@@ -16,6 +16,10 @@
 		D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F912AA2F47E009E3C23 /* TabBarType.swift */; };
 		D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */; };
 		D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */; };
+		D8A3AF222AA3239D00AC06C9 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF212AA3239D00AC06C9 /* ProjectCard.swift */; };
+		D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF262AA326B200AC06C9 /* Project.swift */; };
+		D8A3AF2A2AA3294700AC06C9 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF292AA3294700AC06C9 /* MockData.swift */; };
+		D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF2B2AA32AE200AC06C9 /* TagItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		D87E1F912AA2F47E009E3C23 /* TabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarType.swift; sourceTree = "<group>"; };
 		D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D8A3AF212AA3239D00AC06C9 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
+		D8A3AF262AA326B200AC06C9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		D8A3AF292AA3294700AC06C9 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		D8A3AF2B2AA32AE200AC06C9 /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +69,11 @@
 		B7A2A5EE2A7602D7001F392F /* IColab */ = {
 			isa = PBXGroup;
 			children = (
+				D8A3AF2D2AA330DA00AC06C9 /* Config */,
+				D8A3AF232AA3269600AC06C9 /* Core */,
 				D87E1F8A2AA2EE6A009E3C23 /* Features */,
 				B7A2A5EF2A7602D7001F392F /* IColabApp.swift */,
 				B7A2A5F12A7602D7001F392F /* ContentView.swift */,
-				B7A2A5F32A7602D8001F392F /* Assets.xcassets */,
 				B7A2A5F52A7602D8001F392F /* Preview Content */,
 			);
 			path = IColab;
@@ -81,6 +90,7 @@
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D8A3AF1B2AA31C6F00AC06C9 /* Home */,
 				D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */,
 			);
 			path = Features;
@@ -89,7 +99,6 @@
 		D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D8A3AF1B2AA31C6F00AC06C9 /* Home */,
 				D87E1F8C2AA2EEFE009E3C23 /* TabBar */,
 			);
 			path = GlobalComponents;
@@ -108,10 +117,69 @@
 		D8A3AF1B2AA31C6F00AC06C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D8A3AF202AA3238800AC06C9 /* Components */,
 				D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */,
 				D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D8A3AF202AA3238800AC06C9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF212AA3239D00AC06C9 /* ProjectCard.swift */,
+				D8A3AF2B2AA32AE200AC06C9 /* TagItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D8A3AF232AA3269600AC06C9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF242AA3269A00AC06C9 /* Data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D8A3AF242AA3269A00AC06C9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF282AA3293E00AC06C9 /* Mock */,
+				D8A3AF252AA326AA00AC06C9 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D8A3AF252AA326AA00AC06C9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF262AA326B200AC06C9 /* Project.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D8A3AF282AA3293E00AC06C9 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF292AA3294700AC06C9 /* MockData.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		D8A3AF2D2AA330DA00AC06C9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF2E2AA330E300AC06C9 /* Resources */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D8A3AF2E2AA330E300AC06C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7A2A5F32A7602D8001F392F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,12 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */,
+				D8A3AF2A2AA3294700AC06C9 /* MockData.swift in Sources */,
 				D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */,
 				D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */,
 				B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */,
 				D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */,
+				D8A3AF222AA3239D00AC06C9 /* ProjectCard.swift in Sources */,
+				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
 				D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */,
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
+				D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var homeViewModel = HomeViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            ForEach(homeViewModel.projects){ project in
+                ProjectCard(project: project)
+                    .padding(.bottom, 20)
+            }
+        }.padding(.horizontal, 10)
             .navigationTitle("Home")
+        
     }
 }
 
