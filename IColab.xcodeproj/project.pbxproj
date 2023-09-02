@@ -14,6 +14,8 @@
 		D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F8D2AA2EF26009E3C23 /* TabBarItemComponent.swift */; };
 		D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F8F2AA2F0F9009E3C23 /* TabBarView.swift */; };
 		D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F912AA2F47E009E3C23 /* TabBarType.swift */; };
+		D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */; };
+		D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		D87E1F8D2AA2EF26009E3C23 /* TabBarItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemComponent.swift; sourceTree = "<group>"; };
 		D87E1F8F2AA2F0F9009E3C23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87E1F912AA2F47E009E3C23 /* TabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarType.swift; sourceTree = "<group>"; };
+		D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D8A3AF1B2AA31C6F00AC06C9 /* Home */,
 				D87E1F8C2AA2EEFE009E3C23 /* TabBar */,
 			);
 			path = GlobalComponents;
@@ -98,6 +103,15 @@
 				D87E1F912AA2F47E009E3C23 /* TabBarType.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D8A3AF1B2AA31C6F00AC06C9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */,
+				D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +186,9 @@
 			files = (
 				D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */,
 				D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */,
+				D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */,
 				B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */,
+				D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */,
 				D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */,
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
 			);

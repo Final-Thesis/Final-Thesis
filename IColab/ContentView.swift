@@ -9,27 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
-    
     var body: some View {
-        VStack{
-            Spacer()
+        NavigationView {
             VStack{
-                switch selectedTabBar {
-                case .home:
-                    Text("Home")
-                case .projects:
-                    Text("Projects")
-                case .chats:
-                    Text("Chats")
-                case .notifications:
-                    Text("Notifications")
-                case .profile:
-                    Text("Profile")
+                VStack{
+                    switch selectedTabBar {
+                    case .home:
+                        HomeView()
+                    case .projects:
+                        Text("Projects")
+                    case .chats:
+                        Text("Chats")
+                    case .notifications:
+                        Text("Notifications")
+                    case .profile:
+                        Text("Profile")
+                    }
                 }
+                Spacer()
+                TabBarView(selectedTabItem: $selectedTabBar)
+                    .frame(height: 50)
             }
-            Spacer()
-            TabBarView(selectedTabItem: $selectedTabBar)
-                .frame(height: 30)
         }
         
     }

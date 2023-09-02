@@ -21,8 +21,8 @@ struct TabBarView: View {
                     .frame(width: geometry.size.width * 0.2)
                     .foregroundColor(tabBarType == selectedTabItem ? .blue : .primary)
                 }
-            }
-        }
+            }.padding(.top, 10)
+        }.background(.ultraThinMaterial)
     }
 }
 
