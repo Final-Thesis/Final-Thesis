@@ -15,7 +15,6 @@ struct TabBarView: View {
             HStack(spacing: 0){
                 ForEach(tabBarItems, id: \.self){ tabBarType in
                     TabBarItemComponent(tabBarType: tabBarType) {
-                        print("Change to \(tabBarType.getCaption())")
                         selectedTabItem = tabBarType
                     }
                     .frame(width: geometry.size.width * 0.2)

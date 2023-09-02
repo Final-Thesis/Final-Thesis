@@ -37,6 +37,6 @@ struct ProjectCard: View {
 
 struct ProjectCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectCard(project: Project(title: "Project Title", type: "Front-end", tags: ["SwiftUI", "CoreML", "Combine"], startDate: Date.now, endDate: Date.now.addingTimeInterval(20), desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."))
+        ProjectCard(project: Mock.projects[0])
     }
 }

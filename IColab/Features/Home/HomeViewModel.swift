@@ -10,6 +10,6 @@ import Foundation
 class HomeViewModel : ObservableObject{
     @Published var projects : [Project] = []
     init(){
-        projects = Mock.data
+        projects = Mock.projects
     }
 }
