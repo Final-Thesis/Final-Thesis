@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack{
                 VStack{
                     switch selectedTabBar {
