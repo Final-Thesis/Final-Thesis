@@ -82,7 +82,7 @@ struct DetailCard: View {
             }
         }
         .frame(width: detailCardType == .cardwithlogo ? 150 : nil)
-        .padding(.horizontal, detailCardType == .cardwithlogo ? 15 : 30)
+        .padding(.horizontal, detailCardType == .cardwithlogo ? 15 : 20)
         .padding(.vertical, detailCardType == .cardwithlogo ? 8 : 20)
         .background(.ultraThinMaterial)
         .cornerRadius(12)

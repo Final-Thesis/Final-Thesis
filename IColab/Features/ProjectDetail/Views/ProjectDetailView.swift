@@ -15,6 +15,7 @@ enum PickerItem : String, CaseIterable {
 struct ProjectDetailView: View {
     var project : Project
     @State var pickerSelection : PickerItem = .overview
+    @State var showSheet = false
     var body: some View {
         ScrollView{
             ZStack(alignment: .bottomLeading){
@@ -25,19 +26,28 @@ struct ProjectDetailView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-                    .padding()
+                    .padding(.leading, 20)
+                    .padding(.bottom, 20)
             }
+            OwnerNameView(name: project.owner?.name ?? "Name", showSheet: $showSheet)
+                .offset(y: -10)
             PickerView(pickerSelection: $pickerSelection)
-                .padding(.horizontal, 10)
+                .padding(.horizontal, 20)
             switch pickerSelection {
             case .overview:
                 OverviewView(project: project)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 20)
             case .milestone:
                 Text("Milestone")
+                    .padding(.horizontal, 20)
             }
         }
         .ignoresSafeArea()
+        .sheet(isPresented: $showSheet, content: {
+            OwnerProfileSheet(owner: project.owner!)
+                .presentationDetents([.fraction(0.45), .large])
+            .presentationDragIndicator(.visible)
+        })
     }
 }
 

@@ -11,6 +11,13 @@ struct Mock{
     static var projects = [
         Project(
             title: "Project Title",
+            owner: Account(
+                name: "John Doe",
+                email: "john.doe@binus.ac.id",
+                password: "ImaPassword",
+                bankAccount: "bankaccount",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                cvLink: "CVLink"),
             role: "Front-end",
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
@@ -19,6 +26,13 @@ struct Mock{
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
         Project(
             title: "Project Title",
+            owner: Account(
+                name: "John Doe",
+                email: "john.doe@binus.ac.id",
+                password: "ImaPassword",
+                bankAccount: "bankaccount",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                cvLink: "CVLink"),
             role: "Back-end",
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
@@ -27,6 +41,13 @@ struct Mock{
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
         Project(
             title: "Project Title",
+            owner: Account(
+                name: "John Doe",
+                email: "john.doe@binus.ac.id",
+                password: "ImaPassword",
+                bankAccount: "bankaccount",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                cvLink: "CVLink"),
             role: "Back-end",
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
