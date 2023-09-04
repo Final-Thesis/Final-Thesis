@@ -12,12 +12,19 @@ struct HomeView: View {
     var body: some View {
         ScrollView{
             ForEach(homeViewModel.projects){ project in
-                ProjectCard(project: project)
-                    .padding(.bottom, 20)
+                NavigationLink(value: project) {
+                    ProjectCard(project: project)
+                        .padding(.bottom, 20)
+                }
+                .buttonStyle(.plain)
+                
             }
-        }.padding(.horizontal, 10)
-            .navigationTitle("Home")
-        
+        }
+        .navigationDestination(for: Project.self, destination: { project in
+            ProjectDetailView(project: project)
+        })
+        .padding(.horizontal, 10)
+        .navigationTitle("Home")
     }
 }
 

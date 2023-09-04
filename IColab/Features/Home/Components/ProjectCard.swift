@@ -25,10 +25,9 @@ struct ProjectCard: View {
                     TagItem(tagText: tag)
                 }
             }
-            
         }
         .padding()
-        .background(.ultraThinMaterial)
+        .background(.ultraThickMaterial)
         .cornerRadius(12)
         
         

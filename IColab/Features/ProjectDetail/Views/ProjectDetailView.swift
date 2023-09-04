@@ -13,7 +13,7 @@ enum PickerItem : String, CaseIterable {
 }
 
 struct ProjectDetailView: View {
-    @Binding var project : Project
+    var project : Project
     @State var pickerSelection : PickerItem = .overview
     var body: some View {
         ScrollView{
@@ -43,7 +43,6 @@ struct ProjectDetailView: View {
 
 struct ProjectDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectDetailView(project: .constant(Mock.projects[0]))
-//            .preferredColorScheme()
+        ProjectDetailView(project: Mock.projects[0])
     }
 }
