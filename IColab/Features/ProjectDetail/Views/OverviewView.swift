@@ -46,7 +46,7 @@ struct OverviewView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 5)
             }
-            DetailCard(detailCardType: .description, title: "\(project.title)", caption: "\(project.desc)")
+            DetailCard(detailCardType: .description, title: "Job Description", caption: "\(project.desc)")
         }
     }
 }

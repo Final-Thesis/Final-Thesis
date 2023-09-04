@@ -17,6 +17,16 @@ struct ProjectDetailView: View {
     @State var pickerSelection : PickerItem = .overview
     var body: some View {
         ScrollView{
+            ZStack(alignment: .bottomLeading){
+                Image("purple")
+                    .resizable()
+                    .frame(height: 200)
+                Text("\(project.title)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+            }
             PickerView(pickerSelection: $pickerSelection)
             switch pickerSelection {
             case .overview:
@@ -24,7 +34,7 @@ struct ProjectDetailView: View {
             case .milestone:
                 Text("Milestone")
             }
-        }
+        }.ignoresSafeArea()
     }
 }
 
