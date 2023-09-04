@@ -24,6 +24,7 @@
 		D8A3AF362AA4664E00AC06C9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF352AA4664E00AC06C9 /* Account.swift */; };
 		D8A3AF382AA48A5500AC06C9 /* DetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF372AA48A5500AC06C9 /* DetailCard.swift */; };
 		D8A3AF3A2AA4B35B00AC06C9 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF392AA4B35B00AC06C9 /* PickerView.swift */; };
+		D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FFEB7E2AA58D9900317362 /* OverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D8A3AF352AA4664E00AC06C9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D8A3AF372AA48A5500AC06C9 /* DetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCard.swift; sourceTree = "<group>"; };
 		D8A3AF392AA4B35B00AC06C9 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		D8FFEB7E2AA58D9900317362 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D8FFEB7B2AA58ADD00317362 /* ProjectDetail */,
 				D8A3AF1B2AA31C6F00AC06C9 /* Home */,
 				D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */,
 			);
@@ -107,6 +110,7 @@
 		D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D8A3AF2B2AA32AE200AC06C9 /* TagItem.swift */,
 				D87E1F8C2AA2EEFE009E3C23 /* TabBar */,
 			);
 			path = GlobalComponents;
@@ -136,9 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				D8A3AF212AA3239D00AC06C9 /* ProjectCard.swift */,
-				D8A3AF2B2AA32AE200AC06C9 /* TagItem.swift */,
-				D8A3AF372AA48A5500AC06C9 /* DetailCard.swift */,
-				D8A3AF392AA4B35B00AC06C9 /* PickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -196,7 +197,6 @@
 		D8A3AF322AA464CC00AC06C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8A3AF2F2AA3332800AC06C9 /* ProjectDetailView.swift */,
 				D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */,
 			);
 			path = Views;
@@ -208,6 +208,33 @@
 				D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D8FFEB7B2AA58ADD00317362 /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D8FFEB7D2AA58D8600317362 /* Views */,
+				D8FFEB7C2AA58B6600317362 /* Components */,
+			);
+			path = ProjectDetail;
+			sourceTree = "<group>";
+		};
+		D8FFEB7C2AA58B6600317362 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF392AA4B35B00AC06C9 /* PickerView.swift */,
+				D8A3AF372AA48A5500AC06C9 /* DetailCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D8FFEB7D2AA58D8600317362 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8A3AF2F2AA3332800AC06C9 /* ProjectDetailView.swift */,
+				D8FFEB7E2AA58D9900317362 /* OverviewView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +322,7 @@
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
 				D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */,
 				D8A3AF302AA3332800AC06C9 /* ProjectDetailView.swift in Sources */,
+				D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,8 @@ struct DetailCard: View {
     var symbol : String?
     var title : String?
     var caption : String?
+    @State private var showFullDesc = false
+    @State private var descMoreThan3Lines = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
@@ -21,20 +23,53 @@ struct DetailCard: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 Text("\(caption ?? "Caption")")
+                    .lineLimit(showFullDesc ? nil : 3)
+                    .font(.body)
+                    .background(
+                        GeometryReader { geometry in
+                            Color.clear.onAppear {
+                                let lineHeight = UIFont.preferredFont(forTextStyle: .body).lineHeight
+                                let threeLinesHeight = lineHeight * 3
+                                descMoreThan3Lines = geometry.size.height > threeLinesHeight
+                            }
+                        }
+                    )
+                if descMoreThan3Lines{
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            withAnimation {
+                                showFullDesc.toggle()
+                            }
+                        }, label: {
+                            HStack(spacing: 1){
+                                Text(showFullDesc ? "Read Less" : "Read More")
+                                Image(systemName: showFullDesc ? "chevron.up" : "chevron.down")
+                            }
+                        })
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                        Spacer()
+                    }
+                }
+                
+                
             case .cardwithlogo:
                 HStack{
                     Image(systemName: "\(symbol ?? "folder")")
-                        .font(.system(size: 25))
+                        .font(.system(size: 24))
+                        .frame(width: 30)
                     VStack(alignment: .leading, spacing: 5){
                         Text("\(title ?? "Title")")
                             .font(.callout)
                             .fontWeight(.bold)
                         Text("\(caption ?? "Caption")")
                     }
+                    Spacer()
                 }
             }
         }
-        .frame(width: detailCardType == .cardwithlogo ? 140 : nil)
+        .frame(width: detailCardType == .cardwithlogo ? 150 : nil)
         .padding(.horizontal, detailCardType == .cardwithlogo ? 15 : 30)
         .padding(.vertical, detailCardType == .cardwithlogo ? 8 : 20)
         .background(.ultraThinMaterial)

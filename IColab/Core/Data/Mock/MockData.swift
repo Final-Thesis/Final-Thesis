@@ -14,7 +14,7 @@ struct Mock{
             type: "Front-end",
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10),
+            endDate: Date.now.addingTimeInterval(10000),
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
         Project(
             title: "Project Title",

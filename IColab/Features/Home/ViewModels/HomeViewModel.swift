@@ -9,7 +9,12 @@ import Foundation
 
 class HomeViewModel : ObservableObject{
     @Published var projects : [Project] = []
+    
     init(){
+        getProjects()
+    }
+    
+    func getProjects(){
         projects = Mock.projects
     }
 }
