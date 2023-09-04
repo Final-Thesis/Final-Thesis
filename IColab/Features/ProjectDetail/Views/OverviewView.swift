@@ -29,7 +29,7 @@ struct OverviewView: View {
                     detailCardType: .cardwithlogo,
                     symbol: "person",
                     title: "Role",
-                    caption: "\(project.type)")
+                    caption: "\(project.role)")
                 DetailCard(
                     detailCardType: .cardwithlogo,
                     symbol: "clock.fill",
@@ -47,6 +47,7 @@ struct OverviewView: View {
                 .padding(.vertical, 5)
             }
             DetailCard(detailCardType: .description, title: "Job Description", caption: "\(project.desc)")
+            DetailCard(detailCardType: .requirements, title: "Job Requirements", requirements: project.requirements)
         }
     }
 }

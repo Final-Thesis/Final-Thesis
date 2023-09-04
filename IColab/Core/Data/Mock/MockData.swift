@@ -11,21 +11,24 @@ struct Mock{
     static var projects = [
         Project(
             title: "Project Title",
-            type: "Front-end",
+            role: "Front-end",
+            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
             endDate: Date.now.addingTimeInterval(10000),
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
         Project(
             title: "Project Title",
-            type: "Back-end",
+            role: "Back-end",
+            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
             endDate: Date.now.addingTimeInterval(10),
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
         Project(
             title: "Project Title",
-            type: "Back-end",
+            role: "Back-end",
+            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
             endDate: Date.now.addingTimeInterval(10),

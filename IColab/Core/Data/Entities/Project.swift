@@ -11,7 +11,8 @@ struct Project : Identifiable{
     let id = UUID().uuidString
     var title : String
     var owner : Account?
-    var type : String
+    var role : String
+    var requirements : [String]
     var tags : [String]
     var startDate : Date
     var endDate : Date

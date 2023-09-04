@@ -28,18 +28,22 @@ struct ProjectDetailView: View {
                     .padding()
             }
             PickerView(pickerSelection: $pickerSelection)
+                .padding(.horizontal, 10)
             switch pickerSelection {
             case .overview:
                 OverviewView(project: project)
+                    .padding(.horizontal, 10)
             case .milestone:
                 Text("Milestone")
             }
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
     }
 }
 
 struct ProjectDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectDetailView(project: .constant(Mock.projects[0]))
+//            .preferredColorScheme()
     }
 }
