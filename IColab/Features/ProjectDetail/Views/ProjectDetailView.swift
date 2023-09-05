@@ -38,7 +38,7 @@ struct ProjectDetailView: View {
                 OverviewView(project: project)
                     .padding(.horizontal, 20)
             case .milestone:
-                Text("Milestone")
+                MilestoneView(milestones: project.milestones)
                     .padding(.horizontal, 20)
             }
         }

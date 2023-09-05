@@ -17,6 +17,7 @@ struct Project : Identifiable, Hashable{
     var startDate : Date
     var endDate : Date
     var desc : String
+    var milestones : [Milestone]
     
     public mutating func setOwner(owner : Account){
         self.owner = owner
@@ -31,6 +32,7 @@ struct Project : Identifiable, Hashable{
         lhs.tags == rhs.tags &&
         lhs.startDate == rhs.startDate &&
         lhs.endDate == rhs.endDate &&
-        lhs.desc == rhs.desc
+        lhs.desc == rhs.desc &&
+        lhs.milestones == rhs.milestones
     }
 }

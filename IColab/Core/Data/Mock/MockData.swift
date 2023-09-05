@@ -23,7 +23,11 @@ struct Mock{
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
             endDate: Date.now.addingTimeInterval(10000),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            milestones: [Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false),
+                         Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false)
+            ]
+        ),
         Project(
             title: "Project Title",
             owner: Account(
@@ -38,7 +42,12 @@ struct Mock{
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
             endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            milestones: [
+                Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false),
+                Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false)
+            ]
+        ),
         Project(
             title: "Project Title",
             owner: Account(
@@ -53,7 +62,12 @@ struct Mock{
             tags: ["SwiftUI", "CoreML", "Vision"],
             startDate: Date.now,
             endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            milestones: [
+                Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false),
+                Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false)
+            ]
+        )
     ]
     
     static var accounts = [

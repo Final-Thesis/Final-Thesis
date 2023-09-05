@@ -13,6 +13,9 @@
 		B7A2A5F72A7602D8001F392F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A2A5F62A7602D8001F392F /* Preview Assets.xcassets */; };
 		D87A67B22AA63211000586A1 /* OwnerProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B12AA63211000586A1 /* OwnerProfileSheet.swift */; };
 		D87A67B42AA63B4E000586A1 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B32AA63B4E000586A1 /* ButtonComponent.swift */; };
+		D87A67B62AA70393000586A1 /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B52AA70393000586A1 /* MilestoneView.swift */; };
+		D87A67B82AA7059F000586A1 /* MilestoneDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B72AA7059F000586A1 /* MilestoneDetailCard.swift */; };
+		D87A67BA2AA766CD000586A1 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B92AA766CD000586A1 /* Milestone.swift */; };
 		D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F8D2AA2EF26009E3C23 /* TabBarItemComponent.swift */; };
 		D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F8F2AA2F0F9009E3C23 /* TabBarView.swift */; };
 		D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E1F912AA2F47E009E3C23 /* TabBarType.swift */; };
@@ -38,6 +41,9 @@
 		B7A2A5F62A7602D8001F392F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D87A67B12AA63211000586A1 /* OwnerProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileSheet.swift; sourceTree = "<group>"; };
 		D87A67B32AA63B4E000586A1 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		D87A67B52AA70393000586A1 /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
+		D87A67B72AA7059F000586A1 /* MilestoneDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailCard.swift; sourceTree = "<group>"; };
+		D87A67B92AA766CD000586A1 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		D87E1F8D2AA2EF26009E3C23 /* TabBarItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemComponent.swift; sourceTree = "<group>"; };
 		D87E1F8F2AA2F0F9009E3C23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87E1F912AA2F47E009E3C23 /* TabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarType.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 			children = (
 				D8A3AF262AA326B200AC06C9 /* Project.swift */,
 				D8A3AF352AA4664E00AC06C9 /* Account.swift */,
+				D87A67B92AA766CD000586A1 /* Milestone.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 				D8A3AF372AA48A5500AC06C9 /* DetailCard.swift */,
 				D8FFEB802AA6218500317362 /* OwnerNameView.swift */,
 				D87A67B12AA63211000586A1 /* OwnerProfileSheet.swift */,
+				D87A67B72AA7059F000586A1 /* MilestoneDetailCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 			children = (
 				D8A3AF2F2AA3332800AC06C9 /* ProjectDetailView.swift */,
 				D8FFEB7E2AA58D9900317362 /* OverviewView.swift */,
+				D87A67B52AA70393000586A1 /* MilestoneView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +326,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */,
+				D87A67B62AA70393000586A1 /* MilestoneView.swift in Sources */,
+				D87A67B82AA7059F000586A1 /* MilestoneDetailCard.swift in Sources */,
 				D8A3AF362AA4664E00AC06C9 /* Account.swift in Sources */,
 				D8A3AF2A2AA3294700AC06C9 /* MockData.swift in Sources */,
 				D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */,
@@ -332,6 +343,7 @@
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
 				D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */,
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
+				D87A67BA2AA766CD000586A1 /* Milestone.swift in Sources */,
 				D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */,
 				D8A3AF302AA3332800AC06C9 /* ProjectDetailView.swift in Sources */,
 				D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */,
