@@ -30,7 +30,7 @@ struct ContentView: View {
                 TabBarView(selectedTabItem: $selectedTabBar)
                     .frame(height: 50)
             }
-        }
+        }.accentColor(.white)
         
     }
 }

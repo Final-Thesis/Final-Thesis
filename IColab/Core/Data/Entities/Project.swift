@@ -23,6 +23,18 @@ struct Project : Identifiable, Hashable{
         self.owner = owner
     }
     
+    public func totalMilestone() -> Int{
+        var total = 0
+        for milestone in milestones {
+            total += milestone.nominal
+        }
+        return total
+    }
+    
+    public func calculateAverageMilestone() -> Float {
+        return Float(totalMilestone()/milestones.count)
+    }
+    
     static func == (lhs: Project, rhs: Project) -> Bool {
         return lhs.id == rhs.id &&
         lhs.title == rhs.title &&

@@ -12,6 +12,7 @@ struct MilestoneDetailCard: View {
     var milestones : [Milestone]
     var body: some View {
         switch milestoneDetailCardType {
+    // MARK: Overview
         case .overview:
             HStack{
                 VStack(spacing: 5){
@@ -45,6 +46,7 @@ struct MilestoneDetailCard: View {
             .padding(.horizontal, 10)
             .background(.ultraThinMaterial)
             .cornerRadius(12)
+    //MARK: Detail
         case .detail:
             ForEach(milestones) { milestone in
                 HStack{

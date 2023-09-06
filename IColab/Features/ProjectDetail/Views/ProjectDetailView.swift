@@ -32,14 +32,12 @@ struct ProjectDetailView: View {
             OwnerNameView(name: project.owner?.name ?? "Name", showSheet: $showSheet)
                 .offset(y: -10)
             PickerView(pickerSelection: $pickerSelection)
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 10)
             switch pickerSelection {
             case .overview:
                 OverviewView(project: project)
-                    .padding(.horizontal, 20)
             case .milestone:
                 MilestoneView(milestones: project.milestones)
-                    .padding(.horizontal, 20)
             }
         }
         .ignoresSafeArea()
@@ -54,5 +52,6 @@ struct ProjectDetailView: View {
 struct ProjectDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectDetailView(project: Mock.projects[0])
+            .preferredColorScheme(.dark)
     }
 }
