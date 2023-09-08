@@ -10,7 +10,7 @@ import Foundation
 struct Mock{
     static var projects = [
         Project(
-            title: "Project Title",
+            title: "Front-end Project",
             owner: Account(
                 name: "John Doe",
                 email: "john.doe@binus.ac.id",
@@ -29,7 +29,7 @@ struct Mock{
             ]
         ),
         Project(
-            title: "Project Title",
+            title: "Back-end Project",
             owner: Account(
                 name: "John Doe",
                 email: "john.doe@binus.ac.id",

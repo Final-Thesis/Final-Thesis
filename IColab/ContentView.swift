@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     var body: some View {
         NavigationStack {
-            VStack{
+            ScrollView{
                 VStack{
                     switch selectedTabBar {
                     case .home:
@@ -27,11 +27,9 @@ struct ContentView: View {
                     }
                 }
                 Spacer()
-                TabBarView(selectedTabItem: $selectedTabBar)
-                    .frame(height: 50)
             }
+            TabBarView(selectedTabItem: $selectedTabBar)
         }.accentColor(.white)
-        
     }
 }
 

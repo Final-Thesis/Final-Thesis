@@ -19,15 +19,17 @@ struct TabBarView: View {
                     }
                     .frame(width: geometry.size.width * 0.2)
                     .foregroundColor(tabBarType == selectedTabItem ? .blue : .primary)
-                }
-            }.padding(.top, 10)
-        }.background(.ultraThinMaterial)
+                }.offset(y: 5)
+            }
+        }
+        .frame(height: 50)
     }
 }
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
+            HomeView()
             TabBarView(selectedTabItem: .constant(.home))
         }
         

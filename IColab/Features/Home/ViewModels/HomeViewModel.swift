@@ -11,10 +11,27 @@ class HomeViewModel : ObservableObject{
     @Published var projects : [Project] = []
     
     init(){
-        getProjects()
+        projects = getProjects()
     }
     
-    func getProjects(){
-        projects = Mock.projects
+    private func getProjects() -> [Project]{
+        let projects = Mock.projects
+        return projects
+    }
+    
+    private func getFilteredProjects(searchTitle: String) -> [Project] {
+        if searchTitle.isEmpty{
+            return Mock.projects
+        }
+        let allProjects = Mock.projects
+        let filteredProjects = allProjects.filter { project in
+            let projectTitleLowercased = project.title.lowercased()
+            return projectTitleLowercased.contains(searchTitle.lowercased())
+        }
+        return filteredProjects
+    }
+    
+    public func searchProject(searchTitle: String) {
+        self.projects = getFilteredProjects(searchTitle: searchTitle)
     }
 }

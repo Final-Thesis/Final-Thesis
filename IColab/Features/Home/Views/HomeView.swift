@@ -9,27 +9,34 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
+    @State var searchText = ""
     var body: some View {
-        ScrollView{
-            ForEach(homeViewModel.projects){ project in
-                NavigationLink(value: project) {
-                    ProjectCard(project: project)
-                        .padding(.bottom, 20)
-                }
-                .buttonStyle(.plain)
-                
+        VStack{
+            SearchBar(searchText: $searchText){ search in
+                homeViewModel.searchProject(searchTitle: search)
             }
+            ScrollView{
+                ForEach(homeViewModel.projects){ project in
+                    NavigationLink(value: project) {
+                        ProjectCard(project: project)
+                            .padding(.top, 10)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .navigationDestination(for: Project.self, destination: { project in
+                ProjectDetailView(project: project)
+            })
+            .padding(.horizontal, 10)
+            .navigationTitle("Home")
         }
-        .navigationDestination(for: Project.self, destination: { project in
-            ProjectDetailView(project: project)
-        })
-        .padding(.horizontal, 10)
-        .navigationTitle("Home")
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        NavigationStack{
+            HomeView()
+        }
     }
 }
