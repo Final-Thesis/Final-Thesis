@@ -44,7 +44,7 @@ struct ProjectDetailView: View {
         .sheet(isPresented: $showSheet, content: {
             OwnerProfileSheet(owner: project.owner!)
                 .presentationDetents([.fraction(0.45), .large])
-            .presentationDragIndicator(.visible)
+                .presentationDragIndicator(.visible)
         })
     }
 }
