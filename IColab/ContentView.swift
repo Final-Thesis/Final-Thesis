@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTabBar : TabBarType = .home
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationStack {
+            ScrollView{
+                VStack{
+                    switch selectedTabBar {
+                    case .home:
+                        HomeView()
+                    case .projects:
+                        Text("Projects")
+                    case .chats:
+                        Text("Chats")
+                    case .notifications:
+                        Text("Notifications")
+                    case .profile:
+                        Text("Profile")
+                    }
+                }
+                Spacer()
+            }
+            TabBarView(selectedTabItem: $selectedTabBar)
+        }.accentColor(.white)
     }
 }
 

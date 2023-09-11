@@ -26,8 +26,6 @@ struct TabBarItemComponent: View {
                     .font(.caption2)
             }
         }
-
-       
     }
 }
 

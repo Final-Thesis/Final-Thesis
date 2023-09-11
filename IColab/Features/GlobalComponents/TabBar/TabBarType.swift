@@ -23,7 +23,7 @@ extension TabBarType{
         case .projects:
             return "menucard"
         case .chats:
-            return "bubble.right"
+            return "bubble.left"
         case .notifications:
             return "bell"
         case .profile:

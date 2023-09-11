@@ -15,20 +15,21 @@ struct TabBarView: View {
             HStack(spacing: 0){
                 ForEach(tabBarItems, id: \.self){ tabBarType in
                     TabBarItemComponent(tabBarType: tabBarType) {
-                        print("Change to \(tabBarType.getCaption())")
                         selectedTabItem = tabBarType
                     }
                     .frame(width: geometry.size.width * 0.2)
                     .foregroundColor(tabBarType == selectedTabItem ? .blue : .primary)
-                }
+                }.offset(y: 5)
             }
         }
+        .frame(height: 50)
     }
 }
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
+            HomeView()
             TabBarView(selectedTabItem: .constant(.home))
         }
         
