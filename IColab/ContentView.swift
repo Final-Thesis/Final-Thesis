@@ -23,7 +23,7 @@ struct ContentView: View {
                     case .notifications:
                         Text("Notifications")
                     case .profile:
-                        Text("Profile")
+                        ProfileView()
                     }
                 }
                 Spacer()
