@@ -9,17 +9,19 @@ import Foundation
 
 class HomeViewModel : ObservableObject{
     @Published var projects : [Project] = []
+    @Published var searchText : String = ""
+    @Published var searchPressed : Bool = false
+    @Published var filters : [String] = []
     
     init(){
         projects = getProjects()
     }
     
     private func getProjects() -> [Project]{
-        let projects = Mock.projects
-        return projects
+        Mock.projects
     }
     
-    private func getFilteredProjects(searchTitle: String) -> [Project] {
+    private func getSearchProjects(searchTitle: String) -> [Project] {
         if searchTitle.isEmpty{
             return Mock.projects
         }
@@ -32,6 +34,6 @@ class HomeViewModel : ObservableObject{
     }
     
     public func searchProject(searchTitle: String) {
-        self.projects = getFilteredProjects(searchTitle: searchTitle)
+        self.projects = getSearchProjects(searchTitle: searchTitle)
     }
 }

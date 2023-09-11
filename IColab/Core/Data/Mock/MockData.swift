@@ -87,7 +87,5 @@ struct Mock{
             cvLink: "cvlink")
     ]
     
-    public func setOwner(){
-        Mock.projects[0].setOwner(owner: Mock.accounts[0])
-    }
+    static var tags = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
 }

@@ -9,21 +9,20 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
-    @State var searchText = ""
-    @State var filterPressed = false
     @FocusState var isInputActive: Bool
     var body: some View {
         VStack{
             HStack{
-                SearchBar(searchText: $searchText){ search in
+                SearchBar(searchText: $homeViewModel.searchText){ search in
                     homeViewModel.searchProject(searchTitle: search)
                 }
                 .focused($isInputActive)
                 Button {
-                    filterPressed.toggle()
+                    homeViewModel.searchPressed.toggle()
                 } label: {
                     Image(systemName: "line.3.horizontal.decrease.circle")
                         .font(.title2)
+                        .foregroundColor(.primary)
                 }
             }.padding(.horizontal, 10)
             ScrollView{
@@ -48,9 +47,9 @@ struct HomeView: View {
                     }
                 }
             }
-            .sheet(isPresented: $filterPressed) {
-                Text("Filter Pressed")
-                    .presentationDetents([.fraction(0.45), .large])
+            .sheet(isPresented: $homeViewModel.searchPressed) {
+                FilterSheetView()
+                    .presentationDetents([.fraction(0.5), .large])
                     .presentationDragIndicator(.visible)
             }
         }

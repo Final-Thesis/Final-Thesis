@@ -53,6 +53,11 @@ struct OverviewView: View {
                 .padding(.horizontal, 20)
             DetailCard(detailCardType: .requirements, title: "Job Requirements", requirements: project.requirements)
                 .padding(.horizontal, 20)
+                .padding(.bottom, 10)
+            ButtonComponent(title: "Apply", width: 200) {
+                print("Apply Success")
+            }
+
         }
     }
 }
