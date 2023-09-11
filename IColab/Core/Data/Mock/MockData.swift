@@ -14,6 +14,7 @@ struct Mock{
             owner: Account(
                 name: "John Doe",
                 email: "john.doe@binus.ac.id",
+                location: "Indonesia",
                 password: "ImaPassword",
                 bankAccount: "bankaccount",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -33,6 +34,7 @@ struct Mock{
             owner: Account(
                 name: "John Doe",
                 email: "john.doe@binus.ac.id",
+                location: "Indonesia",
                 password: "ImaPassword",
                 bankAccount: "bankaccount",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -53,6 +55,7 @@ struct Mock{
             owner: Account(
                 name: "John Doe",
                 email: "john.doe@binus.ac.id",
+                location: "Indonesia",
                 password: "ImaPassword",
                 bankAccount: "bankaccount",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -74,6 +77,7 @@ struct Mock{
         Account(
             name: "John Doe",
             email: "john.doe@binus.ac.id",
+            location: "Indonesia",
             password: "ImaPassword",
             bankAccount: "bankaccount",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -81,6 +85,7 @@ struct Mock{
         Account(
             name: "Doe John",
             email: "doe.john@binus.ac.id",
+            location: "Indonesia",
             password: "ImaPassword",
             bankAccount: "bankaccount",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

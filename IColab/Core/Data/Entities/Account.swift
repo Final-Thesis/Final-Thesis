@@ -11,6 +11,7 @@ struct Account: Hashable {
     let id = UUID().uuidString
     var name : String
     var email : String
+    var location : String
     var password : String
     var bankAccount : String
     var desc : String

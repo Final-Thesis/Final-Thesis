@@ -12,7 +12,12 @@ struct ProfileView: View {
     
     var body: some View {
         if let account = profileViewModel.account {
-            ProfileCardView(account: account)
+            VStack{
+                HStack{
+                    ProfileCardView(account: account)
+                    Spacer()
+                }
+            }.padding(.horizontal, 20)
         }else{
             Text("No Account to be displayed")
         }

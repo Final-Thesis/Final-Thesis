@@ -12,7 +12,19 @@ struct ProfileCardView: View {
     
     var body: some View {
         if let account = account {
-            Text(account.name)
+            HStack(spacing: 20){
+                Image("purple")
+                    .resizable()
+                    .frame(width: 72, height: 72)
+                    .cornerRadius(12)
+                VStack(alignment: .leading, spacing: 10){
+                    Text(account.name)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Text("\(Image(systemName: "mappin.and.ellipse")) \(account.location)")
+                        .font(.caption)
+                }
+            }
         } else {
             Text("No Account to be displayed")
         }
