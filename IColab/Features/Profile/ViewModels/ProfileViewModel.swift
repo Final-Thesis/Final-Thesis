@@ -9,12 +9,14 @@ import Foundation
 
 class ProfileViewModel : ObservableObject {
     @Published var account : Account?
-    
-    init(){
-        self.account = getAccount()
+
+    init(uid: String){
+        self.account = getAccount(uid: uid)
     }
     
-    private func getAccount() -> Account{
-        return Mock.accounts[0]
+    private func getAccount(uid: String) -> Account{
+        return Mock.accounts.first { account in
+            account.id == uid
+        }!
     }
 }

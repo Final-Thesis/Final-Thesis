@@ -20,14 +20,22 @@ struct OwnerProfileSheet: View {
                 .padding(.horizontal, 40)
                 .padding(.bottom, 20)
             HStack{
-                ButtonComponent(title: "View Profile", width: 140, tint: .gray) {
-                    print("View Profile")
+                NavigationLink(value: owner) {
+                    Text("View Profile")
+                        .font(.callout)
+                        .fontWeight(.bold)
+                        .frame(width: 140)
                 }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 12))
+                .tint(Color("purple"))
                 ButtonComponent(title: "Contact", width: 140, tint: Color("purple")) {
                     print("Contact")
                 }
             }
             
+        }.navigationDestination(for: Account.self) { account in
+            ProfileView(pvm: ProfileViewModel(uid: account.id))
         }
     }
 }

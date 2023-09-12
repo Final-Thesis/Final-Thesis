@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject var profileViewModel = ProfileViewModel()
+    @StateObject var pvm : ProfileViewModel
     @State var pickerSelection : PickerItem = .overview
     let pickerItems : [PickerItem] = [.overview, .portofolio]
     var body: some View {
-        if let account = profileViewModel.account {
+        if let account = pvm.account {
             VStack{
                 HStack{
                     ProfileCardView(account: account)
@@ -24,21 +24,24 @@ struct ProfileView: View {
                 switch pickerSelection {
                 case .overview:
                     ProfileDetailCard(profileDetailCardType: .horizontal, title: "Skills")
+                        .padding(.vertical, 15)
                     ProfileDetailCard(profileDetailCardType: .vertical, title: "Experience")
                 case .portofolio:
                     Text("Portofolio")
                 default:
                     EmptyView()
                 }
-            }.padding(.horizontal, 20)
+            }
+            .padding(.horizontal, 20)
         }else{
             Text("No Account to be displayed")
         }
+            
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
     }
 }
