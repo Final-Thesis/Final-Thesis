@@ -7,15 +7,12 @@
 
 import SwiftUI
 
-enum PickerItem : String, CaseIterable {
-    case overview = "Overview"
-    case milestone = "Milestone"
-}
 
 struct ProjectDetailView: View {
     var project : Project
     @State var pickerSelection : PickerItem = .overview
     @State var showSheet = false
+    let pickerItems : [PickerItem] = [.overview, .milestone]
     var body: some View {
         ScrollView{
             ZStack(alignment: .bottomLeading){
@@ -31,13 +28,15 @@ struct ProjectDetailView: View {
             }
             OwnerNameView(name: project.owner?.name ?? "Name", showSheet: $showSheet)
                 .offset(y: -10)
-            PickerView(pickerSelection: $pickerSelection)
+            PickerView(pickerSelection: $pickerSelection, allItems: pickerItems)
                 .padding(.horizontal, 10)
             switch pickerSelection {
             case .overview:
                 OverviewView(project: project)
             case .milestone:
                 MilestoneView(milestones: project.milestones)
+            default:
+                EmptyView()
             }
         }
         .ignoresSafeArea()
