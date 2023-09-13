@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OwnerProfileSheet: View {
     var owner : Account
+    @Binding var showSheet : Bool
+    @Binding var showProfile : Bool
     var body: some View {
         VStack(spacing: 10) {
             Circle()
@@ -20,28 +22,21 @@ struct OwnerProfileSheet: View {
                 .padding(.horizontal, 40)
                 .padding(.bottom, 20)
             HStack{
-                NavigationLink(value: owner) {
-                    Text("View Profile")
-                        .font(.callout)
-                        .fontWeight(.bold)
-                        .frame(width: 140)
+                ButtonComponent(title: "View Profile", width: 140, tint: Color("graybutton")) {
+                    showSheet = false
+                    showProfile.toggle()
                 }
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle(radius: 12))
-                .tint(Color("purple"))
                 ButtonComponent(title: "Contact", width: 140, tint: Color("purple")) {
                     print("Contact")
                 }
             }
             
-        }.navigationDestination(for: Account.self) { account in
-            ProfileView(pvm: ProfileViewModel(uid: account.id))
         }
     }
 }
 
 struct OwnerProfileSheet_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerProfileSheet(owner: Mock.accounts[0])
+        OwnerProfileSheet(owner: Mock.accounts[0], showSheet: .constant(false), showProfile: .constant(false))
     }
 }
