@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExperienceDetailView: View {
-    
+    var background : Background
     var body: some View {
         HStack(spacing: 15){
             Image("purple")
@@ -16,13 +16,13 @@ struct ExperienceDetailView: View {
                 .frame(width: 48, height: 92)
                 .cornerRadius(12)
             VStack(alignment: .leading){
-                Text("Experience Title")
+                Text(background.title)
                     .fontWeight(.bold)
-                Text("Experience Company")
+                Text(background.company)
                     .font(.subheadline)
-                Text("\(Date.now.formatted(date: .abbreviated, time: .omitted)) - \(Date.now.formatted(date: .abbreviated, time: .omitted))")
+                Text("\(background.startDate.formatted(date: .abbreviated, time: .omitted))) - \(background.endDate.formatted(date: .abbreviated, time: .omitted))")
                     .font(.caption)
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                Text(background.desc)
                     .font(.caption)
             }
         }
@@ -31,6 +31,6 @@ struct ExperienceDetailView: View {
 
 struct ExperienceDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExperienceDetailView()
+        ExperienceDetailView(background: Mock.accountDetails[0].experiences[0])
     }
 }

@@ -24,9 +24,11 @@ struct ProfileView: View {
                         .font(.caption)
                     switch pickerSelection {
                     case .overview:
-                        ProfileDetailCard(profileDetailCardType: .horizontal, title: "Skills")
+                        ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: pvm.account!.accountDetail, title: "Skills")
                             .padding(.vertical, 15)
-                        ProfileDetailCard(profileDetailCardType: .vertical, title: "Experience")
+                        ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Experience")
+                            .padding(.vertical, 15)
+                        ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Education")
                     case .portofolio:
                         Text("Portofolio")
                     default:

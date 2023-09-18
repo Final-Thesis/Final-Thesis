@@ -18,7 +18,7 @@ struct ProfileCardView: View {
                     .frame(width: 72, height: 72)
                     .cornerRadius(12)
                 VStack(alignment: .leading, spacing: 10){
-                    Text(account.name)
+                    Text(account.accountDetail.name)
                         .font(.title2)
                         .fontWeight(.bold)
                     Text("\(Image(systemName: "mappin.and.ellipse")) \(account.location)")

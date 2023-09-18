@@ -16,7 +16,7 @@ struct OwnerProfileSheet: View {
             Circle()
                 .foregroundColor(Color("purple"))
                 .frame(width: 80)
-            Text("\(owner.name)")
+            Text("\(owner.accountDetail.name)")
                 .font(.headline)
             Text("\(owner.desc)")
                 .padding(.horizontal, 40)

@@ -14,9 +14,9 @@ class ProfileViewModel : ObservableObject {
         self.account = getAccount(uid: uid)
     }
     
-    private func getAccount(uid: String) -> Account{
+    private func getAccount(uid: String) -> Account?{
         return Mock.accounts.first { account in
             account.id == uid
-        }!
+        }
     }
 }

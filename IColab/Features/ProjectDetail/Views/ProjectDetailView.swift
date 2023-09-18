@@ -28,7 +28,7 @@ struct ProjectDetailView: View {
                     .padding(.leading, 20)
                     .padding(.bottom, 20)
             }
-            OwnerNameView(name: project.owner?.name ?? "Name", showSheet: $showSheet)
+            OwnerNameView(name: project.owner?.accountDetail.name ?? "Name", showSheet: $showSheet)
                 .offset(y: -10)
             PickerView(pickerSelection: $pickerSelection, allItems: pickerItems)
                 .padding(.horizontal, 10)
@@ -43,10 +43,8 @@ struct ProjectDetailView: View {
         }
         .ignoresSafeArea()
         .sheet(isPresented: $showSheet, content: {
-            NavigationStack {
-                OwnerProfileSheet(owner: project.owner!, showSheet: $showSheet, showProfile: $showProfile)
-                    .presentationDragIndicator(.visible)
-            }
+            OwnerProfileSheet(owner: project.owner!, showSheet: $showSheet, showProfile: $showProfile)
+                .presentationDragIndicator(.visible)
             .presentationDetents([.fraction(0.45), .large])
         })
         .navigationDestination(isPresented: $showProfile) {

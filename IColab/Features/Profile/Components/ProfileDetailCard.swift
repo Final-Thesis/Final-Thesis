@@ -14,7 +14,22 @@ enum ProfileDetailCardType{
 
 struct ProfileDetailCard: View {
     var profileDetailCardType : ProfileDetailCardType
+    var skills : [String]?
+    var backgrounds : [Background]?
     var title : String
+    
+    init(profileDetailCardType: ProfileDetailCardType, accountDetail: AccountDetail, title: String) {
+        self.profileDetailCardType = profileDetailCardType
+        self.title = title
+        if title == "Experience" {
+            backgrounds = accountDetail.experiences
+        }else if title == "Education"{
+            backgrounds = accountDetail.educations
+        }else {
+            skills = accountDetail.skills
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading){
             Text(title)
@@ -23,14 +38,14 @@ struct ProfileDetailCard: View {
             switch profileDetailCardType {
             case .horizontal:
                 HStack{
-                    TagItem(tagText: "Skill")
-                    TagItem(tagText: "Skill")
-                    TagItem(tagText: "Skill")
+                    ForEach(skills ?? ["Skill"], id: \.self){ skill in
+                        TagItem(tagText: skill)
+                    }
                     Spacer()
                 }
             case .vertical:
-                ForEach(0..<2, id:\.self){ _ in 
-                    ExperienceDetailView()
+                ForEach(backgrounds ?? [], id: \.self){ background in
+                    ExperienceDetailView(background: background)
                 }
             }
         }
@@ -44,8 +59,8 @@ struct ProfileDetailCard: View {
 struct ProfileDetailCard_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            ProfileDetailCard(profileDetailCardType: .horizontal, title: "Skills")
-            ProfileDetailCard(profileDetailCardType: .vertical, title: "Experience")
+            ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: Mock.accountDetails[0], title: "Skills")
+            ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: Mock.accountDetails[0], title: "Experience")
         }
     }
 }
