@@ -11,13 +11,7 @@ struct Mock{
     static var projects = [
         Project(
             title: "Front-end Project",
-            owner: Account(
-                name: "John Doe",
-                email: "john.doe@binus.ac.id",
-                password: "ImaPassword",
-                bankAccount: "bankaccount",
-                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                cvLink: "CVLink"),
+            owner: Mock.accounts[0],
             role: "Front-end",
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
@@ -30,13 +24,7 @@ struct Mock{
         ),
         Project(
             title: "Back-end Project",
-            owner: Account(
-                name: "John Doe",
-                email: "john.doe@binus.ac.id",
-                password: "ImaPassword",
-                bankAccount: "bankaccount",
-                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                cvLink: "CVLink"),
+            owner: Mock.accounts[0],
             role: "Back-end",
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
@@ -50,13 +38,7 @@ struct Mock{
         ),
         Project(
             title: "Project Title",
-            owner: Account(
-                name: "John Doe",
-                email: "john.doe@binus.ac.id",
-                password: "ImaPassword",
-                bankAccount: "bankaccount",
-                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                cvLink: "CVLink"),
+            owner: Mock.accounts[0],
             role: "Back-end",
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
@@ -72,15 +54,17 @@ struct Mock{
     
     static var accounts = [
         Account(
-            name: "John Doe",
             email: "john.doe@binus.ac.id",
+            location: "Indonesia",
             password: "ImaPassword",
-            bankAccount: "bankaccount",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            cvLink: "CVLink"),
+            cvLink: "CVLink",
+            accountDetail: Mock.accountDetails[0]
+        ),
         Account(
             name: "Doe John",
             email: "doe.john@binus.ac.id",
+            location: "Indonesia",
             password: "ImaPassword",
             bankAccount: "bankaccount",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -88,4 +72,15 @@ struct Mock{
     ]
     
     static var tags = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
+    
+    static var accountDetails = [
+        AccountDetail(
+            name: "John Doe",
+            location: "Indonesia",
+            bankAccount: "bankaccount",
+            skills: ["SwiftUI", "CoreML", "Vision"],
+            educations: [Education(title: "BINUS University", company: "BINUS", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")],
+            experiences: [Experience(title: "Assistant Lab", company: "BINUS University", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")]
+        )
+    ]
 }

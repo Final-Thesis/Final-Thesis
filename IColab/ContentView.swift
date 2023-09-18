@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
+    @State var path = NavigationPath()
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView{
                 VStack{
                     switch selectedTabBar {
                     case .home:
-                        HomeView()
+                        HomeView(path: $path)
                     case .projects:
                         Text("Projects")
                     case .chats:
@@ -23,13 +24,13 @@ struct ContentView: View {
                     case .notifications:
                         Text("Notifications")
                     case .profile:
-                        Text("Profile")
+                        ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
                     }
                 }
                 Spacer()
             }
             TabBarView(selectedTabItem: $selectedTabBar)
-        }.accentColor(.white)
+        }.accentColor(.primary)
     }
 }
 

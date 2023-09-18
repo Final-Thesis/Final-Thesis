@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-enum PickerItem : String, CaseIterable {
-    case overview = "Overview"
-    case milestone = "Milestone"
-}
 
 struct ProjectDetailView: View {
     var project : Project
     @State var pickerSelection : PickerItem = .overview
     @State var showSheet = false
+    @Binding var path : NavigationPath
+    @State var showProfile = false
+    let pickerItems : [PickerItem] = [.overview, .milestone]
     var body: some View {
         ScrollView{
             ZStack(alignment: .bottomLeading){
@@ -29,29 +28,34 @@ struct ProjectDetailView: View {
                     .padding(.leading, 20)
                     .padding(.bottom, 20)
             }
-            OwnerNameView(name: project.owner?.name ?? "Name", showSheet: $showSheet)
+            OwnerNameView(name: project.owner?.accountDetail.name ?? "Name", showSheet: $showSheet)
                 .offset(y: -10)
-            PickerView(pickerSelection: $pickerSelection)
+            PickerView(pickerSelection: $pickerSelection, allItems: pickerItems)
                 .padding(.horizontal, 10)
             switch pickerSelection {
             case .overview:
                 OverviewView(project: project)
             case .milestone:
                 MilestoneView(milestones: project.milestones)
+            default:
+                EmptyView()
             }
         }
         .ignoresSafeArea()
         .sheet(isPresented: $showSheet, content: {
-            OwnerProfileSheet(owner: project.owner!)
-                .presentationDetents([.fraction(0.45), .large])
+            OwnerProfileSheet(owner: project.owner!, showSheet: $showSheet, showProfile: $showProfile)
                 .presentationDragIndicator(.visible)
+            .presentationDetents([.fraction(0.45), .large])
         })
+        .navigationDestination(isPresented: $showProfile) {
+            ProfileView(pvm: ProfileViewModel(uid: project.owner?.id ?? ""))
+        }
     }
 }
 
 struct ProjectDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectDetailView(project: Mock.projects[0])
+        ProjectDetailView(project: Mock.projects[0], path: .constant(NavigationPath()))
             .preferredColorScheme(.dark)
     }
 }

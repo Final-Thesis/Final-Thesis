@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
     @FocusState var isInputActive: Bool
+    @Binding var path : NavigationPath
     var body: some View {
         VStack{
             HStack{
@@ -35,7 +36,7 @@ struct HomeView: View {
                 }
             }
             .navigationDestination(for: Project.self, destination: { project in
-                ProjectDetailView(project: project)
+                ProjectDetailView(project: project, path: $path)
             })
             .padding(.horizontal, 10)
             .navigationTitle("Home")
@@ -59,7 +60,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            HomeView()
+            HomeView(path: .constant(NavigationPath()))
         }
     }
 }

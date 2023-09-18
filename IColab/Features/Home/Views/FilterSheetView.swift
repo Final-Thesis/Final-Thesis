@@ -13,7 +13,6 @@ struct FilterSheetView: View {
     @State var endDate : Date = Date.now
     
     var body: some View {
-        
         VStack{
             VStack(alignment: .leading){
                 Text("Project Tags")
