@@ -59,7 +59,11 @@ struct Mock{
             password: "ImaPassword",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             cvLink: "CVLink",
-            accountDetail: Mock.accountDetails[0]
+            accountDetail: Mock.accountDetails[0],
+            notifications: [
+                Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now),
+                Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now)
+            ]
         ),
         Account(
             name: "Doe John",

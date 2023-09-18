@@ -22,7 +22,7 @@ struct ContentView: View {
                     case .chats:
                         Text("Chats")
                     case .notifications:
-                        Text("Notifications")
+                        NotificationView(notifications: Mock.accounts[0].notifications!)
                     case .profile:
                         ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
                     }
