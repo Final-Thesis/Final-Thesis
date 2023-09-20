@@ -22,12 +22,11 @@ struct ContentView: View {
                     case .chats:
                         Text("Chats")
                     case .notifications:
-                        NotificationView(notifications: Mock.accounts[0].notifications!)
+                        NotificationView()
                     case .profile:
                         ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
                     }
                 }
-                Spacer()
             }
             TabBarView(selectedTabItem: $selectedTabBar)
         }.accentColor(.primary)

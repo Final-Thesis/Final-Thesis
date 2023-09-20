@@ -37,7 +37,7 @@ struct ProfileView: View {
                 }
                 .padding(.horizontal, 20)
             }
-            
+            .navigationTitle("")
         }else{
             Text("No Account to be displayed")
         }

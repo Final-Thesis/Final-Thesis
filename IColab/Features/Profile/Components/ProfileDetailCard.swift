@@ -32,9 +32,18 @@ struct ProfileDetailCard: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text(title)
-                .font(.title3)
-                .fontWeight(.bold)
+            HStack{
+                Text(title)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                Spacer()
+                Button {
+                    print("edit")
+                } label: {
+                    Image(systemName: "pencil")
+                }
+                .buttonStyle(.plain)
+            }
             switch profileDetailCardType {
             case .horizontal:
                 HStack{

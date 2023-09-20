@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NotificationView: View {
-    var notifications : [Notification]?
+    var nvm = NotificationViewModel()
     var body: some View {
         VStack{
-            if let notifications = notifications{
+            if let notifications = nvm.notifications{
                 ScrollView{
                     ForEach(notifications) { notification in
                         NotificationCard(notification: notification)
@@ -28,16 +28,16 @@ struct NotificationView: View {
                     Text("We will notify you when there’s something that needs your attention")
                         .multilineTextAlignment(.center)
                 }
-                .frame(width: 250)
             }
-        }
-        .navigationTitle("Notifications")
+        }.navigationTitle("Notifications")
+        Spacer()
     }
 }
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationView(notifications: nil)
-        NotificationView(notifications: Mock.accounts[0].notifications)
+        NavigationStack{
+            NotificationView()
+        }
     }
 }
