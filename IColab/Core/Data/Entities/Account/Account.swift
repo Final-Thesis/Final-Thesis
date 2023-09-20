@@ -16,6 +16,7 @@ class Account: Identifiable {
     var projectsOwned : [Project]?
     var cvLink : String
     var accountDetail : AccountDetail
+    var notifications : [Notification]?
     
     init(name: String, email: String, location: String, password: String, bankAccount: String, desc: String, projectsOwned: [Project]? = nil, cvLink: String, accountDetail : AccountDetail = Mock.accountDetails[0]) {
         self.email = email
@@ -27,7 +28,7 @@ class Account: Identifiable {
         self.accountDetail = AccountDetail(name: name, location: location, bankAccount: bankAccount)
     }
     
-    init(email: String, location: String, password: String, desc: String, projectsOwned: [Project]? = nil, cvLink: String, accountDetail : AccountDetail){
+    init(email: String, location: String, password: String, desc: String, projectsOwned: [Project]? = nil, cvLink: String, accountDetail : AccountDetail, notifications : [Notification]? = nil){
         self.email = email
         self.location = location
         self.password = password
@@ -35,6 +36,7 @@ class Account: Identifiable {
         self.projectsOwned = projectsOwned
         self.cvLink = cvLink
         self.accountDetail = accountDetail
+        self.notifications = notifications
     }
     
     public func addProject(project : Project){

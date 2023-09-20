@@ -34,11 +34,23 @@ class AccountDetail {
         skills.append(skill)
     }
     
+    public func removeSkill(idx : Int){
+        skills.remove(at: idx)
+    }
+    
     public func addEducation(education : Education){
         educations.append(education)
     }
     
+    public func removeEducation(idx : Int){
+        educations.remove(at: idx)
+    }
+    
     public func addExperiences(experience : Experience){
         experiences.append(experience)
+    }
+    
+    public func removeExperiences(idx : Int){
+        experiences.remove(at: idx)
     }
 }
