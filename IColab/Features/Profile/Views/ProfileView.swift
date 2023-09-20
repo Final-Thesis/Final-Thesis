@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject var pvm : ProfileViewModel
-    @State var pickerSelection : PickerItem = .overview
-    let pickerItems : [PickerItem] = [.overview, .portofolio]
     var body: some View {
         if let account = pvm.account {
             ScrollView{
@@ -19,16 +17,17 @@ struct ProfileView: View {
                         ProfileCardView(account: account)
                         Spacer()
                     }
-                    PickerView(pickerSelection: $pickerSelection, allItems: pickerItems)
+                    PickerView(pickerSelection: $pvm.pickerSelection, allItems: pvm.pickerItems)
                     Text(account.desc)
                         .font(.caption)
-                    switch pickerSelection {
+                    switch pvm.pickerSelection {
                     case .overview:
                         ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: pvm.account!.accountDetail, title: "Skills")
-                            .padding(.vertical, 15)
+                            .environmentObject(pvm)
                         ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Experience")
-                            .padding(.vertical, 15)
+                            .environmentObject(pvm)
                         ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Education")
+                            .environmentObject(pvm)
                     case .portofolio:
                         Text("Portofolio")
                     default:
@@ -38,6 +37,7 @@ struct ProfileView: View {
                 .padding(.horizontal, 20)
             }
             .navigationTitle("")
+            
         }else{
             Text("No Account to be displayed")
         }

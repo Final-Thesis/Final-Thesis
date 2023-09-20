@@ -83,8 +83,14 @@ struct Mock{
             location: "Indonesia",
             bankAccount: "bankaccount",
             skills: ["SwiftUI", "CoreML", "Vision"],
-            educations: [Education(title: "BINUS University", company: "BINUS", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")],
-            experiences: [Experience(title: "Assistant Lab", company: "BINUS University", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")]
+            educations: [
+                Education(title: "BINUS University", company: "BINUS", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+                Education(title: "National University of Singapore", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - BS, Data Science and Analytics")
+            ],
+            experiences: [
+                Experience(title: "Assistant Lab", company: "BINUS University", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+                Experience(title: "Junior Developer Intern", company: "Samsung Korea", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            ]
         )
     ]
 }

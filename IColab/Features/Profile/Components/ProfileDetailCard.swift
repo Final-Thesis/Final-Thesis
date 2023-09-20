@@ -13,6 +13,7 @@ enum ProfileDetailCardType{
 }
 
 struct ProfileDetailCard: View {
+    @EnvironmentObject var pvm : ProfileViewModel
     var profileDetailCardType : ProfileDetailCardType
     var skills : [String]?
     var backgrounds : [Background]?
@@ -37,24 +38,41 @@ struct ProfileDetailCard: View {
                     .font(.title3)
                     .fontWeight(.bold)
                 Spacer()
-                Button {
-                    print("edit")
-                } label: {
-                    Image(systemName: "pencil")
+                switch profileDetailCardType {
+                case .horizontal:
+                    NavigationLink {
+                        EditView(backgroundType: .skill, skills: skills)
+                            .environmentObject(pvm)
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
+
+                case .vertical:
+                    NavigationLink{
+                        if backgrounds is [Education] {
+                            EditView(backgroundType: .education, backgrounds: backgrounds)
+                                .environmentObject(pvm)
+                        }else {
+                            EditView(backgroundType: .experience, backgrounds: backgrounds)
+                                .environmentObject(pvm)
+                        }
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
+                    
                 }
-                .buttonStyle(.plain)
             }
             switch profileDetailCardType {
             case .horizontal:
                 HStack{
-                    ForEach(skills ?? ["Skill"], id: \.self){ skill in
+                    ForEach(skills ?? [], id: \.self){ skill in
                         TagItem(tagText: skill)
                     }
                     Spacer()
                 }
             case .vertical:
                 ForEach(backgrounds ?? [], id: \.self){ background in
-                    ExperienceDetailView(background: background)
+                    ExperienceDetailView(background: background, editMode: false)
                 }
             }
         }
@@ -67,7 +85,7 @@ struct ProfileDetailCard: View {
 
 struct ProfileDetailCard_Previews: PreviewProvider {
     static var previews: some View {
-        VStack{
+        NavigationStack{
             ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: Mock.accountDetails[0], title: "Skills")
             ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: Mock.accountDetails[0], title: "Experience")
         }
