@@ -7,70 +7,52 @@
 
 import SwiftUI
 
-enum ProfileDetailCardType{
-    case horizontal
-    case vertical
-}
-
 struct ProfileDetailCard: View {
     @EnvironmentObject var pvm : ProfileViewModel
-    var profileDetailCardType : ProfileDetailCardType
+    var backgroundType : BackgroundType
     var skills : [String]?
     var backgrounds : [Background]?
-    var title : String
-    
-    init(profileDetailCardType: ProfileDetailCardType, accountDetail: AccountDetail, title: String) {
-        self.profileDetailCardType = profileDetailCardType
-        self.title = title
-        if title == "Experience" {
-            backgrounds = accountDetail.experiences
-        }else if title == "Education"{
-            backgrounds = accountDetail.educations
-        }else {
-            skills = accountDetail.skills
-        }
-    }
     
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Text(title)
+                Text(backgroundType.rawValue)
                     .font(.title3)
                     .fontWeight(.bold)
                 Spacer()
-                switch profileDetailCardType {
-                case .horizontal:
+                switch backgroundType {
+                case .skill:
                     NavigationLink {
-                        EditView(backgroundType: .skill, skills: skills)
+                        EditView(backgroundType: .skill)
                             .environmentObject(pvm)
                     } label: {
                         Image(systemName: "pencil")
                     }
-
-                case .vertical:
+                case .education:
                     NavigationLink{
-                        if backgrounds is [Education] {
-                            EditView(backgroundType: .education, backgrounds: backgrounds)
-                                .environmentObject(pvm)
-                        }else {
-                            EditView(backgroundType: .experience, backgrounds: backgrounds)
-                                .environmentObject(pvm)
-                        }
+                        EditView(backgroundType: .education)
+                            .environmentObject(pvm)
                     } label: {
                         Image(systemName: "pencil")
                     }
-                    
+                case .experience:
+                    NavigationLink{
+                        EditView(backgroundType: .experience)
+                            .environmentObject(pvm)
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
                 }
             }
-            switch profileDetailCardType {
-            case .horizontal:
+            switch backgroundType {
+            case .skill:
                 HStack{
                     ForEach(skills ?? [], id: \.self){ skill in
                         TagItem(tagText: skill)
                     }
                     Spacer()
                 }
-            case .vertical:
+            default:
                 ForEach(backgrounds ?? [], id: \.self){ background in
                     ExperienceDetailView(background: background, editMode: false)
                 }
@@ -86,8 +68,8 @@ struct ProfileDetailCard: View {
 struct ProfileDetailCard_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: Mock.accountDetails[0], title: "Skills")
-            ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: Mock.accountDetails[0], title: "Experience")
+            ProfileDetailCard(backgroundType: .skill)
+            ProfileDetailCard(backgroundType: .education)
         }
     }
 }

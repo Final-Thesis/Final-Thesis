@@ -24,7 +24,9 @@ struct ContentView: View {
                     case .notifications:
                         NotificationView()
                     case .profile:
-                        ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
+                        let pvm = ProfileViewModel(uid: Mock.accounts[0].id)
+                        ProfileView(pvm: pvm)
+                            .environmentObject(pvm)
                     }
                 }
             }

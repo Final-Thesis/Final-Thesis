@@ -16,8 +16,6 @@ enum BackgroundType: String {
 struct EditView: View {
     @EnvironmentObject var pvm : ProfileViewModel
     var backgroundType : BackgroundType
-    var backgrounds : [Background]?
-    var skills : [String]?
     var body: some View {
         ScrollView{
             switch backgroundType {
@@ -25,8 +23,15 @@ struct EditView: View {
                 ForEach((pvm.account?.accountDetail.skills)!, id: \.self){ skill in
                     Text("Skills")
                 }
-            default:
-                ForEach(backgrounds ?? [], id: \.self) { background in
+            case .education:
+                ForEach(pvm.account?.accountDetail.educations ?? [], id: \.self) { background in
+                    ExperienceDetailView(background: background, editMode: true)
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(12)
+                }
+            case .experience:
+                ForEach(pvm.account?.accountDetail.experiences ?? [], id: \.self) { background in
                     ExperienceDetailView(background: background, editMode: true)
                         .padding()
                         .background(.ultraThinMaterial)
@@ -42,7 +47,7 @@ struct EditView: View {
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            EditView(backgroundType: .education, backgrounds: [])
+            EditView(backgroundType: .education)
         }
     }
 }

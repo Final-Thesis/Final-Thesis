@@ -22,12 +22,9 @@ struct ProfileView: View {
                         .font(.caption)
                     switch pvm.pickerSelection {
                     case .overview:
-                        ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: pvm.account!.accountDetail, title: "Skills")
-                            .environmentObject(pvm)
-                        ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Experience")
-                            .environmentObject(pvm)
-                        ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Education")
-                            .environmentObject(pvm)
+                        ProfileDetailCard(backgroundType: .skill, skills: pvm.account?.accountDetail.skills)
+                        ProfileDetailCard(backgroundType: .experience, backgrounds: pvm.account?.accountDetail.experiences)
+                        ProfileDetailCard(backgroundType: .education, backgrounds: pvm.account?.accountDetail.educations)
                     case .portofolio:
                         Text("Portofolio")
                     default:
@@ -37,7 +34,6 @@ struct ProfileView: View {
                 .padding(.horizontal, 20)
             }
             .navigationTitle("")
-            
         }else{
             Text("No Account to be displayed")
         }

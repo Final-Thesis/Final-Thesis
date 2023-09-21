@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ProfileViewModel : ObservableObject {
     @Published var account : Account?
@@ -32,5 +33,9 @@ class ProfileViewModel : ObservableObject {
             index = account!.accountDetail.educations.firstIndex(of: background as! Education) ?? 0
             account?.accountDetail.educations.remove(at: index)
         }
+        withAnimation {
+            objectWillChange.send()
+        }
+        
     }
 }
