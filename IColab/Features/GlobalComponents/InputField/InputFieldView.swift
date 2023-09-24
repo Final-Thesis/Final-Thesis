@@ -14,6 +14,21 @@ struct InputFieldView: View {
             InputTitleView()
             InputDescriptionView()
             InputDateView()
+            
+            Button {
+                //open file picker
+            } label: {
+                HStack {
+                    Image(systemName: "paperclip")
+                    Text("Attach File")
+                        .font(.headline)
+                    Spacer()
+                }
+                .padding()
+                .background(Color("gray"))
+            }
+            .buttonStyle(.plain)
+
         }
     }
 }
