@@ -18,6 +18,8 @@
 		D82C0D592ABACFD2009802D9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D582ABACFD2009802D9 /* EditView.swift */; };
 		D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D5A2ABC0741009802D9 /* EditFormView.swift */; };
 		D83479AD2AA9D5B800E16739 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83479AC2AA9D5B800E16739 /* SearchBar.swift */; };
+		D84142D32AC0162000E38C5B /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84142D22AC0162000E38C5B /* AddProfileView.swift */; };
+		D84142D92AC0215800E38C5B /* ProfileSectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */; };
 		D87A67B22AA63211000586A1 /* OwnerProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B12AA63211000586A1 /* OwnerProfileSheet.swift */; };
 		D87A67B42AA63B4E000586A1 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B32AA63B4E000586A1 /* ButtonComponent.swift */; };
 		D87A67B62AA70393000586A1 /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A67B52AA70393000586A1 /* MilestoneView.swift */; };
@@ -80,6 +82,8 @@
 		D82C0D582ABACFD2009802D9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D82C0D5A2ABC0741009802D9 /* EditFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFormView.swift; sourceTree = "<group>"; };
 		D83479AC2AA9D5B800E16739 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		D84142D22AC0162000E38C5B /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
+		D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionCard.swift; sourceTree = "<group>"; };
 		D87A67B12AA63211000586A1 /* OwnerProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerProfileSheet.swift; sourceTree = "<group>"; };
 		D87A67B32AA63B4E000586A1 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		D87A67B52AA70393000586A1 /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 				D89586FF2AAF5E7E0064629B /* ProfileView.swift */,
 				D82C0D582ABACFD2009802D9 /* EditView.swift */,
 				D82C0D5A2ABC0741009802D9 /* EditFormView.swift */,
+				D84142D22AC0162000E38C5B /* AddProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				D89587062AB036560064629B /* ExperienceDetailView.swift */,
 				D80BC30E2ABD38690086558D /* FormTextField.swift */,
 				D80BC3102ABD3D130086558D /* FormDatePicker.swift */,
+				D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				D83479AD2AA9D5B800E16739 /* SearchBar.swift in Sources */,
 				D80BC3132ABD49950086558D /* NavigationManager.swift in Sources */,
 				D80BC3112ABD3D130086558D /* FormDatePicker.swift in Sources */,
+				D84142D92AC0215800E38C5B /* ProfileSectionCard.swift in Sources */,
 				D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */,
 				D89587142AB8192D0064629B /* Background.swift in Sources */,
 				D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */,
@@ -586,6 +593,7 @@
 				D8A3AF302AA3332800AC06C9 /* ProjectDetailView.swift in Sources */,
 				D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */,
 				D8C2BE9E2AB88D5B003969D8 /* NotificationView.swift in Sources */,
+				D84142D32AC0162000E38C5B /* AddProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

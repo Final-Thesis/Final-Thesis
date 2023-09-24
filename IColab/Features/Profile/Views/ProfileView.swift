@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject var pvm : ProfileViewModel
+    @State var showAddProfile : Bool = false
     var body: some View {
         if let account = pvm.account {
             ScrollView{
@@ -25,6 +26,9 @@ struct ProfileView: View {
                         ProfileDetailCard(backgroundType: .skill, skills: pvm.account?.accountDetail.skills)
                         ProfileDetailCard(backgroundType: .experience, backgrounds: pvm.account?.accountDetail.experiences)
                         ProfileDetailCard(backgroundType: .education, backgrounds: pvm.account?.accountDetail.educations)
+                        ButtonComponent(title: "Add More", width: 300) {
+                            showAddProfile.toggle()
+                        }
                     case .portofolio:
                         Text("Portofolio")
                     default:
@@ -34,6 +38,10 @@ struct ProfileView: View {
                 .padding(.horizontal, 20)
             }
             .navigationTitle("")
+            .navigationDestination(isPresented: $showAddProfile) {
+                AddProfileView()
+                    .environmentObject(pvm)
+            }
         }else{
             Text("No Account to be displayed")
         }

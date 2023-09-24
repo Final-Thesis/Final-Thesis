@@ -15,4 +15,5 @@ class Education : Background {
     override init(copyFrom other: Background) {
         super.init(copyFrom: other)
     }
+    
 }

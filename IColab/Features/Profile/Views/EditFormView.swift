@@ -10,26 +10,39 @@ import SwiftUI
 struct EditFormView: View {
     @EnvironmentObject var pvm : ProfileViewModel
     @State var editedBackground : Background
-    @State var textfieldText = ""
+    var backgroundType : BackgroundType
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     init(background : Background){
         if background is Experience {
             self._editedBackground = State(initialValue: Experience(copyFrom: background))
+            self.backgroundType = .experience
         }else{
             self._editedBackground = State(initialValue: Education(copyFrom: background))
+            self.backgroundType = .education
         }
     }
+    
+    init(backgroundType : BackgroundType) {
+        if backgroundType == .education {
+            self._editedBackground = State(initialValue: Education(title: "", company: "", startDate: Date.now, endDate: Date.now, desc: ""))
+        }
+        else {
+            self._editedBackground = State(initialValue: Experience(title: "", company: "", startDate: Date.now, endDate: Date.now, desc: ""))
+        }
+        self.backgroundType = backgroundType
+    }
+    
 
     var body: some View {
         VStack(spacing: 10){
-            if editedBackground is Experience {
+            if backgroundType == .experience {
                 FormTextField(title: "Experience Title", textField: $editedBackground.title)
                 FormTextField(title: "Company", textField: $editedBackground.company)
                 FormTextField(title: "Description", textField: $editedBackground.desc)
                 FormDatePicker(title: "Start Date", date: $editedBackground.startDate)
                 FormDatePicker(title: "End Date", date: $editedBackground.endDate)
-            }else{
+            }else if backgroundType == .education{
                 FormTextField(title: "School", textField: $editedBackground.title)
                 FormTextField(title: "Degree", textField: $editedBackground.company)
                 FormTextField(title: "Field of Study", textField: $editedBackground.desc)
@@ -39,7 +52,7 @@ struct EditFormView: View {
             
             Spacer()
             ButtonComponent(title: "Save", width: 300) {
-                pvm.editBackground(background: editedBackground)
+                pvm.saveBackground(background: editedBackground)
                 self.presentationMode.wrappedValue.dismiss()
             }
         }
