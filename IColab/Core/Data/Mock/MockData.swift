@@ -84,7 +84,7 @@ struct Mock{
             bankAccount: "bankaccount",
             skills: ["SwiftUI", "CoreML", "Vision"],
             educations: [
-                Education(title: "BINUS University", company: "BINUS", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+                Education(title: "BINUS University", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - Data Science and Analytics"),
                 Education(title: "National University of Singapore", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - BS, Data Science and Analytics")
             ],
             experiences: [

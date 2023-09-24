@@ -28,11 +28,13 @@ struct ExperienceDetailView: View {
                         } label: {
                             Image(systemName: "trash")
                         }.buttonStyle(.plain)
-                        Button {
-                            print("Edit")
+                        NavigationLink {
+                            EditFormView(background: background)
+                                .environmentObject(pvm)
                         } label: {
                             Image(systemName: "pencil")
                         }.buttonStyle(.plain)
+
                     }
                 }
                 Text(background.company)

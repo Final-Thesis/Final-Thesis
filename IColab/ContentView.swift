@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
-    @State var path = NavigationPath()
+    @StateObject var navigationManager = NavigationManager()
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $navigationManager.path) {
             ScrollView{
                 VStack{
                     switch selectedTabBar {
                     case .home:
-                        HomeView(path: $path)
+                        HomeView(path: $navigationManager.path)
                     case .projects:
                         Text("Projects")
                     case .chats:

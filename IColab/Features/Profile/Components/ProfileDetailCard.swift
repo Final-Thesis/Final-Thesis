@@ -69,7 +69,9 @@ struct ProfileDetailCard_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
             ProfileDetailCard(backgroundType: .skill)
+                .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
             ProfileDetailCard(backgroundType: .education)
+                .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
         }
     }
 }

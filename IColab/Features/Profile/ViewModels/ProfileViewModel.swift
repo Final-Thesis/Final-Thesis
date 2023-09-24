@@ -24,12 +24,32 @@ class ProfileViewModel : ObservableObject {
         }
     }
     
+    public func editBackground(background : Background) {
+        var index = -1
+        if background is Experience {
+            index = account!.accountDetail.experiences.firstIndex(of: background as! Experience) ?? 0
+        }else if background is Education{
+            index = account!.accountDetail.educations.firstIndex(of: background as! Education) ?? 0
+        }
+        
+        if index != -1{
+            if background is Experience {
+                account?.accountDetail.experiences[index] = background as! Experience
+            } else if background is Education {
+                account?.accountDetail.educations[index] = background as! Education
+            }
+        }
+        withAnimation {
+            objectWillChange.send()
+        }
+    }
+    
     public func deleteBackground(background : Background) {
         var index = 0
         if background is Experience {
             index = account!.accountDetail.experiences.firstIndex(of: background as! Experience) ?? 0
             account?.accountDetail.experiences.remove(at: index)
-        }else {
+        }else if background is Education{
             index = account!.accountDetail.educations.firstIndex(of: background as! Education) ?? 0
             account?.accountDetail.educations.remove(at: index)
         }

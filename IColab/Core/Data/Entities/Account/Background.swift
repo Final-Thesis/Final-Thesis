@@ -22,6 +22,14 @@ class Background : Hashable{
         self.desc = desc
     }
     
+    init(copyFrom other: Background) {
+        self.title = other.title
+        self.company = other.company
+        self.startDate = other.startDate
+        self.endDate = other.endDate
+        self.desc = other.desc
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(title)
         hasher.combine(company)
