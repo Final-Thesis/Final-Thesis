@@ -12,14 +12,15 @@ struct InputTagsView: View {
     
     var body: some View {
         ZStack {
-            
             VStack(alignment: .leading) {
                 HStack {
                     Text("Input Tags")
                         .font(.headline)
                     Spacer()
                     Button {
-                        popupToggle.toggle()
+                        withAnimation {
+                            popupToggle.toggle()
+                        }
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }
@@ -44,8 +45,11 @@ struct InputTagsView: View {
                 Divider()
                     .foregroundColor(.white)
             }
+    
             if popupToggle {
-                InputTagPopupView()
+                InputTagPopupView(popupToggle: $popupToggle)
+                    .transition(.opacity)
+                    .zIndex(1)
             }
         }
         
