@@ -25,7 +25,9 @@ struct ResourceRequirementView: View {
                         .font(.title2)
                         .foregroundColor(.primary)
                 }
-            }.padding(.horizontal, 10)
+            }
+            .padding(.horizontal, 10)
+            .padding()
             ProjectButtonView()
             ProjectButtonView()
             ProjectButtonView()
