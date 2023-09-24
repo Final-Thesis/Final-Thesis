@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct ProjectButtonView: View {
+    var icon: String = "newspaper.circle"
+    var title: String = "Resource Requirement"
+    var description: String = "Get in depth overview of the current project, it's requirements, and summary"
+    
     var body: some View {
         HStack {
-            Image(systemName: "newspaper.circle")
+            Image(systemName: icon)
                 .font(.title)
             VStack(alignment: .leading) {
-                Text("Project Overview")
+                Text(title)
                     .font(.headline)
-                Text("Get in depth overview of the current project, it's requirements, and summary")
+                Text(description)
                     .font(.caption2)
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 280)
             }
             Image(systemName: "chevron.right")
                 .font(.title)

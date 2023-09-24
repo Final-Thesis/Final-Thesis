@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct CurrentMilestoneView: View {
+    var milestone: Milestone = Mock.milestones[0]
+    
     var body: some View {
         HStack {
             CircleProgressView()
                 .frame(width: 80, height: 80)
             VStack(alignment: .leading) {
-                Text("Milestone 2")
+                Text(milestone.name)
                     .font(.headline)
-                Text("Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.")
+                Text(milestone.desc)
                     .font(.caption2)
             }
             VStack {

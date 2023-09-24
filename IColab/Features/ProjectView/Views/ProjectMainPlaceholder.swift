@@ -19,18 +19,12 @@ struct ProjectMainPlaceholder: View {
                 NavigationLink {
                     ProjectOverviewView(project: Mock.projects[0])
                 } label: {
-                    Text("Example navigations")
-                }
-                .buttonStyle(.borderedProminent)
-
-                Button {
-                    //
-                } label: {
                     Text("Worker Project")
                 }
                 .buttonStyle(.borderedProminent)
-                Button {
-                    //
+
+                NavigationLink {
+                    ProjectOverviewView(project: Mock.projects[0])
                 } label: {
                     Text("Owner Project")
                 }
@@ -47,5 +41,6 @@ struct ProjectMainPlaceholder: View {
 struct ProjectMainPlaceholder_Previews: PreviewProvider {
     static var previews: some View {
         ProjectMainPlaceholder()
+            .preferredColorScheme(.dark)
     }
 }
