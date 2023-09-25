@@ -27,8 +27,12 @@ struct ContactListView: View {
                 }
             }
             .padding(.horizontal, 10)
-            GroupedContactView()
-            GroupedContactView()
+            Group {
+                GroupedContactView()
+                GroupedContactView()
+            }
+            .padding()
+            
             Spacer()
         }
         .padding()

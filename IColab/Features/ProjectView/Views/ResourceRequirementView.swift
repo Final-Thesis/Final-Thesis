@@ -28,10 +28,12 @@ struct ResourceRequirementView: View {
             }
             .padding(.horizontal, 10)
             .padding()
+            
             ProjectButtonView()
             ProjectButtonView()
             ProjectButtonView()
             ProjectButtonView()
+            
             Spacer()
         }
         

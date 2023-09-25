@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */; };
 		6C74DB752ABFE80000FD5D3F /* ProjectOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB742ABFE80000FD5D3F /* ProjectOverviewView.swift */; };
 		6C74DB772ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB762ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift */; };
 		6C74DB792ABFEA1000FD5D3F /* CurrentMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB782ABFEA1000FD5D3F /* CurrentMilestoneView.swift */; };
@@ -31,6 +32,7 @@
 		6CC7F2A62AC03ACA00AF0A12 /* InputTagPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A52AC03ACA00AF0A12 /* InputTagPopupView.swift */; };
 		6CC7F2A82AC047F000AF0A12 /* InputMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A72AC047F000AF0A12 /* InputMemberView.swift */; };
 		6CC7F2AA2AC048A500AF0A12 /* InputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A92AC048A500AF0A12 /* InputTaskView.swift */; };
+		6CCF86002AC167260090D1B3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF85FF2AC167260090D1B3 /* Task.swift */; };
 		B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5EF2A7602D7001F392F /* IColabApp.swift */; };
 		B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5F12A7602D7001F392F /* ContentView.swift */; };
 		B7A2A5F42A7602D8001F392F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A2A5F32A7602D8001F392F /* Assets.xcassets */; };
@@ -87,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		6C74DB742ABFE80000FD5D3F /* ProjectOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOverviewView.swift; sourceTree = "<group>"; };
 		6C74DB762ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainPlaceholder.swift; sourceTree = "<group>"; };
 		6C74DB782ABFEA1000FD5D3F /* CurrentMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMilestoneView.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 		6CC7F2A52AC03ACA00AF0A12 /* InputTagPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPopupView.swift; sourceTree = "<group>"; };
 		6CC7F2A72AC047F000AF0A12 /* InputMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMemberView.swift; sourceTree = "<group>"; };
 		6CC7F2A92AC048A500AF0A12 /* InputTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTaskView.swift; sourceTree = "<group>"; };
+		6CCF85FF2AC167260090D1B3 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B7A2A5EC2A7602D7001F392F /* IColab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IColab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A2A5EF2A7602D7001F392F /* IColabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IColabApp.swift; sourceTree = "<group>"; };
 		B7A2A5F12A7602D7001F392F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				6C74DB8A2AC0199D00FD5D3F /* MilestonesView.swift */,
 				6C74DB902AC01C6100FD5D3F /* TestView.swift */,
 				6C74DB922AC0299E00FD5D3F /* ContactListView.swift */,
+				6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			children = (
 				D8A3AF262AA326B200AC06C9 /* Project.swift */,
 				D87A67B92AA766CD000586A1 /* Milestone.swift */,
+				6CCF85FF2AC167260090D1B3 /* Task.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -695,10 +701,12 @@
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
 				6C74DB952AC02AD000FD5D3F /* ContactCardView.swift in Sources */,
 				6C74DB8B2AC0199D00FD5D3F /* MilestonesView.swift in Sources */,
+				6CCF86002AC167260090D1B3 /* Task.swift in Sources */,
 				6C74DB8F2AC01A4E00FD5D3F /* MilestoneCardView.swift in Sources */,
 				D87A67BA2AA766CD000586A1 /* Milestone.swift in Sources */,
 				D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */,
 				D8A3AF302AA3332800AC06C9 /* ProjectDetailView.swift in Sources */,
+				6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */,
 				6C74DB7F2AC009DB00FD5D3F /* ProjectDescriptionView.swift in Sources */,
 				D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */,
 				D8C2BE9E2AB88D5B003969D8 /* NotificationView.swift in Sources */,

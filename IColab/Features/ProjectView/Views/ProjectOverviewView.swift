@@ -14,19 +14,24 @@ struct ProjectOverviewView: View {
         NavigationStack {
             ScrollView {
                 VStack {
-                    VStack(alignment: .leading) {
-                        Text("Acne Detection")
-                            .font(.largeTitle)
-                            .bold()
-                        HStack{
-                            ForEach(project.tags, id: \.self){ tag in
-                                TagItem(tagText: tag)
+                    ZStack(alignment: .bottomLeading){
+                        Rectangle()
+                            .frame(height: 200)
+                            .foregroundColor(Color("purple"))
+                        VStack(alignment: .leading) {
+                            Text("Acne Detection")
+                                .font(.largeTitle)
+                                .bold()
+                            HStack{
+                                ForEach(project.tags, id: \.self){ tag in
+                                    TagItem(tagText: tag)
+                                }
                             }
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                            
                         }
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                        .padding()
                     }
-                    .padding()
-                    .background(.purple)
                     CurrentMilestoneView(milestone: Mock.milestones[0])
                     Divider()
                         .background(.gray)
@@ -84,13 +89,12 @@ struct ProjectOverviewView: View {
                     }
                 }
             }
-            .toolbarBackground(Color.purple, for: .navigationBar)
+//            .ignoresSafeArea()
+            .toolbarBackground(Color("purple"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle("Project Overview")
         }
-        
-
-        //.navigationBarBackButtonHidden()
+//        .navigationBarBackButtonHidden()
         
     }
 }

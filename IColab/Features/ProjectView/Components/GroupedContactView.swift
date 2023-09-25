@@ -12,17 +12,19 @@ struct GroupedContactView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Important Contacts")
-                    .font(.headline)
-                Spacer()
-                Button {
-                    toggle.toggle()
-                } label: {
+            Button {
+                toggle.toggle()
+            } label: {
+                HStack {
+                    Text("Important Contacts")
+                        .font(.headline)
+                    Spacer()
                     Image(systemName: toggle ? "chevron.down" : "chevron.up")
                 }
-                
             }
+            .buttonStyle(.plain)
+
+            
             Divider()
                 .background(.white)
             if toggle {

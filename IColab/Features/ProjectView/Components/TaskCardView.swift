@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct TaskCardView: View {
-    @State var toggle: Bool = true
+    var task: Task = Mock.tasks[0]
+    @State var toggle: Bool = false
     
     var body: some View {
         HStack {
-            VStack {
-                Text("Task Name")
+            VStack(alignment: .leading) {
+                Text(task.title)
                     .font(.headline)
-                Text("Member Name")
+                Text(task.member)
                     .font(.caption2)
             }
             Spacer()
@@ -23,13 +24,27 @@ struct TaskCardView: View {
                 toggle.toggle()
             } label: {
                 ZStack {
-                    Circle()
-                        .stroke(
-                            Color.white,
-                            lineWidth: 2
-                        )
-                        .frame(width: 20)
-                    if toggle {
+                    if task.status == .notCompleted {
+                        Circle()
+                            .stroke(
+                                Color.white,
+                                lineWidth: 2
+                            )
+                            .frame(width: 20)
+                        if toggle {
+                            Circle()
+                                .foregroundColor(.purple)
+                                .frame(width: 12)
+                        }
+                    }
+                    else if task.status == .onReview {
+                        Circle()
+                            .stroke(
+                                Color.white,
+                                lineWidth: 2
+                            )
+                            .frame(width: 20)
+                        
                         Circle()
                             .foregroundColor(.purple)
                             .frame(width: 12)

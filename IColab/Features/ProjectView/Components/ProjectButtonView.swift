@@ -15,14 +15,15 @@ struct ProjectButtonView: View {
     var body: some View {
         HStack {
             Image(systemName: icon)
-                .font(.title)
+                .font(.largeTitle)
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text(description)
                     .font(.caption2)
                     .multilineTextAlignment(.leading)
-                    .frame(width: 280)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             Image(systemName: "chevron.right")
                 .font(.title)

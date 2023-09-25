@@ -22,21 +22,21 @@ struct MilestonesView: View {
                 Divider()
                     .frame(height: 32)
                 VStack {
-                    Text("Total Milestone")
+                    Text("Average Length")
                         .font(.caption2)
-                    Text("6")
+                    Text("22.2")
                         .font(.headline)
-                    Text("Milestone")
+                    Text("Days")
                         .font(.caption2)
                 }
                 Divider()
                     .frame(height: 32)
                 VStack {
-                    Text("Total Milestone")
+                    Text("Average Payment")
                         .font(.caption2)
-                    Text("6")
+                    Text("5.525.000")
                         .font(.headline)
-                    Text("Milestone")
+                    Text("Rp")
                         .font(.caption2)
                 }
             }

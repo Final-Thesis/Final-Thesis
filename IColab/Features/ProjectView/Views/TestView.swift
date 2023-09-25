@@ -17,17 +17,31 @@ struct VerticalStepIndicator: View {
                 Rectangle()
                     .frame(width: 4)
                     .padding(.leading, 14)
-                    .padding(.vertical, 128)
+                    .padding(.vertical, 82)
+                    .foregroundColor(.purple)
                 Spacer()
             }
             
             VStack {
                 ForEach(0..<steps.count, id: \.self) { index in
                     HStack {
-                        Circle()
-                            .frame(width: 32)
-                            .foregroundColor(index <= currentStepIndex ? .purple : .gray) // Change color based on completed steps
-
+                        if !(index <= currentStepIndex) {
+                            Circle()
+                                .stroke(
+                                    Color.white,
+                                    lineWidth: 4
+                                )
+                                .background(.black)
+                                .cornerRadius(99)
+                                .foregroundColor(.red)
+                                .frame(width: 32)
+                        }
+                        else {
+                            Circle()
+                                .frame(width: 32)
+                                .foregroundColor(.purple)
+                        }
+                            
                         MilestoneCardView()
                     }
                 }
@@ -40,7 +54,7 @@ struct VerticalStepIndicator: View {
 
 struct TestView: View {
     let steps = ["Step 1", "Step 2", "Step 3", "Step 4"] // Add your step descriptions here
-        let currentStepIndex = 0 // Set the current step index here
+        let currentStepIndex = 1 // Set the current step index here
 
         var body: some View {
             VerticalStepIndicator(steps: steps, currentStepIndex: currentStepIndex)
