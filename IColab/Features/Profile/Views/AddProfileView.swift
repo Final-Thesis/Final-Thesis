@@ -13,14 +13,14 @@ struct AddProfileView: View {
         VStack(spacing: 30){
             HStack(spacing: 20){
                 NavigationLink {
-                    EditFormView(backgroundType: .education)
+                    NewFormView(backgroundType: .education)
                         .environmentObject(pvm)
                 } label: {
                     ProfileSectionCard(title: "Education", symbol: "graduationcap.fill")
                 }.buttonStyle(.plain)
                 
                 NavigationLink{
-                    EditFormView(backgroundType: .education)
+                    NewFormView(backgroundType: .education)
                         .environmentObject(pvm)
                 } label: {
                     ProfileSectionCard(title: "Experience", symbol: "case.fill")

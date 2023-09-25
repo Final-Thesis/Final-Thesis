@@ -29,7 +29,7 @@ struct ExperienceDetailView: View {
                             Image(systemName: "trash")
                         }.buttonStyle(.plain)
                         NavigationLink {
-                            EditFormView(background: background)
+                            EditFormView(background: background, index: pvm.getBackgroundIndex(background: background))
                                 .environmentObject(pvm)
                         } label: {
                             Image(systemName: "pencil")

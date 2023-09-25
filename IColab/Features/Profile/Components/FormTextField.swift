@@ -18,6 +18,7 @@ struct FormTextField: View {
                 .multilineTextAlignment(.leading)
             TextField(title, text: $textField, axis: .vertical)
                 .font(.caption)
+                .autocorrectionDisabled()
                 .submitLabel(.continue)
             Divider()
                 .frame(height: 1.5)

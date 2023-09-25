@@ -1,30 +1,29 @@
 //
-//  EditFormView.swift
+//  NewFormView.swift
 //  IColab
 //
-//  Created by Kevin Dallian on 21/09/23.
+//  Created by Kevin Dallian on 25/09/23.
 //
 
 import SwiftUI
 
-struct EditFormView: View {
+struct NewFormView: View {
     @EnvironmentObject var pvm : ProfileViewModel
     @State var editedBackground : Background
     var backgroundType : BackgroundType
-    var index : Int
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    init(background : Background, index : Int){
-        self.index = index
-        if background is Experience {
-            self._editedBackground = State(initialValue: Experience(copyFrom: background))
-            self.backgroundType = .experience
-        }else{
-            self._editedBackground = State(initialValue: Education(copyFrom: background))
-            self.backgroundType = .education
+    init(backgroundType : BackgroundType) {
+        if backgroundType == .education {
+            self._editedBackground = State(initialValue: Education(title: "", company: "", startDate: Date.now, endDate: Date.now, desc: ""))
         }
+        else {
+            self._editedBackground = State(initialValue: Experience(title: "", company: "", startDate: Date.now, endDate: Date.now, desc: ""))
+        }
+        self.backgroundType = backgroundType
     }
     
+
     var body: some View {
         VStack(spacing: 10){
             if backgroundType == .experience {
@@ -43,7 +42,7 @@ struct EditFormView: View {
             
             Spacer()
             ButtonComponent(title: "Save", width: 300) {
-                pvm.saveBackground(background: editedBackground, index: self.index)
+                pvm.addBackground(background: editedBackground)
                 self.presentationMode.wrappedValue.dismiss()
             }
         }
@@ -54,10 +53,6 @@ struct EditFormView: View {
     }
 }
 
-struct EditFormView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditFormView(background: Mock.accountDetails[0].educations[0], index: 1)
-            .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
-            .environmentObject(NavigationManager())
-    }
+#Preview {
+    NewFormView(backgroundType: .education)
 }
