@@ -28,11 +28,13 @@ struct ResourceRequirementView: View {
             }
             .padding(.horizontal, 10)
             .padding()
+            ScrollView {
+                ProjectButtonView(icon: "newspaper.circle", title: "Project Requirement", description: "Pdf")
+                ProjectButtonView(icon: "folder.circle", title: "Class Diagram", description: "Diagram")
+                ProjectButtonView(icon: "newspaper.circle", title: "Project Guideline", description: "Pdf")
+                ProjectButtonView(icon: "link.circle", title: "Server", description: "Url")
+            }
             
-            ProjectButtonView()
-            ProjectButtonView()
-            ProjectButtonView()
-            ProjectButtonView()
             
             Spacer()
         }

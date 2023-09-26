@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct CurrentTaskView: View {
-    var tasks: [Task] = Mock.tasks
+    @State var toggles: [Bool] = [false, false, true, true, true, true, true, true, true]
+    @State var tasks: [Task] = Mock.tasks
     @State var pickerSelector = 1
+    
+    func appendToggle() {
+        for task in tasks {
+            if task.status == .notCompleted {
+                toggles.append(true)
+            }
+        }
+    }
     
     var body: some View {
         VStack {
@@ -22,9 +31,9 @@ struct CurrentTaskView: View {
             .padding(.bottom)
             Group {
                 if pickerSelector == 1 {
-                    ForEach(tasks) { task in
-                        if task.status == .notCompleted {
-                            TaskCardView(task: task)
+                    ForEach(0..<tasks.count) { i in
+                        if tasks[i].status == .notCompleted {
+                            TaskCardView(task: tasks[i], toggle: toggles[i])
                         }
                     }
                 }
@@ -48,7 +57,11 @@ struct CurrentTaskView: View {
             
             if pickerSelector == 1 {
                 ButtonComponent(title: "Submit", width: 360) {
-                    print("test")
+                    for (index, element) in tasks.enumerated() {
+                        if toggles[index] == true {
+                            tasks[index].setStatus(status: .onReview)
+                        }
+                    }
                 }
                 .padding(.top)
             }
