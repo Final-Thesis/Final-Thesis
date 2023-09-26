@@ -22,9 +22,15 @@ struct EditView: View {
             ScrollView{
                 switch backgroundType {
                 case .skill:
-                    ForEach((pvm.account?.accountDetail.skills)!, id: \.self){ skill in
-                        Text("Skills")
+                    VStack{
+                        ForEach(pvm.account!.accountDetail.skills, id: \.self) { skill in
+                            SkillEditView(string: skill)
+                            Divider()
+                                .padding(.horizontal, 20)
+                        }
                     }
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(12)
                 case .education:
                     ForEach(pvm.account?.accountDetail.educations ?? [], id: \.self) { background in
                         ExperienceDetailView(showAlert: $showAlert, background: background, editMode: true)
@@ -50,7 +56,7 @@ struct EditView: View {
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            EditView(backgroundType: .education)
+            EditView(backgroundType: .skill)
                 .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
         }
     }

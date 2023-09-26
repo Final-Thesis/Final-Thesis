@@ -78,4 +78,18 @@ class ProfileViewModel : ObservableObject {
         }
         
     }
+    
+    public func addSkills(skill : String){
+        account?.accountDetail.skills.append(skill)
+    }
+    
+    public func deleteSkills(skill : String){
+        let index = account?.accountDetail.skills.firstIndex(of: skill) ?? -1
+        if index != -1 {
+            account?.accountDetail.removeSkill(idx: index)
+            withAnimation {
+                objectWillChange.send()
+            }
+        }
+    }
 }

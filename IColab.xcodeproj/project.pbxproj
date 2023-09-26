@@ -14,6 +14,7 @@
 		D80BC30F2ABD38690086558D /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC30E2ABD38690086558D /* FormTextField.swift */; };
 		D80BC3112ABD3D130086558D /* FormDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3102ABD3D130086558D /* FormDatePicker.swift */; };
 		D80BC3132ABD49950086558D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3122ABD49950086558D /* NavigationManager.swift */; };
+		D81DCE242AC34EE600D65604 /* SkillEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DCE232AC34EE600D65604 /* SkillEditView.swift */; };
 		D82C0D532AB976E1009802D9 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D522AB976E1009802D9 /* NotificationViewModel.swift */; };
 		D82C0D592ABACFD2009802D9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D582ABACFD2009802D9 /* EditView.swift */; };
 		D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D5A2ABC0741009802D9 /* EditFormView.swift */; };
@@ -79,6 +80,7 @@
 		D80BC30E2ABD38690086558D /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D80BC3102ABD3D130086558D /* FormDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePicker.swift; sourceTree = "<group>"; };
 		D80BC3122ABD49950086558D /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		D81DCE232AC34EE600D65604 /* SkillEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillEditView.swift; sourceTree = "<group>"; };
 		D82C0D522AB976E1009802D9 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		D82C0D582ABACFD2009802D9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D82C0D5A2ABC0741009802D9 /* EditFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFormView.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				D80BC30E2ABD38690086558D /* FormTextField.swift */,
 				D80BC3102ABD3D130086558D /* FormDatePicker.swift */,
 				D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */,
+				D81DCE232AC34EE600D65604 /* SkillEditView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				D87A67B22AA63211000586A1 /* OwnerProfileSheet.swift in Sources */,
 				D8A3AF3A2AA4B35B00AC06C9 /* PickerView.swift in Sources */,
 				D8A3AF222AA3239D00AC06C9 /* ProjectCard.swift in Sources */,
+				D81DCE242AC34EE600D65604 /* SkillEditView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
 				D80BC30F2ABD38690086558D /* FormTextField.swift in Sources */,
 				D85CEFBB2AC1E553004D4C75 /* NewFormView.swift in Sources */,
