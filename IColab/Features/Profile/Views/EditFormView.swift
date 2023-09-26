@@ -26,31 +26,34 @@ struct EditFormView: View {
     }
     
     var body: some View {
-        VStack(spacing: 10){
-            if backgroundType == .experience {
-                FormTextField(title: "Experience Title", textField: $editedBackground.title)
-                FormTextField(title: "Company", textField: $editedBackground.company)
-                FormTextField(title: "Description", textField: $editedBackground.desc)
-                FormDatePicker(title: "Start Date", date: $editedBackground.startDate)
-                FormDatePicker(title: "End Date", date: $editedBackground.endDate)
-            }else if backgroundType == .education{
-                FormTextField(title: "School", textField: $editedBackground.title)
-                FormTextField(title: "Degree", textField: $editedBackground.company)
-                FormTextField(title: "Field of Study", textField: $editedBackground.desc)
-                FormDatePicker(title: "Start Date", date: $editedBackground.startDate)
-                FormDatePicker(title: "End Date", date: $editedBackground.endDate)
+        ZStack{
+            VStack(spacing: 10){
+                if backgroundType == .experience {
+                    FormTextField(title: "Experience Title", textField: $editedBackground.title)
+                    FormTextField(title: "Company", textField: $editedBackground.company)
+                    FormTextField(title: "Description", textField: $editedBackground.desc)
+                    FormDatePicker(title: "Start Date", date: $editedBackground.startDate)
+                    FormDatePicker(title: "End Date", date: $editedBackground.endDate)
+                }else if backgroundType == .education{
+                    FormTextField(title: "School", textField: $editedBackground.title)
+                    FormTextField(title: "Degree", textField: $editedBackground.company)
+                    FormTextField(title: "Field of Study", textField: $editedBackground.desc)
+                    FormDatePicker(title: "Start Date", date: $editedBackground.startDate)
+                    FormDatePicker(title: "End Date", date: $editedBackground.endDate)
+                }
+                
+                Spacer()
+                ButtonComponent(title: "Save", width: 300) {
+                    pvm.saveBackground(background: editedBackground, index: self.index)
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }
+            .navigationTitle("Edit Profile")
+            .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal, 20)
+            .padding(.top, 100)
             
-            Spacer()
-            ButtonComponent(title: "Save", width: 300) {
-                pvm.saveBackground(background: editedBackground, index: self.index)
-                self.presentationMode.wrappedValue.dismiss()
-            }
         }
-        .navigationTitle("Edit Profile")
-        .navigationBarTitleDisplayMode(.inline)
-        .padding(.horizontal, 20)
-        .padding(.top, 100)
     }
 }
 

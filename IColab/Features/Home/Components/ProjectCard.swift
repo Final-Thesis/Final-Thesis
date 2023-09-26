@@ -11,7 +11,7 @@ struct ProjectCard: View {
     var project : Project
     var body: some View {
         VStack(alignment: .leading){
-            Color("purple")
+            Color(.purple)
                 .frame(height: 100)
                 .cornerRadius(12)
             Text("\(project.title)")

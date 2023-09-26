@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileDetailCard: View {
     @EnvironmentObject var pvm : ProfileViewModel
+    @State var showAlert = false
     var backgroundType : BackgroundType
     var skills : [String]?
     var backgrounds : [Background]?
@@ -54,7 +55,7 @@ struct ProfileDetailCard: View {
                 }
             default:
                 ForEach(backgrounds ?? [], id: \.self){ background in
-                    ExperienceDetailView(background: background, editMode: false)
+                    ExperienceDetailView(showAlert: $showAlert, background: background, editMode: false)
                 }
             }
         }
