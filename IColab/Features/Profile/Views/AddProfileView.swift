@@ -26,7 +26,14 @@ struct AddProfileView: View {
                     ProfileSectionCard(title: "Experience", symbol: "case.fill")
                 }.buttonStyle(.plain)
             }
-            ProfileSectionCard(title: "Skill", symbol: "person.fill")
+            NavigationLink {
+                NewFormView(backgroundType: .skill)
+                    .environmentObject(pvm)
+            } label: {
+                ProfileSectionCard(title: "Skill", symbol: "person.fill")
+            }
+
+            
         }
     }
 }

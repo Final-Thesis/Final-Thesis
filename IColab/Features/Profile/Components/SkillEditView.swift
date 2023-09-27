@@ -9,19 +9,21 @@ import SwiftUI
 
 struct SkillEditView: View {
     @EnvironmentObject var pvm : ProfileViewModel
-    var string : String
+    var skill : String
     var body: some View {
         HStack{
-            Text(string)
+            Text(skill)
             Spacer()
             Button {
-                pvm.deleteSkills(skill: string)
+                pvm.deleteSkills(skill: skill)
             } label: {
                 Image(systemName: "trash")
+                    .foregroundStyle(.gray)
             }.buttonStyle(.plain)
             
-            Button{
-                print("edit")
+            NavigationLink {
+                EditSkillFormView(skill: skill, index: pvm.getSkillIndex(skill: skill))
+                    .environmentObject(pvm)
             } label: {
                 Image(systemName: "pencil")
             }.buttonStyle(.plain)
@@ -34,6 +36,6 @@ struct SkillEditView: View {
 }
 
 #Preview {
-    SkillEditView(string: "String")
+    SkillEditView(skill: "String")
         .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
 }

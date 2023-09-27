@@ -10,6 +10,7 @@ import SwiftUI
 struct NewFormView: View {
     @EnvironmentObject var pvm : ProfileViewModel
     @State var editedBackground : Background
+    @State var skill = ""
     var backgroundType : BackgroundType
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -38,11 +39,18 @@ struct NewFormView: View {
                 FormTextField(title: "Field of Study", textField: $editedBackground.desc)
                 FormDatePicker(title: "Start Date", date: $editedBackground.startDate)
                 FormDatePicker(title: "End Date", date: $editedBackground.endDate)
+            }else if backgroundType == .skill {
+                FormTextField(title: "Skill", textField: $skill)
             }
             
             Spacer()
             ButtonComponent(title: "Save", width: 300) {
-                pvm.addBackground(background: editedBackground)
+                if backgroundType == .skill{
+                    pvm.addSkills(skill: skill)
+                }else {
+                    pvm.addBackground(background: editedBackground)
+                }
+                
                 self.presentationMode.wrappedValue.dismiss()
             }
         }

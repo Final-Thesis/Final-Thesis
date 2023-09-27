@@ -24,7 +24,7 @@ struct EditView: View {
                 case .skill:
                     VStack{
                         ForEach(pvm.account!.accountDetail.skills, id: \.self) { skill in
-                            SkillEditView(string: skill)
+                            SkillEditView(skill: skill)
                             Divider()
                                 .padding(.horizontal, 20)
                         }

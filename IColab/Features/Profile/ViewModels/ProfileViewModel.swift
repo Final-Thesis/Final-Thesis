@@ -41,12 +41,6 @@ class ProfileViewModel : ObservableObject {
             } else if background is Education {
                 account?.accountDetail.educations[index] = background as! Education
             }
-        } else{
-            if background is Experience {
-                account?.accountDetail.addExperiences(experience: background as! Experience)
-            } else if background is Education {
-                account?.accountDetail.addEducation(education: background as! Education)
-            }
         }
         withAnimation {
             objectWillChange.send()
@@ -79,8 +73,20 @@ class ProfileViewModel : ObservableObject {
         
     }
     
+    public func getSkillIndex(skill: String) -> Int{
+        return account?.accountDetail.skills.firstIndex(of: skill) ?? -1
+    }
+    
     public func addSkills(skill : String){
         account?.accountDetail.skills.append(skill)
+        objectWillChange.send()
+    }
+    
+    public func editSkills(skill : String, index : Int){
+        account?.accountDetail.skills[index] = skill
+        withAnimation {
+            objectWillChange.send()
+        }
     }
     
     public func deleteSkills(skill : String){

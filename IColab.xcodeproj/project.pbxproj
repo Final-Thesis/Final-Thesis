@@ -15,6 +15,7 @@
 		D80BC3112ABD3D130086558D /* FormDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3102ABD3D130086558D /* FormDatePicker.swift */; };
 		D80BC3132ABD49950086558D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3122ABD49950086558D /* NavigationManager.swift */; };
 		D81DCE242AC34EE600D65604 /* SkillEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DCE232AC34EE600D65604 /* SkillEditView.swift */; };
+		D81DCE282AC3FAE900D65604 /* EditSkillFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81DCE272AC3FAE900D65604 /* EditSkillFormView.swift */; };
 		D82C0D532AB976E1009802D9 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D522AB976E1009802D9 /* NotificationViewModel.swift */; };
 		D82C0D592ABACFD2009802D9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D582ABACFD2009802D9 /* EditView.swift */; };
 		D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D5A2ABC0741009802D9 /* EditFormView.swift */; };
@@ -81,6 +82,7 @@
 		D80BC3102ABD3D130086558D /* FormDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePicker.swift; sourceTree = "<group>"; };
 		D80BC3122ABD49950086558D /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		D81DCE232AC34EE600D65604 /* SkillEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillEditView.swift; sourceTree = "<group>"; };
+		D81DCE272AC3FAE900D65604 /* EditSkillFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSkillFormView.swift; sourceTree = "<group>"; };
 		D82C0D522AB976E1009802D9 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		D82C0D582ABACFD2009802D9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D82C0D5A2ABC0741009802D9 /* EditFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFormView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				D82C0D5A2ABC0741009802D9 /* EditFormView.swift */,
 				D85CEFBA2AC1E553004D4C75 /* NewFormView.swift */,
 				D84142D22AC0162000E38C5B /* AddProfileView.swift */,
+				D81DCE272AC3FAE900D65604 /* EditSkillFormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				D8C2BEA22AB89538003969D8 /* NotificationCard.swift in Sources */,
 				D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */,
 				D87A67B42AA63B4E000586A1 /* ButtonComponent.swift in Sources */,
+				D81DCE282AC3FAE900D65604 /* EditSkillFormView.swift in Sources */,
 				D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */,
 				D895870E2AB2C1720064629B /* Experience.swift in Sources */,
 				B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */,
