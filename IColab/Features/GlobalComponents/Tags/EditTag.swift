@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct EditTag: View {
+    var text: String = "tag"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(text)
+            Button {
+                //
+            } label: {
+                Image(systemName: "x.circle.fill")
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(8)
+        .background(.purple)
+        .cornerRadius(12)
     }
 }
 

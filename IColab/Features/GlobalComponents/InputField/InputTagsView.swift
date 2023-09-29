@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct InputTagsView: View {
+    @EnvironmentObject var vm: ProjectOverviewViewModel
+    @Binding var tags: [String]
+    
     @State var popupToggle: Bool = false
     
     var body: some View {
@@ -29,36 +32,32 @@ struct InputTagsView: View {
                 }
                 
                 HStack {
-                    HStack {
-                        Text("Tag")
-                        Button {
-                            //
-                        } label: {
-                            Image(systemName: "x.circle.fill")
-                        }
-                        .buttonStyle(.plain)
+                    ForEach(vm.getTestProject().tags, id: \.self) { tag in
+                        TagItem(tagText: tag)
                     }
-                    .padding(8)
-                    .background(.purple)
-                    .cornerRadius(12)
+                    
                 }
                 Divider()
                     .foregroundColor(.white)
             }
+            .sheet(isPresented: $popupToggle, content: {
+                InputTagPopupView(tag: $tags, popupToggle: $popupToggle)
+                    .presentationDetents([.fraction(0.3)])
+            })
     
-            if popupToggle {
-                InputTagPopupView(popupToggle: $popupToggle)
-                    .transition(.opacity)
-                    .zIndex(1)
-            }
+//            if popupToggle {
+//                InputTagPopupView(popupToggle: $popupToggle)
+//                    .transition(.opacity)
+//                    .zIndex(1)
+//            }
         }
         
     }
 }
 
-struct InputTagsView_Previews: PreviewProvider {
-    static var previews: some View {
-        InputTagsView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct InputTagsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InputTagsView(tags: .constant([]))
+//            .preferredColorScheme(.dark)
+//    }
+//}

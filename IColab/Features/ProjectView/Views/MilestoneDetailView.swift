@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MilestoneDetailView: View {
+    var title: String = "Acne Detection"
+    var desc: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    
     var body: some View {
         VStack {
             ZStack(alignment: .bottomLeading) {
@@ -15,57 +18,24 @@ struct MilestoneDetailView: View {
                     .frame(height: 200)
                     .foregroundColor(Color("purple"))
                 VStack(alignment: .leading) {
-                    Text("Acne Detection")
+                    Text(title)
                         .font(.largeTitle)
                         .bold()
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    Text(desc)
                     
                 }
                 .padding()
             }
             HStack {
-                VStack {
-                    Image(systemName: "hourglass.circle")
-                        .font(.largeTitle)
-                    Text("Due Date")
-                        .font(.headline)
-                    Text("08-08-2023")
-                        .font(.subheadline)
-                }
-                .padding()
-                .padding(.vertical)
-                .background(Color("gray"))
-                .cornerRadius(12)
-                VStack {
-                    Image(systemName: "hourglass.circle")
-                        .font(.largeTitle)
-                    Text("Due Date")
-                        .font(.headline)
-                    Text("08-08-2023")
-                        .font(.subheadline)
-                }
-                .padding()
-                .padding(.vertical)
-                .background(Color("gray"))
-                .cornerRadius(12)
-                VStack {
-                    Image(systemName: "hourglass.circle")
-                        .font(.largeTitle)
-                    Text("Due Date")
-                        .font(.headline)
-                    Text("08-08-2023")
-                        .font(.subheadline)
-                }
-                .padding()
-                .padding(.vertical)
-                .background(Color("gray"))
-                .cornerRadius(12)
+                MilestoneDetailInfoView(icon: "hourglass.circle", title: "Due Date", value: "08-08-2023")
+                MilestoneDetailInfoView(icon: "dollarsign.circle", title: "Nominal", value: "Rp. 500.000")
+                MilestoneDetailInfoView(icon: "folder.circle", title: "Total Task", value: "5")
             }
             .padding(.vertical)
             Divider()
             ScrollView {
                 ForEach(Mock.milestones[0].tasks) { task in
-                    TaskCardView(task: task)
+                    TaskCardView(task: task, toggle: .constant(true))
                 }
             }
             

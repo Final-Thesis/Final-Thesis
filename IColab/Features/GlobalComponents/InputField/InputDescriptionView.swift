@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct InputDescriptionView: View {
-    @State var text: String = ""
+    var title: String = "Input Description"
+    @Binding var text: String
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Input Description")
+            Text(title)
                 .font(.headline)
             HStack {
                 TextEditor(text: $text)
@@ -39,6 +40,6 @@ struct InputDescriptionView: View {
 
 struct InputDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        InputDescriptionView()
+        InputDescriptionView(text: .constant(""))
     }
 }

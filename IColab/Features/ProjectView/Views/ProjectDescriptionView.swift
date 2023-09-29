@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProjectDescriptionView: View {
+    @EnvironmentObject var vm: ProjectOverviewViewModel
+    
     var project: Project
     
     var body: some View {
@@ -57,6 +59,22 @@ struct ProjectDescriptionView: View {
             Spacer()
         }
         .navigationTitle("Project Description")
+        .toolbar {
+            //placeholder
+            if true {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        EditProjectDescriptionView()
+                            .environmentObject(vm)
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
+                    .buttonStyle(.plain)
+
+                }
+            }
+            
+        }
         .padding(.vertical, 36)
         .padding()
         

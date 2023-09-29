@@ -89,6 +89,8 @@ struct Mock{
             password: "ImaPassword",
             bankAccount: "bankaccount",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            projectsOwned: [Project(title: "Backend Project", role: "Backend", requirements: ["SwiftUI"], tags: ["SwiftUI", "Vision"], startDate: Date.now, endDate: Date.now, desc: "SAdasdasdsada", milestones: []),
+                           ],
             cvLink: "cvlink")
     ]
     

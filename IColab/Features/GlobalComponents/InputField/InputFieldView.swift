@@ -11,8 +11,8 @@ struct InputFieldView: View {
     
     var body: some View {
         VStack {
-            InputTitleView()
-            InputDescriptionView()
+            //InputTitleView()
+            //InputDescriptionView()
             InputDateView()
             
             Button {

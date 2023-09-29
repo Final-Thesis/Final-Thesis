@@ -11,20 +11,16 @@ struct ProjectMainPlaceholder: View {
     var body: some View {
         NavigationStack {
             HStack {
-//                Text("Example navigations")
-//                    .navigationDestination(for: String.self) { text in
-//                        ProjectOverviewView(project: Mock.projects[0])
-//                    }
 
                 NavigationLink {
-                    ProjectOverviewView(project: Mock.projects[0])
+                    ProjectOverviewView()
                 } label: {
                     Text("Worker Project")
                 }
                 .buttonStyle(.borderedProminent)
 
                 NavigationLink {
-                    ProjectOverviewView(project: Mock.projects[0])
+                    ProjectOverviewView()
                 } label: {
                     Text("Owner Project")
                 }
