@@ -80,11 +80,11 @@ struct MilestoneDetailCard: View {
 struct MilestoneDetailCard_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            MilestoneDetailCard(milestoneDetailCardType: .overview, milestones: [Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false)])
+            MilestoneDetailCard(milestoneDetailCardType: .overview, milestones: [Mock.milestones[0]])
             
             MilestoneDetailCard(milestoneDetailCardType: .detail, milestones: [
-                Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false),
-                Milestone(name: "Milestone Title", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false),
+                Mock.milestones[0],
+                Mock.milestones[1],
             ])
             
         }
