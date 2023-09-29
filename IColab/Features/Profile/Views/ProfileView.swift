@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject var pvm : ProfileViewModel
-    @State var pickerSelection : PickerItem = .overview
-    let pickerItems : [PickerItem] = [.overview, .portofolio]
+    @State var showAddProfile : Bool = false
     var body: some View {
         if let account = pvm.account {
             ScrollView{
@@ -19,16 +18,17 @@ struct ProfileView: View {
                         ProfileCardView(account: account)
                         Spacer()
                     }
-                    PickerView(pickerSelection: $pickerSelection, allItems: pickerItems)
+                    PickerView(pickerSelection: $pvm.pickerSelection, allItems: pvm.pickerItems)
                     Text(account.desc)
                         .font(.caption)
-                    switch pickerSelection {
+                    switch pvm.pickerSelection {
                     case .overview:
-                        ProfileDetailCard(profileDetailCardType: .horizontal, accountDetail: pvm.account!.accountDetail, title: "Skills")
-                            .padding(.vertical, 15)
-                        ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Experience")
-                            .padding(.vertical, 15)
-                        ProfileDetailCard(profileDetailCardType: .vertical, accountDetail: pvm.account!.accountDetail, title: "Education")
+                        ProfileDetailCard(backgroundType: .skill, skills: pvm.account?.accountDetail.skills)
+                        ProfileDetailCard(backgroundType: .experience, backgrounds: pvm.account?.accountDetail.experiences)
+                        ProfileDetailCard(backgroundType: .education, backgrounds: pvm.account?.accountDetail.educations)
+                        ButtonComponent(title: "Add More", width: 300) {
+                            showAddProfile.toggle()
+                        }
                     case .portofolio:
                         Text("Portofolio")
                     default:
@@ -38,6 +38,10 @@ struct ProfileView: View {
                 .padding(.horizontal, 20)
             }
             .navigationTitle("")
+            .navigationDestination(isPresented: $showAddProfile) {
+                AddProfileView()
+                    .environmentObject(pvm)
+            }
         }else{
             Text("No Account to be displayed")
         }
@@ -48,5 +52,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
+            .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
     }
 }

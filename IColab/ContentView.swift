@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
-    @State var path = NavigationPath()
+    @StateObject var navigationManager = NavigationManager()
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $navigationManager.path) {
             ScrollView{
                 VStack{
                     switch selectedTabBar {
                     case .home:
-                        HomeView(path: $path)
+                        HomeView(path: $navigationManager.path)
                     case .projects:
                         Text("Projects")
                     case .chats:
@@ -24,7 +24,9 @@ struct ContentView: View {
                     case .notifications:
                         NotificationView()
                     case .profile:
-                        ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
+                        let pvm = ProfileViewModel(uid: Mock.accounts[0].id)
+                        ProfileView(pvm: pvm)
+                            .environmentObject(pvm)
                     }
                 }
             }

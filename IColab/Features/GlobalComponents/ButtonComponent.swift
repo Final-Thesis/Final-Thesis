@@ -14,7 +14,7 @@ struct ButtonComponent: View {
     var width : CGFloat
     var tint : Color
     
-    init(title: String, role: ButtonRole? = nil, width : CGFloat, tint: Color = Color("purple"), action: @escaping () -> Void) {
+    init(title: String, role: ButtonRole? = nil, width : CGFloat, tint: Color = Color(.purple), action: @escaping () -> Void) {
         self.title = title
         self.role = role
         self.action = action
