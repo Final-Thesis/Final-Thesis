@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaskCardView: View {
     var task: Task = Mock.tasks[0]
-    @State var toggle: Bool = false
+    @Binding var toggle: Bool
     
     var body: some View {
         HStack {
@@ -63,7 +63,7 @@ struct TaskCardView: View {
 
 struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCardView()
+        TaskCardView(toggle: .constant(true))
             .preferredColorScheme(.dark)
     }
 }
