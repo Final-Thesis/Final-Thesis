@@ -14,7 +14,7 @@ struct OwnerProfileSheet: View {
     var body: some View {
         VStack(spacing: 10) {
             Circle()
-                .foregroundColor(Color("purple"))
+                .foregroundColor(Color(.purple))
                 .frame(width: 80)
             Text("\(owner.accountDetail.name)")
                 .font(.headline)
@@ -26,7 +26,7 @@ struct OwnerProfileSheet: View {
                     showSheet = false
                     showProfile.toggle()
                 }
-                ButtonComponent(title: "Contact", width: 140, tint: Color("purple")) {
+                ButtonComponent(title: "Contact", width: 140) {
                     print("Contact")
                 }
             }

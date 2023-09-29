@@ -49,6 +49,7 @@ struct ProjectDetailView: View {
         })
         .navigationDestination(isPresented: $showProfile) {
             ProfileView(pvm: ProfileViewModel(uid: project.owner?.id ?? ""))
+                .environmentObject(ProfileViewModel(uid: project.owner?.id ?? ""))
         }
     }
 }
