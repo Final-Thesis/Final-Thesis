@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */; };
+		6C74DB752ABFE80000FD5D3F /* ProjectOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB742ABFE80000FD5D3F /* ProjectOverviewView.swift */; };
+		6C74DB772ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB762ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift */; };
+		6C74DB792ABFEA1000FD5D3F /* CurrentMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB782ABFEA1000FD5D3F /* CurrentMilestoneView.swift */; };
+		6C74DB7B2ABFEAB500FD5D3F /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB7A2ABFEAB500FD5D3F /* CircleProgressView.swift */; };
+		6C74DB7D2ABFF27D00FD5D3F /* ProjectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB7C2ABFF27D00FD5D3F /* ProjectButtonView.swift */; };
+		6C74DB7F2AC009DB00FD5D3F /* ProjectDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB7E2AC009DB00FD5D3F /* ProjectDescriptionView.swift */; };
+		6C74DB812AC00ABC00FD5D3F /* MemberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB802AC00ABC00FD5D3F /* MemberListView.swift */; };
+		6C74DB832AC010AC00FD5D3F /* ResourceRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB822AC010AC00FD5D3F /* ResourceRequirementView.swift */; };
+		6C74DB852AC013A800FD5D3F /* CurrentTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB842AC013A800FD5D3F /* CurrentTaskView.swift */; };
+		6C74DB872AC0144E00FD5D3F /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB862AC0144E00FD5D3F /* TaskCardView.swift */; };
+		6C74DB8B2AC0199D00FD5D3F /* MilestonesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB8A2AC0199D00FD5D3F /* MilestonesView.swift */; };
+		6C74DB8F2AC01A4E00FD5D3F /* MilestoneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB8E2AC01A4E00FD5D3F /* MilestoneCardView.swift */; };
+		6C74DB912AC01C6100FD5D3F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB902AC01C6100FD5D3F /* TestView.swift */; };
+		6C74DB932AC0299E00FD5D3F /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB922AC0299E00FD5D3F /* ContactListView.swift */; };
+		6C74DB952AC02AD000FD5D3F /* ContactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB942AC02AD000FD5D3F /* ContactCardView.swift */; };
+		6C74DB972AC02C1300FD5D3F /* GroupedContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB962AC02C1300FD5D3F /* GroupedContactView.swift */; };
+		6C74DB9A2AC0323700FD5D3F /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB992AC0323700FD5D3F /* InputFieldView.swift */; };
+		6C74DB9C2AC0324300FD5D3F /* InputTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74DB9B2AC0324300FD5D3F /* InputTitleView.swift */; };
+		6CC7F2A02AC0344A00AF0A12 /* InputDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F29F2AC0344A00AF0A12 /* InputDescriptionView.swift */; };
+		6CC7F2A22AC035D300AF0A12 /* InputDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A12AC035D300AF0A12 /* InputDateView.swift */; };
+		6CC7F2A42AC0394B00AF0A12 /* InputTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A32AC0394B00AF0A12 /* InputTagsView.swift */; };
+		6CC7F2A62AC03ACA00AF0A12 /* InputTagPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A52AC03ACA00AF0A12 /* InputTagPopupView.swift */; };
+		6CC7F2A82AC047F000AF0A12 /* InputMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A72AC047F000AF0A12 /* InputMemberView.swift */; };
+		6CC7F2AA2AC048A500AF0A12 /* InputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F2A92AC048A500AF0A12 /* InputTaskView.swift */; };
+		6CCF86002AC167260090D1B3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF85FF2AC167260090D1B3 /* Task.swift */; };
 		B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5EF2A7602D7001F392F /* IColabApp.swift */; };
 		B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5F12A7602D7001F392F /* ContentView.swift */; };
 		B7A2A5F42A7602D8001F392F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A2A5F32A7602D8001F392F /* Assets.xcassets */; };
@@ -63,6 +89,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
+		6C74DB742ABFE80000FD5D3F /* ProjectOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOverviewView.swift; sourceTree = "<group>"; };
+		6C74DB762ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainPlaceholder.swift; sourceTree = "<group>"; };
+		6C74DB782ABFEA1000FD5D3F /* CurrentMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMilestoneView.swift; sourceTree = "<group>"; };
+		6C74DB7A2ABFEAB500FD5D3F /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		6C74DB7C2ABFF27D00FD5D3F /* ProjectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtonView.swift; sourceTree = "<group>"; };
+		6C74DB7E2AC009DB00FD5D3F /* ProjectDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDescriptionView.swift; sourceTree = "<group>"; };
+		6C74DB802AC00ABC00FD5D3F /* MemberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListView.swift; sourceTree = "<group>"; };
+		6C74DB822AC010AC00FD5D3F /* ResourceRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequirementView.swift; sourceTree = "<group>"; };
+		6C74DB842AC013A800FD5D3F /* CurrentTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTaskView.swift; sourceTree = "<group>"; };
+		6C74DB862AC0144E00FD5D3F /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		6C74DB8A2AC0199D00FD5D3F /* MilestonesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonesView.swift; sourceTree = "<group>"; };
+		6C74DB8E2AC01A4E00FD5D3F /* MilestoneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCardView.swift; sourceTree = "<group>"; };
+		6C74DB902AC01C6100FD5D3F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		6C74DB922AC0299E00FD5D3F /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		6C74DB942AC02AD000FD5D3F /* ContactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCardView.swift; sourceTree = "<group>"; };
+		6C74DB962AC02C1300FD5D3F /* GroupedContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedContactView.swift; sourceTree = "<group>"; };
+		6C74DB992AC0323700FD5D3F /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		6C74DB9B2AC0324300FD5D3F /* InputTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTitleView.swift; sourceTree = "<group>"; };
+		6CC7F29F2AC0344A00AF0A12 /* InputDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDescriptionView.swift; sourceTree = "<group>"; };
+		6CC7F2A12AC035D300AF0A12 /* InputDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDateView.swift; sourceTree = "<group>"; };
+		6CC7F2A32AC0394B00AF0A12 /* InputTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagsView.swift; sourceTree = "<group>"; };
+		6CC7F2A52AC03ACA00AF0A12 /* InputTagPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPopupView.swift; sourceTree = "<group>"; };
+		6CC7F2A72AC047F000AF0A12 /* InputMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMemberView.swift; sourceTree = "<group>"; };
+		6CC7F2A92AC048A500AF0A12 /* InputTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTaskView.swift; sourceTree = "<group>"; };
+		6CCF85FF2AC167260090D1B3 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B7A2A5EC2A7602D7001F392F /* IColab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IColab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A2A5EF2A7602D7001F392F /* IColabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IColabApp.swift; sourceTree = "<group>"; };
 		B7A2A5F12A7602D7001F392F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +180,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C74DB702ABFE6CD00FD5D3F /* ProjectView */ = {
+			isa = PBXGroup;
+			children = (
+				6C74DB712ABFE6F500FD5D3F /* Views */,
+				6C74DB722ABFE6FA00FD5D3F /* ViewModels */,
+				6C74DB732ABFE6FE00FD5D3F /* Components */,
+			);
+			path = ProjectView;
+			sourceTree = "<group>";
+		};
+		6C74DB712ABFE6F500FD5D3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C74DB742ABFE80000FD5D3F /* ProjectOverviewView.swift */,
+				6C74DB762ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift */,
+				6C74DB7E2AC009DB00FD5D3F /* ProjectDescriptionView.swift */,
+				6C74DB822AC010AC00FD5D3F /* ResourceRequirementView.swift */,
+				6C74DB842AC013A800FD5D3F /* CurrentTaskView.swift */,
+				6C74DB8A2AC0199D00FD5D3F /* MilestonesView.swift */,
+				6C74DB902AC01C6100FD5D3F /* TestView.swift */,
+				6C74DB922AC0299E00FD5D3F /* ContactListView.swift */,
+				6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6C74DB722ABFE6FA00FD5D3F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6C74DB732ABFE6FE00FD5D3F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6C74DB782ABFEA1000FD5D3F /* CurrentMilestoneView.swift */,
+				6C74DB7A2ABFEAB500FD5D3F /* CircleProgressView.swift */,
+				6C74DB7C2ABFF27D00FD5D3F /* ProjectButtonView.swift */,
+				6C74DB802AC00ABC00FD5D3F /* MemberListView.swift */,
+				6C74DB862AC0144E00FD5D3F /* TaskCardView.swift */,
+				6C74DB8E2AC01A4E00FD5D3F /* MilestoneCardView.swift */,
+				6C74DB942AC02AD000FD5D3F /* ContactCardView.swift */,
+				6C74DB962AC02C1300FD5D3F /* GroupedContactView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6C74DB982AC0322900FD5D3F /* InputField */ = {
+			isa = PBXGroup;
+			children = (
+				6C74DB992AC0323700FD5D3F /* InputFieldView.swift */,
+				6C74DB9B2AC0324300FD5D3F /* InputTitleView.swift */,
+				6CC7F29F2AC0344A00AF0A12 /* InputDescriptionView.swift */,
+				6CC7F2A12AC035D300AF0A12 /* InputDateView.swift */,
+				6CC7F2A32AC0394B00AF0A12 /* InputTagsView.swift */,
+				6CC7F2A52AC03ACA00AF0A12 /* InputTagPopupView.swift */,
+				6CC7F2A72AC047F000AF0A12 /* InputMemberView.swift */,
+				6CC7F2A92AC048A500AF0A12 /* InputTaskView.swift */,
+			);
+			path = InputField;
+			sourceTree = "<group>";
+		};
 		B7A2A5E32A7602D7001F392F = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +301,7 @@
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				6C74DB702ABFE6CD00FD5D3F /* ProjectView */,
 				D8C2BE9B2AB88C31003969D8 /* Notification */,
 				D89586FA2AAF5E1E0064629B /* Profile */,
 				D8FFEB7B2AA58ADD00317362 /* ProjectDetail */,
@@ -198,6 +314,7 @@
 		D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6C74DB982AC0322900FD5D3F /* InputField */,
 				D8FCE07E2AAC362900B19B95 /* Tags */,
 				D87E1F8C2AA2EEFE009E3C23 /* TabBar */,
 				D87A67B32AA63B4E000586A1 /* ButtonComponent.swift */,
@@ -257,6 +374,7 @@
 			children = (
 				D8A3AF262AA326B200AC06C9 /* Project.swift */,
 				D87A67B92AA766CD000586A1 /* Milestone.swift */,
+				6CCF85FF2AC167260090D1B3 /* Task.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -527,43 +645,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C74DB7D2ABFF27D00FD5D3F /* ProjectButtonView.swift in Sources */,
 				D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */,
+				6C74DB792ABFEA1000FD5D3F /* CurrentMilestoneView.swift in Sources */,
 				D87A67B62AA70393000586A1 /* MilestoneView.swift in Sources */,
 				D82C0D532AB976E1009802D9 /* NotificationViewModel.swift in Sources */,
 				D8FCE0802AAC363300B19B95 /* TagManager.swift in Sources */,
+				6C74DB812AC00ABC00FD5D3F /* MemberListView.swift in Sources */,
+				6C74DB932AC0299E00FD5D3F /* ContactListView.swift in Sources */,
 				D89586FE2AAF5E340064629B /* ProfileViewModel.swift in Sources */,
+				6C74DB752ABFE80000FD5D3F /* ProjectOverviewView.swift in Sources */,
 				D89587072AB036560064629B /* ExperienceDetailView.swift in Sources */,
+				6C74DB832AC010AC00FD5D3F /* ResourceRequirementView.swift in Sources */,
 				D87A67B82AA7059F000586A1 /* MilestoneDetailCard.swift in Sources */,
 				D8A3AF362AA4664E00AC06C9 /* Account.swift in Sources */,
+				6C74DB9A2AC0323700FD5D3F /* InputFieldView.swift in Sources */,
 				D8FCE0822AAC3AC900B19B95 /* TagsView.swift in Sources */,
 				D89587102AB2C1C70064629B /* Education.swift in Sources */,
 				D8A3AF2A2AA3294700AC06C9 /* MockData.swift in Sources */,
 				D8C2BEA22AB89538003969D8 /* NotificationCard.swift in Sources */,
 				D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */,
+				6CC7F2A02AC0344A00AF0A12 /* InputDescriptionView.swift in Sources */,
 				D87A67B42AA63B4E000586A1 /* ButtonComponent.swift in Sources */,
 				D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */,
 				D895870E2AB2C1720064629B /* Experience.swift in Sources */,
 				B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */,
 				D89587052AB02E200064629B /* ProfileDetailCard.swift in Sources */,
 				D895870C2AB180060064629B /* AccountDetail.swift in Sources */,
+				6C74DB912AC01C6100FD5D3F /* TestView.swift in Sources */,
 				D8C2BEA02AB89310003969D8 /* Notification.swift in Sources */,
 				D89587002AAF5E7E0064629B /* ProfileView.swift in Sources */,
 				D8A3AF382AA48A5500AC06C9 /* DetailCard.swift in Sources */,
+				6CC7F2A22AC035D300AF0A12 /* InputDateView.swift in Sources */,
+				6C74DB872AC0144E00FD5D3F /* TaskCardView.swift in Sources */,
 				D89587032AAF5EDA0064629B /* ProfileCardView.swift in Sources */,
 				D8FCE07D2AAB6F1000B19B95 /* FilterSheetView.swift in Sources */,
+				6CC7F2A82AC047F000AF0A12 /* InputMemberView.swift in Sources */,
 				D8FFEB812AA6218500317362 /* OwnerNameView.swift in Sources */,
 				D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */,
+				6C74DB772ABFE81F00FD5D3F /* ProjectMainPlaceholder.swift in Sources */,
 				D87A67B22AA63211000586A1 /* OwnerProfileSheet.swift in Sources */,
+				6C74DB852AC013A800FD5D3F /* CurrentTaskView.swift in Sources */,
+				6CC7F2A42AC0394B00AF0A12 /* InputTagsView.swift in Sources */,
+				6C74DB972AC02C1300FD5D3F /* GroupedContactView.swift in Sources */,
 				D8A3AF3A2AA4B35B00AC06C9 /* PickerView.swift in Sources */,
 				D8A3AF222AA3239D00AC06C9 /* ProjectCard.swift in Sources */,
+				6CC7F2A62AC03ACA00AF0A12 /* InputTagPopupView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
+				6C74DB7B2ABFEAB500FD5D3F /* CircleProgressView.swift in Sources */,
+				6CC7F2AA2AC048A500AF0A12 /* InputTaskView.swift in Sources */,
 				D83479AD2AA9D5B800E16739 /* SearchBar.swift in Sources */,
 				D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */,
 				D89587142AB8192D0064629B /* Background.swift in Sources */,
+				6C74DB9C2AC0324300FD5D3F /* InputTitleView.swift in Sources */,
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
+				6C74DB952AC02AD000FD5D3F /* ContactCardView.swift in Sources */,
+				6C74DB8B2AC0199D00FD5D3F /* MilestonesView.swift in Sources */,
+				6CCF86002AC167260090D1B3 /* Task.swift in Sources */,
+				6C74DB8F2AC01A4E00FD5D3F /* MilestoneCardView.swift in Sources */,
 				D87A67BA2AA766CD000586A1 /* Milestone.swift in Sources */,
 				D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */,
 				D8A3AF302AA3332800AC06C9 /* ProjectDetailView.swift in Sources */,
+				6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */,
+				6C74DB7F2AC009DB00FD5D3F /* ProjectDescriptionView.swift in Sources */,
 				D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */,
 				D8C2BE9E2AB88D5B003969D8 /* NotificationView.swift in Sources */,
 			);
@@ -711,6 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IColab/Preview Content\"";
+				DEVELOPMENT_TEAM = 5V99WU443D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -739,6 +884,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IColab/Preview Content\"";
+				DEVELOPMENT_TEAM = 5V99WU443D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
