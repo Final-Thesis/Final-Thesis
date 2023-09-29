@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct MilestoneInfoView: View {
+    var title: String = "Title"
+    var value: String = "8"
+    var measurement: String = "Milestone"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(title)
+                .font(.caption2)
+            Text(value)
+                .font(.headline)
+            Text(measurement)
+                .font(.caption2)
+        }
     }
 }
 

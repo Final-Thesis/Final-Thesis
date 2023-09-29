@@ -9,16 +9,24 @@ import SwiftUI
 
 struct TagItem: View {
     var tagText : String
+    var editMode: Bool = false
+    
     var body: some View {
-       Text("\(tagText)")
-            .font(.caption2)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 5)
-            .foregroundColor(.white)
-            .background(
-                Color(.purple)
-                    .cornerRadius(16)
-            )
+        HStack {
+            Text(tagText)
+            if editMode {
+                Button {
+                    //
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                }
+                .buttonStyle(.plain)
+            }
+            
+        }
+        .padding(8)
+        .background(.purple)
+        .cornerRadius(12)
     }
 }
 

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class ContactListViewModel: ObservableObject {
+    @Published var contacts : [String] = []
+    @Published var searchText : String = ""
+    @Published var searchPressed : Bool = false
+    @Published var filters : [String] = []
+    
+    
+}

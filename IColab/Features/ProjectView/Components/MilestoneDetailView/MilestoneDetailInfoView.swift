@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct MilestoneDetailInfoView: View {
+    var icon: String = "hourglass.circle"
+    var title: String = "Due Date"
+    var value: String = "08-08-2023"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(systemName: icon)
+                .font(.largeTitle)
+            Text(title)
+                .font(.headline)
+            Text(value)
+                .font(.subheadline)
+        }
+        .padding()
+        .padding(.vertical)
+        .background(Color("gray"))
+        .cornerRadius(12)
     }
 }
 

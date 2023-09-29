@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct InputTagPopupView: View {
+    @EnvironmentObject var vm: ProjectOverviewViewModel
+    
+    @Binding var tag: [String]
     @Binding var popupToggle: Bool
-    @State var pickerSelector: String = "Tag 2"
+    var tags: [String] = ["HealthKit", "CoreData", "Vision", "CloudKit", "LocationKit"]
+    @State var pickerSelector: String = "Vision"
     
     var body: some View {
         VStack {
@@ -26,10 +30,10 @@ struct InputTagPopupView: View {
                 }
 
                 }
-            Picker("Flavor", selection: $pickerSelector) {
-                Text("Chocolate").tag("Tag 1")
-                Text("Vanilla").tag("Tag 2")
-                Text("Strawberry").tag("Tag 3")
+            Picker("Tags Picker", selection: $pickerSelector) {
+                ForEach(tags, id: \.self) { tag in
+                    Text(tag).tag(tag)
+                }
             }
             .pickerStyle(.wheel)
             .padding(.horizontal)
@@ -37,10 +41,11 @@ struct InputTagPopupView: View {
                 withAnimation {
                     popupToggle.toggle()
                 }
-                
+//                vm.getTestProject().tags.append(pickerSelector)
+                tag.append(pickerSelector)
             } label: {
                 Text("Confirm")
-                    .frame(width: .infinity)
+                    .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
         }
@@ -51,7 +56,7 @@ struct InputTagPopupView: View {
 
 struct InputTagPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        InputTagPopupView(popupToggle: .constant(true))
+        InputTagPopupView(tag: .constant([]), popupToggle: .constant(true))
             .colorScheme(.dark)
     }
 }

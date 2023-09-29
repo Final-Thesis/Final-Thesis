@@ -18,7 +18,7 @@ struct ContentView: View {
                     case .home:
                         HomeView(path: $navigationManager.path)
                     case .projects:
-                        Text("Projects")
+                        ProjectOverviewView()
                     case .chats:
                         Text("Chats")
                     case .notifications:

@@ -23,9 +23,9 @@ struct InputTaskView: View {
             }
             Group {
                 //need to add the cancel/trash/delete button
-                TaskCardView()
-                TaskCardView()
-                TaskCardView()
+                TaskCardView(toggle: .constant(true))
+                TaskCardView(toggle: .constant(true))
+                TaskCardView(toggle: .constant(true))
             }
             .padding(4)
             

@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct InputTitleView: View {
-    @State var text: String = ""
+    @State var title: String = "Input Title"
+    @Binding var text: String
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Input Title")
+            Text(title)
                 .font(.headline)
             HStack {
                 TextField("Example Title", text: $text)
@@ -38,6 +39,6 @@ struct InputTitleView: View {
 
 struct InputTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        InputTitleView()
+        InputTitleView(text: .constant(""))
     }
 }
