@@ -48,6 +48,15 @@ struct EditView: View {
                 }
             }
         }
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button{
+                    print("Add")
+                } label: {
+                    Image(systemName: "plus")
+                }.buttonStyle(.plain)
+            }
+        }
         .navigationTitle("\(backgroundType.rawValue)")
         .navigationBarTitleDisplayMode(.inline)
     }

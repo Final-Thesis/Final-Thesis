@@ -54,6 +54,15 @@ struct EditFormView: View {
             .padding(.top, 100)
             
         }
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button{
+                    print("Add")
+                } label: {
+                    Image(systemName: "plus")
+                }.buttonStyle(.plain)
+            }
+        }
     }
 }
 

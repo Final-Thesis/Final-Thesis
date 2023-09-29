@@ -28,6 +28,9 @@ struct EditSkillFormView: View {
 }
 
 #Preview {
-    EditSkillFormView(skill: "Skill", index: 0)
-        .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
+    NavigationStack{
+        EditSkillFormView(skill: "Skill", index: 0)
+            .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
+    }
+    
 }
