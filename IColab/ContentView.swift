@@ -10,6 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     @StateObject var navigationManager = NavigationManager()
+    
+    init() {
+        Mock.init()
+    }
+    
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
             ScrollView{
@@ -20,7 +25,7 @@ struct ContentView: View {
                     case .projects:
                         ProjectOverviewView()
                     case .chats:
-                        Text("Chats")
+                        ChatListView()
                     case .notifications:
                         NotificationView()
                     case .profile:

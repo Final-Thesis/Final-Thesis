@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ChatView: View {
-    @StateObject var homeViewModel = HomeViewModel()
-    @FocusState var isInputActive: Bool
+    var chat: Chat
     
     var body: some View {
         VStack {
-            PersonChatBubbleView()
-            UserChatBubbleView()
-            PersonChatBubbleView()
+            ForEach(chat.messages) { message in
+                ChatBubbleView(message: message)
+            }
             Spacer()
         }
-        .navigationTitle("Project Description")
+        //.navigationTitle("Project Description")
         .toolbar {
             //placeholder
             if true {
@@ -38,5 +37,5 @@ struct ChatView: View {
 }
 
 #Preview {
-    ChatView()
+    ChatView(chat: Mock.chats[0])
 }

@@ -9,22 +9,20 @@ import Foundation
 
 class AccountDetail {
     var name : String
+    var desc : String
     var location : String
     var bankAccount : String
+    var cvLink : String
     var skills : [String] = []
     var educations : [Education] = []
     var experiences : [Experience] = []
     
-    init(name: String, location: String, bankAccount: String) {
+    init(name: String, desc: String, location: String, bankAccount: String, cvLink: String, skills: [String] = [], educations: [Education] = [], experiences: [Experience] = []) {
         self.name = name
+        self.desc = desc
         self.location = location
         self.bankAccount = bankAccount
-    }
-    
-    init(name: String, location: String, bankAccount: String, skills : [String], educations : [Education], experiences : [Experience]){
-        self.name = name
-        self.location = location
-        self.bankAccount = bankAccount
+        self.cvLink = cvLink
         self.skills = skills
         self.educations = educations
         self.experiences = experiences
