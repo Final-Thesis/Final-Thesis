@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectOverviewView: View {
-    @StateObject var vm: ProjectOverviewViewModel = ProjectOverviewViewModel(uid: Mock.accounts[1].id)
+    @StateObject var vm: ProjectOverviewViewModel = ProjectOverviewViewModel(uid: Mock.accounts[0].id)
     
     var body: some View {
         NavigationStack {

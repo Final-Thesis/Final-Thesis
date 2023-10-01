@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Mock{
+struct Mock {
     init() {
         Mock.projects = [
             Project(
@@ -26,7 +26,7 @@ struct Mock{
             ),
             Project(
                 title: "Back-end Project",
-                owner: Mock.accounts[0],
+                owner: Mock.accounts[1],
                 role: "Back-end",
                 requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
                 tags: ["SwiftUI", "CoreML", "Vision"],
@@ -53,6 +53,59 @@ struct Mock{
                 ]
             )
         ]
+        
+        Mock.accounts = [
+            Account(
+                email: "john@gmail.com",
+                location: "Indonesia",
+                password: "john@123",
+                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+                projectsOwned: Mock.projects,
+                projectsJoined: Mock.projects,
+                cvLink: "CVLink",
+                accountDetail: Mock.accountDetails[0],
+                notifications: Mock.notifications,
+                chats: Mock.chats
+            ),
+            Account(
+                email: "kevin@gmail.com",
+                location: "Indonesia",
+                password: "kevin@123",
+                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+                projectsOwned: Mock.projects,
+                projectsJoined: Mock.projects,
+                cvLink: "CVLink",
+                accountDetail: Mock.accountDetails[0],
+                notifications: Mock.notifications,
+                chats: Mock.chats
+            ),
+            Account(
+                email: "gregorius@gmail.com",
+                location: "Indonesia",
+                password: "gregorius@123",
+                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+                projectsOwned: Mock.projects,
+                projectsJoined: Mock.projects,
+                cvLink: "CVLink",
+                accountDetail: Mock.accountDetails[0],
+                notifications: Mock.notifications,
+                chats: Mock.chats
+            ),
+            Account(
+                email: "brandon@gmail.com",
+                location: "Indonesia",
+                password: "brandon@123",
+                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+                projectsOwned: Mock.projects,
+                projectsJoined: Mock.projects,
+                cvLink: "CVLink",
+                accountDetail: Mock.accountDetails[0],
+                notifications: Mock.notifications,
+                chats: Mock.chats
+            ),
+                
+        ]
+
     }
     
     static var projects: [Project] = []
@@ -117,42 +170,58 @@ struct Mock{
         Notification(desc: "A short description of the notification", projectName: "Project 7", date: Date.now),
     ]
     
-    static var accounts = [
+    static var accounts: [Account] = [
         Account(
-            email: "john.doe@binus.ac.id",
+            email: "john@gmail.com",
             location: "Indonesia",
-            password: "ImaPassword",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            password: "john@123",
+            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+            projectsOwned: Mock.projects,
+            projectsJoined: Mock.projects,
             cvLink: "CVLink",
             accountDetail: Mock.accountDetails[0],
             notifications: Mock.notifications,
             chats: Mock.chats
         ),
         Account(
-            name: "Doe John",
-            email: "doe.john@binus.ac.id",
+            email: "kevin@gmail.com",
             location: "Indonesia",
-            password: "ImaPassword",
-            bankAccount: "bankaccount",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            projectsOwned: [Project(title: "Backend Project", role: "Backend", requirements: ["SwiftUI"], tags: ["SwiftUI", "Vision"], startDate: Date.now, endDate: Date.now, desc: "SAdasdasdsada", milestones: []),
-                           ],
-            cvLink: "cvlink",
+            password: "kevin@123",
+            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+            projectsOwned: Mock.projects,
+            projectsJoined: Mock.projects,
+            cvLink: "CVLink",
+            accountDetail: Mock.accountDetails[0],
+            notifications: Mock.notifications,
             chats: Mock.chats
         ),
         Account(
-            name: "Doe John",
-            email: "doe.john@binus.ac.id",
+            email: "gregorius@gmail.com",
             location: "Indonesia",
-            password: "ImaPassword",
-            bankAccount: "bankaccount",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            password: "gregorius@123",
+            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
             projectsOwned: Mock.projects,
-            cvLink: "cvlink",
+            projectsJoined: Mock.projects,
+            cvLink: "CVLink",
+            accountDetail: Mock.accountDetails[0],
+            notifications: Mock.notifications,
+            chats: Mock.chats
+        ),
+        Account(
+            email: "brandon@gmail.com",
+            location: "Indonesia",
+            password: "brandon@123",
+            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+            projectsOwned: Mock.projects,
+            projectsJoined: Mock.projects,
+            cvLink: "CVLink",
+            accountDetail: Mock.accountDetails[0],
+            notifications: Mock.notifications,
             chats: Mock.chats
         ),
             
     ]
+
     
     static var tags = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
     

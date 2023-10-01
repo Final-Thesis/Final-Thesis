@@ -21,7 +21,8 @@ class ProjectOverviewViewModel: ObservableObject {
     }
     
     func getTestProject() -> Project {
-        return (account?.projectsOwned![0])!
+        return (self.account?.projectsOwned![0])!
+//        return Mock.projects[0]
     }
     
     func editProjectDetail(title: String, summary: String, tags: [String], index: Int) {
