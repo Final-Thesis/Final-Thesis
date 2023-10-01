@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskCardView: View {
-    var task: Task = Mock.tasks[0]
+    var task: Task = MockTasks.tasks[0]
     @Binding var toggle: Bool
     
     var body: some View {
