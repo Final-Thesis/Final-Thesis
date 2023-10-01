@@ -13,7 +13,7 @@ struct Mock {
     static var notifications: [Notification] = []
     static var accounts: [Account] = []
     
-    static var tags = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
+    static var tags: [String] = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
     
     init() {
         Mock.accounts = MockAccounts.accounts
