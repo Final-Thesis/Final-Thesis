@@ -11,6 +11,7 @@ class Project : Identifiable{
     let id = UUID().uuidString
     var title : String
     var owner : Account?
+    var members: [Member]?
     var role : String
     var requirements : [String]
     var tags : [String]
@@ -19,9 +20,10 @@ class Project : Identifiable{
     var desc : String
     var milestones : [Milestone]
     
-    init(title: String, owner: Account? = nil, role: String, requirements: [String], tags: [String], startDate: Date, endDate: Date, desc: String, milestones: [Milestone]) {
+    init(title: String, owner: Account? = nil, members: [Member]? = nil, role: String, requirements: [String], tags: [String], startDate: Date, endDate: Date, desc: String, milestones: [Milestone]) {
         self.title = title
         self.owner = owner
+        self.members = members
         self.role = role
         self.requirements = requirements
         self.tags = tags

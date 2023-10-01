@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum Role: String {
-    case frontend = "Front-End"
-    case backend = "Back-End"
-    case design = "Designer"
-}
-
 struct Milestone: Identifiable, Hashable {
     let id = UUID().uuidString
     var role: Role
