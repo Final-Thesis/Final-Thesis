@@ -70,15 +70,15 @@ struct Mock{
     ]
     
     static var chats = [
-        Chat(name: "John", messages: Mock.messages),
+        Chat(name: "John", messages: Mock.messages, type: .owner),
         Chat(name: "Doe", messages: Mock.messages),
-        Chat(name: "Kevin", messages: Mock.messages),
+        Chat(name: "Kevin", messages: Mock.messages, type: .owner),
         Chat(name: "Dallian", messages: Mock.messages),
         Chat(name: "Gregorius", messages: Mock.messages),
-        Chat(name: "Jeremy", messages: Mock.messages),
+        Chat(name: "Jeremy", messages: Mock.messages, type: .owner),
         Chat(name: "Raymond", messages: Mock.messages),
         Chat(name: "Metekohy", messages: Mock.messages),
-        Chat(name: "Brandon", messages: Mock.messages),
+        Chat(name: "Brandon", messages: Mock.messages, type: .owner),
         Chat(name: "Nicholas", messages: Mock.messages),
         Chat(name: "Marlim", messages: Mock.messages),
     ]

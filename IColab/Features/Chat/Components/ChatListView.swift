@@ -55,7 +55,9 @@ struct ChatListView: View {
         }
         .sheet(isPresented: $filterToggle, content: { 
             ChatFilterView()
-                .presentationDetents([.medium])
+                .environmentObject(vm)
+                .presentationDetents([.fraction(0.4)])
+                .presentationDragIndicator(.visible)
         })
         .navigationTitle("Chats")
         .toolbar {

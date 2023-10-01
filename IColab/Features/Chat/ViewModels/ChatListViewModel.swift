@@ -49,4 +49,12 @@ class ChatListViewModel: ObservableObject {
         self.chats = getSearchChats(searchTitle: searchTitle)
     }
     
+    public func filterChatType(chatType: ChatType) -> [Chat] {
+        let allChats = self.getChats()
+        let filteredChats = allChats.filter { chat in
+            chat.type == chatType
+            
+        }
+        return filteredChats
+    }
 }
