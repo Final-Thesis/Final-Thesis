@@ -8,14 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTabBar : TabBarType = .home
+    @StateObject var navigationManager = NavigationManager()
+    
+    init() {
+        Mock.init()
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationStack(path: $navigationManager.path) {
+            ScrollView{
+                VStack{
+                    switch selectedTabBar {
+                    case .home:
+                        HomeView(path: $navigationManager.path)
+                    case .projects:
+                        ProjectOverviewView()
+                    case .chats:
+                        ChatListView()
+                    case .notifications:
+                        NotificationView()
+                    case .profile:
+                        let pvm = ProfileViewModel(uid: Mock.accounts[0].id)
+                        ProfileView(pvm: pvm)
+                            .environmentObject(pvm)
+                    }
+                }
+            }
+            TabBarView(selectedTabItem: $selectedTabBar)
+        }.accentColor(.primary)
     }
 }
 
