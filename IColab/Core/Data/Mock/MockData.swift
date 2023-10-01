@@ -8,50 +8,54 @@
 import Foundation
 
 struct Mock{
-    static var projects = [
-        Project(
-            title: "Front-end Project",
-            owner: Mock.accounts[0],
-            role: "Front-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10000),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                Mock.milestones[0],
-                Mock.milestones[1]
-            ]
-        ),
-        Project(
-            title: "Back-end Project",
-            owner: Mock.accounts[0],
-            role: "Back-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                Mock.milestones[0],
-                Mock.milestones[1]
-            ]
-        ),
-        Project(
-            title: "Project Title",
-            owner: Mock.accounts[0],
-            role: "Back-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                Mock.milestones[0],
-                Mock.milestones[1]
-            ]
-        )
-    ]
+    init() {
+        Mock.projects = [
+            Project(
+                title: "Front-end Project",
+                owner: Mock.accounts[0],
+                role: "Front-end",
+                requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
+                tags: ["SwiftUI", "CoreML", "Vision"],
+                startDate: Date.now,
+                endDate: Date.now.addingTimeInterval(10000),
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                milestones: [
+                    Mock.milestones[0],
+                    Mock.milestones[1]
+                ]
+            ),
+            Project(
+                title: "Back-end Project",
+                owner: Mock.accounts[0],
+                role: "Back-end",
+                requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
+                tags: ["SwiftUI", "CoreML", "Vision"],
+                startDate: Date.now,
+                endDate: Date.now.addingTimeInterval(10),
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                milestones: [
+                    Mock.milestones[0],
+                    Mock.milestones[1]
+                ]
+            ),
+            Project(
+                title: "Project Title",
+                owner: Mock.accounts[0],
+                role: "Back-end",
+                requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
+                tags: ["SwiftUI", "CoreML", "Vision"],
+                startDate: Date.now,
+                endDate: Date.now.addingTimeInterval(10),
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                milestones: [
+                    Mock.milestones[0],
+                    Mock.milestones[1]
+                ]
+            )
+        ]
+    }
+    
+    static var projects: [Project] = []
     
     static var milestones = [
         Milestone(name: "Milestone Title 1", nominal: 100000, desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.", endDate: Date.now, isAchieved: false, tasks: Mock.tasks),
@@ -123,6 +127,17 @@ struct Mock{
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             projectsOwned: [Project(title: "Backend Project", role: "Backend", requirements: ["SwiftUI"], tags: ["SwiftUI", "Vision"], startDate: Date.now, endDate: Date.now, desc: "SAdasdasdsada", milestones: []),
                            ],
+            cvLink: "cvlink",
+            chats: Mock.chats
+        ),
+        Account(
+            name: "Doe John",
+            email: "doe.john@binus.ac.id",
+            location: "Indonesia",
+            password: "ImaPassword",
+            bankAccount: "bankaccount",
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            projectsOwned: Mock.projects,
             cvLink: "cvlink",
             chats: Mock.chats
         ),

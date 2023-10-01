@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     @StateObject var navigationManager = NavigationManager()
+    
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
             ScrollView{
