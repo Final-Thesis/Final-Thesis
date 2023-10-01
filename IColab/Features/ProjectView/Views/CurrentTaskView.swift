@@ -31,21 +31,21 @@ struct CurrentTaskView: View {
             .padding(.bottom)
             Group {
                 if pickerSelector == 1 {
-                    ForEach(0..<tasks.count) { i in
+                    ForEach(0..<tasks.count, id: \.self) { i in
                         if tasks[i].status == .notCompleted {
                             TaskCardView(task: tasks[i], toggle: $toggles[i])
                         }
                     }
                 }
                 else if pickerSelector == 2 {
-                    ForEach(0..<tasks.count) { i in
+                    ForEach(0..<tasks.count, id: \.self) { i in
                         if tasks[i].status == .onReview {
                             TaskCardView(task: tasks[i], toggle: $toggles[i])
                         }
                     }
                 }
                 else if pickerSelector == 3 {
-                    ForEach(0..<tasks.count) { i in
+                    ForEach(0..<tasks.count, id: \.self) { i in
                         if tasks[i].status == .completed {
                             TaskCardView(task: tasks[i], toggle: $toggles[i])
                         }

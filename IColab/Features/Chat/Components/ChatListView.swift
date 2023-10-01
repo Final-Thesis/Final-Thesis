@@ -17,8 +17,8 @@ struct ChatListView: View {
     var body: some View {
         VStack {
             HStack{
-                SearchBar(searchText: $homeViewModel.searchText){ search in
-                    homeViewModel.searchProject(searchTitle: search)
+                SearchBar(searchText: $vm.searchText){ search in
+                    vm.searchChats(searchTitle: search)
                 }
                 .focused($isInputActive)
                 Button {
@@ -31,11 +31,26 @@ struct ChatListView: View {
             }
             .padding(.horizontal, 10)
             .padding()
-            ScrollView {
-                ForEach(vm.account!.chats!) { chat in
-                    ContactView(name: chat.name, text: chat.messages.randomElement()!.text, time: chat.messages.randomElement()!.time)
+            if vm.chats.isEmpty {
+                Spacer()
+                VStack(alignment: .center) {
+                    Image(systemName: "envelope.open.fill")
+                        .font(.largeTitle)
+                    Text("No Message Yet")
+                        .font(.headline)
+                    Text("Join a project first to start chatting with someone")
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+            }
+            else {
+                ScrollView {
+                    ForEach(vm.chats) { chat in
+                        ContactView(name: chat.name, text: chat.messages.randomElement()!.text, time: chat.messages.randomElement()!.time)
+                    }
                 }
             }
+            
             Spacer()
         }
         .sheet(isPresented: $filterToggle, content: { 

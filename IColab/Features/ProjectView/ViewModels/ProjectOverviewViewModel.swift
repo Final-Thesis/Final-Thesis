@@ -25,7 +25,7 @@ class ProjectOverviewViewModel: ObservableObject {
     }
     
     func editProjectDetail(title: String, summary: String, tags: [String], index: Int) {
-        var project = account!.projectsOwned![0]
+        let project = account!.projectsOwned![0]
         
         account!.projectsOwned![0] = Project(title: title, role: project.role, requirements: project.requirements, tags: tags, startDate: project.startDate, endDate: project.endDate, desc: summary, milestones: project.milestones)
     }
