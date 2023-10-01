@@ -93,6 +93,16 @@ struct Mock{
         Message(text: "Example message 7", time: "06:00"),
     ]
     
+    static var notifications = [
+        Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now),
+        Notification(desc: "A short description of the notification", projectName: "Project 2", date: Date.now),
+        Notification(desc: "A short description of the notification", projectName: "Project 3", date: Date.now),
+        Notification(desc: "A short description of the notification", projectName: "Project 4", date: Date.now),
+        Notification(desc: "A short description of the notification", projectName: "Project 5", date: Date.now),
+        Notification(desc: "A short description of the notification", projectName: "Project 6", date: Date.now),
+        Notification(desc: "A short description of the notification", projectName: "Project 7", date: Date.now),
+    ]
+    
     static var accounts = [
         Account(
             email: "john.doe@binus.ac.id",
@@ -101,10 +111,7 @@ struct Mock{
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             cvLink: "CVLink",
             accountDetail: Mock.accountDetails[0],
-            notifications: [
-                Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now),
-                Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now)
-            ],
+            notifications: Mock.notifications,
             chats: Mock.chats
         ),
         Account(
