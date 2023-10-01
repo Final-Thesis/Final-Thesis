@@ -21,7 +21,7 @@ struct ProfileCardView: View {
                     Text(account.accountDetail.name)
                         .font(.title2)
                         .fontWeight(.bold)
-                    Text("\(Image(systemName: "mappin.and.ellipse")) \(account.location)")
+                    Text("\(Image(systemName: "mappin.and.ellipse")) \(account.accountDetail.location)")
                         .font(.caption)
                 }
             }

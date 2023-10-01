@@ -19,7 +19,7 @@ struct ProfileView: View {
                         Spacer()
                     }
                     PickerView(pickerSelection: $pvm.pickerSelection, allItems: pvm.pickerItems)
-                    Text(account.desc)
+                    Text(account.accountDetail.desc)
                         .font(.caption)
                     switch pvm.pickerSelection {
                     case .overview:

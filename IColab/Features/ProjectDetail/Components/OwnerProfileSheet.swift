@@ -18,7 +18,7 @@ struct OwnerProfileSheet: View {
                 .frame(width: 80)
             Text("\(owner.accountDetail.name)")
                 .font(.headline)
-            Text("\(owner.desc)")
+            Text("\(owner.accountDetail.desc)")
                 .padding(.horizontal, 40)
                 .padding(.bottom, 20)
             HStack{

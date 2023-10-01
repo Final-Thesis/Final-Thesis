@@ -57,55 +57,37 @@ struct Mock {
         Mock.accounts = [
             Account(
                 email: "john@gmail.com",
-                location: "Indonesia",
                 password: "john@123",
-                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-                projectsOwned: Mock.projects,
+                accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
                 projectsJoined: Mock.projects,
-                cvLink: "CVLink",
-                accountDetail: Mock.accountDetails[0],
                 notifications: Mock.notifications,
                 chats: Mock.chats
             ),
             Account(
                 email: "kevin@gmail.com",
-                location: "Indonesia",
                 password: "kevin@123",
-                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-                projectsOwned: Mock.projects,
+                accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
                 projectsJoined: Mock.projects,
-                cvLink: "CVLink",
-                accountDetail: Mock.accountDetails[0],
                 notifications: Mock.notifications,
                 chats: Mock.chats
             ),
             Account(
                 email: "gregorius@gmail.com",
-                location: "Indonesia",
                 password: "gregorius@123",
-                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-                projectsOwned: Mock.projects,
+                accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
                 projectsJoined: Mock.projects,
-                cvLink: "CVLink",
-                accountDetail: Mock.accountDetails[0],
                 notifications: Mock.notifications,
                 chats: Mock.chats
             ),
             Account(
                 email: "brandon@gmail.com",
-                location: "Indonesia",
                 password: "brandon@123",
-                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-                projectsOwned: Mock.projects,
+                accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
                 projectsJoined: Mock.projects,
-                cvLink: "CVLink",
-                accountDetail: Mock.accountDetails[0],
                 notifications: Mock.notifications,
                 chats: Mock.chats
             ),
-                
         ]
-
     }
     
     static var projects: [Project] = []
@@ -173,63 +155,48 @@ struct Mock {
     static var accounts: [Account] = [
         Account(
             email: "john@gmail.com",
-            location: "Indonesia",
             password: "john@123",
-            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-            projectsOwned: Mock.projects,
+            accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
             projectsJoined: Mock.projects,
-            cvLink: "CVLink",
-            accountDetail: Mock.accountDetails[0],
             notifications: Mock.notifications,
             chats: Mock.chats
         ),
         Account(
             email: "kevin@gmail.com",
-            location: "Indonesia",
             password: "kevin@123",
-            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-            projectsOwned: Mock.projects,
+            accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
             projectsJoined: Mock.projects,
-            cvLink: "CVLink",
-            accountDetail: Mock.accountDetails[0],
             notifications: Mock.notifications,
             chats: Mock.chats
         ),
         Account(
             email: "gregorius@gmail.com",
-            location: "Indonesia",
             password: "gregorius@123",
-            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-            projectsOwned: Mock.projects,
+            accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
             projectsJoined: Mock.projects,
-            cvLink: "CVLink",
-            accountDetail: Mock.accountDetails[0],
             notifications: Mock.notifications,
             chats: Mock.chats
         ),
         Account(
             email: "brandon@gmail.com",
-            location: "Indonesia",
             password: "brandon@123",
-            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-            projectsOwned: Mock.projects,
+            accountDetail: Mock.accountDetails[0], projectsOwned: Mock.projects,
             projectsJoined: Mock.projects,
-            cvLink: "CVLink",
-            accountDetail: Mock.accountDetails[0],
             notifications: Mock.notifications,
             chats: Mock.chats
         ),
-            
     ]
 
     
     static var tags = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
     
     static var accountDetails = [
-        AccountDetail(
-            name: "John Doe",
+        AccountDetail (
+            name: "John",
+            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
             location: "Indonesia",
             bankAccount: "bankaccount",
+            cvLink: "CVLink",
             skills: ["SwiftUI", "CoreML", "Vision"],
             educations: [
                 Education(title: "BINUS University", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - Data Science and Analytics"),
@@ -239,6 +206,6 @@ struct Mock {
                 Experience(title: "Assistant Lab", company: "BINUS University", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
                 Experience(title: "Junior Developer Intern", company: "Samsung Korea", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
             ]
-        )
+        ),
     ]
 }
