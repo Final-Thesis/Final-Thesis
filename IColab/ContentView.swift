@@ -20,7 +20,7 @@ struct ContentView: View {
                     case .projects:
                         ProjectOverviewView()
                     case .chats:
-                        Text("Chats")
+                        ChatListView()
                     case .notifications:
                         NotificationView()
                     case .profile:

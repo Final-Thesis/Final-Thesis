@@ -7,27 +7,9 @@
 
 import SwiftUI
 
-struct ChatTestData: Identifiable {
-    var id: UUID = UUID()
-    var name: String
-    var text: String
-    var time: String
-    
-    static var testData : [ChatTestData] = [
-        ChatTestData(name: "Kevin", text: "Example Text", time: "00:00"),
-        ChatTestData(name: "Dallian", text: "Example Text", time: "01:00"),
-        ChatTestData(name: "Gregorius", text: "Example Text", time: "02:00"),
-        ChatTestData(name: "Jeremy", text: "Example Text", time: "03:00"),
-        ChatTestData(name: "Raymond", text: "Example Text", time: "07:00"),
-        ChatTestData(name: "Metekohy", text: "Example Text", time: "12:00"),
-        ChatTestData(name: "Brandon", text: "Example Text", time: "16:00"),
-        ChatTestData(name: "Nicholas", text: "Example Text", time: "03:00"),
-        ChatTestData(name: "Marlim", text: "Example Text", time: "02:00"),
-    ]
-}
-
 struct ChatListView: View {
     @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var vm = ChatListViewModel(uid: Mock.accounts[1].id)
     @FocusState var isInputActive: Bool
     
     @State var filterToggle: Bool = false
@@ -50,12 +32,10 @@ struct ChatListView: View {
             .padding(.horizontal, 10)
             .padding()
             ScrollView {
-                ForEach(ChatTestData.testData) { chat in
-                    ContactView()
+                ForEach(vm.account!.chats!) { chat in
+                    ContactView(name: chat.name, text: chat.messages.randomElement()!.text, time: chat.messages.randomElement()!.time)
                 }
             }
-            
-            
             Spacer()
         }
         .sheet(isPresented: $filterToggle, content: { 

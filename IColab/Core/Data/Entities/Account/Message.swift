@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Message {
+    var text: String;
+    var time: String;
+}

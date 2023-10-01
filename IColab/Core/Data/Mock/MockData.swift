@@ -69,6 +69,30 @@ struct Mock{
         Task(title: "Example Task 7", member: "Member Name 7", status: .completed),
     ]
     
+    static var chats = [
+        Chat(name: "John", messages: Mock.messages),
+        Chat(name: "Doe", messages: Mock.messages),
+        Chat(name: "Kevin", messages: Mock.messages),
+        Chat(name: "Dallian", messages: Mock.messages),
+        Chat(name: "Gregorius", messages: Mock.messages),
+        Chat(name: "Jeremy", messages: Mock.messages),
+        Chat(name: "Raymond", messages: Mock.messages),
+        Chat(name: "Metekohy", messages: Mock.messages),
+        Chat(name: "Brandon", messages: Mock.messages),
+        Chat(name: "Nicholas", messages: Mock.messages),
+        Chat(name: "Marlim", messages: Mock.messages),
+    ]
+    
+    static var messages = [
+        Message(text: "Example message 1", time: "00:00"),
+        Message(text: "Example message 2", time: "01:00"),
+        Message(text: "Example message 3", time: "02:00"),
+        Message(text: "Example message 4", time: "03:00"),
+        Message(text: "Example message 5", time: "04:00"),
+        Message(text: "Example message 6", time: "05:00"),
+        Message(text: "Example message 7", time: "06:00"),
+    ]
+    
     static var accounts = [
         Account(
             email: "john.doe@binus.ac.id",
@@ -80,7 +104,8 @@ struct Mock{
             notifications: [
                 Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now),
                 Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now)
-            ]
+            ],
+            chats: Mock.chats
         ),
         Account(
             name: "Doe John",
@@ -91,7 +116,10 @@ struct Mock{
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             projectsOwned: [Project(title: "Backend Project", role: "Backend", requirements: ["SwiftUI"], tags: ["SwiftUI", "Vision"], startDate: Date.now, endDate: Date.now, desc: "SAdasdasdsada", milestones: []),
                            ],
-            cvLink: "cvlink")
+            cvLink: "cvlink",
+            chats: Mock.chats
+        ),
+            
     ]
     
     static var tags = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
