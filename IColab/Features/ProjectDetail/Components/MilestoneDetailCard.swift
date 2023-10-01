@@ -36,7 +36,7 @@ struct MilestoneDetailCard: View {
                 VStack(spacing: 5){
                     Text("Average Payment")
                         .font(.caption)
-                    Text("\(milestones[0].nominal.formatted(.number))")
+                    Text("\(milestones[0].goals[0].nominal.formatted(.number))")
                         .fontWeight(.bold)
                     Text("Rp")
                         .font(.caption)
@@ -48,7 +48,7 @@ struct MilestoneDetailCard: View {
             .cornerRadius(12)
     //MARK: Detail
         case .detail:
-            ForEach(milestones) { milestone in
+            ForEach(milestones[0].goals) { milestone in
                 HStack{
                     VStack(alignment: .leading, spacing: 10){
                         Text(milestone.name)

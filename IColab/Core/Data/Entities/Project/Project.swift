@@ -38,7 +38,7 @@ class Project : Identifiable{
     public func totalMilestone() -> Int{
         var total = 0
         for milestone in milestones {
-            total += milestone.nominal
+            total += milestone.goals[0].nominal
         }
         return total
     }

@@ -7,17 +7,19 @@
 
 import Foundation
 
+enum Role: String {
+    case frontend = "Front-End"
+    case backend = "Back-End"
+    case design = "Designer"
+}
+
 struct Milestone: Identifiable, Hashable {
     let id = UUID().uuidString
-    var name : String
-    var nominal : Int
-    var desc : String
-    var endDate : Date
-    var isAchieved : Bool
-    var tasks: [Task]
+    var role: Role
+    var goals: [Goal]
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        
     }
     
     static func == (lhs: Milestone, rhs: Milestone) -> Bool {
