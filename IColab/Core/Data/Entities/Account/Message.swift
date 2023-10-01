@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Message {
+struct Message: Identifiable {
+    var id: UUID = UUID()
     var text: String;
     var time: String;
+    var isUser: Bool = true
 }

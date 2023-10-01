@@ -88,13 +88,13 @@ struct Mock{
     ]
     
     static var messages = [
-        Message(text: "Example message 1", time: "00:00"),
-        Message(text: "Example message 2", time: "01:00"),
-        Message(text: "Example message 3", time: "02:00"),
-        Message(text: "Example message 4", time: "03:00"),
-        Message(text: "Example message 5", time: "04:00"),
-        Message(text: "Example message 6", time: "05:00"),
-        Message(text: "Example message 7", time: "06:00"),
+        Message(text: "Example message 1", time: "00:00", isUser: false),
+        Message(text: "Example message 2", time: "01:00", isUser: true),
+        Message(text: "Example message 3", time: "02:00", isUser: true),
+        Message(text: "Example message 4", time: "03:00", isUser: false),
+        Message(text: "Example message 5", time: "04:00", isUser: true),
+        Message(text: "Example message 6", time: "05:00", isUser: false),
+        Message(text: "Example message 7", time: "06:00", isUser: true),
     ]
     
     static var notifications = [

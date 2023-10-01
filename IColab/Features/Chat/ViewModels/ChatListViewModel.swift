@@ -57,4 +57,8 @@ class ChatListViewModel: ObservableObject {
         }
         return filteredChats
     }
+    
+    public func filterChats(chatType: ChatType) {
+        self.chats = filterChatType(chatType: chatType)
+    }
 }

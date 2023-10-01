@@ -34,7 +34,7 @@ struct ChatFilterView: View {
             }
             
             ButtonComponent(title: "Confirm", width: 360) {
-                vm.filterChatType(chatType: chatType)
+                vm.filterChats(chatType: chatType)
                 
                 vm.objectWillChange.send()
                 self.presentationMode.wrappedValue.dismiss()
