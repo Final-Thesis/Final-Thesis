@@ -57,7 +57,7 @@ struct ChatListView: View {
                         NavigationLink {
                             ChatView(chat: chat)
                         } label: {
-                            ContactView(name: chat.name, text: chat.messages.randomElement()!.text, time: chat.messages.randomElement()!.time)
+                            ContactView(chat: chat)
                         }
 
 
