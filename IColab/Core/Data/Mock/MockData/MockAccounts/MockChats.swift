@@ -20,5 +20,8 @@ struct MockChats {
         Chat(name: "Brandon", messages: MockMessages.messages, type: .owner),
         Chat(name: "Nicholas", messages: MockMessages.messages),
         Chat(name: "Marlim", messages: MockMessages.messages),
+        Chat(name: "Dishcovery", messages: MockMessages.messages, type: .group),
+        Chat(name: "IColab", messages: MockMessages.messages, type: .group),
+        Chat(name: "Slipi", messages: MockMessages.messages, type: .group),
     ]
 }

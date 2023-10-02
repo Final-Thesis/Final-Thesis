@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContactView: View {
     var chat: Chat = MockChats.chats[0]
-    var isPinned: Bool = true
     
     var body: some View {
         HStack {
@@ -43,7 +42,7 @@ struct ContactView: View {
                     VStack(alignment: .trailing) {
                         Text(chat.messages.first!.time)
                             .font(.footnote)
-                        if isPinned {
+                        if chat.isPinned {
                             Image(systemName: "pin.circle")
                                 .font(.caption2)
                         }
