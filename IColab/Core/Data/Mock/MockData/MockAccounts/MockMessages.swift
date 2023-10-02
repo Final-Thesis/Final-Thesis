@@ -9,12 +9,31 @@ import Foundation
 
 struct MockMessages {
     static var messages: [Message] = [
-        Message(text: "Example message 1", time: "00:00", isUser: false),
-        Message(text: "Example message 2", time: "01:00", isUser: true),
-        Message(text: "Example message 3", time: "02:00", isUser: true),
-        Message(text: "Example message 4", time: "03:00", isUser: false),
-        Message(text: "Example message 5", time: "04:00", isUser: true),
-        Message(text: "Example message 6", time: "05:00", isUser: false),
-        Message(text: "Example message 7", time: "06:00", isUser: true),
+        Message(text: "Example message 1", time: Date.now, isUser: false),
+        Message(text: "Example message 2", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+        Message(text: "Example message 3", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+        Message(text: "Example message 4", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
+        Message(text: "Example message 5", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+        Message(text: "Example message 6", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
+        Message(text: "Example message 7", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+        Message(text: "Example message 8", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+        Message(text: "Example message 9", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
+        Message(text: "Example message 10", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+        Message(text: "Example message 11", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
+        Message(text: "Example message 12", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
     ]
+    
+    static func ranNum() -> Double {
+        return Double(Int.random(in: 1000..<30000))
+    }
+    
+    static func generateMessages() -> [Message] {
+        var messages: [Message] = []
+        
+        for _ in 0...Int.random(in: 5..<10) {
+            messages.append(MockMessages.messages.randomElement()!)
+        }
+        
+        return messages
+    }
 }

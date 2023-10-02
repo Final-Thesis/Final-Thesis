@@ -7,12 +7,24 @@
 
 import Foundation
 
+enum ChatFilterType: String {
+    case all = "All"
+    case personal = "Personal"
+    case owner = "Owner"
+    case group = "Group"
+    
+    case date = "Date"
+    case project = "Project"
+}
+
 class ChatListViewModel: ObservableObject {
     @Published var account: Account?
     @Published var chats: [Chat] = []
     
     @Published var searchText : String = ""
     @Published var searchPressed : Bool = false
+    
+    @Published var filterType: ChatFilterType = .all
     
     init(uid: String){
         self.account = getAccount(uid: uid)
@@ -25,12 +37,20 @@ class ChatListViewModel: ObservableObject {
         }
     }
     
-    func getTestProject() -> Project {
-        return (account?.projectsOwned![1])!
+    func getChats() -> [Chat] {
+        var chats = account!.chats!
+        
+        chats.sort { $0.isPinned && !$1.isPinned }
+        
+        return chats
     }
     
-    func getChats() -> [Chat] {
-        return account!.chats!
+    func sortChat() -> [Chat] {
+        var chats = self.getChats()
+        
+        chats.sort { $0.isPinned && !$1.isPinned }
+        
+        return chats
     }
     
     private func getSearchChats(searchTitle: String) -> [Chat] {
@@ -58,7 +78,27 @@ class ChatListViewModel: ObservableObject {
         return filteredChats
     }
     
-    public func filterChats(chatType: ChatType) {
-        self.chats = filterChatType(chatType: chatType)
+    public func filterChats(filterType: ChatFilterType) {
+        switch filterType {
+            case .group:
+                self.chats = filterChatType(chatType: .group)
+            case .owner:
+                self.chats = filterChatType(chatType: .owner)
+            case .personal:
+                self.chats = filterChatType(chatType: .personal)
+            default:
+                self.chats = self.getChats()
+        }
+        
+    }
+    
+    public func pinChat(chat: Chat) {
+        let chats = account!.chats!
+        if let index = chats.firstIndex(of: chat) {
+            //self.chats[index].isPinned.toggle()
+            account!.chats![index].isPinned.toggle()
+            
+            self.objectWillChange.send()
+        }
     }
 }

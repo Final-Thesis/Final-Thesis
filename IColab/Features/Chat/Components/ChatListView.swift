@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ChatListView: View {
-    @StateObject var homeViewModel = HomeViewModel()
     @StateObject var vm = ChatListViewModel(uid: Mock.accounts[1].id)
     @FocusState var isInputActive: Bool
     
@@ -45,14 +44,43 @@ struct ChatListView: View {
             }
             else {
                 ScrollView {
+//                    ForEach(0..<vm.getChats().count, id: \.self) { i in
+//                        NavigationLink {
+//                            ChatView(chat: vm.chats[i])
+//                        } label: {
+//                            ContactView(chat: vm.chats[i])
+//                        }
+//                        .contextMenu(menuItems: {
+//                            Button {
+//                                vm.pinChat(index: i)
+//                            } label: {
+//                                if !vm.chats[i].isPinned {
+//                                    Text("Pin Chat")
+//                                }
+//                                else {
+//                                    Text("Unpin Chat")
+//                                }
+//                            }
+//                        })
+//                    }
                     ForEach(vm.chats) { chat in
                         NavigationLink {
                             ChatView(chat: chat)
                         } label: {
-                            ContactView(name: chat.name, text: chat.messages.randomElement()!.text, time: chat.messages.randomElement()!.time)
+                            ContactView(chat: chat)
                         }
-
-
+                        .contextMenu(menuItems: {
+                            Button {
+                                vm.pinChat(chat: chat)
+                            } label: {
+                                if chat.isPinned {
+                                    Text("Unpin Chat")
+                                }
+                                else {
+                                    Text("Pin Chat")
+                                }
+                            }
+                        })
                     }
                 }
             }

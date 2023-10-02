@@ -10,6 +10,6 @@ import Foundation
 struct Message: Identifiable {
     var id: UUID = UUID()
     var text: String;
-    var time: String;
+    var time: Date;
     var isUser: Bool = true
 }

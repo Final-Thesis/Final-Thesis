@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChatBubbleView: View {
-    var message: Message = Message(text: "Example text", time: "00:00", isUser: false)
+    var message: Message = Message(text: "Example text", time: Date.now, isUser: false)
     
     var body: some View {
         if message.isUser {
