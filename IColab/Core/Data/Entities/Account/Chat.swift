@@ -19,6 +19,8 @@ struct Chat: Identifiable, Equatable {
     var messages: [Message]
     var type: ChatType = .personal
     
+    var projectName: String
+    
     var isPinned: Bool = false
     
     static func == (lhs: Chat, rhs: Chat) -> Bool {

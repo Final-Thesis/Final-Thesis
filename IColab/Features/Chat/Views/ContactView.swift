@@ -26,21 +26,26 @@ struct ContactView: View {
                         Spacer()
                     }
                 }
-                
-                
             }
             .frame(width: 48, height: 48)
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(chat.name)
-                            .font(.headline)
+                        HStack {
+                            Text(chat.name)
+                                .font(.headline)
+                            Text(chat.projectName)
+                                .font(.footnote)
+                                .foregroundStyle(.gray)
+                        }
+                        
                         Text(chat.messages.first!.text)
                             .font(.footnote)
                     }
+                    .frame(width: 240, alignment: .leading)
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text(chat.messages.first!.time)
+                        Text(chat.messages.first!.time, style: .time)
                             .font(.footnote)
                         if chat.isPinned {
                             Image(systemName: "pin.circle")
