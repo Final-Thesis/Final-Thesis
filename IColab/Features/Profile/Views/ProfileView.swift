@@ -30,7 +30,8 @@ struct ProfileView: View {
                             showAddProfile.toggle()
                         }
                     case .portofolio:
-                        Text("Portofolio")
+                        PortofolioView()
+                            .environmentObject(pvm)
                     default:
                         EmptyView()
                     }
