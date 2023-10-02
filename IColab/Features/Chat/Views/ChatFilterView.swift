@@ -46,5 +46,4 @@ struct ChatFilterView: View {
 
 #Preview {
     ChatFilterView()
-        .preferredColorScheme(.dark)
 }

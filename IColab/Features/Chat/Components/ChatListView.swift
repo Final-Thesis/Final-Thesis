@@ -16,14 +16,6 @@ struct ChatListView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Chats")
-                    .font(.largeTitle)
-                    .bold()
-                Image(systemName: "plus.circle")
-                    .font(.largeTitle)
-                Spacer()
-            }
             HStack{
                 SearchBar(searchText: $vm.searchText){ search in
                     vm.searchChats(searchTitle: search)
@@ -73,17 +65,18 @@ struct ChatListView: View {
                 .presentationDetents([.fraction(0.4)])
                 .presentationDragIndicator(.visible)
         })
-//        .toolbar {
-//            ToolbarItem(placement: .topBarLeading) {
-//                Button {
-//                    // Your button action here
-//                } label: {
-//                    // your button label here
-//                    Text("Add")
-//                }
-//            }
-//                    
-//        }
+        .navigationTitle("Chats")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    // Your button action here
+                } label: {
+                    // your button label here
+                    Text("Add")
+                }
+            }
+                    
+        }
         
     }
 }

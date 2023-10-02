@@ -68,6 +68,12 @@
 		B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5F12A7602D7001F392F /* ContentView.swift */; };
 		B7A2A5F42A7602D8001F392F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A2A5F32A7602D8001F392F /* Assets.xcassets */; };
 		B7A2A5F72A7602D8001F392F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A2A5F62A7602D8001F392F /* Preview Assets.xcassets */; };
+		B7EE98C22ACA974B00C9B428 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98C12ACA974B00C9B428 /* LoginView.swift */; };
+		B7EE98C42ACA975400C9B428 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98C32ACA975400C9B428 /* RegisterView.swift */; };
+		B7EE98C62ACA976600C9B428 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98C52ACA976600C9B428 /* OnboardingView.swift */; };
+		B7EE98C82ACA977A00C9B428 /* DotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98C72ACA977A00C9B428 /* DotIndicator.swift */; };
+		B7EE98CA2ACA979700C9B428 /* OnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98C92ACA979700C9B428 /* OnboardingInfoView.swift */; };
+		B7EE98CC2ACA97AD00C9B428 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98CB2ACA97AD00C9B428 /* TextFieldView.swift */; };
 		D80BC30F2ABD38690086558D /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC30E2ABD38690086558D /* FormTextField.swift */; };
 		D80BC3112ABD3D130086558D /* FormDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3102ABD3D130086558D /* FormDatePicker.swift */; };
 		D80BC3132ABD49950086558D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3122ABD49950086558D /* NavigationManager.swift */; };
@@ -195,6 +201,12 @@
 		B7A2A5F12A7602D7001F392F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7A2A5F32A7602D8001F392F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7A2A5F62A7602D8001F392F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B7EE98C12ACA974B00C9B428 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B7EE98C32ACA975400C9B428 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		B7EE98C52ACA976600C9B428 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B7EE98C72ACA977A00C9B428 /* DotIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotIndicator.swift; sourceTree = "<group>"; };
+		B7EE98C92ACA979700C9B428 /* OnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoView.swift; sourceTree = "<group>"; };
+		B7EE98CB2ACA97AD00C9B428 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		D80BC30E2ABD38690086558D /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D80BC3102ABD3D130086558D /* FormDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePicker.swift; sourceTree = "<group>"; };
 		D80BC3122ABD49950086558D /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -512,6 +524,50 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B7EE98BC2ACA96EF00C9B428 /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				B7EE98C02ACA970D00C9B428 /* Views */,
+				B7EE98BF2ACA970600C9B428 /* ViewModels */,
+				B7EE98BE2ACA96FE00C9B428 /* Components */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		B7EE98BD2ACA96F700C9B428 /* ProjectMain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectMain;
+			sourceTree = "<group>";
+		};
+		B7EE98BE2ACA96FE00C9B428 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B7EE98C72ACA977A00C9B428 /* DotIndicator.swift */,
+				B7EE98C92ACA979700C9B428 /* OnboardingInfoView.swift */,
+				B7EE98CB2ACA97AD00C9B428 /* TextFieldView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B7EE98BF2ACA970600C9B428 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B7EE98C02ACA970D00C9B428 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7EE98C12ACA974B00C9B428 /* LoginView.swift */,
+				B7EE98C32ACA975400C9B428 /* RegisterView.swift */,
+				B7EE98C52ACA976600C9B428 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D82C0D542AB976E5009802D9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +587,8 @@
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B7EE98BD2ACA96F700C9B428 /* ProjectMain */,
+				B7EE98BC2ACA96EF00C9B428 /* LoginRegister */,
 				6C7269FE2AC82F9600E14230 /* Chat */,
 				6C74DB702ABFE6CD00FD5D3F /* ProjectView */,
 				D8C2BE9B2AB88C31003969D8 /* Notification */,
@@ -957,6 +1015,7 @@
 				6CC7F2A22AC035D300AF0A12 /* InputDateView.swift in Sources */,
 				6C129E912AC2D26800F7036D /* EditProjectView.swift in Sources */,
 				6C74DB872AC0144E00FD5D3F /* TaskCardView.swift in Sources */,
+				B7EE98C62ACA976600C9B428 /* OnboardingView.swift in Sources */,
 				D89587032AAF5EDA0064629B /* ProfileCardView.swift in Sources */,
 				6C745EBA2AC9814400646574 /* MockGoals.swift in Sources */,
 				D8FCE07D2AAB6F1000B19B95 /* FilterSheetView.swift in Sources */,
@@ -981,6 +1040,7 @@
 				D81DCE242AC34EE600D65604 /* SkillEditView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
 				D80BC30F2ABD38690086558D /* FormTextField.swift in Sources */,
+				B7EE98C82ACA977A00C9B428 /* DotIndicator.swift in Sources */,
 				D85CEFBB2AC1E553004D4C75 /* NewFormView.swift in Sources */,
 				6CC7F2A62AC03ACA00AF0A12 /* InputTagPopupView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
@@ -988,13 +1048,16 @@
 				D89DCFC42ACA876D00FF248F /* PortofolioView.swift in Sources */,
 				6C74DB7B2ABFEAB500FD5D3F /* CircleProgressView.swift in Sources */,
 				6CC7F2AA2AC048A500AF0A12 /* InputTaskView.swift in Sources */,
+				B7EE98CC2ACA97AD00C9B428 /* TextFieldView.swift in Sources */,
 				D83479AD2AA9D5B800E16739 /* SearchBar.swift in Sources */,
 				D80BC3132ABD49950086558D /* NavigationManager.swift in Sources */,
+				B7EE98CA2ACA979700C9B428 /* OnboardingInfoView.swift in Sources */,
 				D80BC3112ABD3D130086558D /* FormDatePicker.swift in Sources */,
 				D84142D92AC0215800E38C5B /* ProfileSectionCard.swift in Sources */,
 				D87E1F902AA2F0F9009E3C23 /* TabBarView.swift in Sources */,
 				D89587142AB8192D0064629B /* Background.swift in Sources */,
 				6C745EBC2AC9818A00646574 /* MockTasks.swift in Sources */,
+				B7EE98C42ACA975400C9B428 /* RegisterView.swift in Sources */,
 				D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */,
 				6C726A032AC82FB300E14230 /* ContactView.swift in Sources */,
 				D89DCFC82ACA87BB00FF248F /* GridView.swift in Sources */,
@@ -1018,6 +1081,7 @@
 				6C745EAC2AC97AF300646574 /* MockProjects.swift in Sources */,
 				6C726A0E2AC82FCF00E14230 /* FilterButtonView.swift in Sources */,
 				D8A3AF302AA3332800AC06C9 /* ProjectDetailView.swift in Sources */,
+				B7EE98C22ACA974B00C9B428 /* LoginView.swift in Sources */,
 				6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */,
 				6C74DB7F2AC009DB00FD5D3F /* ProjectDescriptionView.swift in Sources */,
 				D8FFEB7F2AA58D9900317362 /* OverviewView.swift in Sources */,
