@@ -97,6 +97,9 @@
 		D895870E2AB2C1720064629B /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895870D2AB2C1720064629B /* Experience.swift */; };
 		D89587102AB2C1C70064629B /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895870F2AB2C1C70064629B /* Education.swift */; };
 		D89587142AB8192D0064629B /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89587132AB8192D0064629B /* Background.swift */; };
+		D89DCFC42ACA876D00FF248F /* PortofolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89DCFC32ACA876D00FF248F /* PortofolioView.swift */; };
+		D89DCFC82ACA87BB00FF248F /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89DCFC72ACA87BB00FF248F /* GridView.swift */; };
+		D89DCFCA2ACA8D8300FF248F /* PortofolioCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89DCFC92ACA8D8300FF248F /* PortofolioCard.swift */; };
 		D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */; };
 		D8A3AF1F2AA31C9000AC06C9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */; };
 		D8A3AF222AA3239D00AC06C9 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF212AA3239D00AC06C9 /* ProjectCard.swift */; };
@@ -221,6 +224,9 @@
 		D895870D2AB2C1720064629B /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		D895870F2AB2C1C70064629B /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		D89587132AB8192D0064629B /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		D89DCFC32ACA876D00FF248F /* PortofolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortofolioView.swift; sourceTree = "<group>"; };
+		D89DCFC72ACA87BB00FF248F /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		D89DCFC92ACA8D8300FF248F /* PortofolioCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortofolioCard.swift; sourceTree = "<group>"; };
 		D8A3AF1C2AA31C8800AC06C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D8A3AF1E2AA31C9000AC06C9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D8A3AF212AA3239D00AC06C9 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
@@ -546,6 +552,7 @@
 				6C726A162AC8302100E14230 /* RoundedCorner.swift */,
 				D83479AC2AA9D5B800E16739 /* SearchBar.swift */,
 				D80BC3122ABD49950086558D /* NavigationManager.swift */,
+				D89DCFC72ACA87BB00FF248F /* GridView.swift */,
 			);
 			path = GlobalComponents;
 			sourceTree = "<group>";
@@ -573,12 +580,10 @@
 		D89586FB2AAF5E250064629B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D89DCFC62ACA879700FF248F /* Edit */,
+				D89DCFC52ACA877E00FF248F /* Forms */,
 				D89586FF2AAF5E7E0064629B /* ProfileView.swift */,
-				D82C0D582ABACFD2009802D9 /* EditView.swift */,
-				D82C0D5A2ABC0741009802D9 /* EditFormView.swift */,
-				D85CEFBA2AC1E553004D4C75 /* NewFormView.swift */,
-				D84142D22AC0162000E38C5B /* AddProfileView.swift */,
-				D81DCE272AC3FAE900D65604 /* EditSkillFormView.swift */,
+				D89DCFC32ACA876D00FF248F /* PortofolioView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				D80BC3102ABD3D130086558D /* FormDatePicker.swift */,
 				D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */,
 				D81DCE232AC34EE600D65604 /* SkillEditView.swift */,
+				D89DCFC92ACA8D8300FF248F /* PortofolioCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -631,6 +637,25 @@
 				6C745E9F2AC91A8F00646574 /* Message.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		D89DCFC52ACA877E00FF248F /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				D81DCE272AC3FAE900D65604 /* EditSkillFormView.swift */,
+				D85CEFBA2AC1E553004D4C75 /* NewFormView.swift */,
+				D82C0D5A2ABC0741009802D9 /* EditFormView.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		D89DCFC62ACA879700FF248F /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				D82C0D582ABACFD2009802D9 /* EditView.swift */,
+				D84142D22AC0162000E38C5B /* AddProfileView.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		D8A3AF1B2AA31C6F00AC06C9 /* Home */ = {
@@ -912,6 +937,7 @@
 				D89587102AB2C1C70064629B /* Education.swift in Sources */,
 				6C745EB22AC97F0400646574 /* MockChats.swift in Sources */,
 				D8A3AF2A2AA3294700AC06C9 /* MockData.swift in Sources */,
+				D89DCFCA2ACA8D8300FF248F /* PortofolioCard.swift in Sources */,
 				D8C2BEA22AB89538003969D8 /* NotificationCard.swift in Sources */,
 				D87E1F922AA2F47E009E3C23 /* TabBarType.swift in Sources */,
 				6CC7F2A02AC0344A00AF0A12 /* InputDescriptionView.swift in Sources */,
@@ -959,6 +985,7 @@
 				6CC7F2A62AC03ACA00AF0A12 /* InputTagPopupView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
 				6C3189E12AC55F9100A6C113 /* MilestoneLineView.swift in Sources */,
+				D89DCFC42ACA876D00FF248F /* PortofolioView.swift in Sources */,
 				6C74DB7B2ABFEAB500FD5D3F /* CircleProgressView.swift in Sources */,
 				6CC7F2AA2AC048A500AF0A12 /* InputTaskView.swift in Sources */,
 				D83479AD2AA9D5B800E16739 /* SearchBar.swift in Sources */,
@@ -970,6 +997,7 @@
 				6C745EBC2AC9818A00646574 /* MockTasks.swift in Sources */,
 				D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */,
 				6C726A032AC82FB300E14230 /* ContactView.swift in Sources */,
+				D89DCFC82ACA87BB00FF248F /* GridView.swift in Sources */,
 				6C745EB62AC9802D00646574 /* MockMessages.swift in Sources */,
 				6C74DB9C2AC0324300FD5D3F /* InputTitleView.swift in Sources */,
 				6C3189E62AC5614100A6C113 /* MilestoneDetailInfoView.swift in Sources */,
