@@ -506,6 +506,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B7EE98BB2ACA963A00C9B428 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		D82C0D542AB976E5009802D9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +532,7 @@
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B7EE98BB2ACA963A00C9B428 /* New Group */,
 				6C7269FE2AC82F9600E14230 /* Chat */,
 				6C74DB702ABFE6CD00FD5D3F /* ProjectView */,
 				D8C2BE9B2AB88C31003969D8 /* Notification */,
