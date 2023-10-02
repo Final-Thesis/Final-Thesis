@@ -47,15 +47,30 @@ struct ProfileDetailCard: View {
             }
             switch backgroundType {
             case .skill:
-                HStack{
-                    ForEach(skills ?? [], id: \.self){ skill in
-                        TagItem(tagText: skill)
+                if let skills = self.skills {
+                    if skills.isEmpty{
+                        Text("No Skills listed...")
+                    }else {
+                        ScrollView(.horizontal){
+                            HStack{
+                                ForEach(skills, id: \.self){ skill in
+                                    TagItem(tagText: skill)
+                                }
+                            }
+                            Spacer()
+                        }
                     }
-                    Spacer()
                 }
             default:
-                ForEach(backgrounds ?? [], id: \.self){ background in
-                    ExperienceDetailView(showAlert: $showAlert, background: background, editMode: false)
+                if let backgrounds = self.backgrounds {
+                    if backgrounds.isEmpty{
+                        Text("No Backgrounds listed...")
+                            .font(.caption)
+                    }else{
+                        ForEach(backgrounds, id: \.self){ background in
+                            ExperienceDetailView(showAlert: $showAlert, background: background, editMode: false)
+                        }
+                    }
                 }
             }
         }

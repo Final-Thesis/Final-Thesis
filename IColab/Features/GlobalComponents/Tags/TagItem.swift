@@ -14,6 +14,7 @@ struct TagItem: View {
     var body: some View {
         HStack {
             Text(tagText)
+                .font(.caption2)
             if editMode {
                 Button {
                     //
@@ -25,7 +26,7 @@ struct TagItem: View {
             
         }
         .padding(8)
-        .background(.purple)
+        .background(Color(.purple))
         .cornerRadius(12)
     }
 }

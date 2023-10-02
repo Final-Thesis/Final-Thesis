@@ -15,11 +15,13 @@ struct ProjectCard: View {
                 .frame(height: 100)
                 .cornerRadius(12)
             Text("\(project.title)")
-                .font(.title2)
+                .font(.title3)
                 .fontWeight(.bold)
             Text("\(project.startDate.formatted(date: .numeric, time: .omitted))")
+                .font(.caption)
             Text("\(project.desc)")
                 .padding(.top, 1)
+                .font(.caption)
             HStack{
                 ForEach(project.tags, id: \.self){ tag in
                     TagItem(tagText: tag)
@@ -29,13 +31,11 @@ struct ProjectCard: View {
         .padding()
         .background(.ultraThickMaterial)
         .cornerRadius(12)
-        
-        
     }
 }
 
 struct ProjectCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectCard(project: Mock.projects[0])
+        ProjectCard(project: MockProjects.projects[0])
     }
 }
