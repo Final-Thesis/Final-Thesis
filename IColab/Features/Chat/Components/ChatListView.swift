@@ -81,7 +81,12 @@ struct ChatListView: View {
                             Button {
                                 vm.pinChat(chat: chat)
                             } label: {
-                                Text("Pin Chat")
+                                if chat.isPinned {
+                                    Text("Unpin Chat")
+                                }
+                                else {
+                                    Text("Pin Chat")
+                                }
                             }
                         })
                     }

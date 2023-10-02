@@ -40,6 +40,8 @@ class ChatListViewModel: ObservableObject {
     func getChats() -> [Chat] {
         var chats = account!.chats!
         
+        chats.sort { $0.isPinned && !$1.isPinned }
+        
         return chats
     }
     
@@ -91,13 +93,12 @@ class ChatListViewModel: ObservableObject {
     }
     
     public func pinChat(chat: Chat) {
-//        if let index = self.getChats().firstIndex(of: chat) {
-//            //self.chats[index].isPinned.toggle()
-//            account!.chats![index].isPinned.toggle()
-//            self.objectWillChange.send()
-//            print("is pinned \(self.chats[index].isPinned)")
-//            return
-//        }
-//        print("Not pinned")
+        let chats = account!.chats!
+        if let index = chats.firstIndex(of: chat) {
+            //self.chats[index].isPinned.toggle()
+            account!.chats![index].isPinned.toggle()
+            
+            self.objectWillChange.send()
+        }
     }
 }
