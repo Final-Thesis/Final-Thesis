@@ -76,6 +76,7 @@
 		B7EE98CC2ACA97AD00C9B428 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98CB2ACA97AD00C9B428 /* TextFieldView.swift */; };
 		B7EE98D12ACA9A8800C9B428 /* ProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98D02ACA9A8800C9B428 /* ProjectMainView.swift */; };
 		B7EE98D32ACA9A9A00C9B428 /* ProjectMainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE98D22ACA9A9A00C9B428 /* ProjectMainCardView.swift */; };
+		B7F3A2A22ACB03B10034EACF /* ProjectMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F3A2A12ACB03B10034EACF /* ProjectMainViewModel.swift */; };
 		D80BC30F2ABD38690086558D /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC30E2ABD38690086558D /* FormTextField.swift */; };
 		D80BC3112ABD3D130086558D /* FormDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3102ABD3D130086558D /* FormDatePicker.swift */; };
 		D80BC3132ABD49950086558D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BC3122ABD49950086558D /* NavigationManager.swift */; };
@@ -208,6 +209,7 @@
 		B7EE98CB2ACA97AD00C9B428 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		B7EE98D02ACA9A8800C9B428 /* ProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainView.swift; sourceTree = "<group>"; };
 		B7EE98D22ACA9A9A00C9B428 /* ProjectMainCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainCardView.swift; sourceTree = "<group>"; };
+		B7F3A2A12ACB03B10034EACF /* ProjectMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectMainViewModel.swift; path = IColab/Features/ProjectMain/ProjectMainViewModel.swift; sourceTree = SOURCE_ROOT; };
 		D80BC30E2ABD38690086558D /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		D80BC3102ABD3D130086558D /* FormDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePicker.swift; sourceTree = "<group>"; };
 		D80BC3122ABD49950086558D /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 		B7EE98CE2ACA992400C9B428 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B7F3A2A12ACB03B10034EACF /* ProjectMainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1073,6 +1076,7 @@
 				6C745E9E2AC91A7A00646574 /* Chat.swift in Sources */,
 				6C74DB952AC02AD000FD5D3F /* ContactCardView.swift in Sources */,
 				6C74DB8B2AC0199D00FD5D3F /* MilestonesView.swift in Sources */,
+				B7F3A2A22ACB03B10034EACF /* ProjectMainViewModel.swift in Sources */,
 				6CCF86002AC167260090D1B3 /* Task.swift in Sources */,
 				6C74DB8F2AC01A4E00FD5D3F /* MilestoneCardView.swift in Sources */,
 				6C3189D42AC445D800A6C113 /* EditProjectDescriptionView.swift in Sources */,
