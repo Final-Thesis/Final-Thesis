@@ -20,8 +20,6 @@ struct LoginView: View {
             Group {
                 TextFieldView()
                 TextFieldView()
-                TextFieldView()
-                TextFieldView()
             }
             .padding(.vertical)
             Spacer()
