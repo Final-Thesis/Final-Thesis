@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContactCardView: View {
+    var name: String = "Name"
+    
     var body: some View {
         HStack {
             Circle()
                 .frame(width: 48)
                 .foregroundColor(.purple)
             VStack(alignment: .leading) {
-                Text("Kevin")
+                Text(name)
                 Divider()
             }
             Spacer()

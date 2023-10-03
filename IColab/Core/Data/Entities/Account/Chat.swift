@@ -15,6 +15,7 @@ enum ChatType {
 
 struct Chat: Identifiable, Equatable {
     let id: UUID = UUID()
+    
     var name: String
     var messages: [Message]
     var type: ChatType = .personal

@@ -333,15 +333,6 @@
 			path = ProjectNavigationCardView;
 			sourceTree = "<group>";
 		};
-		6C3189DE2AC44BE100A6C113 /* ContactListView */ = {
-			isa = PBXGroup;
-			children = (
-				6C74DB942AC02AD000FD5D3F /* ContactCardView.swift */,
-				6C74DB962AC02C1300FD5D3F /* GroupedContactView.swift */,
-			);
-			path = ContactListView;
-			sourceTree = "<group>";
-		};
 		6C3189DF2AC44C4000A6C113 /* ProjectDescriptionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,7 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				6C3189E42AC5612700A6C113 /* MilestoneDetailView */,
-				6C3189DE2AC44BE100A6C113 /* ContactListView */,
 				6C3189DC2AC44B7F00A6C113 /* MilestoneView */,
 				6C3189DF2AC44C4000A6C113 /* ProjectDescriptionView */,
 				6C3189D92AC44B1D00A6C113 /* ProjectOverviewView */,
@@ -489,6 +479,15 @@
 				6CC7F2A92AC048A500AF0A12 /* InputTaskView.swift */,
 			);
 			path = InputField;
+			sourceTree = "<group>";
+		};
+		6CEF9EA92ACC00200008CF2D /* GroupedContact */ = {
+			isa = PBXGroup;
+			children = (
+				6C74DB942AC02AD000FD5D3F /* ContactCardView.swift */,
+				6C74DB962AC02C1300FD5D3F /* GroupedContactView.swift */,
+			);
+			path = GroupedContact;
 			sourceTree = "<group>";
 		};
 		B7A2A5E32A7602D7001F392F = {
@@ -636,6 +635,7 @@
 		D87E1F8B2AA2EEE0009E3C23 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6CEF9EA92ACC00200008CF2D /* GroupedContact */,
 				6C74DB982AC0322900FD5D3F /* InputField */,
 				D8FCE07E2AAC362900B19B95 /* Tags */,
 				D87E1F8C2AA2EEFE009E3C23 /* TabBar */,
