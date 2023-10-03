@@ -33,7 +33,6 @@ struct ProfileCardView: View {
 
 struct ProfileCardView_Previews : PreviewProvider{
     static var previews: some View{
-        let account: Account? = Mock.accounts[0]
-        return ProfileCardView(account: account)
+        ProfileCardView(account: Mock.accounts[0])
     }
 }
