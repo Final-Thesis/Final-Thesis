@@ -22,7 +22,9 @@ struct Mock {
         Mock.notifications = MockNotifications.notifications
         Mock.chats = MockChats.chats
         
-        MockAccounts.setProjects()
-        Mock.accounts = MockAccounts.accounts
+        for account in Mock.accounts {
+            account.projectsOwned = MockProjects.addProjects()
+            account.projectsJoined = MockProjects.addProjects()
+        }
     }
 }

@@ -52,4 +52,8 @@ struct MockProjects {
             ]
         )
     ]
+    
+    static func addProjects() -> [Project] {
+        return MockProjects.projects
+    }
 }
