@@ -25,6 +25,8 @@ struct Mock {
         for account in Mock.accounts {
             account.projectsOwned = MockProjects.addProjects()
             account.projectsJoined = MockProjects.addProjects()
+            account.chats = Mock.chats
+            account.notifications = Mock.notifications
         }
     }
 }
