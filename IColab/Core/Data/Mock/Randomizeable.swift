@@ -11,8 +11,6 @@ protocol Randomizeable {
     associatedtype Element
     
     static var array: [Element] { get set }
-    
-    static func initArray() -> [Element]
 }
 
 extension Randomizeable {
@@ -21,6 +19,17 @@ extension Randomizeable {
         
         for _ in 0...Int.random(in: 5..<10) {
             array.append(self.array.randomElement()!)
+        }
+        
+        return array
+    }
+    
+    static func initArray(count: Int, elementGenerator: () -> Element) -> [Element] {
+        var array: [Element] = []
+        
+        for _ in 0...count {
+            let element = elementGenerator()
+            array.append(element)
         }
         
         return array

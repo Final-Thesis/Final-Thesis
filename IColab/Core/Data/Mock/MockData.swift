@@ -16,10 +16,10 @@ struct Mock {
     static var tags: [String] = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
     
     init() {
-        Mock.accounts = MockAccounts.accounts
+        Mock.accounts = MockAccounts.array
         
-        Mock.projects = MockProjects.projects
-        Mock.notifications = MockNotifications.notifications
+        Mock.projects = MockProjects.array
+        Mock.notifications = MockNotifications.array
         Mock.chats = MockChats.generateArray()
         
         for account in Mock.accounts {

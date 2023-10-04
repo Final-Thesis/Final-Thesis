@@ -24,7 +24,9 @@ struct MockMessages: Randomizeable {
         "Example message 12",
     ]
     
-    static var array: [Message] = initArray()
+    static var array: [Message] = MockMessages.initArray(count: 12) {
+        return Message(text: texts.randomElement()!, time: Date.now.addingTimeInterval(ranNum()), isUser: Bool.random())
+    }
     
     static func ranNum() -> Double {
         return Double(Int.random(in: 1000..<30000))

@@ -34,7 +34,7 @@ struct MilestoneDetailView: View {
             .padding(.vertical)
             Divider()
             ScrollView {
-                ForEach(MockMilestones.milestones[0].goals[0].tasks) { task in
+                ForEach(MockMilestones.array[0].goals[0].tasks) { task in
                     TaskCardView(task: task, toggle: .constant(true))
                 }
             }

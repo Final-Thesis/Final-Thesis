@@ -10,18 +10,10 @@ import Foundation
 struct MockChats: Randomizeable {
     typealias Element = Chat
     
-    static var randomProjectTitle: String = MockProjects.projects.randomElement()!.title
+    static var randomProjectTitle: String = MockProjects.array.randomElement()!.title
     
-    static var array: [Element] = initArray()
-    
-    static func initArray() -> [Element] {
-        var array: [Element] = []
-        
-        for name in names {
-            array.append(Element(name: name, messages: MockMessages.generateArray(), type: ChatType.allCases.randomElement()!, projectName: randomProjectTitle))
-        }
-        
-        return array
+    static var array: [Element] = MockChats.initArray(count: names.count) {
+        return Element(name: names.randomElement()!, messages: MockMessages.generateArray(), type: ChatType.allCases.randomElement()!, projectName: randomProjectTitle)
     }
     
     static var names: [String] = [

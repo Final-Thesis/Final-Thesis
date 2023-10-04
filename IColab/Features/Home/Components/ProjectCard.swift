@@ -36,6 +36,6 @@ struct ProjectCard: View {
 
 struct ProjectCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectCard(project: MockProjects.projects[0])
+        ProjectCard(project: MockProjects.array[0])
     }
 }

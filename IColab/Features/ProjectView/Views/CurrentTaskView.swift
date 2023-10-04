@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CurrentTaskView: View {
     @State var toggles: [Bool] = [false, false, true, true, true, true, true, true, true]
-    @State var tasks: [Task] = MockTasks.tasks
+    @State var tasks: [Task] = MockTasks.array
     @State var pickerSelector = 1
     
     func appendToggle() {
