@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct MockMessages {
-    static var messages: [Message] = [
+struct MockMessages: Randomizeable {
+    static var array: [Message] = [
         Message(text: "Example message 1", time: Date.now, isUser: false),
         Message(text: "Example message 2", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
         Message(text: "Example message 3", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
@@ -31,7 +31,7 @@ struct MockMessages {
         var messages: [Message] = []
         
         for _ in 0...Int.random(in: 5..<10) {
-            messages.append(MockMessages.messages.randomElement()!)
+            messages.append(self.array.randomElement()!)
         }
         
         return messages
