@@ -17,8 +17,9 @@ extension Randomizeable {
     static func generateArray() -> [Element] {
         var array: [Element] = []
         
-        for _ in 0...Int.random(in: 5..<10) {
-            array.append(self.array.randomElement()!)
+        for _ in 0...Int.random(in: 2..<self.array.count) {
+            let element = self.array.randomElement()!
+            array.append(element)
         }
         
         return array

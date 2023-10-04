@@ -20,6 +20,7 @@ enum ChatFilterType: String {
 class ChatListViewModel: ObservableObject {
     @Published var account: Account?
     @Published var chats: [Chat] = []
+    @Published var projects: [Project] = []
     
     @Published var searchText : String = ""
     @Published var searchPressed : Bool = false
@@ -29,12 +30,18 @@ class ChatListViewModel: ObservableObject {
     init(uid: String){
         self.account = getAccount(uid: uid)
         self.chats = self.getChats()
+        self.projects = self.getProjects()
+        
     }
     
     private func getAccount(uid: String) -> Account?{
         return Mock.accounts.first { account in
             account.id == uid
         }
+    }
+    
+    func getProjects() -> [Project] {
+        return account!.projectsOwned!
     }
     
     func getChats() -> [Chat] {

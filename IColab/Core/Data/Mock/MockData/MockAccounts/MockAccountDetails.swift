@@ -10,9 +10,23 @@ import Foundation
 struct MockAccountDetails: Randomizeable {
     typealias Element = AccountDetail
     
+    static var names: [String] = [
+        "John",
+        "Doe",
+        "Kevin",
+        "Dallian",
+        "Gregorius",
+        "Jeremy",
+        "Raymond",
+        "Metekohy",
+        "Brandon",
+        "Nicholas",
+        "Marlim",
+    ]
+    
     static var array: [AccountDetail] = MockAccountDetails.initArray(count: 7) {
         return AccountDetail (
-            name: "John",
+            name: names.randomElement()!,
             desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
             location: "Indonesia",
             bankAccount: "bankaccount",

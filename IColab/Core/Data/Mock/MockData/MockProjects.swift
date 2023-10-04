@@ -25,17 +25,15 @@ struct MockProjects: Randomizeable {
     static var array: [Project] = MockProjects.initArray(count: title.count) {
         return Project(
             title: title.randomElement()!,
-            owner: Mock.accounts[0],
-            role: "Front-end",
+            owner: MockAccounts.array.randomElement()!,
+            members: MockMembers.generateArray(),
+            role: Role.allCases.randomElement()!.rawValue,
             requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
             tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10000),
+            startDate: Date.now.addingTimeInterval(Double.random(in: 1000...10000)),
+            endDate: Date.now.addingTimeInterval(Double.random(in: 10000...100000)),
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                MockMilestones.array[0],
-                MockMilestones.array[1]
-            ]
+            milestones: MockMilestones.generateArray()
         )
     }
     

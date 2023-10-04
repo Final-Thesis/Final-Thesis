@@ -96,10 +96,10 @@ struct ChatListView: View {
         .navigationTitle("Chats")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    // Your button action here
+                NavigationLink {
+                    CreateChatView()
+                        .environmentObject(vm)
                 } label: {
-                    // your button label here
                     Text("Add")
                 }
             }

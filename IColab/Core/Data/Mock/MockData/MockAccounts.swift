@@ -26,7 +26,7 @@ struct MockAccounts: Randomizeable {
         Account(
             email: "\(names.randomElement()!)@gmail.com",
             password: "\(names.randomElement()!)@123",
-            accountDetail: MockAccountDetails.array[0]
+            accountDetail: MockAccountDetails.array.randomElement()!
         )
     }
 }

@@ -8,36 +8,17 @@
 import SwiftUI
 
 struct GroupedContactView: View {
-    var title: String = "Group Title"
-    var members: [Account] = Mock.accounts
+    @EnvironmentObject var vm: ChatListViewModel
     
-    @State var toggle: Bool = true
+    var members: [Account] = Mock.accounts
     
     var body: some View {
         VStack {
-            Button {
-                toggle.toggle()
-            } label: {
-                HStack {
-                    Text(title)
-                        .font(.headline)
-                    Spacer()
-                    Image(systemName: toggle ? "chevron.down" : "chevron.up")
-                }
+            ForEach(vm.projects) { project in
+                ProjectContactView(project: project)
             }
-            .buttonStyle(.plain)
-
-            
-            Divider()
-                .background(.white)
-            if toggle {
-                ForEach(members) { member in
-                    ContactCardView()
-                }
-            }
-            
         }
-        .animation(.easeInOut, value: toggle)
+        
     }
 }
 
