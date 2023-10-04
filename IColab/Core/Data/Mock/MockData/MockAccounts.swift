@@ -8,7 +8,6 @@
 import Foundation
 
 struct MockAccounts: Randomizeable {
-    typealias Element = Account
     
     static var names: [String] = [
         "john",
