@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct GroupedContactView: View {
+    var title: String = "Group Title"
+    var members: [Account] = Mock.accounts
+    
     @State var toggle: Bool = true
     
     var body: some View {
@@ -16,7 +19,7 @@ struct GroupedContactView: View {
                 toggle.toggle()
             } label: {
                 HStack {
-                    Text("Important Contacts")
+                    Text(title)
                         .font(.headline)
                     Spacer()
                     Image(systemName: toggle ? "chevron.down" : "chevron.up")
@@ -28,8 +31,9 @@ struct GroupedContactView: View {
             Divider()
                 .background(.white)
             if toggle {
-                ContactCardView()
-                ContactCardView()
+                ForEach(members) { member in
+                    ContactCardView()
+                }
             }
             
         }

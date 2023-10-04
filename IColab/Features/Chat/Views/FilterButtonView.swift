@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct FilterButtonView: View {
-    var text: String = "Button"
-    @State var toggle: Bool = false
+    @EnvironmentObject var vm: ChatListViewModel
+    var filterType: ChatFilterType = .all
     
     var body: some View {
         Button(action: {
-            toggle.toggle()
+            vm.filterType = self.filterType
         }, label: {
-            if toggle {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            if vm.filterType == self.filterType {
+                Text(filterType.rawValue)
                     .frame(maxWidth: 162)
                     .padding(8)
                     .background(.purple)
                     .cornerRadius(12)
             }
             else {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                Text(filterType.rawValue)
                     .frame(maxWidth: 162)
                     .padding(8)
                     .overlay(

@@ -7,15 +7,26 @@
 
 import Foundation
 
-enum ChatType {
+enum ChatType: CaseIterable {
     case personal
     case owner
     case group
 }
 
-struct Chat: Identifiable {
-    var id: UUID = UUID()
+struct Chat: Identifiable, Equatable {
+    let id: UUID = UUID()
+    
     var name: String
     var messages: [Message]
     var type: ChatType = .personal
+    
+    var projectName: String
+    
+    var isPinned: Bool = false
+    
+    static func == (lhs: Chat, rhs: Chat) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.type == rhs.type
+    }
 }

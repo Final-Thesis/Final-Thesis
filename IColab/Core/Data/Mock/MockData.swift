@@ -16,13 +16,17 @@ struct Mock {
     static var tags: [String] = ["SwiftUI", "UIKit", "Vision", "SpriteKit", "CoreML", "AVFoundation"]
     
     init() {
-        Mock.accounts = MockAccounts.accounts
+        Mock.accounts = MockAccounts.array
         
-        Mock.projects = MockProjects.projects
-        Mock.notifications = MockNotifications.notifications
-        Mock.chats = MockChats.chats
+        Mock.projects = MockProjects.array
+        Mock.notifications = MockNotifications.array
+        Mock.chats = MockChats.generateArray()
         
-        MockAccounts.setProjects()
-        Mock.accounts = MockAccounts.accounts
+        for account in Mock.accounts {
+            account.projectsOwned = MockProjects.addProjects()
+            account.projectsJoined = MockProjects.addProjects()
+            account.chats = Mock.chats
+            account.notifications = Mock.notifications
+        }
     }
 }

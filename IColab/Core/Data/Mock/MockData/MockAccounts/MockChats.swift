@@ -7,18 +7,29 @@
 
 import Foundation
 
-struct MockChats {
-    static var chats: [Chat] = [
-        Chat(name: "John", messages: MockMessages.messages, type: .owner),
-        Chat(name: "Doe", messages: MockMessages.messages),
-        Chat(name: "Kevin", messages: MockMessages.messages, type: .owner),
-        Chat(name: "Dallian", messages: MockMessages.messages),
-        Chat(name: "Gregorius", messages: MockMessages.messages),
-        Chat(name: "Jeremy", messages: MockMessages.messages, type: .owner),
-        Chat(name: "Raymond", messages: MockMessages.messages),
-        Chat(name: "Metekohy", messages: MockMessages.messages),
-        Chat(name: "Brandon", messages: MockMessages.messages, type: .owner),
-        Chat(name: "Nicholas", messages: MockMessages.messages),
-        Chat(name: "Marlim", messages: MockMessages.messages),
+struct MockChats: Randomizeable {
+    typealias Element = Chat
+    
+    static var randomProjectTitle: String = MockProjects.array.randomElement()!.title
+    
+    static var array: [Element] = MockChats.initArray(count: names.count) {
+        return Element(name: names.randomElement()!, messages: MockMessages.generateArray(), type: ChatType.allCases.randomElement()!, projectName: randomProjectTitle)
+    }
+    
+    static var names: [String] = [
+        "John",
+        "Doe",
+        "Kevin",
+        "Dallian",
+        "Gregorius",
+        "Jeremy",
+        "Raymond",
+        "Metekohy",
+        "Brandon",
+        "Nicholas",
+        "Marlim",
+        "Dishcovery",
+        "Icolab",
+        "Slipi",
     ]
 }

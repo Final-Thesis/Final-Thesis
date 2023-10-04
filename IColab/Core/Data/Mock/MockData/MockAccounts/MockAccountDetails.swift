@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct MockAccountDetails {
-    static var accountDetails: [AccountDetail] = [
-        AccountDetail (
+struct MockAccountDetails: Randomizeable {
+    typealias Element = AccountDetail
+    
+    static var array: [AccountDetail] = MockAccountDetails.initArray(count: 7) {
+        return AccountDetail (
             name: "John",
             desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
             location: "Indonesia",
@@ -25,5 +27,6 @@ struct MockAccountDetails {
                 Experience(title: "Junior Developer Intern", company: "Samsung Korea", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
             ]
         )
-    ]
+    }
+    
 }

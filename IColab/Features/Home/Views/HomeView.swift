@@ -25,34 +25,46 @@ struct HomeView: View {
                         .font(.title2)
                         .foregroundColor(.primary)
                 }
-            }.padding(.horizontal, 10)
-            ScrollView{
-                ForEach(homeViewModel.projects){ project in
-                    NavigationLink(value: project) {
-                        ProjectCard(project: project)
-                            .padding(.top, 10)
-                    }
-                    .buttonStyle(.plain)
-                }
             }
-            .navigationDestination(for: Project.self, destination: { project in
-                ProjectDetailView(project: project, path: $path)
-            })
-            .padding(.horizontal, 10)
-            .navigationTitle("Home")
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
+            if homeViewModel.projects.isEmpty{
+                VStack{
                     Spacer()
-                    Button("Done"){
-                        isInputActive = false
+                    Image(systemName: "menucard")
+                        .font(.system(size: 64))
+                    Text("No Projects to be shown")
+                        .font(.callout.bold())
+                    Spacer()
+                }
+            }else{
+                ScrollView{
+                    ForEach(homeViewModel.projects){ project in
+                        NavigationLink(value: project) {
+                            ProjectCard(project: project)
+                                .padding(.top, 10)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
+                
             }
-            .sheet(isPresented: $homeViewModel.searchPressed) {
-                FilterSheetView()
-                    .presentationDetents([.fraction(0.5), .large])
-                    .presentationDragIndicator(.visible)
+        }
+        .navigationDestination(for: Project.self, destination: { project in
+            ProjectDetailView(project: project, path: $path)
+        })
+        .padding(.horizontal, 20)
+        .navigationTitle("Home")
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done"){
+                    isInputActive = false
+                }
             }
+        }
+        .sheet(isPresented: $homeViewModel.searchPressed) {
+            FilterSheetView()
+                .presentationDetents([.fraction(0.5), .large])
+                .presentationDragIndicator(.visible)
         }
     }
 }

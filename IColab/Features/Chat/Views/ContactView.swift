@@ -8,41 +8,50 @@
 import SwiftUI
 
 struct ContactView: View {
-    var name: String = "Contact Name"
-    var text: String = "Latest Text"
-    var time: String = "Time"
+    var chat: Chat = MockChats.array[0]
     
     var body: some View {
         HStack {
             ZStack {
                 Circle()
                     .foregroundColor(.blue)
-                VStack {
-                    HStack {
+                if chat.type == .owner {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "crown.fill")
+                                .font(.caption2)
+                            
+                        }
                         Spacer()
-                        Image(systemName: "crown.fill")
-                            .font(.caption2)
-                        
                     }
-                    Spacer()
                 }
-                
             }
             .frame(width: 48, height: 48)
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(name)
-                            .font(.headline)
-                        Text(text)
+                        HStack {
+                            Text(chat.name)
+                                .font(.headline)
+                            Text(chat.projectName)
+                                .font(.footnote)
+                                .foregroundStyle(.gray)
+                        }
+                        
+                        Text(chat.messages.first!.text)
                             .font(.footnote)
                     }
+                    .frame(width: 240, alignment: .leading)
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text(time)
+                        Text(chat.messages.first!.time, style: .time)
                             .font(.footnote)
-                        Image(systemName: "pin.circle")
-                            .font(.caption2)
+                        if chat.isPinned {
+                            Image(systemName: "pin.circle")
+                                .font(.caption2)
+                        }
+                        
                         Divider()
                             
                     }

@@ -7,68 +7,26 @@
 
 import Foundation
 
-struct MockAccounts {
-    static var accounts: [Account] = [
-        Account(
-            email: "john@gmail.com",
-            password: "john@123",
-            accountDetail: MockAccountDetails.accountDetails[0]
-        ),
-        Account(
-            email: "kevin@gmail.com",
-            password: "kevin@123",
-            accountDetail: MockAccountDetails.accountDetails[0]
-        ),
-        Account(
-            email: "gregorius@gmail.com",
-            password: "gregorius@123",
-            accountDetail: MockAccountDetails.accountDetails[0]
-        ),
-        Account(
-            email: "brandon@gmail.com",
-            password: "brandon@123",
-            accountDetail: MockAccountDetails.accountDetails[0]
-        ),
+struct MockAccounts: Randomizeable {
+    
+    static var names: [String] = [
+        "john",
+        "kevin",
+        "dallian",
+        "gregorius",
+        "jeremy",
+        "raymond",
+        "metekohy",
+        "brandon",
+        "nicholas",
+        "marlim"
     ]
     
-    static func setProjects() {
-        MockAccounts.accounts = [
-            Account(
-                email: "john@gmail.com",
-                password: "john@123",
-                accountDetail: MockAccountDetails.accountDetails[0],
-                projectsOwned: Mock.projects,
-                projectsJoined: Mock.projects,
-                notifications: Mock.notifications,
-                chats: Mock.chats
-            ),
-            Account(
-                email: "kevin@gmail.com",
-                password: "kevin@123",
-                accountDetail: MockAccountDetails.accountDetails[0],
-                projectsOwned: Mock.projects,
-                projectsJoined: Mock.projects,
-                notifications: Mock.notifications,
-                chats: Mock.chats
-            ),
-            Account(
-                email: "gregorius@gmail.com",
-                password: "gregorius@123",
-                accountDetail: MockAccountDetails.accountDetails[0],
-                projectsOwned: Mock.projects,
-                projectsJoined: Mock.projects,
-                notifications: Mock.notifications,
-                chats: Mock.chats
-            ),
-            Account(
-                email: "brandon@gmail.com",
-                password: "brandon@123",
-                accountDetail: MockAccountDetails.accountDetails[0], 
-                projectsOwned: Mock.projects,
-                projectsJoined: Mock.projects,
-                notifications: Mock.notifications,
-                chats: Mock.chats
-            ),
-        ]
+    static var array: [Account] = MockAccounts.initArray(count: names.count) {
+        Account(
+            email: "\(names.randomElement()!)@gmail.com",
+            password: "\(names.randomElement()!)@123",
+            accountDetail: MockAccountDetails.array[0]
+        )
     }
 }

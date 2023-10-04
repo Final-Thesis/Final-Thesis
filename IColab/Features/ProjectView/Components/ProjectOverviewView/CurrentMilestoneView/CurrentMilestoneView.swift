@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentMilestoneView: View {
-    var milestone: Goal = MockMilestones.milestones[0].goals[0]
+    var milestone: Goal = MockMilestones.array[0].goals[0]
     
     var body: some View {
         HStack {

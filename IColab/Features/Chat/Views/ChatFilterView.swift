@@ -18,23 +18,23 @@ struct ChatFilterView: View {
             Text("Filter by")
                 .font(.headline)
             HStack {
-                FilterButtonView(text: "All")
-                FilterButtonView(text: "Personal")
+                FilterButtonView(filterType: .all)
+                FilterButtonView(filterType: .personal)
             }
             HStack {
-                FilterButtonView(text: "Group")
-                FilterButtonView(text: "Owner")
+                FilterButtonView(filterType: .owner)
+                FilterButtonView(filterType: .group)
             }
             
             Text("Sort by")
                 .font(.headline)
             HStack {
-                FilterButtonView(text: "Date")
-                FilterButtonView(text: "Project")
+                FilterButtonView(filterType: .date)
+                FilterButtonView(filterType: .project)
             }
             
             ButtonComponent(title: "Confirm", width: 360) {
-                vm.filterChats(chatType: chatType)
+                vm.filterChats(filterType: vm.filterType)
                 
                 vm.objectWillChange.send()
                 self.presentationMode.wrappedValue.dismiss()
@@ -46,5 +46,4 @@ struct ChatFilterView: View {
 
 #Preview {
     ChatFilterView()
-        .preferredColorScheme(.dark)
 }
