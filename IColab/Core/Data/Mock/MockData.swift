@@ -20,7 +20,7 @@ struct Mock {
         
         Mock.projects = MockProjects.projects
         Mock.notifications = MockNotifications.notifications
-        Mock.chats = MockChats.chats
+        Mock.chats = MockChats.generateArray()
         
         for account in Mock.accounts {
             account.projectsOwned = MockProjects.addProjects()

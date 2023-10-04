@@ -7,23 +7,37 @@
 
 import Foundation
 
-struct MockChats {
+struct MockChats: Randomizeable {
+    typealias Element = Chat
+    
     static var randomProjectTitle: String = MockProjects.projects.randomElement()!.title
     
-    static var chats: [Chat] = [
-        Chat(name: "John", messages: MockMessages.generateArray(), type: .owner, projectName: randomProjectTitle),
-        Chat(name: "Doe", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Kevin", messages: MockMessages.generateArray(), type: .owner, projectName: randomProjectTitle),
-        Chat(name: "Dallian", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Gregorius", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Jeremy", messages: MockMessages.generateArray(), type: .owner, projectName: randomProjectTitle),
-        Chat(name: "Raymond", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Metekohy", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Brandon", messages: MockMessages.generateArray(), type: .owner, projectName: randomProjectTitle),
-        Chat(name: "Nicholas", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Marlim", messages: MockMessages.generateArray(), projectName: randomProjectTitle),
-        Chat(name: "Dishcovery", messages: MockMessages.generateArray(), type: .group, projectName: randomProjectTitle),
-        Chat(name: "IColab", messages: MockMessages.generateArray(), type: .group, projectName: randomProjectTitle),
-        Chat(name: "Slipi", messages: MockMessages.generateArray(), type: .group, projectName: randomProjectTitle),
+    static var array: [Element] = initArray()
+    
+    static func initArray() -> [Element] {
+        var array: [Element] = []
+        
+        for name in names {
+            array.append(Element(name: name, messages: MockMessages.generateArray(), type: ChatType.allCases.randomElement()!, projectName: randomProjectTitle))
+        }
+        
+        return array
+    }
+    
+    static var names: [String] = [
+        "John",
+        "Doe",
+        "Kevin",
+        "Dallian",
+        "Gregorius",
+        "Jeremy",
+        "Raymond",
+        "Metekohy",
+        "Brandon",
+        "Nicholas",
+        "Marlim",
+        "Dishcovery",
+        "Icolab",
+        "Slipi",
     ]
 }

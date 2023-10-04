@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ChatType {
+enum ChatType: CaseIterable {
     case personal
     case owner
     case group

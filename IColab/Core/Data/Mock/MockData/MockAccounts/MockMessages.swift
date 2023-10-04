@@ -8,32 +8,35 @@
 import Foundation
 
 struct MockMessages: Randomizeable {
-    static var array: [Message] = [
-        Message(text: "Example message 1", time: Date.now, isUser: false),
-        Message(text: "Example message 2", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
-        Message(text: "Example message 3", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
-        Message(text: "Example message 4", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
-        Message(text: "Example message 5", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
-        Message(text: "Example message 6", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
-        Message(text: "Example message 7", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
-        Message(text: "Example message 8", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
-        Message(text: "Example message 9", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
-        Message(text: "Example message 10", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
-        Message(text: "Example message 11", time: Date.now.addingTimeInterval(ranNum()), isUser: false),
-        Message(text: "Example message 12", time: Date.now.addingTimeInterval(ranNum()), isUser: true),
+    
+    static var texts: [String] = [
+        "Example message 1",
+        "Example message 2",
+        "Example message 3",
+        "Example message 4",
+        "Example message 5",
+        "Example message 6",
+        "Example message 7",
+        "Example message 8",
+        "Example message 9",
+        "Example message 10",
+        "Example message 11",
+        "Example message 12",
     ]
+    
+    static var array: [Message] = initArray()
     
     static func ranNum() -> Double {
         return Double(Int.random(in: 1000..<30000))
     }
     
-    static func generateMessages() -> [Message] {
-        var messages: [Message] = []
+    static func initArray() -> [Message] {
+        var array: [Message] = []
         
-        for _ in 0...Int.random(in: 5..<10) {
-            messages.append(self.array.randomElement()!)
+        for text in texts {
+            array.append(Message(text: text, time: Date.now.addingTimeInterval(ranNum()), isUser: Bool.random()))
         }
         
-        return messages
+        return array
     }
 }

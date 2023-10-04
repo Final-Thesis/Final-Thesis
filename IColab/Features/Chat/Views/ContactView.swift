@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactView: View {
-    var chat: Chat = MockChats.chats[0]
+    var chat: Chat = MockChats.array[0]
     
     var body: some View {
         HStack {

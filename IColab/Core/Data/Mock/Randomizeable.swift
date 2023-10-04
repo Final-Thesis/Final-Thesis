@@ -11,6 +11,8 @@ protocol Randomizeable {
     associatedtype Element
     
     static var array: [Element] { get set }
+    
+    static func initArray() -> [Element]
 }
 
 extension Randomizeable {
