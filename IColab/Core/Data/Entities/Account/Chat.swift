@@ -24,6 +24,10 @@ struct Chat: Identifiable, Equatable {
     
     var isPinned: Bool = false
     
+    mutating func sendMessage(message: Message) {
+        messages.append(message)
+    }
+    
     static func == (lhs: Chat, rhs: Chat) -> Bool {
         return lhs.id == rhs.id &&
         lhs.name == rhs.name &&

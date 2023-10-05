@@ -8,15 +8,44 @@
 import SwiftUI
 
 struct ChatView: View {
-    var chat: Chat
+    @EnvironmentObject var vm: ChatListViewModel
+    @State var chat: Chat
+    var turn: Bool = true
+    
+    @State var text: String = ""
     
     var body: some View {
-        VStack {
-            ForEach(chat.messages) { message in
-                ChatBubbleView(message: message)
+        ZStack {
+            ScrollView {
+                VStack {
+                    ForEach(chat.messages) { message in
+                        ChatBubbleView(message: message)
+                    }
+                    Spacer()
+                }
             }
-            Spacer()
+            VStack {
+                Spacer()
+                HStack {
+                    TextField("Enter your message...", text: $text)
+                        .padding()
+                        .background(Color("gray"))
+                        .cornerRadius(12)
+                    Button(action: {
+                        chat = vm.sendMessage(chat: chat, text: text)
+                        vm.objectWillChange.send()
+                    }, label: {
+                        Image(systemName: "paperplane.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.purple)
+                    })
+                    
+                }
+                .padding(24)
+            }
+            
         }
+        
         //.navigationTitle("Project Description")
         .toolbar {
             //placeholder
@@ -31,7 +60,6 @@ struct ChatView: View {
 
                 }
             }
-            
         }
     }
 }

@@ -108,4 +108,13 @@ class ChatListViewModel: ObservableObject {
             self.objectWillChange.send()
         }
     }
+    
+    public func sendMessage(chat: Chat, text: String) -> Chat {
+        let index = account!.chats!.firstIndex(of: chat)!
+        
+        account!.chats![index].sendMessage(message: Message(text: text, time: Date.now, isUser: true))
+        self.chats = self.getChats()
+        
+        return account!.chats![index]
+    }
 }

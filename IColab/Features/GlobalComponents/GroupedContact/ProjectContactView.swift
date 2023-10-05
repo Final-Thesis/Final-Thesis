@@ -24,7 +24,6 @@ struct ProjectContactView: View {
                 }
             }
             .buttonStyle(.plain)
-
             
             Divider()
                 .background(.white)

@@ -66,6 +66,7 @@ struct ChatListView: View {
                     ForEach(vm.chats) { chat in
                         NavigationLink {
                             ChatView(chat: chat)
+                                .environmentObject(vm)
                         } label: {
                             ContactView(chat: chat)
                         }

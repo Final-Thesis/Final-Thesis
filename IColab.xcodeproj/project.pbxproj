@@ -431,14 +431,14 @@
 			path = MockAccounts;
 			sourceTree = "<group>";
 		};
-		6C74DB702ABFE6CD00FD5D3F /* ProjectView */ = {
+		6C74DB702ABFE6CD00FD5D3F /* Project */ = {
 			isa = PBXGroup;
 			children = (
 				6C74DB712ABFE6F500FD5D3F /* Views */,
 				6C74DB722ABFE6FA00FD5D3F /* ViewModels */,
 				6C74DB732ABFE6FE00FD5D3F /* Components */,
 			);
-			path = ProjectView;
+			path = Project;
 			sourceTree = "<group>";
 		};
 		6C74DB712ABFE6F500FD5D3F /* Views */ = {
@@ -633,7 +633,7 @@
 				B7EE98BD2ACA96F700C9B428 /* ProjectMain */,
 				B7EE98BC2ACA96EF00C9B428 /* LoginRegister */,
 				6C7269FE2AC82F9600E14230 /* Chat */,
-				6C74DB702ABFE6CD00FD5D3F /* ProjectView */,
+				6C74DB702ABFE6CD00FD5D3F /* Project */,
 				D8C2BE9B2AB88C31003969D8 /* Notification */,
 				D89586FA2AAF5E1E0064629B /* Profile */,
 				D8FFEB7B2AA58ADD00317362 /* ProjectDetail */,
