@@ -8,17 +8,9 @@
 import SwiftUI
 
 struct CurrentTaskView: View {
-    @State var toggles: [Bool] = [false, false, true, true, true, true, true, true, true]
-    @State var tasks: [Task] = MockTasks.array
-    @State var pickerSelector = 1
+    @StateObject var vm: CurrentTaskViewModel = CurrentTaskViewModel()
     
-    func appendToggle() {
-        for task in tasks {
-            if task.status == .notCompleted {
-                toggles.append(true)
-            }
-        }
-    }
+    @State var pickerSelector = 1
     
     var body: some View {
         VStack {
@@ -29,39 +21,37 @@ struct CurrentTaskView: View {
             }
             .pickerStyle(.segmented)
             .padding(.bottom)
-            Group {
-                if pickerSelector == 1 {
-                    ForEach(0..<tasks.count, id: \.self) { i in
-                        if tasks[i].status == .notCompleted {
-                            TaskCardView(task: tasks[i], toggle: $toggles[i])
+            ScrollView {
+                Group {
+                    if pickerSelector == 1 {
+                        ForEach(0..<vm.tasks.count, id: \.self) { i in
+                            if vm.tasks[i].status == .notCompleted {
+                                TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
+                            }
                         }
                     }
-                }
-                else if pickerSelector == 2 {
-                    ForEach(0..<tasks.count, id: \.self) { i in
-                        if tasks[i].status == .onReview {
-                            TaskCardView(task: tasks[i], toggle: $toggles[i])
+                    else if pickerSelector == 2 {
+                        ForEach(0..<vm.tasks.count, id: \.self) { i in
+                            if vm.tasks[i].status == .onReview {
+                                TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
+                            }
                         }
                     }
-                }
-                else if pickerSelector == 3 {
-                    ForEach(0..<tasks.count, id: \.self) { i in
-                        if tasks[i].status == .completed {
-                            TaskCardView(task: tasks[i], toggle: $toggles[i])
+                    else if pickerSelector == 3 {
+                        ForEach(0..<vm.tasks.count, id: \.self) { i in
+                            if vm.tasks[i].status == .completed {
+                                TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
+                            }
                         }
                     }
+                    
                 }
-                
+                .padding(4)
             }
-            .padding(4)
             
             if pickerSelector == 1 {
                 ButtonComponent(title: "Submit", width: 360) {
-                    for (index, element) in tasks.enumerated() {
-                        if toggles[index] == true {
-                            tasks[index].setStatus(status: .onReview)
-                        }
-                    }
+                    vm.submitTasks()
                 }
                 .padding(.top)
             }

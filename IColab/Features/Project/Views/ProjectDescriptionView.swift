@@ -75,6 +75,7 @@ struct ProjectDescriptionView: View {
             }
             
         }
+        .navigationBarTitleDisplayMode(.inline)
         .padding(.vertical, 36)
         .padding()
         

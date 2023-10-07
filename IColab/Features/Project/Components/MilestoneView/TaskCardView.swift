@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskCardView: View {
+    @EnvironmentObject var vm: CurrentTaskViewModel
+    
     var task: Task = MockTasks.array[0]
     @Binding var toggle: Bool
     
@@ -49,7 +51,6 @@ struct TaskCardView: View {
                             .foregroundColor(.purple)
                             .frame(width: 12)
                     }
-                    
                 }
             }
 

@@ -16,7 +16,11 @@
 		6C3189E12AC55F9100A6C113 /* MilestoneLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3189E02AC55F9100A6C113 /* MilestoneLineView.swift */; };
 		6C3189E32AC5604D00A6C113 /* MilestoneInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3189E22AC5604D00A6C113 /* MilestoneInfoView.swift */; };
 		6C3189E62AC5614100A6C113 /* MilestoneDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3189E52AC5614100A6C113 /* MilestoneDetailInfoView.swift */; };
+		6C3B2D922AD100700049FE41 /* CurrentMilestoneDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D912AD100700049FE41 /* CurrentMilestoneDateView.swift */; };
+		6C3B2D952AD110640049FE41 /* ProjectMemberContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D942AD110640049FE41 /* ProjectMemberContactView.swift */; };
+		6C3B2D972AD1109F0049FE41 /* ProjectMemberContactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D962AD1109F0049FE41 /* ProjectMemberContactCardView.swift */; };
 		6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */; };
+		6C6D79492ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6D79482ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift */; };
 		6C726A032AC82FB300E14230 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C726A022AC82FB300E14230 /* ContactView.swift */; };
 		6C726A0B2AC82FCF00E14230 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C726A052AC82FCF00E14230 /* PopupView.swift */; };
 		6C726A0C2AC82FCF00E14230 /* ChatFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C726A062AC82FCF00E14230 /* ChatFilterView.swift */; };
@@ -155,7 +159,11 @@
 		6C3189E02AC55F9100A6C113 /* MilestoneLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLineView.swift; sourceTree = "<group>"; };
 		6C3189E22AC5604D00A6C113 /* MilestoneInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneInfoView.swift; sourceTree = "<group>"; };
 		6C3189E52AC5614100A6C113 /* MilestoneDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailInfoView.swift; sourceTree = "<group>"; };
+		6C3B2D912AD100700049FE41 /* CurrentMilestoneDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMilestoneDateView.swift; sourceTree = "<group>"; };
+		6C3B2D942AD110640049FE41 /* ProjectMemberContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemberContactView.swift; sourceTree = "<group>"; };
+		6C3B2D962AD1109F0049FE41 /* ProjectMemberContactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemberContactCardView.swift; sourceTree = "<group>"; };
 		6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
+		6C6D79482ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTaskViewModel.swift; sourceTree = "<group>"; };
 		6C726A022AC82FB300E14230 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		6C726A052AC82FCF00E14230 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		6C726A062AC82FCF00E14230 /* ChatFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFilterView.swift; sourceTree = "<group>"; };
@@ -317,6 +325,7 @@
 			children = (
 				6C74DB782ABFEA1000FD5D3F /* CurrentMilestoneView.swift */,
 				6C74DB7A2ABFEAB500FD5D3F /* CircleProgressView.swift */,
+				6C3B2D912AD100700049FE41 /* CurrentMilestoneDateView.swift */,
 			);
 			path = CurrentMilestoneView;
 			sourceTree = "<group>";
@@ -355,6 +364,15 @@
 				6C3189E52AC5614100A6C113 /* MilestoneDetailInfoView.swift */,
 			);
 			path = MilestoneDetailView;
+			sourceTree = "<group>";
+		};
+		6C3B2D932AD110450049FE41 /* ContactListView */ = {
+			isa = PBXGroup;
+			children = (
+				6C3B2D942AD110640049FE41 /* ProjectMemberContactView.swift */,
+				6C3B2D962AD1109F0049FE41 /* ProjectMemberContactCardView.swift */,
+			);
+			path = ContactListView;
 			sourceTree = "<group>";
 		};
 		6C7269FE2AC82F9600E14230 /* Chat */ = {
@@ -461,6 +479,7 @@
 			children = (
 				6C129E922AC2D9C900F7036D /* ProjectOverviewViewModel.swift */,
 				6C3189D52AC4490100A6C113 /* ContactListViewModel.swift */,
+				6C6D79482ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -468,6 +487,7 @@
 		6C74DB732ABFE6FE00FD5D3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6C3B2D932AD110450049FE41 /* ContactListView */,
 				6C3189E42AC5612700A6C113 /* MilestoneDetailView */,
 				6C3189DC2AC44B7F00A6C113 /* MilestoneView */,
 				6C3189DF2AC44C4000A6C113 /* ProjectDescriptionView */,
@@ -1095,6 +1115,7 @@
 				6C745EA42AC96BC300646574 /* Goal.swift in Sources */,
 				6CC7F2A82AC047F000AF0A12 /* InputMemberView.swift in Sources */,
 				6C129E952AC2E25100F7036D /* EditTag.swift in Sources */,
+				6C6D79492ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift in Sources */,
 				D8FFEB812AA6218500317362 /* OwnerNameView.swift in Sources */,
 				D8A3AF1D2AA31C8800AC06C9 /* HomeView.swift in Sources */,
 				6C726A0F2AC82FCF00E14230 /* NoMessageView.swift in Sources */,
@@ -1104,6 +1125,7 @@
 				6C726A0B2AC82FCF00E14230 /* PopupView.swift in Sources */,
 				6C74DB852AC013A800FD5D3F /* CurrentTaskView.swift in Sources */,
 				6CC7F2A42AC0394B00AF0A12 /* InputTagsView.swift in Sources */,
+				6C3B2D952AD110640049FE41 /* ProjectMemberContactView.swift in Sources */,
 				6C74DB972AC02C1300FD5D3F /* GroupedContactView.swift in Sources */,
 				6C3189D82AC449D700A6C113 /* ProjectNavigationCardView.swift in Sources */,
 				6C726A0C2AC82FCF00E14230 /* ChatFilterView.swift in Sources */,
@@ -1118,6 +1140,7 @@
 				D85CEFBB2AC1E553004D4C75 /* NewFormView.swift in Sources */,
 				6CC7F2A62AC03ACA00AF0A12 /* InputTagPopupView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
+				6C3B2D922AD100700049FE41 /* CurrentMilestoneDateView.swift in Sources */,
 				6C3189E12AC55F9100A6C113 /* MilestoneLineView.swift in Sources */,
 				D89DCFC42ACA876D00FF248F /* PortofolioView.swift in Sources */,
 				6CFC72DB2ACD607700930E74 /* MockMembers.swift in Sources */,
@@ -1152,6 +1175,7 @@
 				6C726A152AC82FDB00E14230 /* ChatView.swift in Sources */,
 				6C745EA22AC952BB00646574 /* ChatBubbleView.swift in Sources */,
 				6C726A112AC82FD600E14230 /* ChatListViewModel.swift in Sources */,
+				6C3B2D972AD1109F0049FE41 /* ProjectMemberContactCardView.swift in Sources */,
 				D87A67BA2AA766CD000586A1 /* Milestone.swift in Sources */,
 				D8A3AF272AA326B200AC06C9 /* Project.swift in Sources */,
 				6C745EAC2AC97AF300646574 /* MockProjects.swift in Sources */,

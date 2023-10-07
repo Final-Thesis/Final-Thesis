@@ -31,7 +31,8 @@ struct CreateChatView: View {
             .padding(.horizontal, 10)
             .padding()
             ScrollView {
-                GroupedContactView()
+                GroupedContactView(projects: vm.getProjects())
+                    .padding()
             }
         }
     }

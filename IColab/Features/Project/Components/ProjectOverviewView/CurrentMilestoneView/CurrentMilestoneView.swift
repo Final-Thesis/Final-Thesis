@@ -8,29 +8,19 @@
 import SwiftUI
 
 struct CurrentMilestoneView: View {
-    var milestone: Goal = MockMilestones.array[0].goals[0]
+    var goal: Goal = MockMilestones.array[0].goals[0]
     
     var body: some View {
         HStack {
             CircleProgressView()
                 .frame(width: 80, height: 80)
             VStack(alignment: .leading) {
-                Text(milestone.name)
+                Text(goal.name)
                     .font(.headline)
-                Text(milestone.desc)
+                Text(goal.desc)
                     .font(.caption2)
             }
-            VStack {
-                Text("22")
-                Text("Oct")
-                    .bold()
-                Text("2022")
-            }
-            .padding(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color("purple"), lineWidth: 2)
-            )
+            CurrentMilestoneDateView(date: goal.endDate)
             
         }
         .padding(24)
@@ -42,6 +32,6 @@ struct CurrentMilestoneView: View {
 struct CurrentMilestoneView_Previews: PreviewProvider {
     static var previews: some View {
         CurrentMilestoneView()
-            .preferredColorScheme(.dark)
+        .preferredColorScheme(.dark)
     }
 }

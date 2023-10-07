@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContactListView: View {
+    @EnvironmentObject var vm: ProjectOverviewViewModel
+    
     @StateObject var homeViewModel = HomeViewModel()
     @FocusState var isInputActive: Bool
     
@@ -27,9 +29,8 @@ struct ContactListView: View {
                 }
             }
             .padding(.horizontal, 10)
-            Group {
-                GroupedContactView()
-                GroupedContactView()
+            ScrollView {
+                ProjectMemberContactView(title: "Members", project: vm.getTestProject())
             }
             .padding()
             

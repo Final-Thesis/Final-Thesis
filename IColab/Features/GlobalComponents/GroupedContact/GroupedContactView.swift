@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct GroupedContactView: View {
-    @EnvironmentObject var vm: ChatListViewModel
+    var projects: [Project]
     
     var members: [Account] = Mock.accounts
     
     var body: some View {
         VStack {
-            ForEach(vm.projects) { project in
+            ForEach(projects) { project in
                 ProjectContactView(project: project)
             }
         }
@@ -24,6 +24,6 @@ struct GroupedContactView: View {
 
 struct GroupedContactView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupedContactView()
+        GroupedContactView(projects: Mock.projects)
     }
 }

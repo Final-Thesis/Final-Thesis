@@ -22,12 +22,23 @@ class ProjectOverviewViewModel: ObservableObject {
     
     func getTestProject() -> Project {
         return (self.account?.projectsOwned![0])!
-//        return Mock.projects[0]
     }
     
     func editProjectDetail(title: String, summary: String, tags: [String], index: Int) {
         let project = account!.projectsOwned![0]
         
         account!.projectsOwned![0] = Project(title: title, role: project.role, requirements: project.requirements, tags: tags, startDate: project.startDate, endDate: project.endDate, desc: summary, milestones: project.milestones)
+    }
+    
+    func getCurrentGoal() -> Goal {
+        var goals = self.getTestProject().milestones[0].goals
+        
+        for goal in goals {
+            if !goal.isAchieved {
+                return goal
+            }
+        }
+        
+        return goals[0]
     }
 }

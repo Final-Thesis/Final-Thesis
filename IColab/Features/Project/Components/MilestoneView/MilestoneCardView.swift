@@ -15,6 +15,7 @@ struct MilestoneCardView: View {
                     .font(.headline)
                 Text("Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.")
                     .font(.caption2)
+                    .multilineTextAlignment(.leading)
                 HStack {
                     Spacer()
                     Text("Rp. 1.500.000")
