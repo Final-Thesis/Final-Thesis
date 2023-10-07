@@ -35,7 +35,7 @@ class ProjectOverviewViewModel: ObservableObject {
         return pmvm.getProject()
     }
     
-    func editProjectDetail(title: String, summary: String, tags: [String], index: Int) {
+    func editProjectDetail(title: String, summary: String, tags: [String]) {
         let project = self.project
         
         self.project = Project(title: title, role: project.role, requirements: project.requirements, tags: tags, startDate: project.startDate, endDate: project.endDate, desc: summary, milestones: project.milestones)

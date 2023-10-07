@@ -59,22 +59,22 @@ struct ProjectDescriptionView: View {
             Spacer()
         }
         .navigationTitle("Project Description")
-        .toolbar {
-            //placeholder
-            if true {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        EditProjectDescriptionView()
-                            .environmentObject(vm)
-                    } label: {
-                        Image(systemName: "pencil")
-                    }
-                    .buttonStyle(.plain)
-
-                }
-            }
-            
-        }
+//        .toolbar {
+//            //placeholder
+//            if true {
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    NavigationLink {
+//                        EditProjectDescriptionView()
+//                            .environmentObject(vm)
+//                    } label: {
+//                        Image(systemName: "pencil")
+//                    }
+//                    .buttonStyle(.plain)
+//
+//                }
+//            }
+//            
+//        }
         .navigationBarTitleDisplayMode(.inline)
         .padding(.vertical, 36)
         .padding()

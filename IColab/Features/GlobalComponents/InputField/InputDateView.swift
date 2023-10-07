@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputDateView: View {
-    @State private var date = Date.now
+    @Binding var date: Date
     
     var body: some View {
         VStack {
@@ -34,6 +34,6 @@ struct InputDateView: View {
 
 struct InputDateView_Previews: PreviewProvider {
     static var previews: some View {
-        InputDateView()
+        InputDateView(date: .constant(Date.now))
     }
 }

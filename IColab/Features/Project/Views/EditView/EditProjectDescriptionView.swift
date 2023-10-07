@@ -18,8 +18,8 @@ struct EditProjectDescriptionView: View {
         VStack {
             VStack {
                 InputDescriptionView(text: $desc)
-                InputDateView()
-                InputMemberView()
+                InputDateView(date: $endDate)
+//                InputMemberView()
             }
             .padding()
             
