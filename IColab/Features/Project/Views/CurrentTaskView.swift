@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentTaskView: View {
-    @StateObject var vm: CurrentTaskViewModel = CurrentTaskViewModel()
+    @StateObject var vm: CurrentTaskViewModel
     
     @State var pickerSelector = 1
     
@@ -61,9 +61,9 @@ struct CurrentTaskView: View {
     }
 }
 
-struct CurrentTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrentTaskView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct CurrentTaskView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CurrentTaskView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

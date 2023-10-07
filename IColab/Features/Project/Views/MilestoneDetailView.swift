@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MilestoneDetailView: View {
+    var goal: Goal
     var title: String = "Acne Detection"
     var desc: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     
@@ -18,10 +19,10 @@ struct MilestoneDetailView: View {
                     .frame(height: 200)
                     .foregroundColor(Color("purple"))
                 VStack(alignment: .leading) {
-                    Text(title)
+                    Text(goal.name)
                         .font(.largeTitle)
                         .bold()
-                    Text(desc)
+                    Text(goal.desc)
                     
                 }
                 .padding()
@@ -34,7 +35,7 @@ struct MilestoneDetailView: View {
             .padding(.vertical)
             Divider()
             ScrollView {
-                ForEach(MockMilestones.array[0].goals[0].tasks) { task in
+                ForEach(goal.tasks) { task in
                     TaskCardView(task: task, toggle: .constant(true))
                 }
             }
@@ -44,9 +45,9 @@ struct MilestoneDetailView: View {
     }
 }
 
-struct MilestoneDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MilestoneDetailView()
-            .colorScheme(.dark)
-    }
-}
+//struct MilestoneDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MilestoneDetailView()
+//            .colorScheme(.dark)
+//    }
+//}

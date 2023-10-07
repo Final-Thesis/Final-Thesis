@@ -8,39 +8,41 @@
 import Foundation
 
 class ProjectOverviewViewModel: ObservableObject {
-    @Published var account: Account?
-//    @Published var project: Project
+    var pmvm: ProjectMainViewModel
+//    @Published var account: Account?
+    @Published var project: Project
     
     
-    
-    init(uid: String){
+    init(pmvm: ProjectMainViewModel) {
+        self.pmvm = pmvm
+        self.project = pmvm.getProject()
+    }
+//    init(uid: String){
 //        self.project = Mock.projects[0]
-        self.account = getAccount(uid: uid)
-        
-    }
-//    
-//    init(project: Project) {
-//        self.project = project
+//        self.account = getAccount(uid: uid)
+//        
 //    }
+//    
     
-    private func getAccount(uid: String) -> Account?{
-        return Mock.accounts.first { account in
-            account.id == uid
-        }
-    }
     
-    func getTestProject() -> Project {
-        return (self.account?.projectsOwned![0])!
+//    private func getAccount(uid: String) -> Account?{
+//        return Mock.accounts.first { account in
+//            account.id == uid
+//        }
+//    }
+//    
+    func getProject() -> Project {
+        return pmvm.getProject()
     }
     
     func editProjectDetail(title: String, summary: String, tags: [String], index: Int) {
-        let project = account!.projectsOwned![0]
+        let project = self.project
         
-        account!.projectsOwned![0] = Project(title: title, role: project.role, requirements: project.requirements, tags: tags, startDate: project.startDate, endDate: project.endDate, desc: summary, milestones: project.milestones)
+        self.project = Project(title: title, role: project.role, requirements: project.requirements, tags: tags, startDate: project.startDate, endDate: project.endDate, desc: summary, milestones: project.milestones)
     }
     
     func getCurrentGoal() -> Goal {
-        var goals = self.getTestProject().milestones[0].goals
+        var goals = self.project.milestones[0].goals
         
         for goal in goals {
             if !goal.isAchieved {
@@ -64,7 +66,7 @@ class ProjectOverviewViewModel: ObservableObject {
     func memberCount(role: Role) -> Int {
         var count: Int = 0
         
-        for member in self.getTestProject().members! {
+        for member in self.project.members! {
             if member.role == role {
                 count += 1;
             }

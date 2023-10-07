@@ -30,7 +30,7 @@ struct ContactListView: View {
             }
             .padding(.horizontal, 10)
             ScrollView {
-                ProjectMemberContactView(title: "Members", project: vm.getTestProject())
+                ProjectMemberContactView(title: "Members", project: vm.getProject())
             }
             .padding()
             

@@ -27,8 +27,8 @@ struct EditProjectView: View {
             
             ButtonComponent(title: "Submit", width: 320) {
                 vm.editProjectDetail(title: title, summary: summary, tags: tags, index: 0)
-                print("\(title) and \(vm.getTestProject().title)")
-                print(vm.getTestProject().tags)
+                print("\(title) and \(vm.getProject().title)")
+                print(vm.getProject().tags)
                 vm.objectWillChange.send()
                 self.presentationMode.wrappedValue.dismiss()
             }

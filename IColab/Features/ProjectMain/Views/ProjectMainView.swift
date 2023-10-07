@@ -49,7 +49,8 @@ struct ProjectMainView: View {
                 if picker == 1 {
                     ForEach(vm.account!.projectsJoined!) { project in
                         NavigationLink {
-                            ProjectOverviewView(project: project)
+                            ProjectOverviewView(vm: ProjectOverviewViewModel(pmvm: vm))
+                                .environmentObject(vm)
                         } label: {
                             ProjectMainCardView(project: project)
                         }
@@ -58,7 +59,8 @@ struct ProjectMainView: View {
                 else {
                     ForEach(vm.account!.projectsOwned!) { project in
                         NavigationLink {
-                            ProjectOverviewView(project: project)
+                            ProjectOverviewView(vm: ProjectOverviewViewModel(pmvm: vm))
+                                .environmentObject(vm)
                         } label: {
                             ProjectMainCardView(project: project)
                         }

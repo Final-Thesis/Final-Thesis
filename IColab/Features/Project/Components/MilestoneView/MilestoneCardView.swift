@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MilestoneCardView: View {
+    var goal: Goal
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Milestone Title")
+                Text(goal.name)
                     .font(.headline)
-                Text("Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.")
+                Text(goal.desc)
                     .font(.caption2)
                     .multilineTextAlignment(.leading)
                 HStack {
@@ -26,17 +28,7 @@ struct MilestoneCardView: View {
                 .cornerRadius(12)
             }
             .padding(.horizontal)
-            VStack {
-                Text("22")
-                Text("Oct")
-                    .bold()
-                Text("2022")
-            }
-            .padding(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color("purple"), lineWidth: 2)
-            )
+            CurrentMilestoneDateView(date: goal.endDate)
             
         }
         .padding()
@@ -45,9 +37,9 @@ struct MilestoneCardView: View {
     }
 }
 
-struct MilestoneCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MilestoneCardView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct MilestoneCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MilestoneCardView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

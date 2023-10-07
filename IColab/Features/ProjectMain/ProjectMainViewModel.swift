@@ -20,7 +20,7 @@ class ProjectMainViewModel: ObservableObject {
         }
     }
     
-    func getTestProject() -> Project {
+    func getProject() -> Project {
         return (self.account?.projectsOwned![0])!
     }
     

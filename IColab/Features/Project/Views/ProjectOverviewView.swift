@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ProjectOverviewView: View {
-    var project: Project
-    @StateObject var vm: ProjectOverviewViewModel = ProjectOverviewViewModel(uid: Mock.accounts[0].id)
+    @StateObject var vm: ProjectOverviewViewModel
     
     @Environment(\.dismiss) var dismiss
     
@@ -37,15 +36,15 @@ struct ProjectOverviewView: View {
                         }
                     }
                     .padding(.vertical)
-                    Text(project.title)
+                    Text(vm.project.title)
                         .font(.largeTitle)
                         .bold()
                     HStack{
-                        ForEach(project.tags, id: \.self){ tag in
+                        ForEach(vm.project.tags, id: \.self){ tag in
                             TagItem(tagText: tag)
                         }
                     }
-                    Text(project.desc)
+                    Text(vm.project.desc)
                 }
                 .padding()
                 .padding(.top, 32)

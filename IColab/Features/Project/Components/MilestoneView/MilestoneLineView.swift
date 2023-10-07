@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VerticalStepIndicator: View {
-    let steps: [String]
+    var milestone: Milestone
     let currentStepIndex: Int
 
     var body: some View {
@@ -24,17 +24,16 @@ struct VerticalStepIndicator: View {
                 }
                 
                 VStack {
-                    ForEach(0..<steps.count, id: \.self) { index in
+                    ForEach(0..<milestone.goals.count, id: \.self) { index in
                         HStack {
                             if !(index <= currentStepIndex) {
                                 Circle()
                                     .stroke(
-                                        Color.white,
+                                        .purple,
                                         lineWidth: 4
                                     )
                                     .background(.black)
                                     .cornerRadius(99)
-                                    .foregroundColor(.red)
                                     .frame(width: 32)
                             }
                             else {
@@ -44,9 +43,9 @@ struct VerticalStepIndicator: View {
                             }
                                 
                             NavigationLink {
-                                MilestoneDetailView()
+                                MilestoneDetailView(goal: milestone.goals[index])
                             } label: {
-                                MilestoneCardView()
+                                MilestoneCardView(goal: milestone.goals[index])
                             }
 
                             
@@ -61,14 +60,14 @@ struct VerticalStepIndicator: View {
 }
 
 struct MilestoneLineView: View {
-    let steps = ["Step 1", "Step 2", "Step 3", "Step 4"] // Add your step descriptions here
-    let currentStepIndex = 1 // Set the current step index here
+    var milestone: Milestone
+        let currentStepIndex = 1 // Set the current step index here
 
     var body: some View {
-        VerticalStepIndicator(steps: steps, currentStepIndex: currentStepIndex)
+        VerticalStepIndicator(milestone: milestone, currentStepIndex: currentStepIndex)
     }
 }
 
 #Preview {
-    MilestoneLineView()
+    MilestoneLineView(milestone: Mock.projects[0].milestones[0])
 }
