@@ -11,15 +11,11 @@ struct Task: Identifiable {
     
     let id = UUID().uuidString
     var title: String = ""
-    var member: String = ""
     var status: TaskStatus = .notCompleted
     
     mutating func setStatus(status: TaskStatus) {
         self.status = status
-        print("this task: " + self.title + ", is of status: ", self.status.rawValue)
     }
-    
-//    var isToggled: Bool = false
 }
 
 enum TaskStatus: String, CaseIterable {

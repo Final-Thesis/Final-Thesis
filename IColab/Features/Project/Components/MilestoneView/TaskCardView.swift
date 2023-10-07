@@ -18,8 +18,6 @@ struct TaskCardView: View {
             VStack(alignment: .leading) {
                 Text(task.title)
                     .font(.headline)
-                Text(task.member)
-                    .font(.caption2)
             }
             Spacer()
             Button {
