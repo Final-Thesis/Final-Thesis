@@ -60,7 +60,7 @@ struct ProjectOverviewView: View {
                 }
             }
             .toolbar(.hidden)
-            .ignoresSafeArea()
+            .ignoresSafeArea(edges: .top)
         }
         
     }

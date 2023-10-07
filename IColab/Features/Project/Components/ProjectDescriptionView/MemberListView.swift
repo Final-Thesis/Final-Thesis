@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MemberListView: View {
+    var role: Role = .design
+    var count: Int = 5
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "paintbrush.pointed")
-                Text("Designer")
+                Image(systemName: Role.getRoleIcon(role: role))
+                Text(role.rawValue)
                     .padding(.trailing)
-                Text("3")
+                Text("\(count)")
             }
             Divider()
                 .background(.white)

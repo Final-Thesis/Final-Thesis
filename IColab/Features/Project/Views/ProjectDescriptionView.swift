@@ -36,7 +36,7 @@ struct ProjectDescriptionView: View {
                         caption: "\(project.role)")
                     DetailCard(
                         detailCardType: .cardwithlogo,
-                        symbol: "clock.fill",
+                        symbol: "dollarsign",
                         title: "Total Earning",
                         caption: "Rp \(project.totalMilestone().formatted(.number))"
                     )
@@ -49,9 +49,9 @@ struct ProjectDescriptionView: View {
             VStack(alignment: .leading) {
                 Text("Members")
                     .font(.headline)
-                MemberListView()
-                MemberListView()
-                MemberListView()
+                ForEach(vm.existingRoles(), id: \.self) { role in
+                    MemberListView(role: role, count: vm.memberCount(role: role))
+                }
             }
             .padding()
             .background(Color("gray"))
