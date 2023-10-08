@@ -7,77 +7,37 @@
 
 import Foundation
 
-struct MockProjects {
-    static var projects: [Project] = [
-        Project(
-            title: "Front-end Project",
-            owner: Mock.accounts[0],
-            role: "Front-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10000),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                MockMilestones.milestones[0],
-                MockMilestones.milestones[1]
-            ]
-        ),
-        Project(
-            title: "Back-end Project",
-            owner: Mock.accounts[1],
-            role: "Back-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                MockMilestones.milestones[0],
-                MockMilestones.milestones[1]
-            ]
-        ),
-        Project(
-            title: "Project Title",
-            owner: Mock.accounts[0],
-            role: "Back-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                MockMilestones.milestones[0],
-                MockMilestones.milestones[1]
-            ]
-        ),
-        Project(
-            title: "Database Project",
-            owner: Mock.accounts[0],
-            role: "Front-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10000),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                MockMilestones.milestones[0],
-                MockMilestones.milestones[1]
-            ]
-        ),
-        Project(
-            title: "Vision Project",
-            owner: Mock.accounts[1],
-            role: "Back-end",
-            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
-            tags: ["SwiftUI", "CoreML", "Vision"],
-            startDate: Date.now,
-            endDate: Date.now.addingTimeInterval(10),
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            milestones: [
-                MockMilestones.milestones[0],
-                MockMilestones.milestones[1]
-            ]
-        )
+struct MockProjects: Randomizeable {
+    
+    
+    typealias Element = Project
+    
+    static var title: [String] = [
+        "Front-end Project",
+        "Back-end Project",
+        "Vision Project",
+        "Database Project",
+        "Design Project",
+        "Cloud Project",
+        "IoT Project"
     ]
+    
+    static var array: [Project] = MockProjects.initArray(count: title.count) {
+        return Project(
+            title: title.randomElement()!,
+            owner: MockAccounts.array.randomElement()!,
+            members: MockMembers.generateArray(),
+            role: Role.allCases.randomElement()!.rawValue,
+            requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
+            tags: ["SwiftUI", "CoreML", "Vision"],
+            startDate: Date.now.addingTimeInterval(Double.random(in: 1000...10000)),
+            endDate: Date.now.addingTimeInterval(Double.random(in: 10000...100000)),
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            milestones: MockMilestones.generateArray()
+        )
+    }
+    
+    static func addProjects() -> [Project] {
+        return MockProjects.array
+    }
 }

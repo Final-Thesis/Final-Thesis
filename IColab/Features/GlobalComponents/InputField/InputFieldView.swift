@@ -13,7 +13,7 @@ struct InputFieldView: View {
         VStack {
             //InputTitleView()
             //InputDescriptionView()
-            InputDateView()
+//            InputDateView()
             
             Button {
                 //open file picker

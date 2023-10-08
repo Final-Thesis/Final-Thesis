@@ -23,7 +23,7 @@ struct ContentView: View {
                     case .home:
                         HomeView(path: $navigationManager.path)
                     case .projects:
-                        ProjectOverviewView()
+                        ProjectMainView()
                     case .chats:
                         ChatListView()
                     case .notifications:

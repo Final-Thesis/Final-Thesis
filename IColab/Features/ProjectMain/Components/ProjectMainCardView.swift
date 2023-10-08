@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProjectMainCardView: View {
+    var project: Project
     @State var status: Bool = true
     
     var body: some View {
@@ -17,9 +18,9 @@ struct ProjectMainCardView: View {
                 .foregroundStyle(.purple)
                 .cornerRadius(12)
             VStack(alignment: .leading) {
-                Text("Project Title")
+                Text(project.title)
                     .font(.headline)
-                Text("Owner Name")
+                Text(project.owner!.accountDetail.name)
                     .font(.caption2)
                 if status {
                     HStack {
@@ -48,8 +49,8 @@ struct ProjectMainCardView: View {
     }
 }
 
-#Preview {
-    ProjectMainCardView()
-        .preferredColorScheme(.dark)
-}
+//#Preview {
+//    ProjectMainCardView()
+//        .preferredColorScheme(.dark)
+//}
 

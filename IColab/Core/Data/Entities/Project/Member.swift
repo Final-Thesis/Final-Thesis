@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct Member {
+struct Member: Identifiable {
+    let id: UUID = UUID()
+    
     var account: Account
     var role: Role
+    
+    mutating func setAccount(account: Account) {
+        self.account = account
+    }
 }
