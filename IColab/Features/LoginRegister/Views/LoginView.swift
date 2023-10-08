@@ -20,9 +20,15 @@ struct LoginView: View {
             Spacer()
             
             VStack {
-                ButtonComponent(title: "Sign In", width: 320) {
+                Button {
                     print("Sign In")
+                } label: {
+                    Text("Sign In")
+                        .frame(width: 330)
+                        .padding(.vertical, 10)
+                        .border(.primary)
                 }
+                .buttonStyle(.plain)
                 Text("Forgot Password?")
                 ButtonComponent(title: "Create Account", width: 320) {
                     print("Sign In")

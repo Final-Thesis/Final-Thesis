@@ -8,41 +8,41 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @StateObject var rvm = RegisterViewModel()
     var body: some View {
         VStack {
-            HStack {
-                Text("Register")
-                    .font(.largeTitle)
-                Spacer()
-            }
-            
             Spacer()
             Group {
-//                TextFieldView()
-//                TextFieldView()
-//                TextFieldView()
-//                TextFieldView()
+                TextFieldView(input: $rvm.username, icon: "person", text: "Username")
+                TextFieldView(input: $rvm.email, icon: "envelope.fill", text: "Email")
+                TextFieldView(input: $rvm.username, icon: "key", text: "Password", textfieldStyle: .password)
+                TextFieldView(input: $rvm.username, icon: "iphone.rear.camera", text: "Phone Number")
             }
             .padding(.vertical)
             Spacer()
-            
             VStack {
-                ButtonComponent(title: "Sign In", width: 320) {
-                    print("Sign In")
+                ButtonComponent(title: "Register", width: 320) {
+                    print("Register")
                 }
-                Text("Forgot Password?")
-                ButtonComponent(title: "Create Account", width: 320) {
-                    print("Sign In")
+                .padding(.bottom, 10)
+                Button {
+                    print("Login")
+                } label: {
+                    Text("Already have an Account? Sign In")
                 }
+                .buttonStyle(.plain)
             }
             Spacer()
             Spacer()
         }
         .padding()
+        .navigationTitle("Register")
     }
 }
 
 #Preview {
-    RegisterView()
-        .preferredColorScheme(.dark)
+    NavigationStack{
+        RegisterView()
+            .preferredColorScheme(.dark)
+    }
 }

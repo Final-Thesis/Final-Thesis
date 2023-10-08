@@ -17,7 +17,7 @@ struct TextFieldView: View {
     var text: String
     var textfieldStyle : TextFieldStyle
     
-    init(input: Binding<String>, icon: String = "person", text: String, textfieldStyle: TextFieldStyle = .plain) {
+    init(input: Binding<String>, icon: String, text: String, textfieldStyle: TextFieldStyle = .plain) {
         self._input = input
         self.icon = icon
         self.text = text
@@ -29,6 +29,7 @@ struct TextFieldView: View {
             HStack {
                 Image(systemName: icon)
                     .font(.title)
+                    .frame(width: 40)
                 switch textfieldStyle {
                 case .plain:
                     TextField(text, text: $input)
