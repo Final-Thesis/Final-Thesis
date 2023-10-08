@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var lvm : LoginViewModel
     var body: some View {
         VStack {
-            HStack {
-                Text("Login")
-                    .font(.largeTitle)
-                Spacer()
-            }
-            
             Spacer()
             Group {
-                TextFieldView()
-                TextFieldView()
+                TextFieldView(input: $lvm.username, text: "Username")
+                TextFieldView(input: $lvm.password, icon: "key", text: "Password", textfieldStyle: .password)
             }
             .padding(.vertical)
             Spacer()
@@ -36,12 +31,16 @@ struct LoginView: View {
             Spacer()
             Spacer()
         }
+        .navigationTitle("Login")
         .padding()
     }
 }
 
 #Preview {
-    LoginView()
-        .preferredColorScheme(.dark)
+    NavigationStack{
+        LoginView(lvm: LoginViewModel())
+            .preferredColorScheme(.dark)
+    }
+    
 }
 

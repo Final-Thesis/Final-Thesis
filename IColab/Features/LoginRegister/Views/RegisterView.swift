@@ -18,10 +18,10 @@ struct RegisterView: View {
             
             Spacer()
             Group {
-                TextFieldView()
-                TextFieldView()
-                TextFieldView()
-                TextFieldView()
+//                TextFieldView()
+//                TextFieldView()
+//                TextFieldView()
+//                TextFieldView()
             }
             .padding(.vertical)
             Spacer()

@@ -8,14 +8,10 @@
 import Foundation
 
 class LoginViewModel: ObservableObject {
-  @Published var email = ""
+  @Published var username = ""
   @Published var password = ""
 
   func login() {
-    if let account = MockAccounts.accounts.first(where: { $0.email == email && $0.password == password }) {
-
-    } else {
-    
-    }
+      
   }
 }
