@@ -25,10 +25,13 @@ struct EditView: View {
                     VStack{
                         ForEach(pvm.account!.accountDetail.skills, id: \.self) { skill in
                             SkillEditView(skill: skill)
-                            Divider()
-                                .padding(.horizontal, 20)
+                            if skill != pvm.account!.accountDetail.skills.last{
+                                Divider()
+                                    .padding(.horizontal, 20)
+                            }
                         }
                     }
+                    .padding(.bottom, 10)
                     .background(.ultraThinMaterial)
                     .cornerRadius(12)
                 case .education:
@@ -50,11 +53,11 @@ struct EditView: View {
         }
         .toolbar{
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button{
-                    print("Add")
+                NavigationLink {
+                    NewFormView(backgroundType: backgroundType)
                 } label: {
                     Image(systemName: "plus")
-                }.buttonStyle(.plain)
+                }
             }
         }
         .navigationTitle("\(backgroundType.rawValue)")

@@ -7,12 +7,10 @@
 
 import Foundation
 
-struct MockMilestones {
-    static var milestones: [Milestone] = [
-        Milestone(role: .frontend, goals: MockGoals.goals),
-        Milestone(role: .frontend, goals: MockGoals.goals),
-        Milestone(role: .frontend, goals: MockGoals.goals),
-        Milestone(role: .frontend, goals: MockGoals.goals),
-        Milestone(role: .frontend, goals: MockGoals.goals),
-    ]
+struct MockMilestones: Randomizeable {
+    typealias Element = Milestone
+    
+    static var array: [Milestone] = MockMilestones.initArray(count: Role.allCases.count) {
+        return Milestone(role: Role.allCases.randomElement()!, goals: MockGoals.array)
+    }
 }

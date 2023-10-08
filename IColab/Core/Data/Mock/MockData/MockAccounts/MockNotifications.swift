@@ -7,14 +7,20 @@
 
 import Foundation
 
-struct MockNotifications {
-    static var notifications: [Notification] = [
-        Notification(desc: "A short description of the notification", projectName: "Project 1", date: Date.now),
-        Notification(desc: "A short description of the notification", projectName: "Project 2", date: Date.now),
-        Notification(desc: "A short description of the notification", projectName: "Project 3", date: Date.now),
-        Notification(desc: "A short description of the notification", projectName: "Project 4", date: Date.now),
-        Notification(desc: "A short description of the notification", projectName: "Project 5", date: Date.now),
-        Notification(desc: "A short description of the notification", projectName: "Project 6", date: Date.now),
-        Notification(desc: "A short description of the notification", projectName: "Project 7", date: Date.now),
+struct MockNotifications: Randomizeable {
+    typealias Element = Notification
+    
+    static var array: [Notification] = MockNotifications.initArray(count: projectNames.count) {
+        return Notification(desc: "A short description of the notification", projectName: projectNames.randomElement()!, date: Date.now)
+    }
+    
+    static var projectNames: [String] = [
+        "Project 1",
+        "Project 2",
+        "Project 3",
+        "Project 4",
+        "Project 5",
+        "Project 6",
+        "Project 7",
     ]
 }

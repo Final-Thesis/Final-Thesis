@@ -7,14 +7,38 @@
 
 import Foundation
 
-struct MockMessages {
-    static var messages: [Message] = [
-        Message(text: "Example message 1", time: "00:00", isUser: false),
-        Message(text: "Example message 2", time: "01:00", isUser: true),
-        Message(text: "Example message 3", time: "02:00", isUser: true),
-        Message(text: "Example message 4", time: "03:00", isUser: false),
-        Message(text: "Example message 5", time: "04:00", isUser: true),
-        Message(text: "Example message 6", time: "05:00", isUser: false),
-        Message(text: "Example message 7", time: "06:00", isUser: true),
+struct MockMessages: Randomizeable {
+    
+    static var texts: [String] = [
+        "Example message 1",
+        "Example message 2",
+        "Example message 3",
+        "Example message 4",
+        "Example message 5",
+        "Example message 6",
+        "Example message 7",
+        "Example message 8",
+        "Example message 9",
+        "Example message 10",
+        "Example message 11",
+        "Example message 12",
     ]
+    
+    static var array: [Message] = MockMessages.initArray(count: 12) {
+        return Message(text: texts.randomElement()!, time: Date.now.addingTimeInterval(ranNum()), isUser: Bool.random())
+    }
+    
+    static func ranNum() -> Double {
+        return Double(Int.random(in: 1000..<30000))
+    }
+    
+    static func initArray() -> [Message] {
+        var array: [Message] = []
+        
+        for text in texts {
+            array.append(Message(text: text, time: Date.now.addingTimeInterval(ranNum()), isUser: Bool.random()))
+        }
+        
+        return array
+    }
 }

@@ -7,10 +7,26 @@
 
 import Foundation
 
-struct MockAccountDetails {
-    static var accountDetails: [AccountDetail] = [
-        AccountDetail (
-            name: "John",
+struct MockAccountDetails: Randomizeable {
+    typealias Element = AccountDetail
+    
+    static var names: [String] = [
+        "John",
+        "Doe",
+        "Kevin",
+        "Dallian",
+        "Gregorius",
+        "Jeremy",
+        "Raymond",
+        "Metekohy",
+        "Brandon",
+        "Nicholas",
+        "Marlim",
+    ]
+    
+    static var array: [AccountDetail] = MockAccountDetails.initArray(count: 7) {
+        return AccountDetail (
+            name: names.randomElement()!,
             desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
             location: "Indonesia",
             bankAccount: "bankaccount",
@@ -25,5 +41,6 @@ struct MockAccountDetails {
                 Experience(title: "Junior Developer Intern", company: "Samsung Korea", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
             ]
         )
-    ]
+    }
+    
 }
