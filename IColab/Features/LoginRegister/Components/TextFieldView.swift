@@ -29,7 +29,7 @@ struct TextFieldView: View {
             HStack {
                 Image(systemName: icon)
                     .font(.title)
-                    .frame(width: 40)
+                    .frame(width: 50)
                 switch textfieldStyle {
                 case .plain:
                     TextField(text, text: $input)

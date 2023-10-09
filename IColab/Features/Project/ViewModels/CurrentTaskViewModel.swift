@@ -16,7 +16,7 @@ class CurrentTaskViewModel: ObservableObject {
     @Published var completedTasks: [Task] = []
     @Published var onReviewTasks: [Task] = []
     
-    init(goal: Goal){
+    init(goal: Goal) {
         self.goal = goal
         self.tasks = self.goal.tasks
         self.initToggle()
