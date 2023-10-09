@@ -60,6 +60,26 @@ class ChatListViewModel: ObservableObject {
         return chats
     }
     
+    public func sortByDate() -> [Chat] {
+        var chats = self.getChats()
+        
+        chats.sort {
+            $0.messages.first!.time > $1.messages.first!.time
+        }
+        
+        return chats
+    }
+    
+    public func sortByProject() -> [Chat] {
+        var chats = self.getChats()
+        
+        chats.sort {
+            $0.projectName < $1.projectName
+        }
+        
+        return chats
+    }
+    
     private func getSearchChats(searchTitle: String) -> [Chat] {
         if searchTitle.isEmpty{
             return self.getChats()
@@ -85,6 +105,8 @@ class ChatListViewModel: ObservableObject {
         return filteredChats
     }
     
+    
+    
     public func filterChats(filterType: ChatFilterType) {
         switch filterType {
             case .group:
@@ -93,6 +115,10 @@ class ChatListViewModel: ObservableObject {
                 self.chats = filterChatType(chatType: .owner)
             case .personal:
                 self.chats = filterChatType(chatType: .personal)
+            case .date:
+                self.chats = self.sortByDate()
+            case .project:
+                self.chats = self.sortByProject()
             default:
                 self.chats = self.getChats()
         }
