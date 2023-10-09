@@ -10,6 +10,7 @@ import SwiftUI
 struct CurrentTaskView: View {
     @StateObject var vm: CurrentTaskViewModel
     @State var refresh = false
+    @State var isOwner: Bool = true
     
     @State var pickerSelector = 1
     
@@ -50,13 +51,26 @@ struct CurrentTaskView: View {
                 .padding(4)
             }
             
-            if pickerSelector == 1 {
-                ButtonComponent(title: "Submit", width: 360) {
-                    vm.submitTasks()
-                    refresh.toggle()
+            if isOwner {
+                if pickerSelector == 2 {
+                    ButtonComponent(title: "Validate", width: 360) {
+                        vm.validateTask()
+                        refresh.toggle()
+                    }
+                    .padding(.top)
                 }
-                .padding(.top)
+
             }
+            else {
+                if pickerSelector == 1 {
+                    ButtonComponent(title: "Submit", width: 360) {
+                        vm.submitTasks()
+                        refresh.toggle()
+                    }
+                    .padding(.top)
+                }
+            }
+            
             Spacer()
         }
         .padding()

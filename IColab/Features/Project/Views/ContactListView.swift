@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContactListView: View {
     @EnvironmentObject var vm: ProjectOverviewViewModel
+    var project: Project
     
     @StateObject var homeViewModel = HomeViewModel()
     @FocusState var isInputActive: Bool
@@ -30,7 +31,7 @@ struct ContactListView: View {
             }
             .padding(.horizontal, 10)
             ScrollView {
-//                ProjectMemberContactView(title: "Members", project: vm.getProject()!)
+                ProjectMemberContactView(title: "Members", project: project)
             }
             .padding()
             
@@ -41,9 +42,9 @@ struct ContactListView: View {
     }
 }
 
-struct ContactListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactListView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct ContactListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContactListView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

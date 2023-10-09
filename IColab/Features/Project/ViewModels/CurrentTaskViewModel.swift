@@ -57,4 +57,18 @@ class CurrentTaskViewModel: ObservableObject {
             }
         }
     }
+    
+    func validateTask() {
+        for (index, _) in self.tasks.enumerated() {
+            if toggles[index] == true && self.tasks[index].status == .onReview {
+                let indexGoal = project.milestones[0].goals.firstIndex(where: {$0.id == self.goal.id})
+                project.milestones[0].goals[indexGoal!].tasks[index].setStatus(status: .completed)
+                
+                self.goal = project.milestones[0].goals[indexGoal!]
+                self.tasks = self.goal.tasks
+                self.objectWillChange.send()
+                
+            }
+        }
+    }
 }

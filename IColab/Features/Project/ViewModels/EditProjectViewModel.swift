@@ -8,14 +8,12 @@
 import Foundation
 
 class EditProjectViewModel: ObservableObject {
+    @Published var project: Project
     @Published var milestones: [Milestone]
     
-    init(milestones: [Milestone]) {
-        self.milestones = milestones
-        for milestone in milestones {
-            print(milestone.id)
-            print(milestone.role)
-        }
+    init(project: Project) {
+        self.project = project
+        self.milestones = project.milestones
     }
     
     @Published var title: String = ""
@@ -38,6 +36,26 @@ class EditProjectViewModel: ObservableObject {
     func addGoal(role: Role) {
         let index = self.milestones.firstIndex(where: {$0.role == role})
         
-        milestones[index!].goals.append(Goal(name: title, nominal: nominal, desc: desc, endDate: dueDate, isAchieved: false, tasks: tasks))
+        project.milestones[index!].goals.append(Goal(name: title, nominal: nominal, desc: desc, endDate: dueDate, isAchieved: false, tasks: tasks))
+    }
+    
+    func editGoal(role: Role, goal: Goal) {
+        let index = self.milestones.firstIndex(where: {$0.role == role})
+        let goalIndex = self.milestones[index!].goals.firstIndex(where: {$0.id == goal.id})
+        
+        let goal = project.milestones[index!].goals[goalIndex!]
+        
+        project.milestones[index!].goals[goalIndex!] = Goal(name: title, nominal: nominal, desc: desc, endDate: dueDate, isAchieved: goal.isAchieved, tasks: tasks)
+        
+        self.milestones = self.project.milestones
+    }
+    
+    func deleteGoal(role: Role, goal: Goal) {
+        let index = self.milestones.firstIndex(where: {$0.role == role})
+        let goalIndex = self.milestones[index!].goals.firstIndex(where: {$0.id == goal.id})!
+        
+        project.milestones[index!].goals.remove(at: goalIndex)
+        
+        self.milestones = self.project.milestones
     }
 }

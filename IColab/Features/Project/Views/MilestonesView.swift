@@ -34,7 +34,8 @@ struct MilestonesView: View {
                     .padding()
                     .background(Color("gray"))
                     .cornerRadius(12)
-                    MilestoneLineView(milestone: vm.getMilestone(role: picker))
+                    MilestoneLineView(role: picker)
+                        .environmentObject(vm)
                 }
             }
             .navigationTitle("Milestone")
