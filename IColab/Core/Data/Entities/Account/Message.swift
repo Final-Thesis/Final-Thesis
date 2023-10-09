@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Message: Identifiable {
+struct Message: Identifiable, Equatable {
     var id: UUID = UUID()
     var text: String;
     var time: Date;

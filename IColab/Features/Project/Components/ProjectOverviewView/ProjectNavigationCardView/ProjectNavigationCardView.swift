@@ -13,8 +13,8 @@ struct ProjectNavigationCardView: View {
     var body: some View {
         VStack {
             NavigationLink {
-                ProjectDescriptionView(project: vm.getProject())
-                    .environmentObject(vm)
+//                ProjectDescriptionView(project: vm.getProject())
+//                    .environmentObject(vm)
             } label: {
                 ProjectButtonView(
                     icon: "newspaper.circle",
@@ -33,7 +33,7 @@ struct ProjectNavigationCardView: View {
                 )
             }
             NavigationLink {
-                MilestonesView(milestone: vm.getProject().milestones[0])
+                MilestonesView(vm: EditProjectViewModel(milestones: vm.project.milestones))
             } label: {
                 ProjectButtonView(
                     icon: "star.circle",
@@ -51,7 +51,9 @@ struct ProjectNavigationCardView: View {
                 )
             }
             NavigationLink {
-                CurrentTaskView(vm: CurrentTaskViewModel(goal: vm.getCurrentGoal()))
+//                CurrentTaskView(vm: CurrentTaskViewModel(uid: vm.getCurrentGoal().id))
+                CurrentTaskView(vm: CurrentTaskViewModel(project: vm.project))
+
             } label: {
                 ProjectButtonView(
                     icon: "bag.circle",

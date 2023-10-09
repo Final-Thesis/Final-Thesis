@@ -51,7 +51,9 @@ struct CurrentTaskView: View {
             
             if pickerSelector == 1 {
                 ButtonComponent(title: "Submit", width: 360) {
+                    print(vm.tasks)
                     vm.submitTasks()
+                    print(vm.tasks)
                 }
                 .padding(.top)
             }

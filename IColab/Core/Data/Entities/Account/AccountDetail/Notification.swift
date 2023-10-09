@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Notification : Identifiable{
+struct Notification : Identifiable, Equatable {
     var id = UUID().uuidString
     var desc : String
     var projectName : String

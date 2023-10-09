@@ -10,8 +10,10 @@ import Foundation
 struct MockNotifications: Randomizeable {
     typealias Element = Notification
     
-    static var array: [Notification] = MockNotifications.initArray(count: projectNames.count) {
-        return Notification(desc: "A short description of the notification", projectName: projectNames.randomElement()!, date: Date.now)
+    static var array: [Notification] {
+        MockNotifications.initArray(count: projectNames.count) {
+            return Notification(desc: "A short description of the notification", projectName: projectNames.randomElement()!, date: Date.now)
+        }
     }
     
     static var projectNames: [String] = [

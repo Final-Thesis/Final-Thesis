@@ -8,19 +8,33 @@
 import Foundation
 
 class CurrentTaskViewModel: ObservableObject {
-    @Published var goal: Goal
+    @Published var project: Project
+    @Published var goal: Goal!
     @Published var tasks: [Task] = []
     @Published var toggles: [Bool] = []
     
-    @Published var notCompletedTasks: [Task] = []
-    @Published var completedTasks: [Task] = []
-    @Published var onReviewTasks: [Task] = []
+//    init(goal: Goal){
+////        self.goal = getGoal(uid: uid)
+//        self.goal = goal
+//        self.tasks = goal.tasks
+//        self.initToggle()
+//    }
     
-    init(goal: Goal){
-        self.goal = goal
-        self.tasks = self.goal.tasks
-        self.initToggle()
+    init(project: Project) {
+        goal = project.milestones
+        
     }
+    
+//    func getGoal(goal: Goal) -> Goal {
+////        let goal = MockGoals.array
+////        
+////        return goal.first { goal in
+////            goal.id == uid
+////        }!
+////        return goal.first { x in
+////            x == goal
+////        }
+//    }
     
     private func initToggle() {
         for task in tasks {
@@ -33,10 +47,13 @@ class CurrentTaskViewModel: ObservableObject {
         }
     }
     
+    
+    
     func submitTasks() {
-        for (index, element) in self.tasks.enumerated() {
+        for (index, _) in self.tasks.enumerated() {
             if toggles[index] == true && self.tasks[index].status == .notCompleted {
-                self.tasks[index].setStatus(status: .onReview)
+                self.goal.tasks[index].setStatus(status: .onReview)
+                self.tasks = self.goal.tasks
             }
         }
     }
