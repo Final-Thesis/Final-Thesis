@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentTaskView: View {
     @StateObject var vm: CurrentTaskViewModel
+    @State var refresh = false
     
     @State var pickerSelector = 1
     
@@ -51,9 +52,8 @@ struct CurrentTaskView: View {
             
             if pickerSelector == 1 {
                 ButtonComponent(title: "Submit", width: 360) {
-                    print(vm.tasks)
                     vm.submitTasks()
-                    print(vm.tasks)
+                    refresh.toggle()
                 }
                 .padding(.top)
             }

@@ -64,14 +64,3 @@ struct ProjectOverviewView: View {
         
     }
 }
-
-//struct ProjectOverviewView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationStack {
-//            ProjectOverviewView()
-//                .environmentObject(ProjectOverviewViewModel(uid: Mock.accounts[0].id))
-//                .preferredColorScheme(.dark)
-//        }
-//        
-//    }
-//}
