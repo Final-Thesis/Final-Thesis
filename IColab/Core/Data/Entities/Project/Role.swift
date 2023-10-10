@@ -15,11 +15,11 @@ enum Role: String, CaseIterable {
     static func getRoleIcon(role: Role) -> String {
         switch role {
             case .frontend:
-                return "paintbrush.pointed"
+                return "computermouse"
             case .backend:
                 return "desktopcomputer"
             case .design:
-                return "computermouse"
+                return "paintbrush.pointed"
             default:
                 return "paintbrush.pointed"
         }

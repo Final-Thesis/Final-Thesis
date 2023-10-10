@@ -10,7 +10,9 @@ import Foundation
 struct MockMembers: Randomizeable {
     typealias Element = Member
     
-    static var array: [Member] = MockMembers.initArray(count: 5) {
-        return Member(account: Mock.accounts.randomElement()!, role: Role.allCases.randomElement()!)
+    static var array: [Member] {
+        MockMembers.initArray(count: 5) {
+            return Member(account: Mock.accounts.randomElement()!, role: Role.allCases.randomElement()!)
+        }
     }
 }

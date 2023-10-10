@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct VerticalStepIndicator: View {
-    var milestone: Milestone
+    @EnvironmentObject var vm: EditProjectViewModel
+    
+    var role: Role
     let currentStepIndex: Int
 
     var body: some View {
@@ -24,7 +26,7 @@ struct VerticalStepIndicator: View {
                 }
                 
                 VStack {
-                    ForEach(0..<milestone.goals.count, id: \.self) { index in
+                    ForEach(0..<vm.getMilestone(role: role).goals.count, id: \.self) { index in
                         HStack {
                             if !(index <= currentStepIndex) {
                                 Circle()
@@ -43,9 +45,10 @@ struct VerticalStepIndicator: View {
                             }
                                 
                             NavigationLink {
-                                MilestoneDetailView(goal: milestone.goals[index])
+                                MilestoneDetailView(milestone: vm.getMilestone(role: role), goal: vm.getMilestone(role: role).goals[index])
+                                    .environmentObject(vm)
                             } label: {
-                                MilestoneCardView(goal: milestone.goals[index])
+                                MilestoneCardView(goal: vm.getMilestone(role: role).goals[index])
                             }
 
                             
@@ -60,14 +63,15 @@ struct VerticalStepIndicator: View {
 }
 
 struct MilestoneLineView: View {
-    var milestone: Milestone
-        let currentStepIndex = 1 // Set the current step index here
+    @EnvironmentObject var vm: EditProjectViewModel
+    var role: Role
+    let currentStepIndex = 1 // Set the current step index here
 
     var body: some View {
-        VerticalStepIndicator(milestone: milestone, currentStepIndex: currentStepIndex)
+        VerticalStepIndicator(role: role, currentStepIndex: currentStepIndex)
     }
 }
 
-#Preview {
-    MilestoneLineView(milestone: Mock.projects[0].milestones[0])
-}
+//#Preview {
+//    MilestoneLineView(milestone: Mock.projects[0].milestones[0])
+//}

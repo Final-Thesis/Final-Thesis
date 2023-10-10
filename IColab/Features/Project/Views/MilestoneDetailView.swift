@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MilestoneDetailView: View {
+    @EnvironmentObject var vm: EditProjectViewModel
+    var milestone: Milestone
     var goal: Goal
-    var title: String = "Acne Detection"
-    var desc: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     
     var body: some View {
         VStack {
@@ -42,6 +42,17 @@ struct MilestoneDetailView: View {
             
         }
         .navigationTitle("Milestone Detail")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    EditGoalView(role: milestone.role, goal: goal)
+                        .environmentObject(vm)
+                } label: {
+                    Image(systemName: "pencil")
+                }
+
+            }
+        }
     }
 }
 

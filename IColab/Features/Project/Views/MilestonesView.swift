@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct MilestonesView: View {
-    var milestone: Milestone
+    @StateObject var vm: EditProjectViewModel
+    
+    @State var picker: Role = .backend
     
     var body: some View {
         NavigationStack {
+            Picker("Milestone Picker", selection: $picker) {
+                ForEach(vm.milestones) { milestone in
+                    Text(milestone.role.rawValue).tag(milestone.role)
+                }
+            }
+            .pickerStyle(.segmented)
             ScrollView {
                 VStack {
                     HStack {
@@ -26,14 +34,16 @@ struct MilestonesView: View {
                     .padding()
                     .background(Color("gray"))
                     .cornerRadius(12)
-                    MilestoneLineView(milestone: milestone)
+                    MilestoneLineView(role: picker)
+                        .environmentObject(vm)
                 }
             }
             .navigationTitle("Milestone")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        AddGoalView()
+                        AddGoalView(role: picker)
+                            .environmentObject(vm)
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .font(.title)
