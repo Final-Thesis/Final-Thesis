@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
     @FocusState var isInputActive: Bool
-    @Binding var path : NavigationPath
     var body: some View {
         VStack{
             HStack{
@@ -38,19 +37,15 @@ struct HomeView: View {
             }else{
                 ScrollView{
                     ForEach(homeViewModel.projects){ project in
-                        NavigationLink(value: project) {
+                        NavigationLink {
+                            ProjectDetailView(project: project)
+                        } label: {
                             ProjectCard(project: project)
-                                .padding(.top, 10)
                         }
-                        .buttonStyle(.plain)
                     }
                 }
-                
             }
         }
-        .navigationDestination(for: Project.self, destination: { project in
-            ProjectDetailView(project: project, path: $path)
-        })
         .padding(.horizontal, 20)
         .navigationTitle("Home")
         .toolbar {
@@ -72,7 +67,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            HomeView(path: .constant(NavigationPath()))
+            HomeView()
         }
     }
 }

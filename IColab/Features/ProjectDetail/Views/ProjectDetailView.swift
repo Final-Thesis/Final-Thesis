@@ -12,7 +12,6 @@ struct ProjectDetailView: View {
     var project : Project
     @State var pickerSelection : PickerItem = .overview
     @State var showSheet = false
-    @Binding var path : NavigationPath
     @State var showProfile = false
     let pickerItems : [PickerItem] = [.overview, .milestone]
     var body: some View {

@@ -48,6 +48,7 @@ struct LoginView: View {
                 Text("\(error.errorSuggestion)")
             }
             .onAppear {
+                Mock.init()
                 print("\(Mock.accounts[0].accountDetail.name)")
                 print("\(Mock.accounts[0].password)")
             }
