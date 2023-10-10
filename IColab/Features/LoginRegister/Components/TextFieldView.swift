@@ -7,27 +7,51 @@
 
 import SwiftUI
 
+enum TextFieldStyle {
+    case plain
+    case password
+}
 struct TextFieldView: View {
-    var icon: String = "person"
-    var text: String = "Username"
-    @State var input: String = ""
+    @Binding var input: String
+    var icon: String
+    var text: String
+    var textfieldStyle : TextFieldStyle
+    
+    init(input: Binding<String>, icon: String, text: String, textfieldStyle: TextFieldStyle = .plain) {
+        self._input = input
+        self.icon = icon
+        self.text = text
+        self.textfieldStyle = textfieldStyle
+    }
     
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: icon)
                     .font(.title)
-                TextField(text, text: $input)
+                    .frame(width: 50, height: 30)
+                switch textfieldStyle {
+                case .plain:
+                    TextField(text, text: $input, axis: .horizontal)
+                        .autocorrectionDisabled()
+                case .password:
+                    SecureField(text, text: $input)
+                        .autocorrectionDisabled()
+                }
             }
-            Rectangle()
-                .frame(height: 2)
+            Divider()
+                .frame(height: 1.5)
+                .overlay(.primary)
         }
         .padding(.horizontal)
     }
 }
 
 #Preview {
-    TextFieldView()
-        .preferredColorScheme(.dark)
+    VStack{
+        TextFieldView(input: .constant("String"), icon: "person", text: "Username", textfieldStyle: .plain)
+        TextFieldView(input: .constant("String"), icon: "key", text: "Password", textfieldStyle: .password)
+    }
+    .preferredColorScheme(.dark)
 }
 

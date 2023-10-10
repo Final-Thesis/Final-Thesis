@@ -105,6 +105,7 @@
 		D82C0D592ABACFD2009802D9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D582ABACFD2009802D9 /* EditView.swift */; };
 		D82C0D5B2ABC0741009802D9 /* EditFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C0D5A2ABC0741009802D9 /* EditFormView.swift */; };
 		D83479AD2AA9D5B800E16739 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83479AC2AA9D5B800E16739 /* SearchBar.swift */; };
+		D8385A522AD51D860013D90F /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8385A512AD51D860013D90F /* AccountManager.swift */; };
 		D84142D32AC0162000E38C5B /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84142D22AC0162000E38C5B /* AddProfileView.swift */; };
 		D84142D92AC0215800E38C5B /* ProfileSectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */; };
 		D85CEFBB2AC1E553004D4C75 /* NewFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85CEFBA2AC1E553004D4C75 /* NewFormView.swift */; };
@@ -260,6 +261,7 @@
 		D82C0D582ABACFD2009802D9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D82C0D5A2ABC0741009802D9 /* EditFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFormView.swift; sourceTree = "<group>"; };
 		D83479AC2AA9D5B800E16739 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		D8385A512AD51D860013D90F /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		D84142D22AC0162000E38C5B /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
 		D84142D82AC0215800E38C5B /* ProfileSectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionCard.swift; sourceTree = "<group>"; };
 		D85CEFBA2AC1E553004D4C75 /* NewFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormView.swift; sourceTree = "<group>"; };
@@ -719,6 +721,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D8385A502AD51D790013D90F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8385A512AD51D860013D90F /* AccountManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -867,6 +877,7 @@
 		D8A3AF232AA3269600AC06C9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D8385A502AD51D790013D90F /* Services */,
 				D8A3AF242AA3269A00AC06C9 /* Data */,
 			);
 			path = Core;
@@ -1184,6 +1195,7 @@
 				D89587002AAF5E7E0064629B /* ProfileView.swift in Sources */,
 				6C3B2D9D2AD159500049FE41 /* EditProjectViewModel.swift in Sources */,
 				6C745EAE2AC97C5D00646574 /* MockAccounts.swift in Sources */,
+				D8385A522AD51D860013D90F /* AccountManager.swift in Sources */,
 				D8A3AF382AA48A5500AC06C9 /* DetailCard.swift in Sources */,
 				6CC7F2A22AC035D300AF0A12 /* InputDateView.swift in Sources */,
 				6C129E912AC2D26800F7036D /* EditProjectView.swift in Sources */,
