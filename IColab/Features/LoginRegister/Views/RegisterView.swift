@@ -23,11 +23,11 @@ struct RegisterView: View {
             Spacer()
             VStack {
                 ButtonComponent(title: "Register", width: 320) {
-                    print("Register")
+                    rvm.register()
                 }
                 .padding(.bottom, 10)
                 Button {
-                    print("Login")
+                    rvm.signIn.toggle()
                 } label: {
                     Text("Already have an Account? Sign In")
                 }
@@ -38,12 +38,18 @@ struct RegisterView: View {
         }
         .padding()
         .navigationTitle("Register")
+        
         .alert(isPresented: $rvm.showError, error: rvm.error) { error in
-            //
+            Button { print("Dismiss") } label: { Text("Dismiss") }
         } message: { error in
-            Text("A")
+            Text("\(error.errorSuggestion ?? "Unknown Error Occured")")
         }
-
+        
+        .navigationDestination(isPresented: $rvm.signIn, destination: {
+            LoginView()
+        })
+        .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 

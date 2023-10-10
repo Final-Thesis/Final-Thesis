@@ -32,7 +32,7 @@ struct LoginView: View {
                     .buttonStyle(.plain)
                     Text("Forgot Password?")
                     ButtonComponent(title: "Create Account", width: 320) {
-                        
+                        lvm.createAccount.toggle()
                     }
                 }
                 Spacer()
@@ -52,8 +52,15 @@ struct LoginView: View {
                 print("\(Mock.accounts[0].accountDetail.name)")
                 print("\(Mock.accounts[0].password)")
             }
+            .navigationDestination(isPresented: $lvm.createAccount) {
+                RegisterView()
+            }
+            .navigationDestination(isPresented: $lvm.contentView) {
+                ContentView()
+            }
         }
         .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.large)
     }
         
 }

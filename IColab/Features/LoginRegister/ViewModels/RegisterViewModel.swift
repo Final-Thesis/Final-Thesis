@@ -51,6 +51,7 @@ class RegisterViewModel : ObservableObject {
     @Published var password : String = ""
     @Published var phoneNumber : String = ""
     @Published var region : String = ""
+    @Published var signIn = false
     
     @Published var error : RegisterError?
     @Published var showError = false
@@ -58,16 +59,30 @@ class RegisterViewModel : ObservableObject {
     public func register(){
         if username.isEmpty || email.isEmpty || password.isEmpty || phoneNumber.isEmpty || region.isEmpty {
             showError(error: .formIncomplete)
+            return
         }
         
         if username.count < 8 {
             showError(error: .shortUsername)
+            return
         }
         
         if password.count < 8 {
             showError(error: .passwordLessThan8)
+            return
         }
         
+        if !email.contains("@") {
+            showError(error: .notEmailFormat)
+            return
+        }
+        
+        if let double = Double(phoneNumber) {
+            print("The string is numeric: \(double)")
+        }else{
+            showError(error: .phoneNotNumber)
+            return
+        }
     }
     
     private func showError(error: RegisterError) {

@@ -35,6 +35,8 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var error : LoginError?
     @Published var showAlert = false
+    @Published var createAccount = false
+    @Published var contentView = false
 
     public func login(){
         let getUsername = username
@@ -50,6 +52,7 @@ class LoginViewModel: ObservableObject {
             account.accountDetail.name == getUsername && account.password == getPassword
         }) {
             print(foundAccount.email)
+            contentView.toggle()
         }else{
             error = .invalidPassword
             showAlert = true

@@ -29,18 +29,19 @@ struct TextFieldView: View {
             HStack {
                 Image(systemName: icon)
                     .font(.title)
-                    .frame(width: 50)
+                    .frame(width: 50, height: 30)
                 switch textfieldStyle {
                 case .plain:
-                    TextField(text, text: $input)
+                    TextField(text, text: $input, axis: .horizontal)
                         .autocorrectionDisabled()
                 case .password:
                     SecureField(text, text: $input)
+                        .autocorrectionDisabled()
                 }
-                
             }
-            Rectangle()
-                .frame(height: 2)
+            Divider()
+                .frame(height: 1.5)
+                .overlay(.primary)
         }
         .padding(.horizontal)
     }
