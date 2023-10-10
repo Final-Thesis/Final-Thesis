@@ -16,7 +16,7 @@ struct ContactCardView: View {
                 .frame(width: 48)
                 .foregroundColor(.purple)
             VStack(alignment: .leading) {
-                Text(member.account.accountDetail.name)
+                Text(member.account!.accountDetail.name)
                 Divider()
             }
             Spacer()

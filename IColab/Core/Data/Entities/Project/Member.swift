@@ -10,7 +10,7 @@ import Foundation
 struct Member: Identifiable, Equatable {
     let id: UUID = UUID()
     
-    var account: Account
+    var account: Account?
     var role: Role
     
     mutating func setAccount(account: Account) {
