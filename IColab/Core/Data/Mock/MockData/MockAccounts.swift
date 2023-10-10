@@ -22,13 +22,15 @@ struct MockAccounts: Randomizeable {
         "marlim"
     ]
     
-    static var array: [Account] {
-        MockAccounts.initArray(count: names.count) {
-            Account(
-                email: "\(names.randomElement()!)@gmail.com",
-                password: "\(names.randomElement()!)@123",
-                accountDetail: MockAccountDetails.array.randomElement()!
-            )
+    static func initAccount() -> [Account] {
+        var accounts: [Account] = []
+        for name in names {
+            let accountDetail = MockAccountDetails.array.randomElement()!
+            accounts.append(Account(email: "\(name)@gmail.com", password: "\(name)@123", accountDetail: accountDetail))
         }
+        
+        return accounts
     }
+    
+    static var array: [Account] = initAccount()
 }

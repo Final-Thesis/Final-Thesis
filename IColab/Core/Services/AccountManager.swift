@@ -1,0 +1,22 @@
+//
+//  AccountManager.swift
+//  IColab
+//
+//  Created by Kevin Dallian on 10/10/23.
+//
+
+import Foundation
+
+class AccountManager : ObservableObject {
+    @Published var account : Account?
+    
+    func getAccount(uid: String) {
+        if let foundAccount = Mock.accounts.first(where: { account in
+            account.id == uid
+        }) {
+            account = foundAccount
+        }else{
+            print("Account not found")
+        }
+    }
+}

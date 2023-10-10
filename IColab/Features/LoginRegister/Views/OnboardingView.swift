@@ -42,8 +42,9 @@ struct OnboardingView: View {
             .navigationDestination(isPresented: $nextView, destination: {
                 LoginView()
             })
+            .padding()
         }
-        .padding()
+        
     }
 }
 
