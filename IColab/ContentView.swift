@@ -9,19 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
-    @StateObject var navigationManager = NavigationManager()
     @StateObject var accountManager = AccountManager()
 
-    init(){
-        Mock.init()
-    }
     var body: some View {
-        NavigationStack(path: $navigationManager.path) {
+        NavigationStack {
             ScrollView{
                 VStack{
                     switch selectedTabBar {
                     case .home:
-                        HomeView(path: $navigationManager.path)
+                        HomeView()
                     case .projects:
                         ProjectMainView()
                     case .chats:
@@ -37,8 +33,6 @@ struct ContentView: View {
             }
             TabBarView(selectedTabItem: $selectedTabBar)
         }
-        
-        .accentColor(.primary)
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.large)
     }
