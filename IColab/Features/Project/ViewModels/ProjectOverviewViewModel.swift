@@ -8,44 +8,28 @@
 import Foundation
 
 class ProjectOverviewViewModel: ObservableObject {
-    var pmvm: ProjectMainViewModel
-//    @Published var account: Account?
-    @Published var project: Project
+    @Published var project: Project = Mock.projects[0]
     
     
-    init(pmvm: ProjectMainViewModel) {
-        self.pmvm = pmvm
-        self.project = pmvm.getProject()
+    init(uid: String) {
+        self.project = self.getProject(uid: uid)
     }
-//    init(uid: String){
-//        self.project = Mock.projects[0]
-//        self.account = getAccount(uid: uid)
-//        
-//    }
 //    
-    
-    
-//    private func getAccount(uid: String) -> Account?{
-//        return Mock.accounts.first { account in
-//            account.id == uid
-//        }
-//    }
-//    
-    func getProject() -> Project {
-        return pmvm.getProject()
+    func getProject(uid: String) -> Project {
+        let project = Mock.projects.first(where: {$0.id == uid})
+        return project!
     }
     
     func editProjectDetail(title: String, summary: String, tags: [String]) {
-        let project = self.project
-        
-        self.project = Project(title: title, role: project.role, requirements: project.requirements, tags: tags, startDate: project.startDate, endDate: project.endDate, desc: summary, milestones: project.milestones)
+        self.project.setOverview(title: title, tags: tags, desc: summary)
     }
     
     func getCurrentGoal() -> Goal {
-        var goals = self.project.milestones[0].goals
+        let goals = self.project.milestones[0].goals
         
         for goal in goals {
             if !goal.isAchieved {
+                print("returned current goal")
                 return goal
             }
         }

@@ -33,6 +33,12 @@ class Project : Identifiable{
         self.milestones = milestones
     }
     
+    func setOverview(title: String, tags: [String], desc: String) {
+        self.title = title
+        self.tags = tags
+        self.desc = desc
+    }
+    
     public func setOwner(owner : Account){
         self.owner = owner
     }

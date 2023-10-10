@@ -7,7 +7,8 @@
 
 import Foundation
 
-class AccountDetail {
+class AccountDetail: Identifiable, Equatable {
+    let id: UUID = UUID()
     var name : String
     var desc : String
     var location : String
@@ -50,5 +51,9 @@ class AccountDetail {
     
     public func removeExperiences(idx : Int){
         experiences.remove(at: idx)
+    }
+    
+    static func == (lhs: AccountDetail, rhs: AccountDetail) -> Bool {
+        return lhs.id == rhs.id
     }
 }
