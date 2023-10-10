@@ -15,12 +15,15 @@
 		6C3189E12AC55F9100A6C113 /* MilestoneLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3189E02AC55F9100A6C113 /* MilestoneLineView.swift */; };
 		6C3189E32AC5604D00A6C113 /* MilestoneInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3189E22AC5604D00A6C113 /* MilestoneInfoView.swift */; };
 		6C3189E62AC5614100A6C113 /* MilestoneDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3189E52AC5614100A6C113 /* MilestoneDetailInfoView.swift */; };
+		6C33A21F2AD3EA2400CD4AE5 /* EditGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A21E2AD3EA2400CD4AE5 /* EditGoalView.swift */; };
 		6C3B2D922AD100700049FE41 /* CurrentMilestoneDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D912AD100700049FE41 /* CurrentMilestoneDateView.swift */; };
 		6C3B2D952AD110640049FE41 /* ProjectMemberContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D942AD110640049FE41 /* ProjectMemberContactView.swift */; };
 		6C3B2D972AD1109F0049FE41 /* ProjectMemberContactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D962AD1109F0049FE41 /* ProjectMemberContactCardView.swift */; };
 		6C3B2D992AD1585B0049FE41 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D982AD1585B0049FE41 /* AddGoalView.swift */; };
 		6C3B2D9B2AD158BA0049FE41 /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D9A2AD158BA0049FE41 /* InputNumberView.swift */; };
 		6C3B2D9D2AD159500049FE41 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D9C2AD159500049FE41 /* EditProjectViewModel.swift */; };
+		6C3B2DA02AD164320049FE41 /* InputTaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2D9F2AD164320049FE41 /* InputTaskCardView.swift */; };
+		6C3B2DA22AD165930049FE41 /* CreateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B2DA12AD165930049FE41 /* CreateTaskView.swift */; };
 		6C486B0D2AC184150094E710 /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */; };
 		6C6D79492ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6D79482ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift */; };
 		6C726A032AC82FB300E14230 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C726A022AC82FB300E14230 /* ContactView.swift */; };
@@ -74,6 +77,10 @@
 		6CFC72DB2ACD607700930E74 /* MockMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC72DA2ACD607700930E74 /* MockMembers.swift */; };
 		6CFC72DD2ACD6FEA00930E74 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC72DC2ACD6FEA00930E74 /* CreateChatView.swift */; };
 		6CFC72DF2ACD759F00930E74 /* ProjectContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC72DE2ACD759F00930E74 /* ProjectContactView.swift */; };
+		B7965D892AD57C3B00D10505 /* PickMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7965D882AD57C3B00D10505 /* PickMemberView.swift */; };
+		B7965D8B2AD57C4B00D10505 /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7965D8A2AD57C4B00D10505 /* CreateProjectView.swift */; };
+		B7965D8D2AD57C6200D10505 /* AddProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7965D8C2AD57C6200D10505 /* AddProjectDetailView.swift */; };
+		B7965D8F2AD57CCC00D10505 /* CreateProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7965D8E2AD57CCC00D10505 /* CreateProjectViewModel.swift */; };
 		B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5EF2A7602D7001F392F /* IColabApp.swift */; };
 		B7A2A5F22A7602D7001F392F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2A5F12A7602D7001F392F /* ContentView.swift */; };
 		B7A2A5F42A7602D8001F392F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A2A5F32A7602D8001F392F /* Assets.xcassets */; };
@@ -162,12 +169,15 @@
 		6C3189E02AC55F9100A6C113 /* MilestoneLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLineView.swift; sourceTree = "<group>"; };
 		6C3189E22AC5604D00A6C113 /* MilestoneInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneInfoView.swift; sourceTree = "<group>"; };
 		6C3189E52AC5614100A6C113 /* MilestoneDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailInfoView.swift; sourceTree = "<group>"; };
+		6C33A21E2AD3EA2400CD4AE5 /* EditGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalView.swift; sourceTree = "<group>"; };
 		6C3B2D912AD100700049FE41 /* CurrentMilestoneDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMilestoneDateView.swift; sourceTree = "<group>"; };
 		6C3B2D942AD110640049FE41 /* ProjectMemberContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemberContactView.swift; sourceTree = "<group>"; };
 		6C3B2D962AD1109F0049FE41 /* ProjectMemberContactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemberContactCardView.swift; sourceTree = "<group>"; };
 		6C3B2D982AD1585B0049FE41 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
 		6C3B2D9A2AD158BA0049FE41 /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		6C3B2D9C2AD159500049FE41 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
+		6C3B2D9F2AD164320049FE41 /* InputTaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTaskCardView.swift; sourceTree = "<group>"; };
+		6C3B2DA12AD165930049FE41 /* CreateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskView.swift; sourceTree = "<group>"; };
 		6C486B0C2AC184150094E710 /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		6C6D79482ACFBB4F00FC27C6 /* CurrentTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTaskViewModel.swift; sourceTree = "<group>"; };
 		6C726A022AC82FB300E14230 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -221,6 +231,10 @@
 		6CFC72DA2ACD607700930E74 /* MockMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMembers.swift; sourceTree = "<group>"; };
 		6CFC72DC2ACD6FEA00930E74 /* CreateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatView.swift; sourceTree = "<group>"; };
 		6CFC72DE2ACD759F00930E74 /* ProjectContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContactView.swift; sourceTree = "<group>"; };
+		B7965D882AD57C3B00D10505 /* PickMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMemberView.swift; sourceTree = "<group>"; };
+		B7965D8A2AD57C4B00D10505 /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
+		B7965D8C2AD57C6200D10505 /* AddProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectDetailView.swift; sourceTree = "<group>"; };
+		B7965D8E2AD57CCC00D10505 /* CreateProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewModel.swift; sourceTree = "<group>"; };
 		B7A2A5EC2A7602D7001F392F /* IColab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IColab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A2A5EF2A7602D7001F392F /* IColabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IColabApp.swift; sourceTree = "<group>"; };
 		B7A2A5F12A7602D7001F392F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -324,6 +338,8 @@
 			children = (
 				6C129E902AC2D26800F7036D /* EditProjectView.swift */,
 				6C3B2D982AD1585B0049FE41 /* AddGoalView.swift */,
+				6C3B2DA12AD165930049FE41 /* CreateTaskView.swift */,
+				6C33A21E2AD3EA2400CD4AE5 /* EditGoalView.swift */,
 			);
 			path = EditView;
 			sourceTree = "<group>";
@@ -381,6 +397,14 @@
 				6C3B2D962AD1109F0049FE41 /* ProjectMemberContactCardView.swift */,
 			);
 			path = ContactListView;
+			sourceTree = "<group>";
+		};
+		6C3B2D9E2AD164240049FE41 /* InputTaskView */ = {
+			isa = PBXGroup;
+			children = (
+				6C3B2D9F2AD164320049FE41 /* InputTaskCardView.swift */,
+			);
+			path = InputTaskView;
 			sourceTree = "<group>";
 		};
 		6C7269FE2AC82F9600E14230 /* Chat */ = {
@@ -508,6 +532,7 @@
 		6C74DB982AC0322900FD5D3F /* InputField */ = {
 			isa = PBXGroup;
 			children = (
+				6C3B2D9E2AD164240049FE41 /* InputTaskView */,
 				6C74DB992AC0323700FD5D3F /* InputFieldView.swift */,
 				6C74DB9B2AC0324300FD5D3F /* InputTitleView.swift */,
 				6CC7F29F2AC0344A00AF0A12 /* InputDescriptionView.swift */,
@@ -529,6 +554,41 @@
 				6CFC72DE2ACD759F00930E74 /* ProjectContactView.swift */,
 			);
 			path = GroupedContact;
+			sourceTree = "<group>";
+		};
+		B7965D822AD57B9E00D10505 /* CreateProject */ = {
+			isa = PBXGroup;
+			children = (
+				B7965D852AD57BE100D10505 /* Views */,
+				B7965D842AD57BCE00D10505 /* ViewModels */,
+				B7965D832AD57BC800D10505 /* Component */,
+			);
+			name = CreateProject;
+			sourceTree = "<group>";
+		};
+		B7965D832AD57BC800D10505 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
+		B7965D842AD57BCE00D10505 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B7965D8E2AD57CCC00D10505 /* CreateProjectViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		B7965D852AD57BE100D10505 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7965D882AD57C3B00D10505 /* PickMemberView.swift */,
+				B7965D8A2AD57C4B00D10505 /* CreateProjectView.swift */,
+				B7965D8C2AD57C6200D10505 /* AddProjectDetailView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B7A2A5E32A7602D7001F392F = {
@@ -662,6 +722,7 @@
 		D87E1F8A2AA2EE6A009E3C23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B7965D822AD57B9E00D10505 /* CreateProject */,
 				B7EE98BD2ACA96F700C9B428 /* ProjectMain */,
 				B7EE98BC2ACA96EF00C9B428 /* LoginRegister */,
 				6C7269FE2AC82F9600E14230 /* Chat */,
@@ -1073,6 +1134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C74DB7D2ABFF27D00FD5D3F /* ProjectButtonView.swift in Sources */,
+				B7965D8D2AD57C6200D10505 /* AddProjectDetailView.swift in Sources */,
 				D87E1F8E2AA2EF26009E3C23 /* TabBarItemComponent.swift in Sources */,
 				6C74DB792ABFEA1000FD5D3F /* CurrentMilestoneView.swift in Sources */,
 				D87A67B62AA70393000586A1 /* MilestoneView.swift in Sources */,
@@ -1080,9 +1142,11 @@
 				D82C0D532AB976E1009802D9 /* NotificationViewModel.swift in Sources */,
 				6C3189D62AC4490100A6C113 /* ContactListViewModel.swift in Sources */,
 				D8FCE0802AAC363300B19B95 /* TagManager.swift in Sources */,
+				6C3B2DA02AD164320049FE41 /* InputTaskCardView.swift in Sources */,
 				6C74DB812AC00ABC00FD5D3F /* MemberListView.swift in Sources */,
 				B7F3A2A42ACB052E0034EACF /* LoginViewModel.swift in Sources */,
 				6C74DB932AC0299E00FD5D3F /* ContactListView.swift in Sources */,
+				6C3B2DA22AD165930049FE41 /* CreateTaskView.swift in Sources */,
 				D89586FE2AAF5E340064629B /* ProfileViewModel.swift in Sources */,
 				6C74DB752ABFE80000FD5D3F /* ProjectOverviewView.swift in Sources */,
 				D89587072AB036560064629B /* ExperienceDetailView.swift in Sources */,
@@ -1099,6 +1163,7 @@
 				B7EE98D12ACA9A8800C9B428 /* ProjectMainView.swift in Sources */,
 				D89587102AB2C1C70064629B /* Education.swift in Sources */,
 				6C745EB22AC97F0400646574 /* MockChats.swift in Sources */,
+				6C33A21F2AD3EA2400CD4AE5 /* EditGoalView.swift in Sources */,
 				D8A3AF2A2AA3294700AC06C9 /* MockData.swift in Sources */,
 				6CFC72DD2ACD6FEA00930E74 /* CreateChatView.swift in Sources */,
 				D89DCFCA2ACA8D8300FF248F /* PortofolioCard.swift in Sources */,
@@ -1140,6 +1205,7 @@
 				6C726A0B2AC82FCF00E14230 /* PopupView.swift in Sources */,
 				6C74DB852AC013A800FD5D3F /* CurrentTaskView.swift in Sources */,
 				6CC7F2A42AC0394B00AF0A12 /* InputTagsView.swift in Sources */,
+				B7965D8F2AD57CCC00D10505 /* CreateProjectViewModel.swift in Sources */,
 				6C3B2D952AD110640049FE41 /* ProjectMemberContactView.swift in Sources */,
 				6C74DB972AC02C1300FD5D3F /* GroupedContactView.swift in Sources */,
 				6C3189D82AC449D700A6C113 /* ProjectNavigationCardView.swift in Sources */,
@@ -1150,6 +1216,7 @@
 				6C7DAFE72ACD16D000DC7D8B /* Randomizeable.swift in Sources */,
 				D8A3AF222AA3239D00AC06C9 /* ProjectCard.swift in Sources */,
 				D81DCE242AC34EE600D65604 /* SkillEditView.swift in Sources */,
+				B7965D892AD57C3B00D10505 /* PickMemberView.swift in Sources */,
 				D8A3AF2C2AA32AE200AC06C9 /* TagItem.swift in Sources */,
 				D80BC30F2ABD38690086558D /* FormTextField.swift in Sources */,
 				B7EE98C82ACA977A00C9B428 /* DotIndicator.swift in Sources */,
@@ -1180,6 +1247,7 @@
 				6C3189E62AC5614100A6C113 /* MilestoneDetailInfoView.swift in Sources */,
 				6C726A172AC8302100E14230 /* RoundedCorner.swift in Sources */,
 				B7A2A5F02A7602D7001F392F /* IColabApp.swift in Sources */,
+				B7965D8B2AD57C4B00D10505 /* CreateProjectView.swift in Sources */,
 				6C745E9E2AC91A7A00646574 /* Chat.swift in Sources */,
 				6C74DB952AC02AD000FD5D3F /* ContactCardView.swift in Sources */,
 				6C74DB8B2AC0199D00FD5D3F /* MilestonesView.swift in Sources */,

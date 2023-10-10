@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Member: Identifiable {
+struct Member: Identifiable, Equatable {
     let id: UUID = UUID()
     
     var account: Account

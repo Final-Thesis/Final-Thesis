@@ -17,6 +17,7 @@ struct Milestone: Identifiable, Hashable {
     }
     
     static func == (lhs: Milestone, rhs: Milestone) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id == rhs.id &&
+        lhs.role == rhs.role
     }
 }

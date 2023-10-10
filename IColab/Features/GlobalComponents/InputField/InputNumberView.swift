@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InputNumberView: View {
-    @Binding var score: Int
+    var title: String = "Input Nominal"
+    @Binding var nominal: Int
 
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -17,14 +18,27 @@ struct InputNumberView: View {
     }()
 
     var body: some View {
-        VStack {
-            TextField("Enter nominal: ", value: $score, formatter: formatter)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.headline)
+            HStack {
+                TextField(title, value: $nominal, formatter: formatter)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                Spacer()
+                Button {
+                    nominal = 0
+                } label: {
+                    Image(systemName: "x.circle")
+                }
+            }
+            
+            Divider()
+                .foregroundColor(.white)
         }
     }
 }
 
 #Preview {
-    InputNumberView(score: .constant(5))
+    InputNumberView(nominal: .constant(5))
 }

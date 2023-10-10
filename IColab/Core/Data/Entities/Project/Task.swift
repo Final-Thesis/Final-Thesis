@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Task: Identifiable {
-    
+struct Task: Identifiable, Equatable {
     let id = UUID().uuidString
+    
     var title: String = ""
     var status: TaskStatus = .notCompleted
     
