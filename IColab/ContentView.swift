@@ -11,6 +11,9 @@ struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     @StateObject var navigationManager = NavigationManager()
     
+    init() {
+        Mock.init()
+    }
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
             ScrollView{
@@ -32,7 +35,8 @@ struct ContentView: View {
                 }
             }
             TabBarView(selectedTabItem: $selectedTabBar)
-        }.accentColor(.primary)
+        }
+        .accentColor(.primary)
     }
 }
 

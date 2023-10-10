@@ -53,10 +53,3 @@ struct ProjectDetailView: View {
         }
     }
 }
-
-struct ProjectDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDetailView(project: Mock.projects[0], path: .constant(NavigationPath()))
-            .preferredColorScheme(.dark)
-    }
-}

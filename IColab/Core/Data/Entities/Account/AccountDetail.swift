@@ -12,7 +12,7 @@ class AccountDetail {
     var desc : String
     var location : String
     var bankAccount : String
-    var cvLink : String
+    var phoneNumber : String
     var skills : [String] = []
     var educations : [Education] = []
     var experiences : [Experience] = []
@@ -22,7 +22,7 @@ class AccountDetail {
         self.desc = desc
         self.location = location
         self.bankAccount = bankAccount
-        self.cvLink = cvLink
+        self.phoneNumber = cvLink
         self.skills = skills
         self.educations = educations
         self.experiences = experiences
