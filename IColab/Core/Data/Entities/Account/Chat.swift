@@ -13,10 +13,10 @@ enum ChatType: CaseIterable {
     case group
 }
 
-struct Chat: Identifiable, Equatable {
+struct Chat: Identifiable, Equatable, Searchable {
     let id: UUID = UUID()
     
-    var name: String
+    var title: String
     var messages: [Message]
     var type: ChatType = .personal
     
@@ -30,7 +30,7 @@ struct Chat: Identifiable, Equatable {
     
     static func == (lhs: Chat, rhs: Chat) -> Bool {
         return lhs.id == rhs.id &&
-        lhs.name == rhs.name &&
+        lhs.title == rhs.title &&
         lhs.type == rhs.type
     }
 }

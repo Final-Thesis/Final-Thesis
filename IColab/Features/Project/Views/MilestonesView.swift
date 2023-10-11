@@ -34,6 +34,7 @@ struct MilestonesView: View {
                     .padding()
                     .background(Color("gray"))
                     .cornerRadius(12)
+                    
                     MilestoneLineView(role: picker)
                         .environmentObject(vm)
                 }

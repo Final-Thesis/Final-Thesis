@@ -7,11 +7,23 @@
 
 import Foundation
 
+enum ProjectMainViewPicker: String, CaseIterable {
+    case projectOwned = "Project Owned"
+    case projectJoined = "Project Joined"
+}
+
 class ProjectMainViewModel: ObservableObject {
-    @Published var account: Account?
+    @Published var account: Account = Mock.accounts[0]
+    @Published var projectJoined: [Project] = []
+    @Published var projectOwned: [Project] = []
+    
+    @Published var picker: ProjectMainViewPicker = .projectOwned
     
     init(uid: String){
-        self.account = getAccount(uid: uid)
+        self.account = getAccount(uid: uid)!
+        
+        self.projectJoined = account.projectsJoined!
+        self.projectOwned = account.projectsOwned!
     }
     
     private func getAccount(uid: String) -> Account?{
@@ -20,33 +32,12 @@ class ProjectMainViewModel: ObservableObject {
         }
     }
     
-    func getProject() -> Project {
-        return (self.account?.projectsOwned![0])!
+    func getProjectsByType(picker: ProjectMainViewPicker) -> [Project] {
+        switch picker {
+            case .projectOwned:
+                return projectOwned
+            case .projectJoined:
+                return projectJoined
+        }
     }
-    
-    @Published var searchText: String = ""
-    @Published var picker: Int = 1
-    @Published var projects: [Project] = []
-
-//    init() {
-//        projects = [
-//            Project(name: "Project 1", type: 1),
-//            Project(name: "Project 2", type: 2),
-//            Project(name: "Project 3", type: 3),
-//            Project(name: "Project 4", type: 4),
-//            Project(name: "Project 5", type: 5),
-//        ]
-//    }
-
-//    func filterProjects() {
-//        projects = projects.filter { project in
-//            project.name.contains(searchText) && project.type == picker
-//        }
-//    }
-    
-//    struct Project: Identifiable {
-//        let id = UUID()
-//        let name: String
-//        let type: Int
-//    }
 }

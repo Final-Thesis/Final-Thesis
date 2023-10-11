@@ -32,7 +32,7 @@ struct ContactView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(chat.name)
+                            Text(chat.title)
                                 .font(.headline)
                             Text(chat.projectName)
                                 .font(.footnote)
