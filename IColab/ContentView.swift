@@ -11,6 +11,9 @@ struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     @StateObject var accountManager = AccountManager()
 
+    init(){
+        Mock.init()
+    }
     var body: some View {
         NavigationStack {
             ScrollView{
@@ -33,6 +36,7 @@ struct ContentView: View {
             }
             TabBarView(selectedTabItem: $selectedTabBar)
         }
+        .accentColor(.primary)
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.large)
     }

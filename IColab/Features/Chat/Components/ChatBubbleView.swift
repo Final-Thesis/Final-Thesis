@@ -18,9 +18,7 @@ struct ChatBubbleView: View {
                     .frame(width: 240, alignment: .topTrailing)
                     .padding(16)
                     .background(.purple)
-                    .cornerRadius(12, corners: .topRight)
-                    .cornerRadius(12, corners: .topLeft)
-                    .cornerRadius(12, corners: .bottomLeft)
+                    .cornerRadius(12, corners: [.topLeft, .topRight, .bottomLeft])
                     .padding(.top, 12)
             }
         }
@@ -39,9 +37,7 @@ struct ChatBubbleView: View {
                         .frame(width: 240, alignment: .topLeading)
                         .padding(16)
                         .background(Color("gray"))
-                        .cornerRadius(12, corners: .bottomLeft)
-                        .cornerRadius(12, corners: .bottomRight)
-                        .cornerRadius(12, corners: .topRight)
+                        .cornerRadius(12, corners: [.bottomLeft, .bottomRight, .topRight])
                     Spacer()
                 }
             }

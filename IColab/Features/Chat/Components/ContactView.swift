@@ -14,14 +14,13 @@ struct ContactView: View {
         HStack {
             ZStack {
                 Circle()
-                    .foregroundColor(.blue)
+                    .foregroundColor(.purple)
                 if chat.type == .owner {
                     VStack {
                         HStack {
                             Spacer()
                             Image(systemName: "crown.fill")
                                 .font(.caption2)
-                            
                         }
                         Spacer()
                     }

@@ -18,7 +18,7 @@ struct ProjectMainView: View {
                         .font(.largeTitle)
                         .bold()
                     NavigationLink {
-                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account!.id))
+                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account.id))
                     } label: {
                         Image(systemName: "plus.circle")
                             .font(.largeTitle)
@@ -29,9 +29,21 @@ struct ProjectMainView: View {
                 
                 switch vm.picker {
                     case .projectOwned:
-                        SearchView(array: $vm.projectOwned, vm: SearchViewModel(array: vm.projectOwned))
+                    SearchView(
+                        array: $vm.projectOwned,
+                        vm: SearchViewModel(array: vm.projectOwned),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
                     case .projectJoined:
-                        SearchView(array: $vm.projectJoined, vm: SearchViewModel(array: vm.projectJoined))
+                    SearchView(
+                        array: $vm.projectJoined,
+                        vm: SearchViewModel(array: vm.projectJoined),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
                 }
                 
                 Picker("Project Picker", selection: $vm.picker) {
