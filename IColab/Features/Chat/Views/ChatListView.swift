@@ -18,15 +18,7 @@ struct ChatListView: View {
 
             if vm.chats.isEmpty {
                 Spacer()
-                VStack(alignment: .center) {
-                    Image(systemName: "envelope.open.fill")
-                        .font(.largeTitle)
-                    Text("No Message Yet")
-                        .font(.headline)
-                    Text("Join a project first to start chatting with someone")
-                        .multilineTextAlignment(.center)
-                }
-                .padding()
+                EmptyDataView(icon: "envelope.open.fill", title: "No Message Yet", desc: "Join a project first to start chatting with someone")
             }
             else {
                 ScrollView {
@@ -42,10 +34,10 @@ struct ChatListView: View {
                                 vm.pinChat(chat: chat)
                             } label: {
                                 if chat.isPinned {
-                                    Text("Unpin Chat")
+                                    Label("Unpin Chat", systemImage: "pin.slash.fill")
                                 }
                                 else {
-                                    Text("Pin Chat")
+                                    Label("Pin Chat", systemImage: "pin.fill")
                                 }
                             }
                         })
