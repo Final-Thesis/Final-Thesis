@@ -20,8 +20,13 @@ struct ProjectMainView: View {
                     Text("Projects")
                         .font(.largeTitle)
                         .bold()
-                    Image(systemName: "plus.circle")
-                        .font(.largeTitle)
+                    NavigationLink {
+                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account!.id))
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .font(.largeTitle)
+                    }
+                    
                     Spacer()
                 }
                 HStack {
