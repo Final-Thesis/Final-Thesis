@@ -9,60 +9,19 @@ import SwiftUI
 
 struct ChatListView: View {
     @StateObject var vm = ChatListViewModel(uid: Mock.accounts[1].id)
-    @FocusState var isInputActive: Bool
     
     @State var filterToggle: Bool = false
     
     var body: some View {
         VStack {
-            HStack{
-                SearchBar(searchText: $vm.searchText){ search in
-                    vm.searchChats(searchTitle: search)
-                }
-                .focused($isInputActive)
-                Button {
-                    filterToggle.toggle()
-                } label: {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                        .font(.title2)
-                        .foregroundColor(.primary)
-                }
-            }
-            .padding(.horizontal, 10)
-            .padding()
+            SearchView(array: $vm.chats, vm: SearchViewModel(array: vm.chats))
+
             if vm.chats.isEmpty {
                 Spacer()
-                VStack(alignment: .center) {
-                    Image(systemName: "envelope.open.fill")
-                        .font(.largeTitle)
-                    Text("No Message Yet")
-                        .font(.headline)
-                    Text("Join a project first to start chatting with someone")
-                        .multilineTextAlignment(.center)
-                }
-                .padding()
+                EmptyDataView(icon: "envelope.open.fill", title: "No Message Yet", desc: "Join a project first to start chatting with someone")
             }
             else {
                 ScrollView {
-//                    ForEach(0..<vm.getChats().count, id: \.self) { i in
-//                        NavigationLink {
-//                            ChatView(chat: vm.chats[i])
-//                        } label: {
-//                            ContactView(chat: vm.chats[i])
-//                        }
-//                        .contextMenu(menuItems: {
-//                            Button {
-//                                vm.pinChat(index: i)
-//                            } label: {
-//                                if !vm.chats[i].isPinned {
-//                                    Text("Pin Chat")
-//                                }
-//                                else {
-//                                    Text("Unpin Chat")
-//                                }
-//                            }
-//                        })
-//                    }
                     ForEach(vm.chats) { chat in
                         NavigationLink {
                             ChatView(chat: chat)
@@ -75,10 +34,10 @@ struct ChatListView: View {
                                 vm.pinChat(chat: chat)
                             } label: {
                                 if chat.isPinned {
-                                    Text("Unpin Chat")
+                                    Label("Unpin Chat", systemImage: "pin.slash.fill")
                                 }
                                 else {
-                                    Text("Pin Chat")
+                                    Label("Pin Chat", systemImage: "pin.fill")
                                 }
                             }
                         })

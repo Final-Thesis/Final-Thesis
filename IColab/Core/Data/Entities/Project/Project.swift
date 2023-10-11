@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Project : Identifiable{
+class Project : Identifiable, Searchable {
     let id = UUID().uuidString
     var title : String
     var owner : Account?

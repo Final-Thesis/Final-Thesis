@@ -9,63 +9,43 @@ import SwiftUI
 
 struct CurrentTaskView: View {
     @StateObject var vm: CurrentTaskViewModel
-    @State var refresh = false
-    @State var isOwner: Bool = true
-    
-    @State var pickerSelector = 1
+    @State var isOwner: Bool = false
+    @State var picker: TaskStatus = .notCompleted
     
     var body: some View {
         VStack {
-            Picker("Task Type", selection: $pickerSelector) {
-                Text("Available").tag(1)
-                Text("On Review").tag(2)
-                Text("Completed").tag(3)
+            Picker("Task Type", selection: $picker) {
+                ForEach(TaskStatus.allCases, id: \.self) { picker in
+                    Text(picker.rawValue).tag(picker)
+                }
             }
             .pickerStyle(.segmented)
             .padding(.bottom)
+            
             ScrollView {
                 Group {
-                    if pickerSelector == 1 {
-                        ForEach(0..<vm.tasks.count, id: \.self) { i in
-                            if vm.tasks[i].status == .notCompleted {
-                                TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
-                            }
+                    ForEach(0..<vm.tasks.count, id: \.self) { i in
+                        if vm.tasks[i].status == picker {
+                            TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
                         }
                     }
-                    else if pickerSelector == 2 {
-                        ForEach(0..<vm.tasks.count, id: \.self) { i in
-                            if vm.tasks[i].status == .onReview {
-                                TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
-                            }
-                        }
-                    }
-                    else if pickerSelector == 3 {
-                        ForEach(0..<vm.tasks.count, id: \.self) { i in
-                            if vm.tasks[i].status == .completed {
-                                TaskCardView(task: vm.tasks[i], toggle: $vm.toggles[i])
-                            }
-                        }
-                    }
-                    
                 }
                 .padding(4)
             }
             
             if isOwner {
-                if pickerSelector == 2 {
+                if picker == .onReview {
                     ButtonComponent(title: "Validate", width: 360) {
                         vm.validateTask()
-                        refresh.toggle()
                     }
                     .padding(.top)
                 }
 
             }
             else {
-                if pickerSelector == 1 {
+                if picker == .notCompleted {
                     ButtonComponent(title: "Submit", width: 360) {
                         vm.submitTasks()
-                        refresh.toggle()
                     }
                     .padding(.top)
                 }
