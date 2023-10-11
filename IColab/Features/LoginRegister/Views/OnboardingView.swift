@@ -33,15 +33,16 @@ struct OnboardingView: View {
                         currentIndex += 1
                     }
                 }else{
-                    NavigationLink {
-                        LoginView()
-                    } label: {
-                        Text("Login")
+                    ButtonComponent(title: "Login", width: 320) {
+                        nextView.toggle()
                     }
                 }
                 
             }
             .padding()
+            .navigationDestination(isPresented: $nextView) {
+                LoginView()
+            }
         }
         .accentColor(.primary)
     }
