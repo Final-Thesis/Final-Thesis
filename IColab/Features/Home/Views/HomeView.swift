@@ -47,7 +47,7 @@ struct HomeView: View {
             }
         }
         .padding(.horizontal, 20)
-        .navigationTitle("Home")
+        .navigationTitle("Browse")
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
