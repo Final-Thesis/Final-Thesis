@@ -49,7 +49,6 @@ struct ChatListView: View {
                                 .environmentObject(vm)
                         } label: {
                             ContactView(chat: chat)
-                                .padding(.horizontal)
                         }
                         .contextMenu(menuItems: {
                             Button {
@@ -69,7 +68,7 @@ struct ChatListView: View {
             
             Spacer()
         }
-        
+        .padding()
     }
 }
 

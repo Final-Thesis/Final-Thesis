@@ -38,8 +38,6 @@ struct SearchView<Element: Searchable>: View {
                 .presentationDetents([.fraction(0.4)])
                 .presentationDragIndicator(.visible)
         })
-        .padding(.horizontal, 10)
-        .padding()
     }
 }
 

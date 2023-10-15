@@ -52,7 +52,7 @@ struct ProjectMainView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .padding()
+                .padding(.vertical)
                 
                 ScrollView {
                     ForEach(vm.getProjectsByType(picker: vm.picker)) { project in
@@ -64,12 +64,10 @@ struct ProjectMainView: View {
                         }
                     }
                 }
-                .padding()
             }
             
-            .padding()
-            
         }
+        .padding()
     }
 }
 //
