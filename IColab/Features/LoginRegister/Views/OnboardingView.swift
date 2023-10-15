@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     @State private var currentIndex = 0
     @State private var nextView = false
+    @Binding var showSignIn : Bool
     
     var body: some View {
         NavigationStack{
@@ -33,24 +34,25 @@ struct OnboardingView: View {
                         currentIndex += 1
                     }
                 }else{
-                    ButtonComponent(title: "Login", width: 320) {
-                        nextView.toggle()
+                    NavigationLink {
+                        LoginView(showSignIn: $showSignIn)
+                    } label: {
+                        Text("Login")
+                            .frame(width: 320)
+                            .bold()
                     }
+                    .tint(Color(.purple))
+                    .buttonStyle(.borderedProminent)
                 }
                 
             }
             .padding()
             .navigationDestination(isPresented: $nextView) {
-                LoginView()
+                LoginView(showSignIn: $showSignIn)
             }
         }
         .accentColor(.primary)
     }
-}
-
-#Preview {
-    OnboardingView()
-        .preferredColorScheme(.dark)
 }
 
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var rvm = RegisterViewModel()
+    @Binding var showSignIn: Bool
     var body: some View {
         VStack {
             Spacer()
@@ -46,16 +47,9 @@ struct RegisterView: View {
         }
         
         .navigationDestination(isPresented: $rvm.signIn, destination: {
-            LoginView()
+            LoginView(showSignIn: $showSignIn)
         })
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.large)
-    }
-}
-
-#Preview {
-    NavigationStack{
-        RegisterView()
-            .preferredColorScheme(.dark)
     }
 }

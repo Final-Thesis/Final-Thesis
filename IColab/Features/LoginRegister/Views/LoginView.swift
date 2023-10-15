@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var lvm : LoginViewModel = LoginViewModel()
+    @Binding var showSignIn : Bool
     var body: some View {
         NavigationStack {
             VStack {
@@ -23,6 +24,7 @@ struct LoginView: View {
                 VStack {
                     Button {
                         lvm.login()
+                        showSignIn.toggle()
                     } label: {
                         Text("Sign In")
                             .frame(width: 330)
@@ -48,15 +50,11 @@ struct LoginView: View {
                 Text("\(error.errorSuggestion)")
             }
             .onAppear {
-                Mock.init()
                 print("\(Mock.accounts[0].accountDetail.name)")
                 print("\(Mock.accounts[0].password)")
             }
             .navigationDestination(isPresented: $lvm.createAccount) {
-                RegisterView()
-            }
-            .navigationDestination(isPresented: $lvm.contentView) {
-                ContentView()
+                RegisterView(showSignIn: $showSignIn)
             }
         }
         .navigationBarBackButtonHidden()
@@ -65,11 +63,4 @@ struct LoginView: View {
         
 }
 
-#Preview {
-    NavigationStack{
-        LoginView(lvm: LoginViewModel())
-            .preferredColorScheme(.dark)
-    }
-    
-}
 
