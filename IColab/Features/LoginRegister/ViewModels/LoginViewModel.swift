@@ -31,28 +31,25 @@ enum LoginError : LocalizedError{
 }
 
 class LoginViewModel: ObservableObject {
-    @Published var username = ""
+    @Published var email = ""
     @Published var password = ""
     @Published var error : LoginError?
     @Published var showAlert = false
     @Published var createAccount = false
-    @Published var contentView = false
 
     public func login(){
-        let getUsername = username
+        let getEmail = email
         let getPassword = password
         
-        if getUsername.isEmpty || getPassword.isEmpty {
+        if getEmail.isEmpty || getPassword.isEmpty {
             error = .incompleteForm
             showAlert = true
             return
         }
-        
         if let foundAccount = Mock.accounts.first(where: { account in
-            account.accountDetail.name == getUsername && account.password == getPassword
+            account.email == getEmail && account.password == getPassword
         }) {
-            print(foundAccount.email)
-            contentView.toggle()
+            AccountManager.shared.getAccount(uid: foundAccount.id)
         }else{
             error = .invalidPassword
             showAlert = true

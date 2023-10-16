@@ -29,14 +29,16 @@ struct TextFieldView: View {
             HStack {
                 Image(systemName: icon)
                     .font(.title)
-                    .frame(width: 50, height: 30)
+                    .frame(width: 30, height: 30)
                 switch textfieldStyle {
                 case .plain:
                     TextField(text, text: $input, axis: .horizontal)
                         .autocorrectionDisabled()
+                        .autocapitalization(.none)
                 case .password:
                     SecureField(text, text: $input)
                         .autocorrectionDisabled()
+                        .autocapitalization(.none)
                 }
             }
             Divider()

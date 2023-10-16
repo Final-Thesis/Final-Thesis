@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var rvm = RegisterViewModel()
+    @Binding var showSignIn: Bool
     var body: some View {
         VStack {
             Spacer()
@@ -24,6 +25,9 @@ struct RegisterView: View {
             VStack {
                 ButtonComponent(title: "Register", width: 320) {
                     rvm.register()
+                    if !rvm.showError {
+                        showSignIn.toggle()
+                    }
                 }
                 .padding(.bottom, 10)
                 Button {
@@ -46,16 +50,9 @@ struct RegisterView: View {
         }
         
         .navigationDestination(isPresented: $rvm.signIn, destination: {
-            LoginView()
+            LoginView(showSignIn: $showSignIn)
         })
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.large)
-    }
-}
-
-#Preview {
-    NavigationStack{
-        RegisterView()
-            .preferredColorScheme(.dark)
     }
 }

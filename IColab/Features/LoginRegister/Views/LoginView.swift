@@ -9,12 +9,13 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var lvm : LoginViewModel = LoginViewModel()
+    @Binding var showSignIn : Bool
     var body: some View {
         NavigationStack {
             VStack {
                 Spacer()
                 Group {
-                    TextFieldView(input: $lvm.username, icon: "person", text: "Username")
+                    TextFieldView(input: $lvm.email, icon: "person", text: "Username")
                     TextFieldView(input: $lvm.password, icon: "key", text: "Password", textfieldStyle: .password)
                 }
                 .padding(.vertical)
@@ -23,6 +24,9 @@ struct LoginView: View {
                 VStack {
                     Button {
                         lvm.login()
+                        if !lvm.showAlert {
+                            showSignIn.toggle()
+                        }
                     } label: {
                         Text("Sign In")
                             .frame(width: 330)
@@ -48,15 +52,12 @@ struct LoginView: View {
                 Text("\(error.errorSuggestion)")
             }
             .onAppear {
-                Mock.init()
-                print("\(Mock.accounts[0].accountDetail.name)")
+                print("\(Mock.accounts[0].email)")
                 print("\(Mock.accounts[0].password)")
+                print("Username : \(Mock.accounts[0].accountDetail.name)")
             }
             .navigationDestination(isPresented: $lvm.createAccount) {
-                RegisterView()
-            }
-            .navigationDestination(isPresented: $lvm.contentView) {
-                ContentView()
+                RegisterView(showSignIn: $showSignIn)
             }
         }
         .navigationBarBackButtonHidden()
@@ -65,11 +66,4 @@ struct LoginView: View {
         
 }
 
-#Preview {
-    NavigationStack{
-        LoginView(lvm: LoginViewModel())
-            .preferredColorScheme(.dark)
-    }
-    
-}
 

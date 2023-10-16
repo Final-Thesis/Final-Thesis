@@ -57,32 +57,43 @@ class RegisterViewModel : ObservableObject {
     @Published var showError = false
     
     public func register(){
+        if registrationValidation() {
+            let accountDetail = AccountDetail(name: self.username, desc: "", location: self.region, bankAccount: "", cvLink: "")
+            let account = Account(email: self.email, password: self.password, accountDetail: accountDetail)
+            Mock.accounts.append(account)
+            AccountManager.shared.getAccount(uid: account.id)
+        }
+    }
+    
+    private func registrationValidation() -> Bool {
         if username.isEmpty || email.isEmpty || password.isEmpty || phoneNumber.isEmpty || region.isEmpty {
             showError(error: .formIncomplete)
-            return
+            return false
         }
         
         if username.count < 8 {
             showError(error: .shortUsername)
-            return
+            return false
         }
         
         if password.count < 8 {
             showError(error: .passwordLessThan8)
-            return
+            return false
         }
         
         if !email.contains("@") {
             showError(error: .notEmailFormat)
-            return
+            return false
         }
         
         if let double = Double(phoneNumber) {
             print("The string is numeric: \(double)")
         }else{
             showError(error: .phoneNotNumber)
-            return
+            return false
         }
+        
+        return true
     }
     
     private func showError(error: RegisterError) {

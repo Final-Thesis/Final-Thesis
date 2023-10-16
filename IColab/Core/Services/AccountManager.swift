@@ -8,9 +8,13 @@
 import Foundation
 
 class AccountManager : ObservableObject {
-    @Published var account : Account?
+    static var shared = AccountManager()
     
-    func getAccount(uid: String) {
+    private init(){}
+
+    var account : Account?
+    
+    public func getAccount(uid: String) {
         if let foundAccount = Mock.accounts.first(where: { account in
             account.id == uid
         }) {
