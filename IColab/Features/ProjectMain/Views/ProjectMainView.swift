@@ -29,9 +29,21 @@ struct ProjectMainView: View {
                 
                 switch vm.picker {
                     case .projectOwned:
-                        SearchView(array: $vm.projectOwned, vm: SearchViewModel(array: vm.projectOwned))
+                    SearchView(
+                        array: $vm.projectOwned,
+                        vm: SearchViewModel(array: vm.projectOwned),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
                     case .projectJoined:
-                        SearchView(array: $vm.projectJoined, vm: SearchViewModel(array: vm.projectJoined))
+                    SearchView(
+                        array: $vm.projectJoined,
+                        vm: SearchViewModel(array: vm.projectJoined),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
                 }
                 
                 Picker("Project Picker", selection: $vm.picker) {
@@ -40,7 +52,7 @@ struct ProjectMainView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .padding()
+                .padding(.vertical)
                 
                 ScrollView {
                     ForEach(vm.getProjectsByType(picker: vm.picker)) { project in
@@ -52,12 +64,10 @@ struct ProjectMainView: View {
                         }
                     }
                 }
-                .padding()
             }
             
-            .padding()
-            
         }
+        .padding()
     }
 }
 //

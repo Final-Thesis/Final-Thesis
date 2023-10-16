@@ -12,6 +12,9 @@ struct SearchView<Element: Searchable>: View {
     @StateObject var vm: SearchViewModel<Element>
     @FocusState var isInputActive: Bool
     
+    var hasFilter: Bool = true
+    var filterView: AnyView?
+    
     @State var filterToggle: Bool = false
     
     var body: some View {
@@ -20,19 +23,21 @@ struct SearchView<Element: Searchable>: View {
                 array = vm.getSearchArrays(array: array)
             }
             .focused($isInputActive)
-            Button {
-                filterToggle.toggle()
-            } label: {
-                Image(systemName: "line.3.horizontal.decrease.circle")
-                    .font(.title2)
-                    .foregroundColor(.primary)
+            if hasFilter {
+                Button {
+                    filterToggle.toggle()
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                        .font(.title2)
+                        .foregroundColor(.primary)
+                }
             }
         }
         .sheet(isPresented: $filterToggle, content: {
-            Text("Filter")
+            filterView
+                .presentationDetents([.fraction(0.4)])
+                .presentationDragIndicator(.visible)
         })
-        .padding(.horizontal, 10)
-        .padding()
     }
 }
 

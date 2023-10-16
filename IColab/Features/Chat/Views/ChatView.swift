@@ -45,10 +45,7 @@ struct ChatView: View {
             }
             
         }
-        
-        //.navigationTitle("Project Description")
         .toolbar {
-            //placeholder
             if true {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {

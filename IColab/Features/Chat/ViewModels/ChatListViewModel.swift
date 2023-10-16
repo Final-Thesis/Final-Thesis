@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ChatFilterType: String {
+enum ChatFilterType: String, CaseIterable {
     case all = "All"
     case personal = "Personal"
     case owner = "Owner"

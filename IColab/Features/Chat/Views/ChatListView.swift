@@ -14,7 +14,28 @@ struct ChatListView: View {
     
     var body: some View {
         VStack {
-            SearchView(array: $vm.chats, vm: SearchViewModel(array: vm.chats))
+            HStack {
+                Text("Chats")
+                    .font(.largeTitle)
+                    .bold()
+                NavigationLink {
+                    CreateChatView()
+                        .environmentObject(vm)
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .font(.largeTitle)
+                }
+                
+                Spacer()
+            }
+            SearchView(
+                array: $vm.chats,
+                vm: SearchViewModel(array: vm.chats),
+                filterView: AnyView(
+                    ChatFilterView()
+                        .environmentObject(vm)
+                )
+            )
 
             if vm.chats.isEmpty {
                 Spacer()
@@ -47,25 +68,7 @@ struct ChatListView: View {
             
             Spacer()
         }
-        .sheet(isPresented: $filterToggle, content: { 
-            ChatFilterView()
-                .environmentObject(vm)
-                .presentationDetents([.fraction(0.4)])
-                .presentationDragIndicator(.visible)
-        })
-        .navigationTitle("Chats")
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                NavigationLink {
-                    CreateChatView()
-                        .environmentObject(vm)
-                } label: {
-                    Text("Add")
-                }
-            }
-                    
-        }
-        
+        .padding()
     }
 }
 

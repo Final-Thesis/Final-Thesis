@@ -2,7 +2,7 @@
 //  CreateProjectViewModel.swift
 //  IColab
 //
-//  Created by Brandon Nicolas Marlim on 10/10/23.
+//  Created by Jeremy Raymond on 10/10/23.
 //
 
 import Foundation
@@ -12,6 +12,14 @@ class CreateProjectViewModel: ObservableObject {
     
     @Published var project: Project = Project(title: "", role: "", requirements: [], tags: [], startDate: Date.now, endDate: Date.now, desc: "", milestones: [])
     @Published var roles: [Role] = []
+    
+//    @Published var title: String = ""
+//    @Published var summary: String = ""
+//    @Published var tags: [String] = ["HealthKit"]
+//    @Published var date: Date = Date.now
+    
+//    @Published var members: [Member] = []
+//    @Published var milestones: [Milestone] = []
     
     init(uid: String){
         self.account = getAccount(uid: uid)
@@ -31,4 +39,3 @@ class CreateProjectViewModel: ObservableObject {
         account.projectsOwned?.append(project)
     }
 }
-

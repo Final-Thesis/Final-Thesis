@@ -19,7 +19,7 @@ extension TabBarType{
     func getImage() -> String{
         switch self{
         case .home:
-            return "house"
+            return "doc.text.magnifyingglass"
         case .projects:
             return "menucard"
         case .chats:
@@ -33,7 +33,7 @@ extension TabBarType{
     func getCaption() -> String {
         switch self{
         case .home:
-            return "Home"
+            return "Browse"
         case .projects:
             return "Projects"
         case .chats:

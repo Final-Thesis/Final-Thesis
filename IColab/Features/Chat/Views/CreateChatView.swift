@@ -15,7 +15,11 @@ struct CreateChatView: View {
     
     var body: some View {
         VStack {
-            SearchView(array: $vm.projects, vm: SearchViewModel(array: vm.projects))
+            SearchView(
+                array: $vm.projects,
+                vm: SearchViewModel(array: vm.projects),
+                hasFilter: false
+            )
             ScrollView {
                 GroupedContactView(projects: vm.projects)
                     .padding()

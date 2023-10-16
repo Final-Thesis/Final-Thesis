@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MilestoneView: View {
     var milestones : [Milestone]
+    
     var body: some View {
         VStack(spacing: 20){
             MilestoneDetailCard(milestoneDetailCardType: .overview, milestones: milestones)
