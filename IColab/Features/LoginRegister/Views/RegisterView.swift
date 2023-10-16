@@ -25,6 +25,9 @@ struct RegisterView: View {
             VStack {
                 ButtonComponent(title: "Register", width: 320) {
                     rvm.register()
+                    if !rvm.showError {
+                        showSignIn.toggle()
+                    }
                 }
                 .padding(.bottom, 10)
                 Button {

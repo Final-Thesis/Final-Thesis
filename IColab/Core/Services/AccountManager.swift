@@ -10,7 +10,7 @@ import Foundation
 class AccountManager : ObservableObject {
     @Published var account : Account?
     
-    func getAccount(uid: String) {
+    public func getAccount(uid: String) {
         if let foundAccount = Mock.accounts.first(where: { account in
             account.id == uid
         }) {
