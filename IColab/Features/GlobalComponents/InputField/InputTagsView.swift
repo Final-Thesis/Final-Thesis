@@ -32,9 +32,9 @@ struct InputTagsView: View {
                 }
                 
                 HStack {
-                    ForEach(vm.getTestProject().tags, id: \.self) { tag in
-                        TagItem(tagText: tag)
-                    }
+//                    ForEach(vm.getProject().tags, id: \.self) { tag in
+//                        TagItem(tagText: tag)
+//                    }
                     
                 }
                 Divider()

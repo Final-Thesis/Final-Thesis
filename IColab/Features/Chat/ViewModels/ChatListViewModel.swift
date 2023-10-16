@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ChatFilterType: String {
+enum ChatFilterType: String, CaseIterable {
     case all = "All"
     case personal = "Personal"
     case owner = "Owner"
@@ -20,21 +20,25 @@ enum ChatFilterType: String {
 class ChatListViewModel: ObservableObject {
     @Published var account: Account?
     @Published var chats: [Chat] = []
-    
-    @Published var searchText : String = ""
-    @Published var searchPressed : Bool = false
+    @Published var projects: [Project] = []
     
     @Published var filterType: ChatFilterType = .all
     
     init(uid: String){
         self.account = getAccount(uid: uid)
         self.chats = self.getChats()
+        self.projects = self.getProjects()
+        
     }
     
     private func getAccount(uid: String) -> Account?{
         return Mock.accounts.first { account in
             account.id == uid
         }
+    }
+    
+    func getProjects() -> [Project] {
+        return account!.projectsOwned!
     }
     
     func getChats() -> [Chat] {
@@ -53,20 +57,24 @@ class ChatListViewModel: ObservableObject {
         return chats
     }
     
-    private func getSearchChats(searchTitle: String) -> [Chat] {
-        if searchTitle.isEmpty{
-            return self.getChats()
+    public func sortByDate() -> [Chat] {
+        var chats = self.getChats()
+        
+        chats.sort {
+            $0.messages.first!.time > $1.messages.first!.time
         }
-        let allChats = self.getChats()
-        let filteredChats = allChats.filter { chat in
-            let chatLowerCased = chat.name.lowercased()
-            return chatLowerCased.contains(searchTitle.lowercased())
-        }
-        return filteredChats
+        
+        return chats
     }
     
-    public func searchChats(searchTitle: String) {
-        self.chats = getSearchChats(searchTitle: searchTitle)
+    public func sortByProject() -> [Chat] {
+        var chats = self.getChats()
+        
+        chats.sort {
+            $0.projectName < $1.projectName
+        }
+        
+        return chats
     }
     
     public func filterChatType(chatType: ChatType) -> [Chat] {
@@ -86,6 +94,10 @@ class ChatListViewModel: ObservableObject {
                 self.chats = filterChatType(chatType: .owner)
             case .personal:
                 self.chats = filterChatType(chatType: .personal)
+            case .date:
+                self.chats = self.sortByDate()
+            case .project:
+                self.chats = self.sortByProject()
             default:
                 self.chats = self.getChats()
         }
@@ -100,5 +112,14 @@ class ChatListViewModel: ObservableObject {
             
             self.objectWillChange.send()
         }
+    }
+    
+    public func sendMessage(chat: Chat, text: String) -> Chat {
+        let index = account!.chats!.firstIndex(of: chat)!
+        
+        account!.chats![index].sendMessage(message: Message(text: text, time: Date.now, isUser: true))
+        self.chats = self.getChats()
+        
+        return account!.chats![index]
     }
 }

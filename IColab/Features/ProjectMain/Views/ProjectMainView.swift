@@ -8,50 +8,71 @@
 import SwiftUI
 
 struct ProjectMainView: View {
-    @State var searchText: String = ""
-    @State var picker: Int = 1
+    @StateObject var vm: ProjectMainViewModel = ProjectMainViewModel(uid: Mock.accounts[0].id)
     
     var body: some View {
-        VStack(alignment: .center) {
-            HStack {
-                Text("Projects")
-                    .font(.largeTitle)
-                    .bold()
-                Image(systemName: "plus.circle")
-                    .font(.largeTitle)
-                Spacer()
-            }
-            HStack {
-                SearchBar(searchText: $searchText, action: { _ in print("search")})
-                Button(
-                    action: {print("Filter")},
-                    label: {
-                        Image(systemName: "line.3.horizontal.circle")
-                        .font(.title)
+        VStack {
+            VStack {
+                HStack {
+                    Text("Projects")
+                        .font(.largeTitle)
+                        .bold()
+                    NavigationLink {
+                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account.id))
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .font(.largeTitle)
                     }
-                )
-                .buttonStyle(.plain)
-            }
-            
-            Picker("Project Picker", selection: $picker) {
-                Text("Joined Project").tag(1)
-                Text("Owned Project").tag(2)
-            }
-            .pickerStyle(.segmented)
-            ScrollView {
-                ForEach(0..<10, id: \.self) { _ in
-                    ProjectMainCardView()
+                    
+                    Spacer()
+                }
+                
+                switch vm.picker {
+                    case .projectOwned:
+                    SearchView(
+                        array: $vm.projectOwned,
+                        vm: SearchViewModel(array: vm.projectOwned),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
+                    case .projectJoined:
+                    SearchView(
+                        array: $vm.projectJoined,
+                        vm: SearchViewModel(array: vm.projectJoined),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
+                }
+                
+                Picker("Project Picker", selection: $vm.picker) {
+                    ForEach(ProjectMainViewPicker.allCases, id: \.self) { picker in
+                        Text(picker.rawValue).tag(picker)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.vertical)
+                
+                ScrollView {
+                    ForEach(vm.getProjectsByType(picker: vm.picker)) { project in
+                        NavigationLink {
+                            ProjectOverviewView(vm: ProjectOverviewViewModel(uid: project.id))
+                                .environmentObject(vm)
+                        } label: {
+                            ProjectMainCardView(project: project)
+                        }
+                    }
                 }
             }
-            .padding()
+            
         }
         .padding()
-        
     }
 }
-
-#Preview {
-    ProjectMainView()
-        .preferredColorScheme(.dark)
-}
+//
+//#Preview {
+//    ProjectMainView()
+//        .preferredColorScheme(.dark)
+//}
 

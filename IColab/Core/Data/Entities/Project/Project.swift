@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Project : Identifiable{
+class Project : Identifiable, Searchable {
     let id = UUID().uuidString
     var title : String
     var owner : Account?
@@ -31,6 +31,12 @@ class Project : Identifiable{
         self.endDate = endDate
         self.desc = desc
         self.milestones = milestones
+    }
+    
+    func setOverview(title: String, tags: [String], desc: String) {
+        self.title = title
+        self.tags = tags
+        self.desc = desc
     }
     
     public func setOwner(owner : Account){

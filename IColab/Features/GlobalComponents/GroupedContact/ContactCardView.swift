@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactCardView: View {
-    var name: String = "Name"
+    var member: Member
     
     var body: some View {
         HStack {
@@ -16,7 +16,7 @@ struct ContactCardView: View {
                 .frame(width: 48)
                 .foregroundColor(.purple)
             VStack(alignment: .leading) {
-                Text(name)
+                Text(member.account.accountDetail.name)
                 Divider()
             }
             Spacer()
@@ -25,8 +25,8 @@ struct ContactCardView: View {
     }
 }
 
-struct ContactCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactCardView()
-    }
-}
+//struct ContactCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContactCardView()
+//    }
+//}

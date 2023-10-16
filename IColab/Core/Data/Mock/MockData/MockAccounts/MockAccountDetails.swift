@@ -10,23 +10,39 @@ import Foundation
 struct MockAccountDetails: Randomizeable {
     typealias Element = AccountDetail
     
-    static var array: [AccountDetail] = MockAccountDetails.initArray(count: 7) {
-        return AccountDetail (
-            name: "John",
-            desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
-            location: "Indonesia",
-            bankAccount: "bankaccount",
-            cvLink: "CVLink",
-            skills: ["SwiftUI", "CoreML", "Vision"],
-            educations: [
-                Education(title: "BINUS University", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - Data Science and Analytics"),
-                Education(title: "National University of Singapore", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - BS, Data Science and Analytics")
-            ],
-            experiences: [
-                Experience(title: "Assistant Lab", company: "BINUS University", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-                Experience(title: "Junior Developer Intern", company: "Samsung Korea", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-            ]
-        )
+    static var names: [String] = [
+        "John",
+        "Doe",
+        "Kevin",
+        "Dallian",
+        "Gregorius",
+        "Jeremy",
+        "Raymond",
+        "Metekohy",
+        "Brandon",
+        "Nicholas",
+        "Marlim",
+    ]
+    
+    static var array: [AccountDetail] {
+        MockAccountDetails.initArray(count: 7) {
+            return AccountDetail (
+                name: names.randomElement()!,
+                desc: "Lorem ipsum dolor sit amet consectetur. Lobortis sit aliquam est lorem leo. Sollicitudin risus ornare sapien.",
+                location: "Indonesia",
+                bankAccount: "bankaccount",
+                cvLink: "CVLink",
+                skills: ["SwiftUI", "CoreML", "Vision"],
+                educations: [
+                    Education(title: "BINUS University", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - Data Science and Analytics"),
+                    Education(title: "National University of Singapore", company: "", startDate: Date.now, endDate: Date.now, desc: "Bachelor of Science - BS, Data Science and Analytics")
+                ],
+                experiences: [
+                    Experience(title: "Assistant Lab", company: "BINUS University", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+                    Experience(title: "Junior Developer Intern", company: "Samsung Korea", startDate: Date.now, endDate: Date.now, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                ]
+            )
+        }
     }
     
 }

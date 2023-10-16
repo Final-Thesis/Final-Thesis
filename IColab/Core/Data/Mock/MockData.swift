@@ -17,14 +17,12 @@ struct Mock {
     
     init() {
         Mock.accounts = MockAccounts.array
-        
         Mock.projects = MockProjects.array
         Mock.notifications = MockNotifications.array
         Mock.chats = MockChats.generateArray()
-        
         for account in Mock.accounts {
-            account.projectsOwned = MockProjects.addProjects()
-            account.projectsJoined = MockProjects.addProjects()
+            account.projectsOwned = MockProjects.generateArray()
+            account.projectsJoined = MockProjects.generateArray()
             account.chats = Mock.chats
             account.notifications = Mock.notifications
         }

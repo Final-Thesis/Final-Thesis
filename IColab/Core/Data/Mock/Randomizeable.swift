@@ -8,17 +8,21 @@
 import Foundation
 
 protocol Randomizeable {
-    associatedtype Element
+    associatedtype Element: Equatable
     
-    static var array: [Element] { get set }
+    static var array: [Element] { get }
 }
 
 extension Randomizeable {
     static func generateArray() -> [Element] {
         var array: [Element] = []
         
-        for _ in 0...Int.random(in: 5..<10) {
-            array.append(self.array.randomElement()!)
+        for _ in 0...Int.random(in: 2..<self.array.count) {
+            var element = self.array.randomElement()!
+            while array.contains(where: { $0 == element }) {
+                element = self.array.randomElement()!
+            }
+            array.append(element)
         }
         
         return array
@@ -27,8 +31,11 @@ extension Randomizeable {
     static func initArray(count: Int, elementGenerator: () -> Element) -> [Element] {
         var array: [Element] = []
         
-        for _ in 0...count {
-            let element = elementGenerator()
+        for _ in 0..<count {
+            var element = elementGenerator()
+            while array.contains(where: { $0 == element }) {
+                element = elementGenerator()
+            }
             array.append(element)
         }
         

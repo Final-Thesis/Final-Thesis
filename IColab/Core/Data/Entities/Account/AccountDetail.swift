@@ -7,12 +7,13 @@
 
 import Foundation
 
-class AccountDetail {
+class AccountDetail: Identifiable, Equatable {
+    let id: UUID = UUID()
     var name : String
     var desc : String
     var location : String
     var bankAccount : String
-    var cvLink : String
+    var phoneNumber : String
     var skills : [String] = []
     var educations : [Education] = []
     var experiences : [Experience] = []
@@ -22,7 +23,7 @@ class AccountDetail {
         self.desc = desc
         self.location = location
         self.bankAccount = bankAccount
-        self.cvLink = cvLink
+        self.phoneNumber = cvLink
         self.skills = skills
         self.educations = educations
         self.experiences = experiences
@@ -50,5 +51,9 @@ class AccountDetail {
     
     public func removeExperiences(idx : Int){
         experiences.remove(at: idx)
+    }
+    
+    static func == (lhs: AccountDetail, rhs: AccountDetail) -> Bool {
+        return lhs.id == rhs.id
     }
 }

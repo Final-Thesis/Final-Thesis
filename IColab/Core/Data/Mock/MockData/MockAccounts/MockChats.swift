@@ -12,8 +12,10 @@ struct MockChats: Randomizeable {
     
     static var randomProjectTitle: String = MockProjects.array.randomElement()!.title
     
-    static var array: [Element] = MockChats.initArray(count: names.count) {
-        return Element(name: names.randomElement()!, messages: MockMessages.generateArray(), type: ChatType.allCases.randomElement()!, projectName: randomProjectTitle)
+    static var array: [Element] {
+        MockChats.initArray(count: names.count) {
+            return Element(title: names.randomElement()!, messages: MockMessages.generateArray(), type: ChatType.allCases.randomElement()!, projectName: randomProjectTitle)
+        }
     }
     
     static var names: [String] = [

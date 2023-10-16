@@ -12,7 +12,6 @@ struct ProjectDetailView: View {
     var project : Project
     @State var pickerSelection : PickerItem = .overview
     @State var showSheet = false
-    @Binding var path : NavigationPath
     @State var showProfile = false
     let pickerItems : [PickerItem] = [.overview, .milestone]
     var body: some View {
@@ -51,12 +50,5 @@ struct ProjectDetailView: View {
             ProfileView(pvm: ProfileViewModel(uid: project.owner!.id))
                 .environmentObject(ProfileViewModel(uid: project.owner!.id))
         }
-    }
-}
-
-struct ProjectDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDetailView(project: Mock.projects[0], path: .constant(NavigationPath()))
-            .preferredColorScheme(.dark)
     }
 }

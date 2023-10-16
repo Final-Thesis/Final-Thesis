@@ -55,6 +55,7 @@ struct EditView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink {
                     NewFormView(backgroundType: backgroundType)
+                        .environmentObject(pvm)
                 } label: {
                     Image(systemName: "plus")
                 }
