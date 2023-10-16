@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VerticalStepIndicator: View {
-    @EnvironmentObject var vm: EditProjectViewModel
+    @ObservedObject var vm: EditProjectViewModel
     
     var role: Role
     let currentStepIndex: Int
@@ -63,12 +63,34 @@ struct VerticalStepIndicator: View {
 }
 
 struct MilestoneLineView: View {
-    @EnvironmentObject var vm: EditProjectViewModel
+    @ObservedObject var vm: EditProjectViewModel
     var role: Role
     let currentStepIndex = 1 // Set the current step index here
 
     var body: some View {
-        VerticalStepIndicator(role: role, currentStepIndex: currentStepIndex)
+        VStack {
+            if vm.milestones.isEmpty {
+                Image(systemName: "target")
+                    .font(.largeTitle)
+                Text("No goals yet, add some")
+                    .font(.title3)
+            }
+            else {
+                VerticalStepIndicator(vm: vm, role: role, currentStepIndex: currentStepIndex)
+            }
+            NavigationLink {
+                AddGoalView(role: role)
+                    .environmentObject(vm)
+            } label: {
+                Text("Add Goals")
+                    .padding()
+                    .background(.purple)
+                    .padding(.horizontal)
+            }
+
+        }
+        
+        
     }
 }
 
