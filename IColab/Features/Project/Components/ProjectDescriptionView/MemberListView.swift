@@ -10,6 +10,7 @@ import SwiftUI
 struct MemberListView: View {
     var role: Role = .design
     var count: Int = 5
+    var editMode: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +18,14 @@ struct MemberListView: View {
                 Image(systemName: Role.getRoleIcon(role: role))
                 Text(role.rawValue)
                     .padding(.trailing)
-                Text("\(count)")
+                Spacer()
+                
+                if editMode {
+                    Image(systemName: "chevron.right")
+                }
+                else {
+                    Text("\(count)")
+                }
             }
             Divider()
                 .background(.white)

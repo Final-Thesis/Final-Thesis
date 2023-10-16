@@ -11,7 +11,7 @@ import SwiftUI
 struct IColabApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            ContentView()
         }
     }
 }

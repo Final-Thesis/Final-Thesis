@@ -20,7 +20,8 @@ struct ResourceRequirementView: View {
                 .focused($isInputActive)
                 Button {
                     homeViewModel.searchPressed.toggle()
-                } label: {
+                } 
+                label: {
                     Image(systemName: "line.3.horizontal.decrease.circle")
                         .font(.title2)
                         .foregroundColor(.primary)
