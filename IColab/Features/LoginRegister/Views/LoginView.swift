@@ -54,8 +54,7 @@ struct LoginView: View {
             .onAppear {
                 print("\(Mock.accounts[0].email)")
                 print("\(Mock.accounts[0].password)")
-                print("\(Mock.accounts[1].email)")
-                print("\(Mock.accounts[1].password)")
+                print("Username : \(Mock.accounts[0].accountDetail.name)")
             }
             .navigationDestination(isPresented: $lvm.createAccount) {
                 RegisterView(showSignIn: $showSignIn)

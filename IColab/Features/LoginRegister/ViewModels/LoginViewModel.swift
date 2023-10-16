@@ -36,7 +36,6 @@ class LoginViewModel: ObservableObject {
     @Published var error : LoginError?
     @Published var showAlert = false
     @Published var createAccount = false
-    @Published var contentView = false
 
     public func login(){
         let getEmail = email
@@ -50,8 +49,7 @@ class LoginViewModel: ObservableObject {
         if let foundAccount = Mock.accounts.first(where: { account in
             account.email == getEmail && account.password == getPassword
         }) {
-            print(foundAccount.email)
-            contentView.toggle()
+            AccountManager.shared.getAccount(uid: foundAccount.id)
         }else{
             error = .invalidPassword
             showAlert = true

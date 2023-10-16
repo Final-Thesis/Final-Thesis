@@ -61,8 +61,7 @@ class RegisterViewModel : ObservableObject {
             let accountDetail = AccountDetail(name: self.username, desc: "", location: self.region, bankAccount: "", cvLink: "")
             let account = Account(email: self.email, password: self.password, accountDetail: accountDetail)
             Mock.accounts.append(account)
-            print(account.email)
-            print(account.password)
+            AccountManager.shared.getAccount(uid: account.id)
         }
     }
     
