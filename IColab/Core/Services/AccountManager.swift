@@ -12,7 +12,7 @@ class AccountManager : ObservableObject {
     
     private init(){}
 
-    var account : Account?
+    @Published var account : Account?
     
     public func getAccount(uid: String) {
         if let foundAccount = Mock.accounts.first(where: { account in
