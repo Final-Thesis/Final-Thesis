@@ -47,7 +47,7 @@ struct ProjectDetailView: View {
             .presentationDetents([.fraction(0.45), .large])
         })
         .navigationDestination(isPresented: $showProfile) {
-            ProfileView(pvm: ProfileViewModel(uid: project.owner!.id))
+            ProfileView(pvm: ProfileViewModel(uid: project.owner!.id), showSignIn: .constant(false))
                 .environmentObject(ProfileViewModel(uid: project.owner!.id))
         }
     }

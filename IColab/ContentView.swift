@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
-    @StateObject var accountManager = AccountManager.shared
+    @ObservedObject var accountManager = AccountManager.shared
     @State var showSignIn : Bool = false
     init() {
         Mock.init()
@@ -30,7 +30,7 @@ struct ContentView: View {
                             NotificationView()
                         case .profile:
                             let pvm = ProfileViewModel(uid: accountManager.account?.id ?? "")
-                            ProfileView(pvm: pvm)
+                            ProfileView(pvm: pvm, showSignIn: $showSignIn)
                                 .environmentObject(pvm)
                         }
                     }
