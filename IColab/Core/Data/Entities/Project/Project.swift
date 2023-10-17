@@ -19,6 +19,7 @@ class Project : Identifiable, Searchable {
     var endDate : Date
     var desc : String
     var milestones : [Milestone]
+    var requests : [Request] = []
     
     init(title: String, owner: Account? = nil, members: [Member]? = nil, role: String, requirements: [String], tags: [String], startDate: Date, endDate: Date, desc: String, milestones: [Milestone]) {
         self.title = title
