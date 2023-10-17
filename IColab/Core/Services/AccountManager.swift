@@ -19,8 +19,14 @@ class AccountManager : ObservableObject {
             account.id == uid
         }) {
             account = foundAccount
+            self.objectWillChange.send()
         }else{
             print("Account not found")
         }
+    }
+    
+    public func logout(){
+        account = nil
+        self.objectWillChange.send()
     }
 }

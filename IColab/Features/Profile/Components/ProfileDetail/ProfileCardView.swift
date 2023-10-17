@@ -41,8 +41,7 @@ struct ProfileCardView: View {
                 }
                 Spacer()
                 Button {
-                    AccountManager.shared.account = nil
-                    AccountManager.shared.objectWillChange.send()
+                    AccountManager.shared.logout()
                     showSignIn.toggle()
                 } label: {
                     Image(systemName: "rectangle.portrait.and.arrow.forward")

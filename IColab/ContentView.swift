@@ -49,6 +49,12 @@ struct ContentView: View {
                 OnboardingView(showSignIn: $showSignIn)
             }
         }
+        .onChange(of: showSignIn) { _ in
+            if showSignIn {
+                selectedTabBar = .home
+            }
+            
+        }
     }
 }
 

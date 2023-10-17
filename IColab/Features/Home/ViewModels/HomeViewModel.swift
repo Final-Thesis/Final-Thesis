@@ -18,7 +18,11 @@ class HomeViewModel : ObservableObject{
     }
     
     private func getProjects() -> [Project]{
-        Mock.projects
+        let allProjects = Mock.projects
+        let filteredProjects = allProjects.filter { project in
+            project.owner?.accountDetail.name != AccountManager.shared.account?.accountDetail.name
+        }
+        return filteredProjects
     }
     
     private func getSearchProjects(searchTitle: String) -> [Project] {
