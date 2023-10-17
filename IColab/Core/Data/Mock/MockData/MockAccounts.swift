@@ -25,7 +25,7 @@ struct MockAccounts: Randomizeable {
     static func initAccount() -> [Account] {
         var accounts: [Account] = []
         for name in names {
-            let accountDetail = MockAccountDetails.array.randomElement()!
+            let accountDetail = MockAccountDetails.array.first {$0.name.lowercased() == name} ?? MockAccountDetails.array.randomElement()!
             accounts.append(Account(email: "\(name)@gmail.com", password: "\(name)@123", accountDetail: accountDetail))
         }
         
