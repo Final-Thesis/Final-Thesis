@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectMainView: View {
-    @StateObject var vm: ProjectMainViewModel = ProjectMainViewModel(uid: Mock.accounts[0].id)
+    @StateObject var vm: ProjectMainViewModel = ProjectMainViewModel(uid: AccountManager.shared.account?.id ?? "")
     
     var body: some View {
         VStack {
@@ -18,12 +18,11 @@ struct ProjectMainView: View {
                         .font(.largeTitle)
                         .bold()
                     NavigationLink {
-                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account.id))
+                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account.id, needRefresh: $vm.needRefresh))
                     } label: {
                         Image(systemName: "plus.circle")
                             .font(.largeTitle)
                     }
-                    
                     Spacer()
                 }
                 

@@ -18,6 +18,7 @@ class ProjectMainViewModel: ObservableObject {
     @Published var projectOwned: [Project] = []
     
     @Published var picker: ProjectMainViewPicker = .projectOwned
+    @Published var needRefresh : Bool = false
     
     init(uid: String){
         self.account = getAccount(uid: uid)!
@@ -35,9 +36,9 @@ class ProjectMainViewModel: ObservableObject {
     func getProjectsByType(picker: ProjectMainViewPicker) -> [Project] {
         switch picker {
             case .projectOwned:
-                return projectOwned
+                return account.projectsOwned!
             case .projectJoined:
-                return projectJoined
+                return account.projectsJoined!
         }
     }
 }
