@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct ProjectMainView: View {
-    @StateObject var vm: ProjectMainViewModel = ProjectMainViewModel(uid: Mock.accounts[0].id)
-    
-    @State var searchText: String = ""
-    @State var picker: Int = 1
+    @StateObject var vm: ProjectMainViewModel = ProjectMainViewModel(uid: AccountManager.shared.account?.id ?? "")
     
     var body: some View {
         VStack {
@@ -21,38 +18,43 @@ struct ProjectMainView: View {
                         .font(.largeTitle)
                         .bold()
                     NavigationLink {
-                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account!.id))
+                        CreateProjectView(vm: CreateProjectViewModel(uid: vm.account.id, needRefresh: $vm.needRefresh))
                     } label: {
                         Image(systemName: "plus.circle")
                             .font(.largeTitle)
                     }
-                    
                     Spacer()
                 }
-                HStack {
-                    SearchBar(searchText: $searchText, action: { _ in print("search")})
-                    Button(
-                        action: {print("Filter")},
-                        label: {
-                            Image(systemName: "line.3.horizontal.circle")
-                            .font(.title)
-                        }
+                
+                switch vm.picker {
+                    case .projectOwned:
+                    SearchView(
+                        array: $vm.projectOwned,
+                        vm: SearchViewModel(array: vm.projectOwned),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
                     )
-                    .buttonStyle(.plain)
+                    case .projectJoined:
+                    SearchView(
+                        array: $vm.projectJoined,
+                        vm: SearchViewModel(array: vm.projectJoined),
+                        filterView: AnyView(
+                            Text("Project Main Filter")
+                        )
+                    )
                 }
-            }
-            .padding()
-            
-            Picker("Project Picker", selection: $picker) {
-                Text("Joined Project").tag(1)
-                Text("Owned Project").tag(2)
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            ScrollView {
-                if picker == 1 {
-                    ForEach(vm.account!.projectsJoined!) { project in
+                
+                Picker("Project Picker", selection: $vm.picker) {
+                    ForEach(ProjectMainViewPicker.allCases, id: \.self) { picker in
+                        Text(picker.rawValue).tag(picker)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.vertical)
+                
+                ScrollView {
+                    ForEach(vm.getProjectsByType(picker: vm.picker)) { project in
                         NavigationLink {
                             ProjectOverviewView(vm: ProjectOverviewViewModel(uid: project.id))
                                 .environmentObject(vm)
@@ -61,27 +63,15 @@ struct ProjectMainView: View {
                         }
                     }
                 }
-                else {
-                    ForEach(vm.account!.projectsOwned!) { project in
-                        NavigationLink {
-                            ProjectOverviewView(vm: ProjectOverviewViewModel(uid: project.id))
-                                .environmentObject(vm)
-                        } label: {
-                            ProjectMainCardView(project: project)
-                        }
-                    }
-                }
             }
-            .padding()
+            
         }
-        
         .padding()
-        
     }
 }
-
-#Preview {
-    ProjectMainView()
-        .preferredColorScheme(.dark)
-}
+//
+//#Preview {
+//    ProjectMainView()
+//        .preferredColorScheme(.dark)
+//}
 
