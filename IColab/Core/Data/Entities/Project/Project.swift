@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Project : Identifiable{
+class Project : Identifiable, Searchable {
     let id = UUID().uuidString
     var title : String
     var owner : Account?
@@ -19,6 +19,7 @@ class Project : Identifiable{
     var endDate : Date
     var desc : String
     var milestones : [Milestone]
+    var requests : [Request] = []
     
     init(title: String, owner: Account? = nil, members: [Member]? = nil, role: String, requirements: [String], tags: [String], startDate: Date, endDate: Date, desc: String, milestones: [Milestone]) {
         self.title = title

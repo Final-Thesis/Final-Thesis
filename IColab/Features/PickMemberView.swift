@@ -2,7 +2,7 @@
 //  PickMemberView.swift
 //  IColab
 //
-//  Created by Brandon Nicolas Marlim on 10/10/23.
+//  Created by Jeremy Raymond on 09/10/23.
 //
 
 import SwiftUI
@@ -15,7 +15,14 @@ struct PickMemberView: View {
         VStack(content: {
             InputMemberView()
                 .environmentObject(vm)
-            
+//            NavigationLink {
+//                //Initialize all the project into account
+//                //And then
+//                //Need to go back to main project page
+//            } label: {
+//                Text("Confirm")
+//            }
+
         })
     }
 }

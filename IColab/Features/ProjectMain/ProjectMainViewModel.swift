@@ -15,7 +15,8 @@ enum ProjectMainViewPicker: String, CaseIterable {
 class ProjectMainViewModel: ObservableObject {
     @Published var account: Account = Mock.accounts[0]
     @Published var projectJoined: [Project] = []
-    @Published var projectOwned: [Project] = []    
+    @Published var projectOwned: [Project] = []
+    
     @Published var picker: ProjectMainViewPicker = .projectOwned
     @Published var needRefresh : Bool = false
     

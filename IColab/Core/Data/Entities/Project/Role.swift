@@ -20,8 +20,6 @@ enum Role: String, CaseIterable {
                 return "desktopcomputer"
             case .design:
                 return "paintbrush.pointed"
-            default:
-                return "paintbrush.pointed"
         }
     }
 }

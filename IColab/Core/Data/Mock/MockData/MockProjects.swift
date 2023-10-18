@@ -17,7 +17,9 @@ struct MockProjects: Randomizeable {
         "Database Project",
         "Design Project",
         "Cloud Project",
-        "IoT Project"
+        "IoT Project",
+        "Create ML Project",
+        "Augmented Reality Project"
     ]
     
 //    static var array: [Project] =  {

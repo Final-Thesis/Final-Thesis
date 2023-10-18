@@ -15,23 +15,13 @@ struct CreateChatView: View {
     
     var body: some View {
         VStack {
-            HStack{
-                SearchBar(searchText: $vm.searchText){ search in
-                    vm.searchChats(searchTitle: search)
-                }
-                .focused($isInputActive)
-                Button {
-                    filterToggle.toggle()
-                } label: {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                        .font(.title2)
-                        .foregroundColor(.primary)
-                }
-            }
-            .padding(.horizontal, 10)
-            .padding()
+            SearchView(
+                array: $vm.projects,
+                vm: SearchViewModel(array: vm.projects),
+                hasFilter: false
+            )
             ScrollView {
-                GroupedContactView(projects: vm.getProjects())
+                GroupedContactView(projects: vm.projects)
                     .padding()
             }
         }

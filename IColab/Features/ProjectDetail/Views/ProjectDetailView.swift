@@ -12,7 +12,6 @@ struct ProjectDetailView: View {
     var project : Project
     @State var pickerSelection : PickerItem = .overview
     @State var showSheet = false
-    @Binding var path : NavigationPath
     @State var showProfile = false
     let pickerItems : [PickerItem] = [.overview, .milestone]
     var body: some View {
@@ -48,15 +47,8 @@ struct ProjectDetailView: View {
             .presentationDetents([.fraction(0.45), .large])
         })
         .navigationDestination(isPresented: $showProfile) {
-            ProfileView(pvm: ProfileViewModel(uid: project.owner!.id))
+            ProfileView(pvm: ProfileViewModel(uid: project.owner!.id), showSignIn: .constant(false))
                 .environmentObject(ProfileViewModel(uid: project.owner!.id))
         }
-    }
-}
-
-struct ProjectDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDetailView(project: Mock.projects[0], path: .constant(NavigationPath()))
-            .preferredColorScheme(.dark)
     }
 }

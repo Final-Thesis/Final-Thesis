@@ -14,14 +14,13 @@ struct ContactView: View {
         HStack {
             ZStack {
                 Circle()
-                    .foregroundColor(.blue)
+                    .foregroundColor(.purple)
                 if chat.type == .owner {
                     VStack {
                         HStack {
                             Spacer()
                             Image(systemName: "crown.fill")
                                 .font(.caption2)
-                            
                         }
                         Spacer()
                     }
@@ -32,7 +31,7 @@ struct ContactView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(chat.name)
+                            Text(chat.title)
                                 .font(.headline)
                             Text(chat.projectName)
                                 .font(.footnote)

@@ -20,6 +20,7 @@ struct ProjectCard: View {
             Text("\(project.startDate.formatted(date: .numeric, time: .omitted))")
                 .font(.caption)
             Text("\(project.desc)")
+                .multilineTextAlignment(.leading)
                 .padding(.top, 1)
                 .font(.caption)
             HStack{

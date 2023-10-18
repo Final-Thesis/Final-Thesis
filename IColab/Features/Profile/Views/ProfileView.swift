@@ -10,14 +10,12 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject var pvm : ProfileViewModel
     @State var showAddProfile : Bool = false
+    @Binding var showSignIn : Bool
     var body: some View {
         if let account = pvm.account {
             ScrollView{
                 VStack{
-                    HStack{
-                        ProfileCardView(account: account)
-                        Spacer()
-                    }
+                    ProfileCardView(account: account, showSignIn: $showSignIn)
                     PickerView(pickerSelection: $pvm.pickerSelection, allItems: pvm.pickerItems)
                     Text(account.accountDetail.desc)
                         .font(.caption)
@@ -46,13 +44,12 @@ struct ProfileView: View {
         }else{
             Text("No Account to be displayed")
         }
-            
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id))
+        ProfileView(pvm: ProfileViewModel(uid: Mock.accounts[0].id), showSignIn: .constant(false))
             .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
     }
 }

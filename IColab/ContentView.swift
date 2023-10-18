@@ -9,34 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
-    @StateObject var navigationManager = NavigationManager()
-    
+    @ObservedObject var accountManager = AccountManager.shared
+    @State var showSignIn : Bool = false
     init() {
         Mock.init()
     }
-    
     var body: some View {
-        NavigationStack(path: $navigationManager.path) {
-            ScrollView{
-                VStack{
-                    switch selectedTabBar {
-                    case .home:
-                        HomeView(path: $navigationManager.path)
-                    case .projects:
-                        ProjectMainView()
-                    case .chats:
-                        ChatListView()
-                    case .notifications:
-                        NotificationView()
-                    case .profile:
-                        let pvm = ProfileViewModel(uid: Mock.accounts[0].id)
-                        ProfileView(pvm: pvm)
-                            .environmentObject(pvm)
+        ZStack{
+            NavigationStack {
+                ScrollView{
+                    VStack{
+                        switch selectedTabBar {
+                        case .home:
+                            HomeView()
+                        case .projects:
+                            ProjectMainView()
+                        case .chats:
+                            ChatListView()
+                        case .notifications:
+                            NotificationView()
+                        case .profile:
+                            let pvm = ProfileViewModel(uid: accountManager.account?.id ?? "")
+                            ProfileView(pvm: pvm, showSignIn: $showSignIn)
+                                .environmentObject(pvm)
+                        }
                     }
                 }
+                TabBarView(selectedTabItem: $selectedTabBar)
             }
-            TabBarView(selectedTabItem: $selectedTabBar)
-        }.accentColor(.primary)
+            .navigationBarBackButtonHidden()
+            .navigationBarTitleDisplayMode(.large)
+        }
+        .accentColor(.primary)
+        .onAppear {
+            self.showSignIn = true
+        }
+        .fullScreenCover(isPresented: $showSignIn) {
+            NavigationStack{
+                OnboardingView(showSignIn: $showSignIn)
+            }
+        }
+        .onChange(of: showSignIn) { _ in
+            if showSignIn {
+                selectedTabBar = .home
+            }
+            
+        }
     }
 }
 
