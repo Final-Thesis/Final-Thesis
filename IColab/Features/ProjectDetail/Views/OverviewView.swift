@@ -9,6 +9,10 @@ import SwiftUI
 
 struct OverviewView: View {
     var project : Project
+    @ObservedObject var accountManager = AccountManager.shared
+    @State var showAlert: Bool = false
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack{
             VStack{
@@ -55,9 +59,15 @@ struct OverviewView: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
             ButtonComponent(title: "Apply", width: 200) {
-                print("Apply Success")
+                let request = Request(worker: accountManager.account!, role: project.role, date: Date.now)
+                project.requests.append(request)
+                showAlert.toggle()
             }
-
+        }
+        .alert("Apply Success", isPresented: $showAlert) {
+            Button("Dismiss"){
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }
