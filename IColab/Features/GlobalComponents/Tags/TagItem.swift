@@ -9,8 +9,14 @@ import SwiftUI
 
 struct TagItem: View {
     var tagText : String
-    var editMode: Bool = false
+    var editMode: Bool
+    var colorBackground : Color
     
+    init(tagText: String, editMode: Bool = false, colorBackground: Color = Color(.purple)) {
+        self.tagText = tagText
+        self.editMode = editMode
+        self.colorBackground = colorBackground
+    }
     var body: some View {
         HStack {
             Text(tagText)
@@ -26,7 +32,7 @@ struct TagItem: View {
             
         }
         .padding(8)
-        .background(Color(.purple))
+        .background(colorBackground)
         .cornerRadius(12)
     }
 }

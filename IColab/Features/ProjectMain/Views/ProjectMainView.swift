@@ -56,7 +56,7 @@ struct ProjectMainView: View {
                 ScrollView {
                     ForEach(vm.getProjectsByType(picker: vm.picker)) { project in
                         NavigationLink {
-                            ProjectOverviewView(vm: ProjectOverviewViewModel(uid: project.id))
+                            ProjectOverviewView(vm: ProjectOverviewViewModel(project: project))
                                 .environmentObject(vm)
                         } label: {
                             ProjectMainCardView(project: project)

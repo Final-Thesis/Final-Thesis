@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProjectOverviewView: View {
     @StateObject var vm: ProjectOverviewViewModel
-    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -41,21 +40,39 @@ struct ProjectOverviewView: View {
                         .bold()
                     HStack{
                         ForEach(vm.project.tags, id: \.self){ tag in
-                            TagItem(tagText: tag)
+                            TagItem(tagText: tag, colorBackground: .black)
                         }
                     }
                     Text(vm.project.desc)
                 }
                 .padding()
                 .padding(.top, 32)
-                .background(.purple)
+                .background(Color(.purple))
                 
                 VStack {
-                    CurrentMilestoneView(goal: vm.getCurrentGoal())
-                    Divider()
-                        .background(.gray)
-                    ProjectNavigationCardView()
-                        .environmentObject(vm)
+                    switch vm.project.projectState {
+                    case .notStarted:
+                        ProjectStatusView()
+                            .environmentObject(vm)
+                    case .started:
+                        CurrentMilestoneView(goal: vm.getCurrentGoal())
+                        Divider()
+                            .background(.gray)
+                        ProjectNavigationCardView()
+                            .environmentObject(vm)
+                    case .overdue:
+                        ProjectStatusView()
+                            .environmentObject(vm)
+                        Button("Extend"){
+                            print("Extend")
+                        }
+                    case .extended:
+                        ProjectStatusView()
+                            .environmentObject(vm)
+                        Button("Confirm"){
+                            print("Confirm")
+                        }
+                    }
                 }
             }
             .toolbar(.hidden)
@@ -63,4 +80,8 @@ struct ProjectOverviewView: View {
         }
         
     }
+}
+
+#Preview {
+    ProjectOverviewView(vm: ProjectOverviewViewModel(project: Mock.projects[0]))
 }

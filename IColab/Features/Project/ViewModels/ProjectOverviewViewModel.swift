@@ -11,8 +11,8 @@ class ProjectOverviewViewModel: ObservableObject {
     @Published var project: Project = Mock.projects[0]
     
     
-    init(uid: String) {
-        self.project = self.getProject(uid: uid)
+    init(project : Project) {
+        self.project = project
     }
 //    
     func getProject(uid: String) -> Project {
@@ -29,7 +29,6 @@ class ProjectOverviewViewModel: ObservableObject {
         
         for goal in goals {
             if !goal.isAchieved {
-                print("returned current goal")
                 return goal
             }
         }
