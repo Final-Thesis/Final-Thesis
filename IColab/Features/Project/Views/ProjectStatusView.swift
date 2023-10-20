@@ -17,7 +17,9 @@ struct ProjectStatusView: View {
                 ForEach(projectPickerItems, id: \.self) { item in
                     Text(item.rawValue)
                 }
-            }.pickerStyle(.segmented)
+            }
+            .pickerStyle(.segmented)
+            .padding(.bottom, 15)
             switch projectPicker {
             case .status:
                 Image(systemName: vm.project.projectState.symbol)
@@ -45,8 +47,9 @@ struct ProjectStatusView: View {
                     RoleCard(symbol: "desktopcomputer", roleTitle: "Back-End", quantity: 3, max: 4)
                     RoleCard(symbol: "paintbrush.pointed.fill", roleTitle: "Design", quantity: 3, max: 4)
                 }
-                Button {
-                    print("WorkerRequest")
+                NavigationLink {
+                    RequestView()
+                        .environmentObject(vm)
                 } label: {
                     HStack{
                         Text("Worker Requests")
@@ -60,7 +63,6 @@ struct ProjectStatusView: View {
                 .buttonStyle(.borderedProminent)
                 .padding(.horizontal)
             }
-            
         }
     }
 }

@@ -84,4 +84,5 @@ struct ProjectOverviewView: View {
 
 #Preview {
     ProjectOverviewView(vm: ProjectOverviewViewModel(project: Mock.projects[0]))
+        .accentColor(.primary)
 }
