@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 enum RegisterError : LocalizedError{
     case formIncomplete
@@ -62,6 +63,17 @@ class RegisterViewModel : ObservableObject {
             let account = Account(email: self.email, password: self.password, accountDetail: accountDetail)
             Mock.accounts.append(account)
             AccountManager.shared.getAccount(uid: account.id)
+        }
+    }
+    
+    func registerAuth() {
+        if registrationValidation() {
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+                if let error = error {
+                    // Handle the registration error
+                    // You can create a custom error type to represent Firebase registration errors
+                } 
+            }
         }
     }
     

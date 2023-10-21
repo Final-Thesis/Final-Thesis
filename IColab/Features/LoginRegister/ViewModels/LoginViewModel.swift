@@ -6,6 +6,29 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
+
+struct authDataResultModel{
+    let uid: String
+    let email: String?
+//    let password: String?
+    let photoUrl: String?
+    
+    init (user: User) {
+        self.uid = user.uid
+        self.email = user.email
+        self.photoUrl = user.photoURL?.absoluteString
+    }
+}
+
+class LoginViewModel: ObservableObject {
+    @Published var email = ""
+    @Published var password = ""
+    @Published var error : LoginError?
+    @Published var showAlert = false
+    @Published var createAccount = false
+}
 
 enum LoginError : LocalizedError{
     case invalidPassword
@@ -30,30 +53,17 @@ enum LoginError : LocalizedError{
     }
 }
 
-class LoginViewModel: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    @Published var error : LoginError?
-    @Published var showAlert = false
-    @Published var createAccount = false
-
-    public func login(){
-        let getEmail = email
-        let getPassword = password
-        
-        if getEmail.isEmpty || getPassword.isEmpty {
-            error = .incompleteForm
-            showAlert = true
-            return
-        }
-        if let foundAccount = Mock.accounts.first(where: { account in
-            account.email == getEmail && account.password == getPassword
-        }) {
-            AccountManager.shared.getAccount(uid: foundAccount.id)
-        }else{
-            error = .invalidPassword
-            showAlert = true
-        }
-        
+class LoginViewModelAuth{
+    
+    static let shared = LoginViewModelAuth()
+    private init() { }
+    
+    
+    func createUser(email: String, password: String) async throws -> authDataResultModel{
+        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+        return authDataResultModel(user: authDataResult.user)
     }
 }
+
+
+

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct LoginView: View {
     @StateObject var lvm : LoginViewModel = LoginViewModel()
     @Binding var showSignIn : Bool
@@ -23,7 +25,7 @@ struct LoginView: View {
                 
                 VStack {
                     Button {
-                        lvm.login()
+                        lvm.login
                         if !lvm.showAlert {
                             showSignIn.toggle()
                         }
