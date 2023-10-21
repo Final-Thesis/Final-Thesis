@@ -58,5 +58,8 @@ class ProjectOverviewViewModel: ObservableObject {
         return count
     }
     
+    func rejectRequest(){
+        
+    }
     
 }

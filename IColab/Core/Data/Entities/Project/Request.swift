@@ -13,3 +13,9 @@ struct Request {
     var role : String
     var date : Date
 }
+
+enum RequestState {
+    case notReviewed
+    case approved
+    case rejected
+}
