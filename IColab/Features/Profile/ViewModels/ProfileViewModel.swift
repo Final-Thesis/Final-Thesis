@@ -98,4 +98,11 @@ class ProfileViewModel : ObservableObject {
             }
         }
     }
+    
+    public func editProfile(name: String, role: String, region: String, desc: String){
+        account?.accountDetail.name = name
+        account?.accountDetail.location = region
+        account?.accountDetail.desc = desc
+        objectWillChange.send()
+    }
 }

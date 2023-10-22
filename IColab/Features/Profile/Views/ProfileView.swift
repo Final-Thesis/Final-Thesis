@@ -16,6 +16,7 @@ struct ProfileView: View {
             ScrollView{
                 VStack{
                     ProfileCardView(account: account, showSignIn: $showSignIn)
+                        .environmentObject(pvm)
                     PickerView(pickerSelection: $pvm.pickerSelection, allItems: pvm.pickerItems)
                     Text(account.accountDetail.desc)
                         .font(.caption)

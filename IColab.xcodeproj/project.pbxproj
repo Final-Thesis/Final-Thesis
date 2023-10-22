@@ -904,6 +904,7 @@
 				D81DCE272AC3FAE900D65604 /* EditSkillFormView.swift */,
 				D85CEFBA2AC1E553004D4C75 /* NewFormView.swift */,
 				D82C0D5A2ABC0741009802D9 /* EditFormView.swift */,
+				D8ECD72F2ADF8A61004F68B6 /* ProfileFormView.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -1298,6 +1299,7 @@
 				D89587032AAF5EDA0064629B /* ProfileCardView.swift in Sources */,
 				6C745EBA2AC9814400646574 /* MockGoals.swift in Sources */,
 				D8FCE07D2AAB6F1000B19B95 /* FilterSheetView.swift in Sources */,
+				D8ECD7302ADF8A61004F68B6 /* ProfileFormView.swift in Sources */,
 				6C745EA42AC96BC300646574 /* Goal.swift in Sources */,
 				6CC7F2A82AC047F000AF0A12 /* InputMemberView.swift in Sources */,
 				6C129E952AC2E25100F7036D /* EditTag.swift in Sources */,
