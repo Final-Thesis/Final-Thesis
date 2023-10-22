@@ -55,10 +55,10 @@ struct MilestoneDetailView: View {
         }
     }
 }
-
+//
 //struct MilestoneDetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MilestoneDetailView()
+//        MilestoneDetailView(milestone: MockMilestones.array[0], goal: MockMilestones.array[0].goals[0])
 //            .colorScheme(.dark)
 //    }
 //}

@@ -71,5 +71,6 @@ struct ProjectDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectDescriptionView(project: Mock.projects[0])
             .preferredColorScheme(.dark)
+            .environmentObject(ProjectOverviewViewModel(project: Mock.projects[0]))
     }
 }

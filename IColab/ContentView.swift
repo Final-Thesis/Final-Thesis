@@ -11,9 +11,6 @@ struct ContentView: View {
     @State var selectedTabBar : TabBarType = .home
     @ObservedObject var accountManager = AccountManager.shared
     @State var showSignIn : Bool = false
-    init() {
-        Mock.init()
-    }
     var body: some View {
         ZStack{
             NavigationStack {
@@ -46,7 +43,7 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showSignIn) {
             NavigationStack{
-                OnboardingView(showSignIn: $showSignIn)
+                LoginView(showSignIn: $showSignIn)
             }
         }
         .onChange(of: showSignIn) { _ in
