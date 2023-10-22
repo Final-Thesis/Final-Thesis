@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ProfileCardView: View {
+    @EnvironmentObject var pvm : ProfileViewModel
     var account : Account?
     @Binding var showSignIn : Bool
-    
     var body: some View {
         if let account = account {
             HStack(spacing: 20){
                 NavigationLink {
-                    //
+                    ProfileFormView()
+                        .environmentObject(pvm)
                 } label: {
                     ZStack{
                         Image("purple")
