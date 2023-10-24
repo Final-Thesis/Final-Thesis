@@ -8,15 +8,33 @@
 import SwiftUI
 
 struct MilestoneView: View {
-    var milestones : [Milestone]
+    @State var milestones : [Milestone]
+    @State var role : Role = .frontend
     
     var body: some View {
-        VStack(spacing: 20){
-            MilestoneDetailCard(milestoneDetailCardType: .overview, milestones: milestones)
-            MilestoneDetailCard(milestoneDetailCardType: .detail, milestones: milestones)
+        ScrollView{
+            HStack{
+                Text("Role")
+                    .font(.title2).bold()
+                Spacer()
+                Picker("Role", selection: $role) {
+                    ForEach(Role.allCases, id : \.self){ role in
+                        Text(role.rawValue)
+                    }
+                }
+            }
+            .padding(.horizontal, 30)
+            MilestoneDetailCard(milestoneDetailCardType: .overview, milestones: filterMilestone())
+            MilestoneDetailCard(milestoneDetailCardType: .detail, milestones: filterMilestone())
                 .padding(.horizontal, 15)
         }
-        
+    }
+    
+    func filterMilestone() -> [Milestone] {
+       let filteredMilestones = self.milestones.filter({ milestone in
+            milestone.role == self.role
+        })
+        return filteredMilestones
     }
 }
 
