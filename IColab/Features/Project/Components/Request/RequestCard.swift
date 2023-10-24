@@ -16,7 +16,7 @@ struct RequestCard: View {
             VStack(alignment: .leading){
                 Text(request.worker.accountDetail.name)
                     .font(.title3).bold()
-                Text(request.role)
+                Text(request.role.rawValue)
                     .font(.caption)
             }
             Spacer()

@@ -12,6 +12,7 @@ struct OverviewView: View {
     @ObservedObject var accountManager = AccountManager.shared
     @State var showAlert: Bool = false
     @Environment(\.presentationMode) var presentationMode
+    @State var role : Role = .frontend
     
     var body: some View {
         VStack{
@@ -58,11 +59,26 @@ struct OverviewView: View {
             DetailCard(detailCardType: .requirements, title: "Job Requirements", requirements: project.requirements)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 10)
+            HStack{
+                Text("Role")
+                    .font(.title2).bold()
+                    .padding(.leading)
+                Spacer()
+                Picker("Role", selection: $role) {
+                    ForEach(Role.allCases, id: \.self){ role in
+                        Text(role.rawValue)
+                    }
+                }
+            }
+            .background(.ultraThinMaterial)
+            .padding(.horizontal, 20)
+            
             ButtonComponent(title: "Apply", width: 200) {
-                let request = Request(worker: accountManager.account!, role: project.role, date: Date.now)
+                let request = Request(worker: accountManager.account!, role: role, date: Date.now)
                 project.requests.append(request)
                 showAlert.toggle()
             }
+            .padding(.bottom, 30)
         }
         .alert("Apply Success", isPresented: $showAlert) {
             Button("Dismiss"){

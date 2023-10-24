@@ -19,7 +19,7 @@ struct MockRequest {
                                     location: "Location",
                                     bankAccount: "Bank",
                                     cvLink: "cvLink")),
-                role: "Front-End",
+                role: .frontend,
                 date: Date.now),
         Request(worker:
                     Account(email: "aaa@gmail.com",
@@ -31,7 +31,7 @@ struct MockRequest {
                                     location: "",
                                     bankAccount: "",
                                     cvLink: "")),
-                role: "Back-End",
+                role: .backend,
                 date: Date.now),
         Request(worker:
                     Account(email: "bbb@gmail.com",
@@ -44,7 +44,7 @@ struct MockRequest {
                                     bankAccount: "",
                                     cvLink: "")
                            ),
-                role: "Designer",
+                role: .design,
                 date: Date.now),
     ]
 }

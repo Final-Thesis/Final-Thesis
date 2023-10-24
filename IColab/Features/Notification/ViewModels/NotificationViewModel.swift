@@ -15,6 +15,6 @@ class NotificationViewModel {
     }
     
     private func getNotifications() -> [Notification]?{
-        return Mock.accounts[0].notifications ?? nil
+        return AccountManager.shared.account?.notifications
     }
 }
