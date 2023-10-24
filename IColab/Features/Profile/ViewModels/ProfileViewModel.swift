@@ -12,10 +12,13 @@ class ProfileViewModel : ObservableObject {
     @Published var account : Account?
     @Published var pickerSelection : PickerItem = .overview
     @Published var showEdit : Bool = false
-    
+    @Published var loggedInAccountIsViewed : Bool = false
     let pickerItems : [PickerItem] = [.overview, .portofolio]
     init(uid: String){
         self.account = getAccount(uid: uid)
+        if account == AccountManager.shared.account {
+            loggedInAccountIsViewed = true
+        }
     }
     
     private func getAccount(uid: String) -> Account?{

@@ -14,23 +14,33 @@ struct ProfileCardView: View {
     var body: some View {
         if let account = account {
             HStack(spacing: 20){
-                NavigationLink {
-                    ProfileFormView()
-                        .environmentObject(pvm)
-                } label: {
+                if pvm.loggedInAccountIsViewed {
+                    NavigationLink {
+                        ProfileFormView()
+                            .environmentObject(pvm)
+                    } label: {
+                        ZStack{
+                            Image("purple")
+                                .resizable()
+                                .frame(width: 72, height: 72)
+                                .cornerRadius(12)
+                            VStack{
+                                Spacer()
+                                Text("Edit")
+                                    .font(.caption2)
+                                    .frame(width: 72)
+                                    .cornerRadius(12)
+                                    .background(.ultraThickMaterial)
+                            }
+                        }
+                    }
+                }
+                else{
                     ZStack{
                         Image("purple")
                             .resizable()
                             .frame(width: 72, height: 72)
                             .cornerRadius(12)
-                        VStack{
-                            Spacer()
-                            Text("Edit")
-                                .font(.caption2)
-                                .frame(width: 72)
-                                .cornerRadius(12)
-                                .background(.ultraThickMaterial)
-                        }
                     }
                 }
                 VStack(alignment: .leading, spacing: 10){
@@ -41,13 +51,16 @@ struct ProfileCardView: View {
                         .font(.caption)
                 }
                 Spacer()
-                Button {
-                    AccountManager.shared.logout()
-                    showSignIn.toggle()
-                } label: {
-                    Image(systemName: "rectangle.portrait.and.arrow.forward")
-                        .font(.system(size: 14))
+                if pvm.loggedInAccountIsViewed {
+                    Button {
+                        AccountManager.shared.logout()
+                        showSignIn.toggle()
+                    } label: {
+                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                            .font(.system(size: 14))
+                    }
                 }
+                
             }
         } else {
             Text("No Account to be displayed")

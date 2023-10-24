@@ -22,11 +22,13 @@ struct ProfileView: View {
                         .font(.caption)
                     switch pvm.pickerSelection {
                     case .overview:
-                        ProfileDetailCard(backgroundType: .skill, skills: pvm.account?.accountDetail.skills)
-                        ProfileDetailCard(backgroundType: .experience, backgrounds: pvm.account?.accountDetail.experiences)
-                        ProfileDetailCard(backgroundType: .education, backgrounds: pvm.account?.accountDetail.educations)
-                        ButtonComponent(title: "Add More", width: 300) {
-                            showAddProfile.toggle()
+                        ProfileDetailCard(backgroundType: .skill, skills: pvm.account?.accountDetail.skills, editMode: pvm.loggedInAccountIsViewed)
+                        ProfileDetailCard(backgroundType: .experience, backgrounds: pvm.account?.accountDetail.experiences, editMode: pvm.loggedInAccountIsViewed)
+                        ProfileDetailCard(backgroundType: .education, backgrounds: pvm.account?.accountDetail.educations, editMode: pvm.loggedInAccountIsViewed)
+                        if pvm.loggedInAccountIsViewed {
+                            ButtonComponent(title: "Add More", width: 300) {
+                                showAddProfile.toggle()
+                            }
                         }
                     case .portofolio:
                         PortofolioView()

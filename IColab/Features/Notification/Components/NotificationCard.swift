@@ -20,6 +20,7 @@ struct NotificationCard: View {
                 Text("\(notification.projectName) - \(notification.date.formatted(date: .abbreviated, time: .shortened))")
                     .font(.caption)
             }
+            Spacer()
         }
         .padding()
         .background(.ultraThinMaterial)
@@ -29,6 +30,6 @@ struct NotificationCard: View {
 
 struct NotificationCard_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationCard(notification: Mock.accounts[0].notifications![0])
+        NotificationCard(notification: Notification(desc: "Request Approved", projectName: "Kevin", date: Date.now))
     }
 }

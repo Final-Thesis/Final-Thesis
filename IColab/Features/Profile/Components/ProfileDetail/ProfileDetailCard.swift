@@ -13,6 +13,7 @@ struct ProfileDetailCard: View {
     var backgroundType : BackgroundType
     var skills : [String]?
     var backgrounds : [Background]?
+    var editMode : Bool
     
     var body: some View {
         VStack(alignment: .leading){
@@ -21,27 +22,29 @@ struct ProfileDetailCard: View {
                     .font(.title3)
                     .fontWeight(.bold)
                 Spacer()
-                switch backgroundType {
-                case .skill:
-                    NavigationLink {
-                        EditView(backgroundType: .skill)
-                            .environmentObject(pvm)
-                    } label: {
-                        Image(systemName: "pencil")
-                    }
-                case .education:
-                    NavigationLink{
-                        EditView(backgroundType: .education)
-                            .environmentObject(pvm)
-                    } label: {
-                        Image(systemName: "pencil")
-                    }
-                case .experience:
-                    NavigationLink{
-                        EditView(backgroundType: .experience)
-                            .environmentObject(pvm)
-                    } label: {
-                        Image(systemName: "pencil")
+                if editMode{
+                    switch backgroundType {
+                    case .skill:
+                        NavigationLink {
+                            EditView(backgroundType: .skill)
+                                .environmentObject(pvm)
+                        } label: {
+                            Image(systemName: "pencil")
+                        }
+                    case .education:
+                        NavigationLink{
+                            EditView(backgroundType: .education)
+                                .environmentObject(pvm)
+                        } label: {
+                            Image(systemName: "pencil")
+                        }
+                    case .experience:
+                        NavigationLink{
+                            EditView(backgroundType: .experience)
+                                .environmentObject(pvm)
+                        } label: {
+                            Image(systemName: "pencil")
+                        }
                     }
                 }
             }
@@ -84,9 +87,9 @@ struct ProfileDetailCard: View {
 struct ProfileDetailCard_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ProfileDetailCard(backgroundType: .skill)
+            ProfileDetailCard(backgroundType: .skill, editMode: false)
                 .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
-            ProfileDetailCard(backgroundType: .education)
+            ProfileDetailCard(backgroundType: .education, editMode: true)
                 .environmentObject(ProfileViewModel(uid: Mock.accounts[0].id))
         }
     }

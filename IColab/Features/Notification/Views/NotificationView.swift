@@ -15,10 +15,12 @@ struct NotificationView: View {
                 ScrollView{
                     ForEach(notifications) { notification in
                         NotificationCard(notification: notification)
+                            .padding(.horizontal, 20)
                     }
                 }
             }else {
                 VStack{
+                    Spacer()
                     Image(systemName: "bell.slash.fill")
                         .font(.system(size: 48))
                     Text("No Notifications Yet")
@@ -27,6 +29,8 @@ struct NotificationView: View {
                         .padding(.bottom, 10)
                     Text("We will notify you when there’s something that needs your attention")
                         .multilineTextAlignment(.center)
+                        .frame(width: 300)
+                    Spacer()
                 }
             }
         }.navigationTitle("Notifications")

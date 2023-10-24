@@ -58,8 +58,22 @@ class ProjectOverviewViewModel: ObservableObject {
         return count
     }
     
-    func rejectRequest(){
+    func rejectRequest(worker: Account){
+        worker.notifications?.append(Notification(desc: "Request Rejected", projectName: project.title, date: Date.now))
         
     }
     
+    func acceptRequest(request : Request){
+        let member = Member(account: request.worker, role: request.role)
+        project.members?.append(member)
+        request.worker.notifications?.append(Notification(desc: "Request Accepted", projectName: project.title, date: Date.now))
+    }
+    
+    func deleteRequest(request : Request){
+        guard let index = project.requests.firstIndex(where: {$0.id == request.id}) else {
+            return
+        }
+        project.requests.remove(at: index)
+        self.objectWillChange.send()
+    }
 }
