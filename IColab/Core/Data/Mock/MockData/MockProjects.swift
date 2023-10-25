@@ -51,7 +51,8 @@ struct MockProjects: Randomizeable {
                 startDate: Date.now.addingTimeInterval(Double.random(in: 1000...10000)),
                 endDate: Date.now.addingTimeInterval(Double.random(in: 10000...100000)),
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                milestones: MockMilestones.array
+                milestones: MockMilestones.array,
+                projectState: ProjectState.allCases.randomElement()!
             )
         }
     

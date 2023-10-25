@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProjectState : String{
+enum ProjectState : String, CaseIterable{
     case notStarted = "Project not Started"
     case started = "Project Started"
     case overdue = "Project Overdue"
