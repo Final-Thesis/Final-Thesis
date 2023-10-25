@@ -76,4 +76,10 @@ class ProjectOverviewViewModel: ObservableObject {
         project.requests.remove(at: index)
         self.objectWillChange.send()
     }
+    
+    func extend(date : Date){
+        project.startDate = date
+        project.projectState = .extended
+        self.objectWillChange.send()
+    }
 }
