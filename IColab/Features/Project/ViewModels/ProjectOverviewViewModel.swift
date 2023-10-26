@@ -76,4 +76,13 @@ class ProjectOverviewViewModel: ObservableObject {
         project.requests.remove(at: index)
         self.objectWillChange.send()
     }
+    
+    func extend(date : Date){
+        let dateRange = Calendar.current.dateComponents([.day], from: project.startDate, to: project.endDate)
+        project.startDate = date
+        project.endDate = Calendar.current.date(byAdding: dateRange, to: date)!
+        
+        project.projectState = .extended
+        self.objectWillChange.send()
+    }
 }

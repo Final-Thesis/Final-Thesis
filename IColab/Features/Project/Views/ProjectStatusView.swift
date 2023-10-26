@@ -11,6 +11,7 @@ struct ProjectStatusView: View {
     @EnvironmentObject var vm : ProjectOverviewViewModel
     @State var projectPicker : ProjectPickerItem = .status
     @State var projectPickerItems : [ProjectPickerItem] = [.status, .info]
+    @Binding var showSheet : Bool
     var body: some View {
         VStack{
             Picker("", selection: $projectPicker) {
@@ -32,9 +33,14 @@ struct ProjectStatusView: View {
                         .padding(.vertical)
                 }
                 else{
-                    Text(.init(vm.project.projectState.description(date: vm.project.projectState == .extended ? Date.distantFuture : Calendar.current.date(byAdding: DateComponents(day: 3), to: Date.now))))
+                    Text(.init(vm.project.projectState.description(date: vm.project.projectState == .extended ? vm.project.startDate : Calendar.current.date(byAdding: DateComponents(day: 3), to: Date.now))))
                         .frame(width: 300)
                         .padding(.vertical)
+                    if vm.project.projectState == .overdue {
+                        ButtonComponent(title: "Extend", width: 320) {
+                            showSheet = true
+                        }
+                    }
                 }
                 
             case .info:
@@ -68,7 +74,7 @@ struct ProjectStatusView: View {
 }
 
 #Preview {
-    ProjectStatusView()
+    ProjectStatusView(showSheet: .constant(false))
         .environmentObject(ProjectOverviewViewModel(project: Mock.projects[0]))
 }
 

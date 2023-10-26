@@ -154,6 +154,7 @@
 		D8ECD7352AE0E2F6004F68B6 /* ProjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECD7342AE0E2F6004F68B6 /* ProjectState.swift */; };
 		D8ECD7382AE0F273004F68B6 /* ProjectStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECD7372AE0F273004F68B6 /* ProjectStatusView.swift */; };
 		D8ECD73B2AE103FC004F68B6 /* RoleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECD73A2AE103FB004F68B6 /* RoleCard.swift */; };
+		D8FBED5C2AE96DE10062CC00 /* ExtendSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FBED5B2AE96DE10062CC00 /* ExtendSheet.swift */; };
 		D8FCE07D2AAB6F1000B19B95 /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCE07C2AAB6F1000B19B95 /* FilterSheetView.swift */; };
 		D8FCE0802AAC363300B19B95 /* TagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCE07F2AAC363300B19B95 /* TagManager.swift */; };
 		D8FCE0822AAC3AC900B19B95 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCE0812AAC3AC900B19B95 /* TagsView.swift */; };
@@ -322,6 +323,7 @@
 		D8ECD7342AE0E2F6004F68B6 /* ProjectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectState.swift; sourceTree = "<group>"; };
 		D8ECD7372AE0F273004F68B6 /* ProjectStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStatusView.swift; sourceTree = "<group>"; };
 		D8ECD73A2AE103FB004F68B6 /* RoleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCard.swift; sourceTree = "<group>"; };
+		D8FBED5B2AE96DE10062CC00 /* ExtendSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendSheet.swift; sourceTree = "<group>"; };
 		D8FCE07C2AAB6F1000B19B95 /* FilterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheetView.swift; sourceTree = "<group>"; };
 		D8FCE07F2AAC363300B19B95 /* TagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagManager.swift; sourceTree = "<group>"; };
 		D8FCE0812AAC3AC900B19B95 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -1082,6 +1084,7 @@
 			isa = PBXGroup;
 			children = (
 				D8ECD73A2AE103FB004F68B6 /* RoleCard.swift */,
+				D8FBED5B2AE96DE10062CC00 /* ExtendSheet.swift */,
 			);
 			path = ProjectStatus;
 			sourceTree = "<group>";
@@ -1256,6 +1259,7 @@
 				D89586FE2AAF5E340064629B /* ProfileViewModel.swift in Sources */,
 				6C74DB752ABFE80000FD5D3F /* ProjectOverviewView.swift in Sources */,
 				D89587072AB036560064629B /* ExperienceDetailView.swift in Sources */,
+				D8FBED5C2AE96DE10062CC00 /* ExtendSheet.swift in Sources */,
 				6C74DB832AC010AC00FD5D3F /* ResourceRequirementView.swift in Sources */,
 				B7EE98D32ACA9A9A00C9B428 /* ProjectMainCardView.swift in Sources */,
 				D87A67B82AA7059F000586A1 /* MilestoneDetailCard.swift in Sources */,

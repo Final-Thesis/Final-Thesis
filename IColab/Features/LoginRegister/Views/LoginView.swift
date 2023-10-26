@@ -52,9 +52,10 @@ struct LoginView: View {
                 Text("\(error.errorSuggestion)")
             }
             .onAppear {
-                print("\(Mock.accounts[0].email)")
-                print("\(Mock.accounts[0].password)")
-                print("Username : \(Mock.accounts[0].accountDetail.name)")
+                guard let account = Mock.accounts.first(where: {$0.projectsOwned!.contains(where: {$0.projectState == .overdue})}) else {
+                    return
+                }
+                print("Account dengan Overdue Project : \(account.accountDetail.name)")
             }
             .navigationDestination(isPresented: $lvm.createAccount) {
                 RegisterView(showSignIn: $showSignIn)

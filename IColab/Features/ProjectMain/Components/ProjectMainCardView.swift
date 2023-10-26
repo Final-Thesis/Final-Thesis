@@ -15,14 +15,14 @@ struct ProjectMainCardView: View {
         HStack {
             Rectangle()
                 .frame(width: 64, height: 64)
-                .foregroundStyle(.purple)
+                .foregroundStyle(project.projectState != .overdue ? .purple : .red)
                 .cornerRadius(12)
             VStack(alignment: .leading) {
                 Text(project.title)
                     .font(.headline)
                 Text(project.owner!.accountDetail.name)
                     .font(.caption2)
-                if status {
+                if project.projectState != .overdue {
                     HStack {
                         ProgressView(value: 0.75)
                             .tint(.purple)
@@ -32,11 +32,11 @@ struct ProjectMainCardView: View {
                     }
                 }
                 else {
-                    Text("Pending")
+                    Text("Overdue")
                         .font(.footnote)
                         .padding(.vertical, 4)
                         .padding(.horizontal)
-                        .background(.purple)
+                        .background(.red)
                         .cornerRadius(12)
                 }
             }
@@ -44,7 +44,7 @@ struct ProjectMainCardView: View {
         }
         .frame(width: 332)
         .padding()
-        .background(Color("gray"))
+        .background(Color(.gray))
         .cornerRadius(12)
     }
 }

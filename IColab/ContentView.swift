@@ -13,29 +13,31 @@ struct ContentView: View {
     @State var showSignIn : Bool = false
     var body: some View {
         ZStack{
-            NavigationStack {
-                ScrollView{
-                    VStack{
-                        switch selectedTabBar {
-                        case .home:
-                            HomeView()
-                        case .projects:
-                            ProjectMainView()
-                        case .chats:
-                            ChatListView()
-                        case .notifications:
-                            NotificationView()
-                        case .profile:
-                            let pvm = ProfileViewModel(uid: accountManager.account?.id ?? "")
-                            ProfileView(pvm: pvm, showSignIn: $showSignIn)
-                                .environmentObject(pvm)
+            if !showSignIn {
+                NavigationStack {
+                    ScrollView{
+                        VStack{
+                            switch selectedTabBar {
+                            case .home:
+                                HomeView()
+                            case .projects:
+                                ProjectMainView()
+                            case .chats:
+                                ChatListView()
+                            case .notifications:
+                                NotificationView()
+                            case .profile:
+                                let pvm = ProfileViewModel(uid: accountManager.account?.id ?? "")
+                                ProfileView(pvm: pvm, showSignIn: $showSignIn)
+                                    .environmentObject(pvm)
+                            }
                         }
                     }
+                    TabBarView(selectedTabItem: $selectedTabBar)
                 }
-                TabBarView(selectedTabItem: $selectedTabBar)
+                .navigationBarBackButtonHidden()
+                .navigationBarTitleDisplayMode(.large)
             }
-            .navigationBarBackButtonHidden()
-            .navigationBarTitleDisplayMode(.large)
         }
         .accentColor(.primary)
         .onAppear {

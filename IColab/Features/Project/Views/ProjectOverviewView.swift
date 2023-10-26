@@ -10,6 +10,7 @@ import SwiftUI
 struct ProjectOverviewView: View {
     @StateObject var vm: ProjectOverviewViewModel
     @Environment(\.dismiss) var dismiss
+    @State var showSheet = false
     
     var body: some View {
         NavigationStack {
@@ -52,7 +53,7 @@ struct ProjectOverviewView: View {
                 VStack {
                     switch vm.project.projectState {
                     case .notStarted:
-                        ProjectStatusView()
+                        ProjectStatusView(showSheet: $showSheet)
                             .environmentObject(vm)
                     case .started:
                         CurrentMilestoneView(goal: vm.getCurrentGoal())
@@ -61,24 +62,22 @@ struct ProjectOverviewView: View {
                         ProjectNavigationCardView()
                             .environmentObject(vm)
                     case .overdue:
-                        ProjectStatusView()
+                        ProjectStatusView(showSheet: $showSheet)
                             .environmentObject(vm)
-                        Button("Extend"){
-                            print("Extend")
-                        }
                     case .extended:
-                        ProjectStatusView()
+                        ProjectStatusView(showSheet: $showSheet)
                             .environmentObject(vm)
-                        Button("Confirm"){
-                            print("Confirm")
-                        }
                     }
                 }
             }
             .toolbar(.hidden)
             .ignoresSafeArea(edges: .top)
         }
-        
+        .sheet(isPresented: $showSheet, content: {
+            ExtendSheet(showSheet: $showSheet)
+                .presentationDetents([.fraction(0.25), .large])
+                .environmentObject(vm)
+        })
     }
 }
 

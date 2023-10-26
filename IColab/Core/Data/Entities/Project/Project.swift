@@ -20,9 +20,9 @@ class Project : Identifiable, Searchable {
     var desc : String
     var milestones : [Milestone]
     var requests : [Request] = []
-    var projectState : ProjectState = .notStarted
+    var projectState : ProjectState
     
-    init(title: String, owner: Account? = nil, members: [Member]? = nil, role: String, requirements: [String], tags: [String], startDate: Date, endDate: Date, desc: String, milestones: [Milestone]) {
+    init(title: String, owner: Account? = nil, members: [Member]? = nil, role: String, requirements: [String], tags: [String], startDate: Date, endDate: Date, desc: String, milestones: [Milestone], projectState: ProjectState = .notStarted) {
         self.title = title
         self.owner = owner
         self.members = members
@@ -33,6 +33,7 @@ class Project : Identifiable, Searchable {
         self.endDate = endDate
         self.desc = desc
         self.milestones = milestones
+        self.projectState = projectState
     }
     
     func setOverview(title: String, tags: [String], desc: String) {

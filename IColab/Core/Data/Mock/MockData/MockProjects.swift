@@ -48,10 +48,11 @@ struct MockProjects: Randomizeable {
                 role: Role.allCases.randomElement()!.rawValue,
                 requirements: ["3 years SwiftUI experience", "3 years UIKit experience"],
                 tags: ["SwiftUI", "CoreML", "Vision"],
-                startDate: Date.now.addingTimeInterval(Double.random(in: 1000...10000)),
-                endDate: Date.now.addingTimeInterval(Double.random(in: 10000...100000)),
+                startDate: Date.now,
+                endDate: Calendar.current.date(byAdding: .day, value: 5, to: Date.now)!,
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                milestones: MockMilestones.array
+                milestones: MockMilestones.array,
+                projectState: ProjectState.allCases.randomElement()!
             )
         }
     
