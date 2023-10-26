@@ -11,6 +11,7 @@ struct ProfileCardView: View {
     @EnvironmentObject var pvm : ProfileViewModel
     var account : Account?
     @Binding var showSignIn : Bool
+    @State var showAlert = false
     var body: some View {
         if let account = account {
             HStack(spacing: 20){
@@ -53,19 +54,34 @@ struct ProfileCardView: View {
                 Spacer()
                 if pvm.loggedInAccountIsViewed {
                     Button {
-                        AccountManager.shared.logout()
-                        showSignIn.toggle()
+                        showAlert = true
                     } label: {
                         Image(systemName: "rectangle.portrait.and.arrow.forward")
                             .font(.system(size: 14))
                     }
+                    .alert("Logout", isPresented: $showAlert) {
+                        HStack{
+                            Button("Cancel", role: .cancel){
+                                
+                            }
+                            Button("Logout", role: .destructive){
+                                AccountManager.shared.logout()
+                                showSignIn = true
+                            }
+                        }
+                    } message: {
+                        Text("Are you sure you want to logout?")
+                    }
+
                 }
                 
             }
         } else {
             Text("No Account to be displayed")
         }
+        
     }
+    
 }
 
 struct ProfileCardView_Previews : PreviewProvider{
